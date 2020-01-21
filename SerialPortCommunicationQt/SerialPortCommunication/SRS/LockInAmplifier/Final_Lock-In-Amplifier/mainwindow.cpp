@@ -10,6 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
     SRS obj;
     std::string model;
 
+    //Добавление моделей
+    for (auto model : obj.getSupportedList()) {
+        ui->comboBoxLockInAmplifierModel->addItem(to_QString(model));
+    }
+
     try {
 //        model = obj.detect("COM7", sucseed);
         ui->lineEditResponse->setText(to_QString(model));

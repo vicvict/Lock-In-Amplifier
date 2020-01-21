@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>429</width>
     <height>300</height>
    </rect>
   </property>
@@ -30,10 +30,59 @@
    <widget class="QLineEdit" name="lineEditResponse">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>50</y>
+      <x>90</x>
+      <y>10</y>
       <width>331</width>
       <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBoxTimeConstant">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Time constant&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBoxSensivity">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sensivity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBoxInputRange">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Input range&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBoxLockInAmplifierModel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>69</width>
+      <height>22</height>
      </rect>
     </property>
    </widget>
@@ -43,7 +92,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>429</width>
      <height>21</height>
     </rect>
    </property>
