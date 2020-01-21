@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     try {
-        obj.connect("COM3", "19200", "8", "1", "NO", "NO");
+        obj.connect("COM7", "19200", "8", "1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString("fail"));
@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     try {
         obj.sendCommand("OFLT 3");
         obj.sendCommand("SCAL 4");
-        ui->lineEditResponse->setText(to_QString(obj.ask("PHAS?").c_str()));
+        ui->lineEditResponse->setText(to_QString(obj.ask("HARM?").c_str()));
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString("kek"));
     }
