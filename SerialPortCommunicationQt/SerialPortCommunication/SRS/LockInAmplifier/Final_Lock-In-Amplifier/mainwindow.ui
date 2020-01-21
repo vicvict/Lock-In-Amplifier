@@ -37,54 +37,76 @@
      </rect>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBoxTimeConstant">
+
+   <widget class="QLineEdit" name="lineEditPhase">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>120</y>
-      <width>69</width>
-      <height>22</height>
+      <x>30</x>
+      <y>100</y>
+      <width>113</width>
+      <height>20</height>
      </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Time constant&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBoxSensivity">
+   <widget class="QLineEdit" name="lineEditFrequency">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>90</y>
-      <width>69</width>
-      <height>22</height>
+      <x>30</x>
+      <y>140</y>
+      <width>113</width>
+      <height>20</height>
      </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sensivity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBoxInputRange">
+   <widget class="QLineEdit" name="lineEditHarmonic">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>150</y>
-      <width>69</width>
-      <height>22</height>
+      <x>30</x>
+      <y>180</y>
+      <width>113</width>
+      <height>20</height>
      </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Input range&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBoxLockInAmplifierModel">
+   <widget class="QPushButton" name="pushButtonPhase">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>60</y>
-      <width>69</width>
-      <height>22</height>
+      <x>160</x>
+      <y>100</y>
+      <width>75</width>
+      <height>23</height>
      </rect>
     </property>
+    <property name="text">
+     <string>Phase</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonFrequency">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>140</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Frequency</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonHarmonic">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>180</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Harmonic</string>
+    </property>
+>>>>>>> 54f2b6d9e5f3fb7c963bd09f384ec1804705b256
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

@@ -2,6 +2,10 @@
 
 LockInAmplifier::LockInAmplifier()
 {
+    setStringToBaudRate(lockinAmplifier_string_to_baud_rate);
+    setStringToStopBits(lockinAmplifier_string_to_stop_bits);
+    setStringToFlowControl(lockinAmplifier_string_to_flow_control);
+
     init();
 }
 
@@ -10,7 +14,7 @@ LockInAmplifier::~LockInAmplifier()
 
 }
 
-int LockInAmplifier::numberFromString(const QStringList &list, const QString &string) const
+/*int LockInAmplifier::numberFromString(const QStringList &list, const QString &string) const
 {
     return list.indexOf(string);
 }
@@ -30,7 +34,7 @@ bool LockInAmplifier::isValidString(const QStringList &list, const QString &stri
 bool LockInAmplifier::isValidNumber(const QStringList &list, const int &number) const
 {
     return (number >= 0 && number < list.size());
-}
+}*/
 
 bool LockInAmplifier::isValidPhase(const double &Phase) const
 {
@@ -41,33 +45,32 @@ bool LockInAmplifier::isValidPhase(const double &Phase) const
 bool LockInAmplifier::setInternalPhase(const double &Phase) const
 {
     QString command = "PHAS " + QString::number(Phase);
-    if (isValidInternalFrequency(Phase))
+   // if (isValidInternalFrequency(Phase))
         return sendCommand(to_StdString(command));
-    else
-        return false;
+  //  else
+    //   return false;
 }
 
-double LockInAmplifier::getPhase() const
+QString LockInAmplifier::getPhase() const
 {
     std::string answer = ask("PHAS?");
-    QString answer_q = to_QString(answer);
-    return answer_q.toDouble();
+    return to_QString(answer);
 }
 
 double LockInAmplifier::getMinInternalFrequency() const
 {
-    return this->State.minInternalFrequency;
+    return this->settings.minInternalFrequency;
 }
 
 double LockInAmplifier::getMaxInternalFrequency() const
 {
-    return this->State.maxInternalFrequency;
+    return this->settings.maxInternalFrequency;
 }
 
 bool LockInAmplifier::isValidInternalFrequency(const double &frequency) const
 {
-    return (frequency >= this->State.minInternalFrequency &&
-            frequency <= this->State.maxInternalFrequency);
+    return (frequency >= this->settings.minInternalFrequency &&
+            frequency <= this->settings.maxInternalFrequency);
 }
 
 bool LockInAmplifier::setInternalFrequency(const double &frequency) const
@@ -80,27 +83,26 @@ bool LockInAmplifier::setInternalFrequency(const double &frequency) const
         return false;
 }
 
-double LockInAmplifier::getFrequency() const
+QString LockInAmplifier::getFrequency() const
 {
     std::string answer = ask("FREQ?");
-    QString answer_q = to_QString(answer);
-    return answer_q.toDouble();
+    return to_QString(answer);
 }
 
 int LockInAmplifier::getMinHarmonic() const
 {
-    return this->State.minHarmonic;
+    return this->settings.minHarmonic;
 }
 
 int LockInAmplifier::getMaxHarmonic() const
 {
-    return this->State.maxHarmonic;
+    return this->settings.maxHarmonic;
 }
 
 bool LockInAmplifier::isValidHarmonic(const int &i) const
 {
-    return (i >= this->State.minHarmonic &&
-            i <= this->State.maxHarmonic);
+    return (i >= this->settings.minHarmonic &&
+            i <= this->settings.maxHarmonic);
 }
 
 bool LockInAmplifier::setHarmonic(const int &i) const
@@ -113,14 +115,13 @@ bool LockInAmplifier::setHarmonic(const int &i) const
         return false;
 }
 
-int LockInAmplifier::getHarmonic() const
+QString LockInAmplifier::getHarmonic() const
 {
     std::string answer = ask("HARM?");
-    QString answer_q = to_QString(answer);
-    return answer_q.toInt();
+    return to_QString(answer);
 }
 
-double LockInAmplifier::getMinSineOutAmplitude() const
+/*double LockInAmplifier::getMinSineOutAmplitude() const
 {
     return this->State.minSineOutputAmplitude;
 }
@@ -705,7 +706,7 @@ bool SR830::autoOffsetAll() const
 
     return ans;
 }
-*/
+
 void LockInAmplifier::initSampleRateList()
 {
     this->State.sampleRateList.clear();
@@ -1039,5 +1040,10 @@ int LockInAmplifier::getBuffer(std::vector<double> &ch1, std::vector<double> &ch
 
     return size;
 }
+*/
 
-
+void LockInAmplifier::SetSettings(const LockInAmplifier_Settings &new_settings)
+{
+    settings = new_settings;
+    return;
+}

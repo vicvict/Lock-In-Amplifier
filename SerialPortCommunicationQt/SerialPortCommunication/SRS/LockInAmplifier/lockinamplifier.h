@@ -9,59 +9,55 @@
 #include <string>
 #include <map>
 
-struct LockInAmplifier_State
+struct LockInAmplifier_Settings
 {
     double minInternalFrequency;
     double maxInternalFrequency;
 
-    double minSineOutputAmplitude;
-    double maxSineOutputAmplitude;
-
     int minHarmonic;
     int maxHarmonic;
-    QStringList referenceSourceList;
-    QStringList referenceTriggerModeList;
-    QStringList signalInputList;
-    QStringList voltageInputCouplingList;
-    QStringList voltageInputShieldsList;
-    QStringList notchFilterList;
-    QStringList sensivityList;
-    QStringList reserveModeList;
-    QStringList timeConstantList;
-    QStringList filterList;
-    QStringList sampleRateList;
-    QStringList bufferModeList;
-    QStringList outputNumberList;
+
+    double minPhase;
+    double maxPhase;
+};
+
+struct LockInAmplifier_State
+{
+    double InternalFrequency;
+
+    int Harmonic;
+
+    double Phase;
 };
 
 class LockInAmplifier : public SRS
 {
 public:
-    explicit LockInAmplifier();
+    LockInAmplifier();
     ~LockInAmplifier();
 
-    int numberFromString(const QStringList &list, const QString &string) const;
+ /*   int numberFromString(const QStringList &list, const QString &string) const;
     QString stringFromNumber(const QStringList &list, const int &number) const;
     bool isValidString(const QStringList &list, const QString &string) const;
     bool isValidNumber(const QStringList &list, const int &number) const;
-
+*/
     bool isValidPhase(const double &Phase) const;
     bool setInternalPhase(const double &phase) const;
-    double getPhase() const;
+    QString getPhase() const;
 
     double getMinInternalFrequency() const;
     double getMaxInternalFrequency() const;
     bool isValidInternalFrequency(const double &frequency) const;
     bool setInternalFrequency(const double &frequency) const;
-    double getFrequency() const;
+    QString getFrequency() const;
 
     int getMinHarmonic() const;
     int getMaxHarmonic() const;
     bool isValidHarmonic(const int &i) const;
     bool setHarmonic(const int &i) const;
-    int getHarmonic() const;
+    QString getHarmonic() const;
 
-    double getMinSineOutAmplitude() const;
+   /* double getMinSineOutAmplitude() const;
     double getMaxSineOutAmplitude() const;
     bool isValidSineOutAmplitude(const double &sineAmplitude) const;
     bool setSineOutAmplitude(const double &sineAmplitude) const;
@@ -206,12 +202,31 @@ public:
     double getPointFromBuffer(const int &channel, const int &number) const;
     std::vector < double > getChannelFromBuffer(const int &channel) const;
     int getBuffer(std::vector < double > &ch1, std::vector < double > &ch2) const;
-
+*/
 protected:
-    std::vector < std::string > supported_models = {
-                                                    "SR830", "SR844", "SR865", "SR865A"
-                                                   };
-    LockInAmplifier_State State;
+
+    LockInAmplifier_Settings settings;
+    LockInAmplifier_State state;
+
+    void SetSettings(const LockInAmplifier_Settings &new_settings);
+
+
+    std::unordered_map < std::string , QSerialPort::BaudRate    > lockinAmplifier_string_to_baud_rate    = {
+                                                                                            {  "1200", QSerialPort::Baud1200  },
+                                                                                            {  "2400", QSerialPort::Baud2400  },
+                                                                                            {  "4800", QSerialPort::Baud4800  },
+                                                                                            {  "9600", QSerialPort::Baud9600  },
+                                                                                            { "19200", QSerialPort::Baud19200 },
+                                                                                            { "57600", QSerialPort::Baud57600 },
+                                                                                            {"115200", QSerialPort::Baud115200}
+                                                                                           };
+    std::unordered_map < std::string , QSerialPort::StopBits    > lockinAmplifier_string_to_stop_bits    = {
+                                                                                                {  "1",  QSerialPort::OneStop       }
+                                                                                               };
+
+    std::unordered_map < std::string , QSerialPort::FlowControl > lockinAmplifier_string_to_flow_control = {
+                                                                                                {  "NO", QSerialPort::NoFlowControl  }
+                                                                                               };
 
     const double sensivityReserve = 1.5;
     const double inputRangeReserve = 3;
