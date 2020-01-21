@@ -1,0 +1,21 @@
+#include "lockinamplifaer.h"
+
+LockinAmplifaer::LockinAmplifaer()
+{
+    init();
+}
+
+LockinAmplifaer::~LockinAmplifaer()
+{
+    
+}
+
+LockInAmplifier_State LockinAmplifaer::getState()
+{
+    return this -> State;
+}
+
+bool LockinAmplifaer::setState(const LockInAmplifier_State &state)
+{
+    
+}
