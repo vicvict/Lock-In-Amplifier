@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     try {
-        obj.connect("COM7","19200","8","1", "NO", "NO");
+        obj.connect("COM3","19200","8","1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
         ui->lineEditPhase ->setText(obj.getPhase());
         ui->lineEditHarmonic -> setText(obj.getHarmonic());

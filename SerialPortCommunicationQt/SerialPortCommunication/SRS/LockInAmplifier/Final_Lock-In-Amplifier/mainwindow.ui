@@ -37,7 +37,6 @@
      </rect>
     </property>
    </widget>
-
    <widget class="QLineEdit" name="lineEditPhase">
     <property name="geometry">
      <rect>
@@ -106,7 +105,16 @@
     <property name="text">
      <string>Harmonic</string>
     </property>
->>>>>>> 54f2b6d9e5f3fb7c963bd09f384ec1804705b256
+   </widget>
+   <widget class="QComboBox" name="comboBoxLockInAmplifierModel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
