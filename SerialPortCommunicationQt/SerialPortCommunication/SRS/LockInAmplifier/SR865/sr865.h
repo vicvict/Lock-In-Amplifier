@@ -1,10 +1,8 @@
 #ifndef SR865_H
 #define SR865_H
 
-#include "Timer.h"
-#include "QtSTLConvertion.h"
 
-#include "SRS.h"
+#include "../../SRS.h"
 
 #include <vector>
 #include <string>

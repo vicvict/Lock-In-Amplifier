@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "SRS.h"
+#include "../../SRS.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     try {
         obj.sendCommand("OFLT 3");
         obj.sendCommand("SCAL 4");
-        //ui->lineEditResponse->setText(to_QString(obj.ask("FREQ?").c_str()));
+        ui->lineEditResponse->setText(to_QString(obj.ask("FREQ?").c_str()));
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString("kek"));
     }

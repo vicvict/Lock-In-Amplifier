@@ -28,29 +28,29 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++1z
 
 SOURCES += \
-        QtSTLConvertion.cpp \
-        SRS.cpp \
-        SerialPortCommunication.cpp \
-        SerialPortCommunicationQt.cpp \
-        Timer.cpp \
-        lockinamplifier.cpp \
+        ../../../../Timer.cpp \
+        ../SR844/sr844.cpp \
+        ../../../../QtSTLConvertion.cpp \
+        ../../SRS.cpp \
+        ../../../SerialPortCommunication.cpp \
+        ../../../../SerialPortCommunicationQt.cpp \
+        ../lockinamplifier.cpp \
         main.cpp \
         mainwindow.cpp \
-        sr830.cpp \
-        sr844.cpp \
-        sr865.cpp
+        ../SR830/sr830.cpp \
+        ../SR865/sr865.cpp
 
 HEADERS += \
-        QtSTLConvertion.h \
-        SRS.h \
-        SerialPortCommunication.h \
-        SerialPortCommunicationQt.h \
-        Timer.h \
-        lockinamplifier.h \
+        ../../../../QtSTLConvertion.h \
+        ../../SRS.h \
+        ../../../SerialPortCommunication.h \
+        ../../../../SerialPortCommunicationQt.h \
+        ../../../../Timer.h \
+        ../lockinamplifier.h \
         mainwindow.h \
-        sr830.h \
-        sr844.h \
-        sr865.h
+        ../SR830/sr830.h \
+        ../SR844/sr844.h \
+        ../SR865/sr865.h
 
 FORMS += \
         mainwindow.ui

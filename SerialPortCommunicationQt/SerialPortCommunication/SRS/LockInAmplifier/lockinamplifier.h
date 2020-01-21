@@ -1,10 +1,9 @@
 #ifndef LOCKINAMPLIFAER_H
 #define LOCKINAMPLIFAER_H
 
-#include "Timer.h"
-#include "QtSTLConvertion.h"
 
-#include "SRS.h"
+
+#include "../SRS.h"
 
 #include <vector>
 #include <string>

@@ -1,10 +1,10 @@
 #ifndef SRS_H
 #define SRS_H
 
-#include "Timer.h"
-#include "QtSTLConvertion.h"
+#include "../../Timer.h"
+#include "../../QtSTLConvertion.h"
 
-#include "SerialPortCommunication.h"
+#include "../SerialPortCommunication.h"
 
 #include <vector>
 #include <string>

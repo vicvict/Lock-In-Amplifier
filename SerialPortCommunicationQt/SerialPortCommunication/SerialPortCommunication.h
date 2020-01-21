@@ -2,7 +2,7 @@
 #define SERIALPORTCOMMUNICATION_H
 
 
-#include "SerialPortCommunicationQt.h"
+#include "../SerialPortCommunicationQt.h"
 
 class SerialPortCommunication : public SerialPortCommunicationQt {
 
