@@ -212,13 +212,13 @@ protected:
 
 
     std::unordered_map < std::string , QSerialPort::BaudRate    > lockinAmplifier_string_to_baud_rate    = {
-                                                                                            {  "1200", QSerialPort::Baud1200  },
-                                                                                            {  "2400", QSerialPort::Baud2400  },
-                                                                                            {  "4800", QSerialPort::Baud4800  },
+                                                                                           // {  "1200", QSerialPort::Baud1200  },
+                                                                                           // {  "2400", QSerialPort::Baud2400  },
+                                                                                            //{  "4800", QSerialPort::Baud4800  },
                                                                                             {  "9600", QSerialPort::Baud9600  },
                                                                                             { "19200", QSerialPort::Baud19200 },
-                                                                                            { "57600", QSerialPort::Baud57600 },
-                                                                                            {"115200", QSerialPort::Baud115200}
+                                                                                            //{ "57600", QSerialPort::Baud57600 },
+                                                                                            //{"115200", QSerialPort::Baud115200}
                                                                                            };
     std::unordered_map < std::string , QSerialPort::StopBits    > lockinAmplifier_string_to_stop_bits    = {
                                                                                                 {  "1",  QSerialPort::OneStop       }

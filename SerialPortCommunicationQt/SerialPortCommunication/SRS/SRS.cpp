@@ -60,12 +60,11 @@ std::string SRS::getModel(bool* succeed) const {
             return model;
         }
     }
-
     if (succeed) {
         *succeed = false;
     }
 
-    return "";
+    return "failed to get model";
 }
 
 bool SRS::isActive() const {
