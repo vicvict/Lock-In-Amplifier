@@ -1,6 +1,6 @@
 #include "SR830.h"
 
-SR830::SR830() {
+/*SR830::SR830() {
     init();
 }
 
@@ -703,7 +703,7 @@ bool SR830::autoOffsetAll() const
 
     return ans;
 }
-*/
+
 void SR830::initSampleRateList()
 {
     this->State.sampleRateList.clear();
@@ -1051,4 +1051,4 @@ int SR830::getBuffer(std::vector<double> &ch1, std::vector<double> &ch2) const
 
     return size;
 }
-
+*/

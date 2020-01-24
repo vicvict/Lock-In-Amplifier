@@ -1,8 +1,9 @@
-#ifndef SR830_H
+//Это только пример (как и реализация библиотеки!)
+/*#ifndef SR830_H
 #define SR830_H
 
 
-#include "../../SRS.h"
+#include "../lockinamplifier.h"
 
 #include <vector>
 #include <string>
@@ -25,7 +26,7 @@ struct LockInAmplifier_State
     QStringList outputNumberList;
 };
 
-class SR830 : public SRS
+class SR830 : public LockInAmplifier
 {
 protected:
     const double minInternalFrequency = 1e-3;
@@ -227,3 +228,4 @@ signals:
 };
 
 #endif // SR830_H
+*/

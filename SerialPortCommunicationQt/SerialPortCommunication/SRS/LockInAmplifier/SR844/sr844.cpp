@@ -1,5 +1,6 @@
 #include "sr844.h"
 
+/*
 SR844::SR844()
 {
     setStringToBaudRate(SRS844_string_to_baud_rate);
@@ -23,3 +24,4 @@ double SR844::getFrequency() const
     return to_QString(ask("FREQ?")).toDouble();
 }
 
+//*/

@@ -9,29 +9,29 @@
 #include <string>
 #include <map>
 
-struct LockInAmplifier_Settings
-{
-    double minInternalFrequency;
-    double maxInternalFrequency;
-
-    int minHarmonic;
-    int maxHarmonic;
-
-    double minPhase;
-    double maxPhase;
-};
-
-struct LockInAmplifier_State
-{
-    double InternalFrequency;
-
-    int Harmonic;
-
-    double Phase;
-};
-
 class LockInAmplifier : public SRS
 {
+protected:
+    struct LockInAmplifierRanges // LockInAmplifierSettings
+    {
+        double minInternalFrequency;
+        double maxInternalFrequency;
+
+        int minHarmonic;
+        int maxHarmonic;
+
+        double minPhase;
+        double maxPhase;
+    };
+
+    //Как использовать этот state?
+    struct LockInAmplifierState
+    {
+        double InternalFrequency;
+        int Harmonic;
+        double Phase;
+    };
+
 public:
     LockInAmplifier();
     ~LockInAmplifier();
@@ -41,7 +41,7 @@ public:
     bool isValidString(const QStringList &list, const QString &string) const;
     bool isValidNumber(const QStringList &list, const int &number) const;
 */
-    bool isValidPhase(const double &Phase) const;
+    bool isValidPhase(const double &phase) const;
     bool setInternalPhase(const double &phase) const;
     QString getPhase() const;
 
@@ -205,10 +205,10 @@ public:
 */
 protected:
 
-    LockInAmplifier_Settings settings;
-    LockInAmplifier_State state;
+    LockInAmplifierRanges ranges;
+    LockInAmplifierState state;
 
-    void SetSettings(const LockInAmplifier_Settings &new_settings);
+    void SetRanges(const LockInAmplifierRanges &new_ranges);
 
 
     std::unordered_map < std::string , QSerialPort::BaudRate    > lockinAmplifier_string_to_baud_rate    = {

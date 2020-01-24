@@ -1,5 +1,5 @@
 #include "lockinamplifier.h"
-
+//В процессе замены settings на ranges
 LockInAmplifier::LockInAmplifier()
 {
     setStringToBaudRate(lockinAmplifier_string_to_baud_rate);
@@ -59,18 +59,18 @@ QString LockInAmplifier::getPhase() const
 
 double LockInAmplifier::getMinInternalFrequency() const
 {
-    return this->settings.minInternalFrequency;
+    return this->ranges.minInternalFrequency;
 }
 
 double LockInAmplifier::getMaxInternalFrequency() const
 {
-    return this->settings.maxInternalFrequency;
+    return this->ranges.maxInternalFrequency;
 }
 
 bool LockInAmplifier::isValidInternalFrequency(const double &frequency) const
 {
-    return (frequency >= this->settings.minInternalFrequency &&
-            frequency <= this->settings.maxInternalFrequency);
+    return (frequency >= this->ranges.minInternalFrequency &&
+            frequency <= this->ranges.maxInternalFrequency);
 }
 
 bool LockInAmplifier::setInternalFrequency(const double &frequency) const
@@ -91,18 +91,18 @@ QString LockInAmplifier::getFrequency() const
 
 int LockInAmplifier::getMinHarmonic() const
 {
-    return this->settings.minHarmonic;
+    return this->ranges.minHarmonic;
 }
 
 int LockInAmplifier::getMaxHarmonic() const
 {
-    return this->settings.maxHarmonic;
+    return this->ranges.maxHarmonic;
 }
 
 bool LockInAmplifier::isValidHarmonic(const int &i) const
 {
-    return (i >= this->settings.minHarmonic &&
-            i <= this->settings.maxHarmonic);
+    return (i >= this->ranges.minHarmonic &&
+            i <= this->ranges.maxHarmonic);
 }
 
 bool LockInAmplifier::setHarmonic(const int &i) const
@@ -1042,8 +1042,8 @@ int LockInAmplifier::getBuffer(std::vector<double> &ch1, std::vector<double> &ch
 }
 */
 
-void LockInAmplifier::SetSettings(const LockInAmplifier_Settings &new_settings)
+void LockInAmplifier::SetRanges(const LockInAmplifierRanges &new_ranges)
 {
-    settings = new_settings;
+    ranges = new_ranges;
     return;
 }

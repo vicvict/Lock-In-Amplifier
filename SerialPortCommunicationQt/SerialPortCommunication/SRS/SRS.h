@@ -37,7 +37,7 @@ protected:
                                                    };
 
     int attempts_to_connect = 5;
-
+    //А как же LF = "\r"?
     inline static const std::string command_terminator = "\n";
 
     inline static const std::string query_suffix = "?";

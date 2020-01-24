@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "../../lockinamplifier.h"
+#include "../../SR865/sr865.h"
 
 namespace Ui {
 class MainWindow;
@@ -22,7 +23,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    LockInAmplifier obj;
+    SR865 obj;
 };
 
 #endif // MAINWINDOW_H

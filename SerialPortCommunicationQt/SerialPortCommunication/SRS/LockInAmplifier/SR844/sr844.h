@@ -2,13 +2,13 @@
 #define SR844_H
 
 
-#include "../../SRS.h"
+#include "../lockinamplifier.h"
 
 #include <vector>
 #include <string>
 #include <map>
 
-class SR844 : public SRS
+class SR844 : public LockInAmplifier
 {
 protected:
     double frequency;

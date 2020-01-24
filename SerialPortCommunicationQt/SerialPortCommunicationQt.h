@@ -76,7 +76,7 @@ public:
 protected:
     int write_timeout     = 10;
     int read_timeout      = 100;
-    int read_wait_timeout = 100;        //Без увеличения нормально строку не принимал
+    int read_wait_timeout = 100;        //Без увеличения SR844 нормально строку не принимал.
 
     QSerialPort *serial = nullptr;
     bool external_serial_port = false;
