@@ -13,6 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
     for (auto model : obj.getSupportedList()) {
         ui->comboBoxLockInAmplifierModel->addItem(to_QString(model));
     }
+    //Добавление time constants
+    for (auto timeConstant : obj.getTimeConstantList()) {
+        ui->comboBoxTimeConstant->addItem(to_QString(timeConstant));
+    }
+
 
     /*try {
         model = obj.detect("COM4", succeed);
@@ -29,16 +34,14 @@ MainWindow::MainWindow(QWidget *parent) :
     try {
         obj.connect("COM4","19200","8","1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
-        ui->lineEditPhase ->setText(obj.getPhase());
-        ui->lineEditFrequency -> setText(obj.getFrequency());
+        ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
+        ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
+        ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
+        ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
+        ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
+        ui->comboBoxTimeConstant -> setCurrentText(to_QString(obj.getTimeConstant()));
 
-        const int i = 5;
-        if (obj.setHarmonic(i)) ui->lineEditHarmonic -> setText(obj.getHarmonic());
-        else ui->lineEditHarmonic -> setText(to_QString("Lox"));
-        //obj.sendCommand("HARM 3");
 
-
-        //ui->lineEditHarmonic -> setText(obj.getHarmonic());
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString(s));
     }
@@ -52,12 +55,84 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButtonPhase_clicked()
 {
-    if (obj.setInternalPhase((ui ->lineEditPhase->text()).toDouble()))    ui->lineEditPhase ->setText(obj.getPhase());\
-    else ui->lineEditPhase ->setText("Lox");
+    bool succeed;
+    ui->lineEditPhase->text().toDouble(&succeed);
+    if (succeed) {
+        obj.setInternalPhase(ui->lineEditPhase->text().toDouble(&succeed));
+    }
+    else {
+        //do nothing
+    }
 }
 
 void MainWindow::on_pushButtonHarmonic_clicked()
 {
-    if(obj.setHarmonic((ui ->lineEditHarmonic->text()).toInt()));
-    //ui->lineEditHarmonic ->setText(obj.getHarmonic());
+    bool succeed;
+    ui->lineEditHarmonic->text().toInt(&succeed);
+    if (succeed) {
+        obj.setHarmonic(ui->lineEditHarmonic->text().toInt(&succeed));
+    }
+    else {
+        //do nothing
+    }
+}
+
+void MainWindow::on_pushButtonFrequency_clicked()
+{
+    bool succeed;
+    ui->lineEditFrequency->text().toDouble(&succeed);
+    if (succeed) {
+        obj.setInternalFrequency(ui->lineEditFrequency->text().toDouble(&succeed));
+    }
+    else {
+        //do nothing
+    }
+}
+
+void MainWindow::on_pushButtonSineAmplitude_clicked()
+{
+    bool succeed;
+    ui->lineEditSineAmplitude->text().toDouble(&succeed);
+    if (succeed) {
+        obj.setSineAmplitude(ui->lineEditSineAmplitude->text().toDouble(&succeed));
+    }
+    else {
+        //do nothing
+    }
+}
+
+void MainWindow::on_pushButtonAutoPhase_clicked()
+{
+    if (obj.autoPhase()) ui->lineEditPhase->setText(to_QString(obj.getPhase()));
+    else {
+        //do nothing
+    }
+    //obj.autoPhase();
+}
+
+void MainWindow::on_pushButtonSineDCLevel_clicked()
+{
+    bool succeed;
+    ui->lineEditSineDCLevel->text().toDouble(&succeed);
+    if (succeed) {
+        obj.setSineDCLevel(ui->lineEditSineDCLevel->text().toDouble(&succeed));
+    }
+    else {
+        //do nothing
+    }
+}
+
+void MainWindow::on_comboBoxLockInAmplifierM_activated(const QString &arg1)
+{
+
+}
+
+void MainWindow::on_comboBoxTimeConstant_activated(const QString &arg1)
+{
+
+}
+
+void MainWindow::on_comboBoxTimeConstant_currentTextChanged(const QString &arg1)
+{
+    obj.setTimeConstant(to_StdString(ui->comboBoxTimeConstant->currentText()));
 }

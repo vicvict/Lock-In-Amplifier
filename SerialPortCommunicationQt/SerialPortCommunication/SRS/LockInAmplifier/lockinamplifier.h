@@ -22,6 +22,9 @@ protected:
 
         double minPhase;
         double maxPhase;
+
+        double minSineAmplitude;
+        double maxSineAmplitude;
     };
 
     //Как использовать этот state?
@@ -30,32 +33,46 @@ protected:
         double InternalFrequency;
         int Harmonic;
         double Phase;
+
+        double SineAmplitude;
     };
 
+    std::vector <std::string> timeConstant;
 public:
     LockInAmplifier();
     ~LockInAmplifier();
 
- /*   int numberFromString(const QStringList &list, const QString &string) const;
-    QString stringFromNumber(const QStringList &list, const int &number) const;
-    bool isValidString(const QStringList &list, const QString &string) const;
-    bool isValidNumber(const QStringList &list, const int &number) const;
-*/
+    int numberFromString(const std::vector< std::string> &vector, const std::string &string) const;
+    std::string stringFromNumber(const std::vector< std::string> &vector, const int &number) const;
+    bool isValidString(const std::vector< std::string> &vector, const std::string &string) const;
+    bool isValidNumber(const std::vector< std::string> &vector, const int &number) const;
+
     bool isValidPhase(const double &phase) const;
     bool setInternalPhase(const double &phase) const;
-    QString getPhase() const;
+    bool autoPhase() const;
+    std::string getPhase() const;
 
     double getMinInternalFrequency() const;
     double getMaxInternalFrequency() const;
     bool isValidInternalFrequency(const double &frequency) const;
     bool setInternalFrequency(const double &frequency) const;
-    QString getFrequency() const;
+    std::string getInternalFrequency() const;
+    std::string getExternalFrequency() const;
+    std::string getFrequencyDetect() const;
+    std::string getFrequency() const;
+
 
     int getMinHarmonic() const;
     int getMaxHarmonic() const;
     bool isValidHarmonic(const int &i) const;
     bool setHarmonic(const int &i) const;
-    QString getHarmonic() const;
+    std::string getHarmonic() const;
+
+    double getMinSineAmplitude() const;
+    double getMaxSineAmplitude() const;
+    bool isValidSineAmplitude(const double &voltage) const;
+    bool setSineAmplitude(const double &voltage) const;
+    std::string getSineAmplitude() const;
 
    /* double getMinSineOutAmplitude() const;
     double getMaxSineOutAmplitude() const;
@@ -125,17 +142,17 @@ public:
     QString reserveModeStringFromNumber(const int &reserveMode_number) const;
     bool setReserveMode(const int &reserveMode) const;
     bool setReserveMode(const QString &reserveMode) const;
-    QString getReserveMode() const;
+    QString getReserveMode() const;*/
 
-    void initTimeConstantList();
-    QStringList getTimeConstantList() const;
-    int timeConstantNumberFromString(const QString &timeConstant_string) const;
-    QString timeConstantStringFromNumber(const int &timeConstant_number) const;
+    //void initTimeConstantList();
+    std::vector<std::string> getTimeConstantList() const;
+    int timeConstantNumberFromString(const std::string  &timeConstant_string) const;
+    std::string timeConstantStringFromNumber(const int &timeConstant_number) const;
     bool setTimeConstant(const int &timeConstant) const;
-    bool setTimeConstant(const QString &timeConstant) const;
-    QString getTimeConstant() const;
+    bool setTimeConstant(const std::string &timeConstant) const;
+    std::string getTimeConstant() const;
 
-    void initFilterList();
+    /*void initFilterList();
     QStringList getFilterList() const;
     int filterNumberFromString(const QString &filter_string) const;
     QString filterStringFromNumber(const int &filter_number) const;
@@ -209,6 +226,8 @@ protected:
     LockInAmplifierState state;
 
     void SetRanges(const LockInAmplifierRanges &new_ranges);
+
+    void SetTimeConstantList( const std::vector<std::string> &new_time_constantlist);
 
 
     std::unordered_map < std::string , QSerialPort::BaudRate    > lockinAmplifier_string_to_baud_rate    = {

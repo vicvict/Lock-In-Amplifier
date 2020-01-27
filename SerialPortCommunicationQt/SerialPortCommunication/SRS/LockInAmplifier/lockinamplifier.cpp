@@ -14,32 +14,36 @@ LockInAmplifier::~LockInAmplifier()
 
 }
 
-/*int LockInAmplifier::numberFromString(const QStringList &list, const QString &string) const
+int LockInAmplifier::numberFromString(const std::vector< std::string> &vector, const std::string &string) const
 {
-    return list.indexOf(string);
+    for(size_t i = 0 ; i < vector.size(); ++i) {
+        if (vector[i] == string)
+            return static_cast<int>(i);
+    }
+    return -1;
 }
 
-QString LockInAmplifier::stringFromNumber(const QStringList &list, const int &number) const
+std::string LockInAmplifier::stringFromNumber(const std::vector< std::string> &vector, const int &number) const
 {
-    if (isValidNumber(list, number))
-        return list.at(number);
+    if (isValidNumber(vector, number))
+        return vector.at(static_cast<size_t>(number));
     return "";
 }
 
-bool LockInAmplifier::isValidString(const QStringList &list, const QString &string) const
+bool LockInAmplifier::isValidString(const std::vector< std::string> &vector, const std::string &string) const
 {
-    return(numberFromString(list, string) != -1);
+    return(numberFromString(vector, string) != -1);
 }
 
-bool LockInAmplifier::isValidNumber(const QStringList &list, const int &number) const
+bool LockInAmplifier::isValidNumber(const std::vector< std::string> &vector, const int &number) const
 {
-    return (number >= 0 && number < list.size());
-}*/
+    return (number >= 0 && number < static_cast<int>(vector.size()));
+}
 
 bool LockInAmplifier::isValidPhase(const double &Phase) const
 {
-    return (Phase >= -180 &&
-            Phase < 180);
+    return (Phase >= ranges.minPhase &&
+            Phase < ranges.maxPhase);
 }
 
 bool LockInAmplifier::setInternalPhase(const double &Phase) const
@@ -51,10 +55,15 @@ bool LockInAmplifier::setInternalPhase(const double &Phase) const
         return false;
 }
 
-QString LockInAmplifier::getPhase() const
+bool LockInAmplifier:: autoPhase() const
+{
+    return sendCommand("APHS");
+}
+
+std::string LockInAmplifier::getPhase() const
 {
     std::string answer = ask("PHAS?");
-    return to_QString(answer);
+    return answer;
 }
 
 double LockInAmplifier::getMinInternalFrequency() const
@@ -75,18 +84,36 @@ bool LockInAmplifier::isValidInternalFrequency(const double &frequency) const
 
 bool LockInAmplifier::setInternalFrequency(const double &frequency) const
 {
-    QString command = "FREQ " + QString::number(frequency);
-    std::string command_s = to_StdString(command);
+    std:: string command = "FREQ " + std:: to_string(frequency);
     if (isValidInternalFrequency(frequency))
-        return sendCommand(command_s);
+        return sendCommand(command);
     else
         return false;
 }
 
-QString LockInAmplifier::getFrequency() const
+std::string LockInAmplifier:: getInternalFrequency() const
+{
+    std::string answer = ask("FREQINT?");
+    return answer;
+}
+
+std::string LockInAmplifier:: getExternalFrequency() const
+{
+    std::string answer = ask("FREQEXT?");
+    return answer;
+}
+
+std::string LockInAmplifier:: getFrequencyDetect() const
+{
+    std::string answer = ask("FREQDET?");
+    return answer;
+}
+
+
+std::string LockInAmplifier::getFrequency() const
 {
     std::string answer = ask("FREQ?");
-    return to_QString(answer);
+    return answer;
 }
 
 int LockInAmplifier::getMinHarmonic() const
@@ -114,10 +141,41 @@ bool LockInAmplifier::setHarmonic(const int &i) const
         return false;
 }
 
-QString LockInAmplifier::getHarmonic() const
+std::string LockInAmplifier::getHarmonic() const
 {
     std::string answer = ask("HARM?");
-    return to_QString(answer);
+    return answer;
+}
+
+double LockInAmplifier::getMinSineAmplitude() const
+{
+    return this->ranges.minSineAmplitude;
+}
+
+double LockInAmplifier::getMaxSineAmplitude() const
+{
+    return this->ranges.maxSineAmplitude;
+}
+
+bool LockInAmplifier::isValidSineAmplitude(const double &voltage) const
+{
+    return (voltage >= this->ranges.minSineAmplitude &&
+            voltage <= this->ranges.maxSineAmplitude);
+}
+
+bool LockInAmplifier::setSineAmplitude(const double &voltage) const
+{
+    std::string command = "SLVL " + std::to_string(voltage);
+    if (isValidSineAmplitude(voltage))
+        return sendCommand(command);
+    else
+        return false;
+}
+
+std::string LockInAmplifier::getSineAmplitude() const
+{
+    std::string answer = ask("SLVL?");
+    return answer;
 }
 
 /*double LockInAmplifier::getMinSineOutAmplitude() const
@@ -570,42 +628,42 @@ void LockInAmplifier::initTimeConstantList()
     this->State.timeConstantList.push_back( "30 ks");
 
     return;
+}*/
+
+std::vector<std::string> LockInAmplifier::getTimeConstantList() const
+{
+    return this->timeConstant;
 }
 
-QStringList LockInAmplifier::getTimeConstantList() const
+int LockInAmplifier::timeConstantNumberFromString(const std::string &timeConstant_string) const
 {
-    return this->State.timeConstantList;
+    return numberFromString(this->timeConstant, timeConstant_string);
 }
 
-int LockInAmplifier::timeConstantNumberFromString(const QString &timeConstant_string) const
+std::string LockInAmplifier::timeConstantStringFromNumber(const int &timeConstant_number) const
 {
-    return numberFromString(this->State.timeConstantList, timeConstant_string);
-}
-
-QString LockInAmplifier::timeConstantStringFromNumber(const int &timeConstant_number) const
-{
-    return stringFromNumber(this->State.timeConstantList, timeConstant_number);
+    return stringFromNumber(this->timeConstant, timeConstant_number);
 }
 
 bool LockInAmplifier::setTimeConstant(const int &timeConstant) const
 {
-    if (!isValidNumber(this->State.timeConstantList, timeConstant))
+    if (!isValidNumber(this->timeConstant, timeConstant))
         return false;
 
-    QString command = "OFLT " + QString::number(timeConstant);
-    return sendCommand(to_StdString(command));
+    std::string command = "OFLT " + std::to_string(timeConstant);
+    return sendCommand(command);
 }
 
-bool LockInAmplifier::setTimeConstant(const QString &timeConstant) const
+bool LockInAmplifier::setTimeConstant(const std::string &timeConstant) const
 {
     return setTimeConstant(timeConstantNumberFromString(timeConstant));
 }
 
-QString LockInAmplifier::getTimeConstant() const
+std::string LockInAmplifier::getTimeConstant() const
 {
-    return timeConstantStringFromNumber(to_QString(ask("OFLT?")).toInt());
+    return timeConstantStringFromNumber(std::stoi(ask("OFLT?")));
 }
-
+/*
 void LockInAmplifier::initFilterList()
 {
     this->State.filterList.clear();
@@ -1044,5 +1102,11 @@ int LockInAmplifier::getBuffer(std::vector<double> &ch1, std::vector<double> &ch
 void LockInAmplifier::SetRanges(const LockInAmplifierRanges &new_ranges)
 {
     ranges = new_ranges;
+    return;
+}
+
+void LockInAmplifier::SetTimeConstantList(const std::vector<std::string> &new_time_constantlist)
+{
+    timeConstant = new_time_constantlist;
     return;
 }

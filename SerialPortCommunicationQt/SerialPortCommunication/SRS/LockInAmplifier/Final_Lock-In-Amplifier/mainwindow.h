@@ -22,6 +22,20 @@ private slots:
 
     void on_pushButtonHarmonic_clicked();
 
+    void on_pushButtonFrequency_clicked();
+
+    void on_pushButtonSineAmplitude_clicked();
+
+    void on_pushButtonAutoPhase_clicked();
+
+    void on_pushButtonSineDCLevel_clicked();
+
+    void on_comboBoxLockInAmplifierM_activated(const QString &arg1);
+
+    void on_comboBoxTimeConstant_activated(const QString &arg1);
+
+    void on_comboBoxTimeConstant_currentTextChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
 
