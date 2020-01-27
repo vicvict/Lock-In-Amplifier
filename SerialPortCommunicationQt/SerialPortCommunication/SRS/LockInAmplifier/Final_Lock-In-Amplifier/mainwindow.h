@@ -20,6 +20,8 @@ public:
 private slots:
     void on_pushButtonPhase_clicked();
 
+    void on_pushButtonHarmonic_clicked();
+
 private:
     Ui::MainWindow *ui;
 

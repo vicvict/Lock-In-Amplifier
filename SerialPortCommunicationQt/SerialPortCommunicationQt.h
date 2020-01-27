@@ -76,7 +76,7 @@ public:
 protected:
     int write_timeout     = 10;
     int read_timeout      = 100;
-    int read_wait_timeout = 100;        //Без увеличения SR844 нормально строку не принимал.
+    int read_wait_timeout = 100;        //Без увеличения SR844 нормально строку не принимал
 
     QSerialPort *serial = nullptr;
     bool external_serial_port = false;
@@ -88,10 +88,12 @@ protected:
 
     bool *throw_exceptions = nullptr;
 
-    void setStringToBaudRate   (const std::unordered_map < std::string , QSerialPort::BaudRate    > &new_string_to_baud_rate   );
+    //void setStringToBaudRate   (const std::unordered_map < std::string , QSerialPort::BaudRate    > &new_string_to_baud_rate   );
+    void setStringToBaudRate   (const std::vector < std::string > &new_vector_to_baud_rate );
     void setStringToDataBits   (const std::unordered_map < std::string , QSerialPort::DataBits    > &new_string_to_data_bits   );
     void setStringToFlowControl(const std::unordered_map < std::string , QSerialPort::FlowControl > &new_string_to_flow_control);
-    void setStringToParity     (const std::unordered_map < std::string , QSerialPort::Parity      > &new_string_to_parity      );
+    //void setStringToParity     (const std::unordered_map < std::string , QSerialPort::Parity      > &new_string_to_parity      );
+    void setStringToParity     (const std::vector < std::string > &new_vector_to_parity );
     void setStringToStopBits   (const std::unordered_map < std::string , QSerialPort::StopBits    > &new_string_to_stop_bits   );
 
     std::unordered_map < std::string , QSerialPort::BaudRate    > string_to_baud_rate    = {

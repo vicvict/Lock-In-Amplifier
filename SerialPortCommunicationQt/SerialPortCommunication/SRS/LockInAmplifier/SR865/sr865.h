@@ -16,8 +16,8 @@ public:
         LockInAmplifierRanges new_ranges;
         new_ranges.maxPhase = 180;
         new_ranges.minPhase = -180;
-        new_ranges.maxHarmonic = 1000;
-        new_ranges.minHarmonic = 0;
+        new_ranges.maxHarmonic = 99;
+        new_ranges.minHarmonic = 1;
         new_ranges.maxInternalFrequency = 100;
         new_ranges.minInternalFrequency = 0;
 

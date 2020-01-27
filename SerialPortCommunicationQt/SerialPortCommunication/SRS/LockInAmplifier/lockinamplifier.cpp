@@ -2,7 +2,7 @@
 //В процессе замены settings на ranges
 LockInAmplifier::LockInAmplifier()
 {
-    setStringToBaudRate(lockinAmplifier_string_to_baud_rate);
+    //setStringToBaudRate(lockinAmplifier_string_to_baud_rate);
     setStringToStopBits(lockinAmplifier_string_to_stop_bits);
     setStringToFlowControl(lockinAmplifier_string_to_flow_control);
 
@@ -39,16 +39,16 @@ bool LockInAmplifier::isValidNumber(const QStringList &list, const int &number) 
 bool LockInAmplifier::isValidPhase(const double &Phase) const
 {
     return (Phase >= -180 &&
-            Phase <= 180);
+            Phase < 180);
 }
 
 bool LockInAmplifier::setInternalPhase(const double &Phase) const
 {
-    QString command = "PHAS " + QString::number(Phase);
-   // if (isValidInternalFrequency(Phase))
-        return sendCommand(to_StdString(command));
-  //  else
-    //   return false;
+    std::string command = "PHAS " + std::to_string(Phase);
+    if (isValidPhase(Phase))
+        return sendCommand(command);
+    else
+        return false;
 }
 
 QString LockInAmplifier::getPhase() const
@@ -107,10 +107,9 @@ bool LockInAmplifier::isValidHarmonic(const int &i) const
 
 bool LockInAmplifier::setHarmonic(const int &i) const
 {
-    QString command = "HARM " + QString::number(i);
-    std::string command_s = to_StdString(command);
+    std::string command = "HARM " + std::to_string(i);
     if (isValidHarmonic(i))
-        return sendCommand(command_s);
+        return sendCommand(command);
     else
         return false;
 }

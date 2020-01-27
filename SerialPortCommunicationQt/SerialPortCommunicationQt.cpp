@@ -523,7 +523,14 @@ void SerialPortCommunicationQt::setStopBits(const std::string &new_stop_bits) co
     return;
 }
 
-void SerialPortCommunicationQt::setStringToBaudRate(const std::unordered_map < std::string , QSerialPort::BaudRate > &new_string_to_baud_rate) {
+void SerialPortCommunicationQt::setStringToBaudRate(const std::vector < std::string > &new_vector_to_baud_rate) {
+    std::unordered_map < std::string , QSerialPort::BaudRate > new_string_to_baud_rate;
+    for (const auto &str: new_vector_to_baud_rate) {
+        if (string_to_baud_rate.count(str) > 0) {
+            new_string_to_baud_rate[str] = string_to_baud_rate.at(str);
+        }
+
+    }
     string_to_baud_rate = new_string_to_baud_rate;
 
     init_subroutine(string_to_baud_rate, baud_rate_to_string, valid_baud_rate);
@@ -551,7 +558,15 @@ void SerialPortCommunicationQt::setStringToFlowControl(const std::unordered_map 
     return;
 }
 
-void SerialPortCommunicationQt::setStringToParity(const std::unordered_map < std::string , QSerialPort::Parity > &new_string_to_parity) {
+void SerialPortCommunicationQt::setStringToParity(const std::vector < std::string > &new_vector_to_parity) {
+    std::unordered_map < std::string , QSerialPort::Parity > new_string_to_parity;
+    for (const auto &str: new_vector_to_parity) {
+        if (string_to_parity.count(str) > 0) {
+            new_string_to_parity[str] = string_to_parity.at(str);
+        }
+
+    }
+
     string_to_parity = new_string_to_parity;
 
     init_subroutine(string_to_parity, parity_to_string, valid_parity);

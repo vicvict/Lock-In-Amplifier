@@ -52,6 +52,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButtonPhase_clicked()
 {
-    obj.setInternalPhase((ui ->lineEditPhase->text()).toDouble());
-    ui->lineEditPhase ->setText(obj.getPhase());
+    if (obj.setInternalPhase((ui ->lineEditPhase->text()).toDouble()))    ui->lineEditPhase ->setText(obj.getPhase());\
+    else ui->lineEditPhase ->setText("Lox");
+}
+
+void MainWindow::on_pushButtonHarmonic_clicked()
+{
+    if(obj.setHarmonic((ui ->lineEditHarmonic->text()).toInt()));
+    //ui->lineEditHarmonic ->setText(obj.getHarmonic());
 }
