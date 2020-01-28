@@ -52,7 +52,11 @@ protected:
         std::string RefTriggerOutput = "REFZ";
         std::string InputSignal;
         std::string InputVoltageMode = "ISRC";
-
+        std::string InputVoltageCoupling = "ICPL";
+        std::string InputVoltageShields = "IGND";
+        std::string InputVoltageRange = "IRNG";
+        std::string InputCurrentGain = "ICUR";
+        std::string SignalStrength = "ILVL";
         std::string AutoPhase = "APHS";
         std::string AutoRange = "ARNG";
         std::string AutoScale = "ASCL";
@@ -134,6 +138,36 @@ public:
     bool setInputVoltageMode(const int &inputVoltageMode) const;
     bool setInputVoltageMode(const std::string &inputVoltageMode) const;
     std::string getInputVoltageMode() const;
+
+    std::vector<std::string> getInputVoltageCouplingList() const;
+    int inputVoltageCouplingNumberFromString(const std::string  &inputVoltageCoupling_string) const;
+    std::string inputVoltageCouplingStringFromNumber(const int &inputVoltageCoupling_number) const;
+    bool setInputVoltageCoupling(const int &inputVoltageCoupling) const;
+    bool setInputVoltageCoupling(const std::string &inputVoltageCoupling) const;
+    std::string getInputVoltageCoupling() const;
+
+    std::vector<std::string> getInputVoltageShieldsList() const;
+    int inputVoltageShieldsNumberFromString(const std::string  &inputVoltageShields_string) const;
+    std::string inputVoltageShieldsStringFromNumber(const int &inputVoltageShields_number) const;
+    bool setInputVoltageShields(const int &inputVoltageShields) const;
+    bool setInputVoltageShields(const std::string &inputVoltageShields) const;
+    std::string getInputVoltageShields() const;
+
+    std::vector<std::string> getInputVoltageRangeList() const;
+    int inputVoltageRangeNumberFromString(const std::string  &inputVoltageRange_string) const;
+    std::string inputVoltageRangeStringFromNumber(const int &inputVoltageRange_number) const;
+    bool setInputVoltageRange(const int &inputVoltageRange) const;
+    bool setInputVoltageRange(const std::string &inputVoltageRange) const;
+    std::string getInputVoltageRange() const;
+
+    std::vector<std::string> getInputCurrentGainList() const;
+    int inputCurrentGainNumberFromString(const std::string  &inputCurrentGain_string) const;
+    std::string inputCurrentGainStringFromNumber(const int &inputCurrentGain_number) const;
+    bool setInputCurrentGain(const int &inputCurrentGain) const;
+    bool setInputCurrentGain(const std::string &inputCurrentGain) const;
+    std::string getInputCurrentGain() const;
+
+    std::string getSignalStrength() const;
 
     //auto functions
     bool autoPhase() const;
@@ -293,6 +327,10 @@ protected:
     std::vector <std::string> refTriggerOutput;
     std::vector <std::string> inputSignal;
     std::vector <std::string> inputVoltageMode;
+    std::vector <std::string> inputVoltageCoupling;
+    std::vector <std::string> inputVoltageShields;
+    std::vector <std::string> inputVoltageRange;
+    std::vector <std::string> inputCurrentGain;
 
     void SetRanges(const LockInAmplifierRanges &new_ranges);
 

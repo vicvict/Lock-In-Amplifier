@@ -49,6 +49,22 @@ public:
         inputVoltageMode = {
                                 "A", "A-B"
                            };
+
+        inputVoltageCoupling =  {
+                                    "AC", "DC"
+                                };
+
+        inputVoltageShields =   {
+                                    "Float", "Ground"
+                                };
+
+        inputVoltageRange =     {
+                                    "1 V", "300 mV", "100 mV", "30 mV", "10 mV"
+                                };
+
+        inputCurrentGain =      {
+                                    "1 uA", "10 nA"
+                                };
     }
 
     int getMinDualHarmonic() const;

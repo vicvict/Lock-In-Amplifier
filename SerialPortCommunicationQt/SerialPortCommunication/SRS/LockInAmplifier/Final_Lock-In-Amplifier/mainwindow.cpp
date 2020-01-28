@@ -43,6 +43,26 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxInputVoltageMode->addItem(to_QString(inputVoltageMode));
     }
 
+    //Добавление voltage coupling
+    for (auto inputVoltageCoupling : obj.getInputVoltageCouplingList()) {
+        ui->comboBoxInputVoltageCoupling->addItem(to_QString(inputVoltageCoupling));
+    }
+
+    //Добавление voltage shields
+    for (auto inputVoltageShields : obj.getInputVoltageShieldsList()) {
+        ui->comboBoxInputVoltageShields->addItem(to_QString(inputVoltageShields));
+    }
+
+    //Добавление voltage range
+    for (auto inputVoltageRange : obj.getInputVoltageRangeList()) {
+        ui->comboBoxInputVoltageRange->addItem(to_QString(inputVoltageRange));
+    }
+
+    //Добавление current gain
+    for (auto inputCurrentGain : obj.getInputCurrentGainList()) {
+        ui->comboBoxInputCurrentGain->addItem(to_QString(inputCurrentGain));
+    }
+
 
 
     /*try {
@@ -71,6 +91,11 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxRefTriggerOutput -> setCurrentText(to_QString(obj.getRefTriggerOutput()));
         ui->comboBoxInputSignal -> setCurrentText(to_QString(obj.getInputSignal()));
         ui->comboBoxInputVoltageMode -> setCurrentText(to_QString(obj.getInputVoltageMode()));
+        ui->comboBoxInputVoltageCoupling -> setCurrentText(to_QString(obj.getInputVoltageCoupling()));
+        ui->comboBoxInputVoltageShields -> setCurrentText(to_QString(obj.getInputVoltageShields()));
+        ui->comboBoxInputVoltageRange -> setCurrentText(to_QString(obj.getInputVoltageRange()));
+        ui->comboBoxInputCurrentGain -> setCurrentText(to_QString(obj.getInputCurrentGain()));
+        ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
 
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString(s));
@@ -206,3 +231,39 @@ void MainWindow::on_comboBoxInputVoltageMode_activated(const QString &arg1) {
     }
 }
 
+
+void MainWindow::on_comboBoxInputVoltageCoupling_activated(const QString &arg1) {
+    try {
+        obj.setInputVoltageCoupling(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxInputVoltageShields_activated(const QString &arg1) {
+    try {
+        obj.setInputVoltageShields(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxInputVoltageRange_activated(const QString &arg1) {
+    try {
+        obj.setInputVoltageRange(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxInputCurrentGain_activated(const QString &arg1) {
+    try {
+        obj.setInputCurrentGain(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_pushButtonSignalStrength_clicked() {
+    ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
+}
