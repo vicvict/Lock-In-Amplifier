@@ -1,3 +1,41 @@
+#ifndef SR830_H
+#define SR830_H
+
+
+#include "../lockinamplifier.h"
+
+#include <vector>
+#include <string>
+#include <map>
+
+
+class SR830: public LockInAmplifier
+{
+public:
+    SR830() : LockInAmplifier() {
+        ranges.maxInternalFrequency = 4E6;
+        ranges.minSineAmplitude = 1E-9;
+        ranges.maxSineAmplitude = 2.0;
+
+
+    }
+
+
+protected:
+
+
+};
+
+#endif // SR830_H
+
+
+
+
+
+
+
+
+
 //Это только пример (как и реализация библиотеки!)
 /*#ifndef SR830_H
 #define SR830_H

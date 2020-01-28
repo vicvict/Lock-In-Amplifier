@@ -58,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     try {
-        obj.connect("COM7","19200","8","1", "NO", "NO");
+        obj.connect("COM4","19200","8","1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
         ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
         ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
