@@ -83,7 +83,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     try {
-        obj.connect("COM4","19200","8","1", "NO", "NO");
+        obj.connect("COM7","19200","8","1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
         ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
         ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
@@ -172,8 +172,8 @@ void MainWindow::on_pushButtonAutoPhase_clicked() {
 
 void MainWindow::on_pushButtonAutoRange_clicked() {
     if (obj.autoRange()) {
-        //ui->comboBoxInputVoltageRange -> setCurrentText(to_QString(obj.getInputVoltageRange()));
-        //ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
+        ui->comboBoxInputVoltageRange -> setCurrentText(to_QString(obj.getInputVoltageRange()));
+        ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
     }
     else {
         ui->lineEditError->setText("KVA");
