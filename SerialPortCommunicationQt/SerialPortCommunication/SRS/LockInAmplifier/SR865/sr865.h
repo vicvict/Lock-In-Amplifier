@@ -93,6 +93,15 @@ public:
                             "50 nV",    "20 nV",    "10 nV",
                             "5 nV",     "2 nV",     "1 nV",
                         };
+
+        outData =   {
+                        "X",        "Y",    "R",    "THETa",
+                        "IN1",      "IN2",  "IN3",  "IN4",
+                        "OUT1",     "OUT2",
+                        "XNOise",   "YNOise",
+                        "PHAse",    "SAMp",  "LEVel",
+                        "FINT",     "FEXT"
+                    };
     }
 
     int getMinDualHarmonic() const;
