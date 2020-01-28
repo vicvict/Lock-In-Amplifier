@@ -43,6 +43,10 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxInputVoltageMode->addItem(to_QString(inputVoltageMode));
     }
 
+    //Добавление sensitivity
+    for (auto sensitivity : obj.getSensitivityList()) {
+        ui->comboBoxSensivitity->addItem(to_QString(sensitivity));
+    }
 
 
     /*try {
@@ -58,7 +62,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     try {
-        obj.connect("COM7","19200","8","1", "NO", "NO");
+        obj.connect("COM4","19200","8","1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
         ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
         ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
@@ -71,6 +75,8 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxRefTriggerOutput -> setCurrentText(to_QString(obj.getRefTriggerOutput()));
         ui->comboBoxInputSignal -> setCurrentText(to_QString(obj.getInputSignal()));
         ui->comboBoxInputVoltageMode -> setCurrentText(to_QString(obj.getInputVoltageMode()));
+        ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
+
 
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString(s));
@@ -143,7 +149,10 @@ void MainWindow::on_pushButtonAutoRange_clicked() {
 }
 
 void MainWindow::on_pushButtonAutoScale_clicked() {
-
+    if (obj.autoScale()) ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
+    else {
+        //do nothing
+    }
 }
 
 void MainWindow::on_pushButtonSineDCLevel_clicked() {
@@ -206,3 +215,11 @@ void MainWindow::on_comboBoxInputVoltageMode_activated(const QString &arg1) {
     }
 }
 
+
+void MainWindow::on_comboBoxSensivitity_activated(const QString &arg1) {
+    try {
+        obj.setSensitivity(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}

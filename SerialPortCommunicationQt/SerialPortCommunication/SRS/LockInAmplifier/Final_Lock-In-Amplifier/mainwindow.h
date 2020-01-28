@@ -46,6 +46,8 @@ private slots:
 
     void on_pushButtonAutoScale_clicked();
 
+    void on_comboBoxSensivitity_activated(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
 

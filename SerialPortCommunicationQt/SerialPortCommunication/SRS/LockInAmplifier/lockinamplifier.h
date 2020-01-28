@@ -52,6 +52,7 @@ protected:
         std::string RefTriggerOutput = "REFZ";
         std::string InputSignal;
         std::string InputVoltageMode = "ISRC";
+        std::string Sensitivity = "SENS";
 
         std::string AutoPhase = "APHS";
         std::string AutoRange = "ARNG";
@@ -134,6 +135,13 @@ public:
     bool setInputVoltageMode(const int &inputVoltageMode) const;
     bool setInputVoltageMode(const std::string &inputVoltageMode) const;
     std::string getInputVoltageMode() const;
+
+    std::vector<std::string> getSensitivityList() const;
+    int sensitivityNumberFromString(const std::string  &sensitivity_string) const;
+    std::string sensitivityStringFromNumber(const int &sensitivity_number) const;
+    bool setSensitivity(const int &sensitivity) const;
+    bool setSensitivity(const std::string &sensitivity) const;
+    std::string getSensitivity() const;
 
     //auto functions
     bool autoPhase() const;
@@ -293,6 +301,7 @@ protected:
     std::vector <std::string> refTriggerOutput;
     std::vector <std::string> inputSignal;
     std::vector <std::string> inputVoltageMode;
+    std::vector <std::string> sensitivity;
 
     void SetRanges(const LockInAmplifierRanges &new_ranges);
 
