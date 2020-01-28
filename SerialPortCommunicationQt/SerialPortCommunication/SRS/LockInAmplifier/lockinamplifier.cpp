@@ -178,6 +178,40 @@ std::string LockInAmplifier::getSineAmplitude() const
     return answer;
 }
 
+std::vector<std::string> LockInAmplifier::getTimeConstantList() const
+{
+    return this->timeConstant;
+}
+
+int LockInAmplifier::timeConstantNumberFromString(const std::string &timeConstant_string) const
+{
+    return numberFromString(this->timeConstant, timeConstant_string);
+}
+
+std::string LockInAmplifier::timeConstantStringFromNumber(const int &timeConstant_number) const
+{
+    return stringFromNumber(this->timeConstant, timeConstant_number);
+}
+
+bool LockInAmplifier::setTimeConstant(const int &timeConstant) const
+{
+    if (!isValidNumber(this->timeConstant, timeConstant))
+        return false;
+
+    std::string command = "OFLT " + std::to_string(timeConstant);
+    return sendCommand(command);
+}
+
+bool LockInAmplifier::setTimeConstant(const std::string &timeConstant) const
+{
+    return setTimeConstant(timeConstantNumberFromString(timeConstant));
+}
+
+std::string LockInAmplifier::getTimeConstant() const
+{
+    return timeConstantStringFromNumber(std::stoi(ask("OFLT?")));
+}
+
 /*double LockInAmplifier::getMinSineOutAmplitude() const
 {
     return this->State.minSineOutputAmplitude;
@@ -630,39 +664,7 @@ void LockInAmplifier::initTimeConstantList()
     return;
 }*/
 
-std::vector<std::string> LockInAmplifier::getTimeConstantList() const
-{
-    return this->timeConstant;
-}
 
-int LockInAmplifier::timeConstantNumberFromString(const std::string &timeConstant_string) const
-{
-    return numberFromString(this->timeConstant, timeConstant_string);
-}
-
-std::string LockInAmplifier::timeConstantStringFromNumber(const int &timeConstant_number) const
-{
-    return stringFromNumber(this->timeConstant, timeConstant_number);
-}
-
-bool LockInAmplifier::setTimeConstant(const int &timeConstant) const
-{
-    if (!isValidNumber(this->timeConstant, timeConstant))
-        return false;
-
-    std::string command = "OFLT " + std::to_string(timeConstant);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setTimeConstant(const std::string &timeConstant) const
-{
-    return setTimeConstant(timeConstantNumberFromString(timeConstant));
-}
-
-std::string LockInAmplifier::getTimeConstant() const
-{
-    return timeConstantStringFromNumber(std::stoi(ask("OFLT?")));
-}
 /*
 void LockInAmplifier::initFilterList()
 {

@@ -29,7 +29,7 @@ public:
         std::vector<std::string> newTimeConstant = {"1 us" , "3 us", "10 us", "30 us", "100 us", "300 us",
                                                     "1 ms" , "3 ms", "10 ms", "30 ms", "100 ms", "300 ms",
                                                     "1 s" , "3 s", "10 s", "30 s", "100 s", "300 s",
-                                                    "1 Ks" , "3 Ks", "10 Ks", "30 Ks"
+                                                    "1 ks" , "3 ks", "10 ks", "30 ks"
                                                     };
         SetTimeConstantList(newTimeConstant);
     }
@@ -46,6 +46,12 @@ public:
     bool setSineDCLevel(const double &voltage) const;
     std::string getSineDCLevel() const;
 
+    std::vector<std::string> getRefSourceList() const;
+    int refSourceNumberFromString(const std::string  &refSource_string) const;
+    std::string refSourceStringFromNumber(const int &refSource_number) const;
+    bool setRefSource(const int &refSource) const;
+    bool setRefSource(const std::string &refSource) const;
+    std::string getRefSource() const;
 protected:
     const int minHarmDual = 1;
     const int maxHarmDual = 99;
@@ -54,6 +60,10 @@ protected:
     const double maxSineDCLevel = +5.00;
 
     double SineDCLevel;
+
+    const std::vector <std:: string> refSource =    {
+                                                        "INT", "EXT", "DUAL", "CHOP"
+                                                    };
 private:
 
 };

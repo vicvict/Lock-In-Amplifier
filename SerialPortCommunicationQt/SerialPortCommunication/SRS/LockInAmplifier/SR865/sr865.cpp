@@ -61,3 +61,37 @@ std::string SR865::getSineDCLevel() const
     std::string answer = ask("SOFF?");
     return answer;
 }
+
+std::vector<std::string> SR865::getRefSourceList() const
+{
+    return this->refSource;
+}
+
+int SR865::refSourceNumberFromString(const std::string &refSource_string) const
+{
+    return numberFromString(this->refSource, refSource_string);
+}
+
+std::string SR865::refSourceStringFromNumber(const int &refSource_number) const
+{
+    return stringFromNumber(this->refSource, refSource_number);
+}
+
+bool SR865::setRefSource(const int &refSource) const
+{
+    if (!isValidNumber(this->refSource, refSource))
+        return false;
+
+    std::string command = "RSRC " + std::to_string(refSource);
+    return sendCommand(command);
+}
+
+bool SR865::setRefSource(const std::string &refSource) const
+{
+    return setRefSource(refSourceNumberFromString(refSource));
+}
+
+std::string SR865::getRefSource() const
+{
+    return refSourceStringFromNumber(std::stoi(ask("RSRC?")));
+}

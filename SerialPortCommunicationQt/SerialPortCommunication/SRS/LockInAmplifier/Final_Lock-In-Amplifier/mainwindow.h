@@ -30,9 +30,9 @@ private slots:
 
     void on_pushButtonSineDCLevel_clicked();
 
-    //void on_comboBoxTimeConstant_currentTextChanged(const QString &new_text);
-
     void on_comboBoxTimeConstant_activated(const QString &new_text);
+
+    void on_comboBoxRefSource_activated(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

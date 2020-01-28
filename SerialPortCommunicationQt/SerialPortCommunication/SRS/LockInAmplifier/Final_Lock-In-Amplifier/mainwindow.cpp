@@ -13,9 +13,15 @@ MainWindow::MainWindow(QWidget *parent) :
     for (auto model : obj.getSupportedList()) {
         ui->comboBoxLockInAmplifierModel->addItem(to_QString(model));
     }
+
     //Добавление time constants
     for (auto timeConstant : obj.getTimeConstantList()) {
         ui->comboBoxTimeConstant->addItem(to_QString(timeConstant));
+    }
+
+    //Добавление ref sources
+    for (auto refSource : obj.getRefSourceList()) {
+        ui->comboBoxRefSource->addItem(to_QString(refSource));
     }
 
 
@@ -40,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
         ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
         ui->comboBoxTimeConstant -> setCurrentText(to_QString(obj.getTimeConstant()));
+        ui->comboBoxRefSource -> setCurrentText(to_QString(obj.getRefSource()));
 
 
     } catch (std:: string s) {
@@ -123,19 +130,19 @@ void MainWindow::on_pushButtonSineDCLevel_clicked()
 }
 
 
-/*void MainWindow::on_comboBoxTimeConstant_currentTextChanged(const QString &new_text)
+void MainWindow::on_comboBoxTimeConstant_activated(const QString &new_text)
 {
     try {
         obj.setTimeConstant(to_StdString(new_text));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }
-}*/
+}
 
-void MainWindow::on_comboBoxTimeConstant_activated(const QString &new_text)
+void MainWindow::on_comboBoxRefSource_activated(const QString &arg1)
 {
     try {
-        obj.setTimeConstant(to_StdString(new_text));
+        obj.setRefSource(to_StdString(arg1));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }

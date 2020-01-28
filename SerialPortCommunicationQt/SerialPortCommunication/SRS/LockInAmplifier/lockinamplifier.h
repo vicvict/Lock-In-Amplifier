@@ -74,6 +74,16 @@ public:
     bool setSineAmplitude(const double &voltage) const;
     std::string getSineAmplitude() const;
 
+    std::vector<std::string> getTimeConstantList() const;
+    int timeConstantNumberFromString(const std::string  &timeConstant_string) const;
+    std::string timeConstantStringFromNumber(const int &timeConstant_number) const;
+    bool setTimeConstant(const int &timeConstant) const;
+    bool setTimeConstant(const std::string &timeConstant) const;
+    std::string getTimeConstant() const;
+
+
+
+
    /* double getMinSineOutAmplitude() const;
     double getMaxSineOutAmplitude() const;
     bool isValidSineOutAmplitude(const double &sineAmplitude) const;
@@ -145,12 +155,7 @@ public:
     QString getReserveMode() const;*/
 
     //void initTimeConstantList();
-    std::vector<std::string> getTimeConstantList() const;
-    int timeConstantNumberFromString(const std::string  &timeConstant_string) const;
-    std::string timeConstantStringFromNumber(const int &timeConstant_number) const;
-    bool setTimeConstant(const int &timeConstant) const;
-    bool setTimeConstant(const std::string &timeConstant) const;
-    std::string getTimeConstant() const;
+
 
     /*void initFilterList();
     QStringList getFilterList() const;
