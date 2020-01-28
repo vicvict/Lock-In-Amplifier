@@ -171,7 +171,14 @@ void MainWindow::on_pushButtonAutoPhase_clicked() {
 }
 
 void MainWindow::on_pushButtonAutoRange_clicked() {
-
+    if (obj.autoRange()) {
+        //ui->comboBoxInputVoltageRange -> setCurrentText(to_QString(obj.getInputVoltageRange()));
+        //ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
+    }
+    else {
+        ui->lineEditError->setText("KVA");
+        //do nothing
+    }
 }
 
 void MainWindow::on_pushButtonAutoScale_clicked() {
@@ -270,6 +277,7 @@ void MainWindow::on_comboBoxInputVoltageShields_activated(const QString &arg1) {
 void MainWindow::on_comboBoxInputVoltageRange_activated(const QString &arg1) {
     try {
         obj.setInputVoltageRange(to_StdString(arg1));
+        ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }
@@ -283,7 +291,5 @@ void MainWindow::on_comboBoxInputCurrentGain_activated(const QString &arg1) {
     }
 }
 
-void MainWindow::on_pushButtonSignalStrength_clicked() {
-    ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
-}
+
 

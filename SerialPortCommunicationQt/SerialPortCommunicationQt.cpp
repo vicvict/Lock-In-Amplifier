@@ -853,3 +853,5 @@ double SerialPortCommunicationQt::getTTS() const {
 double SerialPortCommunicationQt::getTTR() const {
     return *TTR;
 }
+
+

@@ -321,19 +321,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButtonSignalStrength">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>270</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Signal STRG</string>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBoxSensivitity">
     <property name="geometry">
      <rect>

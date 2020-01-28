@@ -54,8 +54,6 @@ private slots:
 
     void on_comboBoxInputCurrentGain_activated(const QString &arg1);
 
-    void on_pushButtonSignalStrength_clicked();
-
     void on_comboBoxSensivitity_activated(const QString &arg1);
 
 
