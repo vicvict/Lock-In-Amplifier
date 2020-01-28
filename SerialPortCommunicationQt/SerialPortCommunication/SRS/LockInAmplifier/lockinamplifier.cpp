@@ -1,7 +1,6 @@
 #include "lockinamplifier.h"
 //В процессе замены settings на ranges
-LockInAmplifier::LockInAmplifier()
-{
+LockInAmplifier::LockInAmplifier() {
     //setStringToBaudRate(lockinAmplifier_string_to_baud_rate);
     setStringToStopBits(lockinAmplifier_string_to_stop_bits);
     setStringToFlowControl(lockinAmplifier_string_to_flow_control);
@@ -9,13 +8,11 @@ LockInAmplifier::LockInAmplifier()
     init();
 }
 
-LockInAmplifier::~LockInAmplifier()
-{
+LockInAmplifier::~LockInAmplifier() {
 
 }
 
-int LockInAmplifier::numberFromString(const std::vector< std::string> &vector, const std::string &string) const
-{
+int LockInAmplifier::numberFromString(const std::vector < std::string > &vector, const std::string &string) const {
     for(size_t i = 0 ; i < vector.size(); ++i) {
         if (vector[i] == string)
             return static_cast<int>(i);
@@ -23,354 +20,281 @@ int LockInAmplifier::numberFromString(const std::vector< std::string> &vector, c
     return -1;
 }
 
-std::string LockInAmplifier::stringFromNumber(const std::vector< std::string> &vector, const int &number) const
-{
+std::string LockInAmplifier::stringFromNumber(const std::vector < std::string > &vector, const int &number) const{
     if (isValidNumber(vector, number))
         return vector.at(static_cast<size_t>(number));
     return "";
 }
 
-bool LockInAmplifier::isValidString(const std::vector< std::string> &vector, const std::string &string) const
-{
+bool LockInAmplifier::isValidString(const std::vector< std::string> &vector, const std::string &string) const {
     return(numberFromString(vector, string) != -1);
 }
 
-bool LockInAmplifier::isValidNumber(const std::vector< std::string> &vector, const int &number) const
-{
+bool LockInAmplifier::isValidNumber(const std::vector< std::string> &vector, const int &number) const {
     return (number >= 0 && number < static_cast<int>(vector.size()));
 }
 
-bool LockInAmplifier::isValidPhase(const double &Phase) const
-{
+bool LockInAmplifier::isValidPhase(const double &Phase) const {
     return (Phase >= ranges.minPhase &&
             Phase < ranges.maxPhase);
 }
 
-bool LockInAmplifier::setInternalPhase(const double &Phase) const
-{
-    std::string command = commands.Phase + " " + std::to_string(Phase);
+bool LockInAmplifier::setInternalPhase(const double &Phase) const {
+    std::string command = commands.Phase + separator + std::to_string(Phase);
     if (isValidPhase(Phase))
         return sendCommand(command);
     else
         return false;
 }
 
-bool LockInAmplifier:: autoPhase() const
-{
+bool LockInAmplifier:: autoPhase() const {
     return sendCommand(commands.AutoPhase);
 }
 
-std::string LockInAmplifier::getPhase() const
-{
-    std::string answer = ask(commands.Phase + "?");
+std::string LockInAmplifier::getPhase() const {
+    std::string answer = ask(commands.Phase + query_suffix);
     return answer;
 }
 
-double LockInAmplifier::getMinInternalFrequency() const
-{
+double LockInAmplifier::getMinInternalFrequency() const {
     return this->ranges.minInternalFrequency;
 }
 
-double LockInAmplifier::getMaxInternalFrequency() const
-{
+double LockInAmplifier::getMaxInternalFrequency() const {
     return this->ranges.maxInternalFrequency;
 }
 
-bool LockInAmplifier::isValidInternalFrequency(const double &frequency) const
-{
+bool LockInAmplifier::isValidInternalFrequency(const double &frequency) const {
     return (frequency >= this->ranges.minInternalFrequency &&
             frequency <= this->ranges.maxInternalFrequency);
 }
 
-bool LockInAmplifier::setInternalFrequency(const double &frequency) const
-{
-    std:: string command = commands.Frequence + " " + std:: to_string(frequency);
+bool LockInAmplifier::setInternalFrequency(const double &frequency) const {
+    std:: string command = commands.Frequence + separator + std:: to_string(frequency);
     if (isValidInternalFrequency(frequency))
         return sendCommand(command);
     else
         return false;
 }
 
-std::string LockInAmplifier:: getInternalFrequency() const
-{
-    std::string answer = ask(commands.Frequence + "INT?");
+std::string LockInAmplifier:: getInternalFrequency() const {
+    std::string answer = ask(commands.Frequence + "INT" + query_suffix);
     return answer;
 }
 
-std::string LockInAmplifier:: getExternalFrequency() const
-{
-    std::string answer = ask(commands.Frequence + "EXT?");
+std::string LockInAmplifier:: getExternalFrequency() const {
+    std::string answer = ask(commands.Frequence + "EXT" + query_suffix);
     return answer;
 }
 
-std::string LockInAmplifier:: getFrequencyDetect() const
-{
-    std::string answer = ask(commands.Frequence + "DET?");
+std::string LockInAmplifier:: getFrequencyDetect() const {
+    std::string answer = ask(commands.Frequence + "DET" + query_suffix);
     return answer;
 }
 
 
-std::string LockInAmplifier::getFrequency() const
-{
-    std::string answer = ask(commands.Frequence + "?");
+std::string LockInAmplifier::getFrequency() const {
+    std::string answer = ask(commands.Frequence + query_suffix);
     return answer;
 }
 
-int LockInAmplifier::getMinHarmonic() const
-{
+int LockInAmplifier::getMinHarmonic() const {
     return this->ranges.minHarmonic;
 }
 
-int LockInAmplifier::getMaxHarmonic() const
-{
+int LockInAmplifier::getMaxHarmonic() const {
     return this->ranges.maxHarmonic;
 }
 
-bool LockInAmplifier::isValidHarmonic(const int &i) const
-{
+bool LockInAmplifier::isValidHarmonic(const int &i) const {
     return (i >= this->ranges.minHarmonic &&
             i <= this->ranges.maxHarmonic);
 }
 
-bool LockInAmplifier::setHarmonic(const int &i) const
-{
-    std::string command = commands.Harmonic + " " + std::to_string(i);
+bool LockInAmplifier::setHarmonic(const int &i) const {
+    std::string command = commands.Harmonic + separator + std::to_string(i);
     if (isValidHarmonic(i))
         return sendCommand(command);
     else
         return false;
 }
 
-std::string LockInAmplifier::getHarmonic() const
-{
-    std::string answer = ask(commands.Harmonic + "?");
+std::string LockInAmplifier::getHarmonic() const {
+    std::string answer = ask(commands.Harmonic + query_suffix);
     return answer;
 }
 
-double LockInAmplifier::getMinSineAmplitude() const
-{
+double LockInAmplifier::getMinSineAmplitude() const {
     return this->ranges.minSineAmplitude;
 }
 
-double LockInAmplifier::getMaxSineAmplitude() const
-{
+double LockInAmplifier::getMaxSineAmplitude() const {
     return this->ranges.maxSineAmplitude;
 }
 
-bool LockInAmplifier::isValidSineAmplitude(const double &voltage) const
-{
+bool LockInAmplifier::isValidSineAmplitude(const double &voltage) const {
     return (voltage >= this->ranges.minSineAmplitude &&
             voltage <= this->ranges.maxSineAmplitude);
 }
 
-bool LockInAmplifier::setSineAmplitude(const double &voltage) const
-{
-    std::string command = commands.SineAmplitude + " " + std::to_string(voltage);
+bool LockInAmplifier::setSineAmplitude(const double &voltage) const {
+    std::string command = commands.SineAmplitude + separator + std::to_string(voltage);
     if (isValidSineAmplitude(voltage))
         return sendCommand(command);
     else
         return false;
 }
 
-std::string LockInAmplifier::getSineAmplitude() const
-{
-    std::string answer = ask(commands.SineAmplitude + "?");
+std::string LockInAmplifier::getSineAmplitude() const {
+    std::string answer = ask(commands.SineAmplitude + query_suffix);
     return answer;
 }
 
-std::vector<std::string> LockInAmplifier::getTimeConstantList() const
-{
+std::vector<std::string> LockInAmplifier::getTimeConstantList() const {
     return this->timeConstant;
 }
 
-int LockInAmplifier::timeConstantNumberFromString(const std::string &timeConstant_string) const
-{
+int LockInAmplifier::timeConstantNumberFromString(const std::string &timeConstant_string) const {
     return numberFromString(this->timeConstant, timeConstant_string);
 }
 
-std::string LockInAmplifier::timeConstantStringFromNumber(const int &timeConstant_number) const
-{
+std::string LockInAmplifier::timeConstantStringFromNumber(const int &timeConstant_number) const {
     return stringFromNumber(this->timeConstant, timeConstant_number);
 }
 
-bool LockInAmplifier::setTimeConstant(const int &timeConstant) const
-{
+bool LockInAmplifier::setTimeConstant(const int &timeConstant) const {
     if (!isValidNumber(this->timeConstant, timeConstant))
         return false;
 
-    std::string command = commands.TimeConstant + " " + std::to_string(timeConstant);
+    std::string command = commands.TimeConstant + separator + std::to_string(timeConstant);
     return sendCommand(command);
 }
 
-bool LockInAmplifier::setTimeConstant(const std::string &timeConstant) const
-{
+bool LockInAmplifier::setTimeConstant(const std::string &timeConstant) const {
     return setTimeConstant(timeConstantNumberFromString(timeConstant));
 }
 
-std::string LockInAmplifier::getTimeConstant() const
-{
-    return timeConstantStringFromNumber(std::stoi(ask(commands.TimeConstant + "?")));
+std::string LockInAmplifier::getTimeConstant() const {
+    return timeConstantStringFromNumber(std::stoi(ask(commands.TimeConstant + query_suffix)));
 }
 
-std::vector<std::string> LockInAmplifier::getRefSourceList() const
-
-{
-
+std::vector<std::string> LockInAmplifier::getRefSourceList() const {
     return this->refSource;
-
 }
 
-int LockInAmplifier::refSourceNumberFromString(const std::string &refSource_string) const
-
-{
+int LockInAmplifier::refSourceNumberFromString(const std::string &refSource_string) const {
 
     return numberFromString(this->refSource, refSource_string);
 
 }
 
-std::string LockInAmplifier::refSourceStringFromNumber(const int &refSource_number) const
-
-{
+std::string LockInAmplifier::refSourceStringFromNumber(const int &refSource_number) const {
 
     return stringFromNumber(this->refSource, refSource_number);
 
 }
 
-bool LockInAmplifier::setRefSource(const int &refSource) const
+bool LockInAmplifier::setRefSource(const int &refSource) const {
 
-{
-
-    if (!isValidNumber(this->refSource, refSource))
-
+    if (!isValidNumber(this->refSource, refSource)) {
         return false;
-
-
-
-    std::string command = commands.RefSource + " " + std::to_string(refSource);
-
+    }
+    std::string command = commands.RefSource + separator + std::to_string(refSource);
     return sendCommand(command);
-
 }
 
 
 
-bool LockInAmplifier::setRefSource(const std::string &refSource) const
-
-{
-
+bool LockInAmplifier::setRefSource(const std::string &refSource) const {
     return setRefSource(refSourceNumberFromString(refSource));
-
 }
 
 
 
-std::string LockInAmplifier::getRefSource() const
-
-{
-
-    return refSourceStringFromNumber(std::stoi(ask(commands.RefSource + "?")));
-
+std::string LockInAmplifier::getRefSource() const {
+    return refSourceStringFromNumber(std::stoi(ask(commands.RefSource + query_suffix)));
 }
 
 
-std::vector<std::string> LockInAmplifier::getRefTriggerModeList() const
-{
+std::vector<std::string> LockInAmplifier::getRefTriggerModeList() const {
     return this->refTriggerMode;
 }
 
-int LockInAmplifier::refTriggerModeNumberFromString(const std::string &refTriggerMode_string) const
-{
+int LockInAmplifier::refTriggerModeNumberFromString(const std::string &refTriggerMode_string) const {
     return numberFromString(this->refTriggerMode, refTriggerMode_string);
 }
 
-std::string LockInAmplifier::refTriggerModeStringFromNumber(const int &refTriggerMode_number) const
-{
+std::string LockInAmplifier::refTriggerModeStringFromNumber(const int &refTriggerMode_number) const {
     return stringFromNumber(this->refTriggerMode, refTriggerMode_number);
 }
 
-bool LockInAmplifier::setRefTriggerMode(const int &refTriggerMode) const
-{
+bool LockInAmplifier::setRefTriggerMode(const int &refTriggerMode) const {
     if (!isValidNumber(this->refTriggerMode, refTriggerMode))
         return false;
     std::string command = commands.RefTriggerMode + separator + std::to_string(refTriggerMode);
     return sendCommand(command);
 }
 
-bool LockInAmplifier::setRefTriggerMode(const std::string &refTriggerMode) const
-{
+bool LockInAmplifier::setRefTriggerMode(const std::string &refTriggerMode) const {
     return setRefTriggerMode(refTriggerModeNumberFromString(refTriggerMode));
 }
 
-std::string LockInAmplifier::getRefTriggerMode() const
-{
+std::string LockInAmplifier::getRefTriggerMode() const {
     return refTriggerModeStringFromNumber(std::stoi(ask(commands.RefTriggerMode + query_suffix)));
 }
 
 
-std::vector<std::string> LockInAmplifier::getRefTriggerOutputList() const
-{
+std::vector<std::string> LockInAmplifier::getRefTriggerOutputList() const {
     return this->refTriggerOutput;
 }
 
-int LockInAmplifier::refTriggerOutputNumberFromString(const std::string &refTriggerOutput_string) const
-{
+int LockInAmplifier::refTriggerOutputNumberFromString(const std::string &refTriggerOutput_string) const {
     return numberFromString(this->refTriggerOutput, refTriggerOutput_string);
 }
 
-std::string LockInAmplifier::refTriggerOutputStringFromNumber(const int &refTriggerOutput_number) const
-{
+std::string LockInAmplifier::refTriggerOutputStringFromNumber(const int &refTriggerOutput_number) const {
     return stringFromNumber(this->refTriggerOutput, refTriggerOutput_number);
 }
 
-bool LockInAmplifier::setRefTriggerOutput(const int &refTriggerOutput) const
-{
+bool LockInAmplifier::setRefTriggerOutput(const int &refTriggerOutput) const {
     if (!isValidNumber(this->refTriggerOutput, refTriggerOutput))
         return false;
     std::string command = commands.RefTriggerOutput + separator + std::to_string(refTriggerOutput);
     return sendCommand(command);
 }
 
-bool LockInAmplifier::setRefTriggerOutput(const std::string &refTriggerOutput) const
-{
+bool LockInAmplifier::setRefTriggerOutput(const std::string &refTriggerOutput) const {
     return setRefTriggerOutput(refTriggerOutputNumberFromString(refTriggerOutput));
 }
 
-std::string LockInAmplifier::getRefTriggerOutput() const
-{
+std::string LockInAmplifier::getRefTriggerOutput() const {
     return refTriggerOutputStringFromNumber(std::stoi(ask(commands.RefTriggerOutput + query_suffix)));
 }
 
-
-std::vector<std::string> LockInAmplifier::getInputSignalList() const
-{
+std::vector<std::string> LockInAmplifier::getInputSignalList() const {
     return this->inputSignal;
 }
 
-int LockInAmplifier::inputSignalNumberFromString(const std::string &inputSignal_string) const
-{
+int LockInAmplifier::inputSignalNumberFromString(const std::string &inputSignal_string) const {
     return numberFromString(this->inputSignal, inputSignal_string);
 }
 
-std::string LockInAmplifier::inputSignalStringFromNumber(const int &inputSignal_number) const
-{
+std::string LockInAmplifier::inputSignalStringFromNumber(const int &inputSignal_number) const {
     return stringFromNumber(this->inputSignal, inputSignal_number);
 }
 
-bool LockInAmplifier::setInputSignal(const int &inputSignal) const
-{
+bool LockInAmplifier::setInputSignal(const int &inputSignal) const {
     if (!isValidNumber(this->inputSignal, inputSignal))
         return false;
     std::string command = commands.InputSignal + separator + std::to_string(inputSignal);
     return sendCommand(command);
 }
 
-bool LockInAmplifier::setInputSignal(const std::string &inputSignal) const
-{
+bool LockInAmplifier::setInputSignal(const std::string &inputSignal) const {
     return setInputSignal(inputSignalNumberFromString(inputSignal));
 }
 
-std::string LockInAmplifier::getInputSignal() const
-{
+std::string LockInAmplifier::getInputSignal() const {
     return inputSignalStringFromNumber(std::stoi(ask(commands.InputSignal + query_suffix)));
 }
 
@@ -1263,14 +1187,12 @@ int LockInAmplifier::getBuffer(std::vector<double> &ch1, std::vector<double> &ch
 }
 */
 
-void LockInAmplifier::SetRanges(const LockInAmplifierRanges &new_ranges)
-{
+void LockInAmplifier::SetRanges(const LockInAmplifierRanges &new_ranges) {
     ranges = new_ranges;
     return;
 }
 
-void LockInAmplifier::SetTimeConstantList(const std::vector<std::string> &new_time_constantlist)
-{
+void LockInAmplifier::SetTimeConstantList(const std::vector<std::string> &new_time_constantlist) {
     timeConstant = new_time_constantlist;
     return;
 }
