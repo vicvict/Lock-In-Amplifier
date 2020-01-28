@@ -51,6 +51,7 @@ protected:
         std::string RefTriggerMode;
         std::string RefTriggerOutput = "REFZ";
         std::string InputSignal;
+        std::string InputVoltageMode = "ISRC";
     };
 
 public:
@@ -123,6 +124,13 @@ public:
     bool setInputSignal(const int &inputSignal) const;
     bool setInputSignal(const std::string &inputSignal) const;
     std::string getInputSignal() const;
+
+    std::vector<std::string> getInputVoltageModeList() const;
+    int inputVoltageModeNumberFromString(const std::string  &inputVoltageMode_string) const;
+    std::string inputVoltageModeStringFromNumber(const int &inputVoltageMode_number) const;
+    bool setInputVoltageMode(const int &inputVoltageMode) const;
+    bool setInputVoltageMode(const std::string &inputVoltageMode) const;
+    std::string getInputVoltageMode() const;
 
    /* double getMinSineOutAmplitude() const;
     double getMaxSineOutAmplitude() const;
@@ -276,6 +284,7 @@ protected:
     std::vector <std::string> refTriggerMode;
     std::vector <std::string> refTriggerOutput;
     std::vector <std::string> inputSignal;
+    std::vector <std::string> inputVoltageMode;
 
     void SetRanges(const LockInAmplifierRanges &new_ranges);
 

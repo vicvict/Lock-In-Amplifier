@@ -374,6 +374,39 @@ std::string LockInAmplifier::getInputSignal() const
     return inputSignalStringFromNumber(std::stoi(ask(commands.InputSignal + query_suffix)));
 }
 
+
+std::vector<std::string> LockInAmplifier::getInputVoltageModeList() const
+{
+    return this->inputVoltageMode;
+}
+
+int LockInAmplifier::inputVoltageModeNumberFromString(const std::string &inputVoltageMode_string) const
+{
+    return numberFromString(this->inputVoltageMode, inputVoltageMode_string);
+}
+
+std::string LockInAmplifier::inputVoltageModeStringFromNumber(const int &inputVoltageMode_number) const
+{
+    return stringFromNumber(this->inputVoltageMode, inputVoltageMode_number);
+}
+
+bool LockInAmplifier::setInputVoltageMode(const int &inputVoltageMode) const
+{
+    if (!isValidNumber(this->inputVoltageMode, inputVoltageMode))
+        return false;
+    std::string command = commands.InputVoltageMode + separator + std::to_string(inputVoltageMode);
+    return sendCommand(command);
+}
+
+bool LockInAmplifier::setInputVoltageMode(const std::string &inputVoltageMode) const
+{
+    return setInputVoltageMode(inputVoltageModeNumberFromString(inputVoltageMode));
+}
+
+std::string LockInAmplifier::getInputVoltageMode() const
+{
+    return inputVoltageModeStringFromNumber(std::stoi(ask(commands.InputVoltageMode + query_suffix)));
+}
 /*double LockInAmplifier::getMinSineOutAmplitude() const
 {
     return this->State.minSineOutputAmplitude;

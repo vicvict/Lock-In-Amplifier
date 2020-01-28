@@ -54,6 +54,10 @@ public:
         inputSignal =       {
                                 "VOLTage", "CURRent"
                             };
+
+        inputVoltageMode = {
+                                "A", "A-B"
+                           };
     }
 
     int getMinDualHarmonic() const;

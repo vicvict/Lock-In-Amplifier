@@ -235,6 +235,16 @@
      </rect>
     </property>
    </widget>
+   <widget class="QComboBox" name="comboBoxInputVoltageMode">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>80</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

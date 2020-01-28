@@ -38,6 +38,11 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxInputSignal->addItem(to_QString(inputSignal));
     }
 
+    //Добавление voltage mode
+    for (auto inputVoltageMode : obj.getInputVoltageModeList()) {
+        ui->comboBoxInputVoltageMode->addItem(to_QString(inputVoltageMode));
+    }
+
 
 
     /*try {
@@ -65,6 +70,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxRefTriggerMode -> setCurrentText(to_QString(obj.getRefTriggerMode()));
         ui->comboBoxRefTriggerOutput -> setCurrentText(to_QString(obj.getRefTriggerOutput()));
         ui->comboBoxInputSignal -> setCurrentText(to_QString(obj.getInputSignal()));
+        ui->comboBoxInputVoltageMode -> setCurrentText(to_QString(obj.getInputVoltageMode()));
 
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString(s));
@@ -187,6 +193,15 @@ void MainWindow::on_comboBoxInputSignal_activated(const QString &arg1)
 {
     try {
         obj.setInputSignal(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxInputVoltageMode_activated(const QString &arg1)
+{
+    try {
+        obj.setInputVoltageMode(to_StdString(arg1));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }

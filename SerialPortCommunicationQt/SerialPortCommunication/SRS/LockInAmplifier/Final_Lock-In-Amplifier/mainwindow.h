@@ -40,6 +40,8 @@ private slots:
 
     void on_comboBoxInputSignal_activated(const QString &arg1);
 
+    void on_comboBoxInputVoltageMode_activated(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
 
