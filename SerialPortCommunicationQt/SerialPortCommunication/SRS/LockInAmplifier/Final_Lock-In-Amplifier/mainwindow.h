@@ -42,6 +42,10 @@ private slots:
 
     void on_comboBoxInputVoltageMode_activated(const QString &arg1);
 
+    void on_pushButtonAutoRange_clicked();
+
+    void on_pushButtonAutoScale_clicked();
+
 private:
     Ui::MainWindow *ui;
 

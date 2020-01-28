@@ -131,17 +131,22 @@ void MainWindow::on_pushButtonSineAmplitude_clicked()
     }
 }
 
-void MainWindow::on_pushButtonAutoPhase_clicked()
-{
+void MainWindow::on_pushButtonAutoPhase_clicked() {
     if (obj.autoPhase()) ui->lineEditPhase->setText(to_QString(obj.getPhase()));
     else {
         //do nothing
     }
-    //obj.autoPhase();
 }
 
-void MainWindow::on_pushButtonSineDCLevel_clicked()
-{
+void MainWindow::on_pushButtonAutoRange_clicked() {
+
+}
+
+void MainWindow::on_pushButtonAutoScale_clicked() {
+
+}
+
+void MainWindow::on_pushButtonSineDCLevel_clicked() {
     bool succeed;
     ui->lineEditSineDCLevel->text().toDouble(&succeed);
     if (succeed) {
@@ -153,8 +158,7 @@ void MainWindow::on_pushButtonSineDCLevel_clicked()
 }
 
 
-void MainWindow::on_comboBoxTimeConstant_activated(const QString &new_text)
-{
+void MainWindow::on_comboBoxTimeConstant_activated(const QString &new_text) {
     try {
         obj.setTimeConstant(to_StdString(new_text));
     } catch (std::string s) {
@@ -162,8 +166,7 @@ void MainWindow::on_comboBoxTimeConstant_activated(const QString &new_text)
     }
 }
 
-void MainWindow::on_comboBoxRefSource_activated(const QString &arg1)
-{
+void MainWindow::on_comboBoxRefSource_activated(const QString &arg1) {
     try {
         obj.setRefSource(to_StdString(arg1));
     } catch (std::string s) {
@@ -171,8 +174,7 @@ void MainWindow::on_comboBoxRefSource_activated(const QString &arg1)
     }
 }
 
-void MainWindow::on_comboBoxRefTriggerMode_activated(const QString &arg1)
-{
+void MainWindow::on_comboBoxRefTriggerMode_activated(const QString &arg1) {
     try {
         obj.setRefTriggerMode(to_StdString(arg1));
     } catch (std::string s) {
@@ -180,8 +182,7 @@ void MainWindow::on_comboBoxRefTriggerMode_activated(const QString &arg1)
     }
 }
 
-void MainWindow::on_comboBoxRefTriggerOutput_activated(const QString &arg1)
-{
+void MainWindow::on_comboBoxRefTriggerOutput_activated(const QString &arg1) {
     try {
         obj.setRefTriggerOutput(to_StdString(arg1));
     } catch (std::string s) {
@@ -189,8 +190,7 @@ void MainWindow::on_comboBoxRefTriggerOutput_activated(const QString &arg1)
     }
 }
 
-void MainWindow::on_comboBoxInputSignal_activated(const QString &arg1)
-{
+void MainWindow::on_comboBoxInputSignal_activated(const QString &arg1) {
     try {
         obj.setInputSignal(to_StdString(arg1));
     } catch (std::string s) {
@@ -198,11 +198,11 @@ void MainWindow::on_comboBoxInputSignal_activated(const QString &arg1)
     }
 }
 
-void MainWindow::on_comboBoxInputVoltageMode_activated(const QString &arg1)
-{
+void MainWindow::on_comboBoxInputVoltageMode_activated(const QString &arg1) {
     try {
         obj.setInputVoltageMode(to_StdString(arg1));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }
 }
+

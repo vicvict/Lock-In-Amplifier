@@ -44,7 +44,6 @@ protected:
         std::string Harmonic  = "HARM";
         std::string HarmonicDual;
         std::string Phase     = "PHAS";
-        std::string AutoPhase = "APHS";
         std::string SineAmplitude = "SLVL";
         std::string SineDCLevel ;
         std::string TimeConstant = "OFLT";
@@ -53,6 +52,10 @@ protected:
         std::string RefTriggerOutput = "REFZ";
         std::string InputSignal;
         std::string InputVoltageMode = "ISRC";
+
+        std::string AutoPhase = "APHS";
+        std::string AutoRange = "ARNG";
+        std::string AutoScale = "ASCL";
     };
 
 public:
@@ -66,7 +69,6 @@ public:
 
     bool isValidPhase(const double &phase) const;
     bool setInternalPhase(const double &phase) const;
-    bool autoPhase() const;
     std::string getPhase() const;
 
     double getMinInternalFrequency() const;
@@ -132,6 +134,11 @@ public:
     bool setInputVoltageMode(const int &inputVoltageMode) const;
     bool setInputVoltageMode(const std::string &inputVoltageMode) const;
     std::string getInputVoltageMode() const;
+
+    //auto functions
+    bool autoPhase() const;
+    bool autoRange() const;
+    bool autoScale() const;
 
    /* double getMinSineOutAmplitude() const;
     double getMaxSineOutAmplitude() const;
