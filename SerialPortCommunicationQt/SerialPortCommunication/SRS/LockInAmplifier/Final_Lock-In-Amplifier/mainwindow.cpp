@@ -122,17 +122,21 @@ void MainWindow::on_pushButtonSineDCLevel_clicked()
     }
 }
 
-void MainWindow::on_comboBoxLockInAmplifierM_activated(const QString &arg1)
+
+/*void MainWindow::on_comboBoxTimeConstant_currentTextChanged(const QString &new_text)
 {
+    try {
+        obj.setTimeConstant(to_StdString(new_text));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}*/
 
-}
-
-void MainWindow::on_comboBoxTimeConstant_activated(const QString &arg1)
+void MainWindow::on_comboBoxTimeConstant_activated(const QString &new_text)
 {
-
-}
-
-void MainWindow::on_comboBoxTimeConstant_currentTextChanged(const QString &arg1)
-{
-    obj.setTimeConstant(to_StdString(ui->comboBoxTimeConstant->currentText()));
+    try {
+        obj.setTimeConstant(to_StdString(new_text));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
 }
