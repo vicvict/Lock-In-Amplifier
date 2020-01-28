@@ -63,6 +63,15 @@ public:
 
                             "1 Vrms"
                         };
+
+        outData =   {
+                        "X",                    "Y",
+                        "R [V]",                "R [dBm]",      "Theta",
+                        "AUX IN1",              "AUX IN2",
+                        "OUT1",                 "OUT2",
+                        "Reference Frequency",
+                        "CH1 display",          "CH2 display"
+                    };
     }
 
     bool setConnection(const QString &portName, const int &new_baudrate);

@@ -343,6 +343,9 @@ protected:
     std::vector <std::string> inputCurrentGain;
     std::vector <std::string> sensitivity;
 
+    //output data such as X, Y, R, Theta
+    std::vector <std::string> outData;
+
     void SetRanges(const LockInAmplifierRanges &new_ranges);
 
     void SetTimeConstantList( const std::vector<std::string> &new_time_constantlist);
