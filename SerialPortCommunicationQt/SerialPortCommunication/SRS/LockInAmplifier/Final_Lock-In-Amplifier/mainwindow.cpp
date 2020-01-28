@@ -8,7 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     std::string model;
-    bool *succeed = nullptr;
     //Добавление моделей
     for (auto model : obj.getSupportedList()) {
         ui->comboBoxLockInAmplifierModel->addItem(to_QString(model));
@@ -24,6 +23,22 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxRefSource->addItem(to_QString(refSource));
     }
 
+    //Добавление ref trigger mode
+    for (auto refTriggerMode : obj.getRefTriggerModeList()) {
+        ui->comboBoxRefTriggerMode->addItem(to_QString(refTriggerMode));
+    }
+
+    //Добавление ref trigger output
+    for (auto refTriggerOutput : obj.getRefTriggerOutputList()) {
+        ui->comboBoxRefTriggerOutput->addItem(to_QString(refTriggerOutput));
+    }
+
+    //Добавление input signal
+    for (auto inputSignal : obj.getInputSignalList()) {
+        ui->comboBoxInputSignal->addItem(to_QString(inputSignal));
+    }
+
+
 
     /*try {
         model = obj.detect("COM4", succeed);
@@ -38,7 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     try {
-        obj.connect("COM4","19200","8","1", "NO", "NO");
+        obj.connect("COM7","19200","8","1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
         ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
         ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
@@ -47,7 +62,9 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
         ui->comboBoxTimeConstant -> setCurrentText(to_QString(obj.getTimeConstant()));
         ui->comboBoxRefSource -> setCurrentText(to_QString(obj.getRefSource()));
-
+        ui->comboBoxRefTriggerMode -> setCurrentText(to_QString(obj.getRefTriggerMode()));
+        ui->comboBoxRefTriggerOutput -> setCurrentText(to_QString(obj.getRefTriggerOutput()));
+        ui->comboBoxInputSignal -> setCurrentText(to_QString(obj.getInputSignal()));
 
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString(s));
@@ -143,6 +160,33 @@ void MainWindow::on_comboBoxRefSource_activated(const QString &arg1)
 {
     try {
         obj.setRefSource(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxRefTriggerMode_activated(const QString &arg1)
+{
+    try {
+        obj.setRefTriggerMode(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxRefTriggerOutput_activated(const QString &arg1)
+{
+    try {
+        obj.setRefTriggerOutput(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxInputSignal_activated(const QString &arg1)
+{
+    try {
+        obj.setInputSignal(to_StdString(arg1));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }

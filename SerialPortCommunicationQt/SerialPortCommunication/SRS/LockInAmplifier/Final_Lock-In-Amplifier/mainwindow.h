@@ -34,6 +34,12 @@ private slots:
 
     void on_comboBoxRefSource_activated(const QString &arg1);
 
+    void on_comboBoxRefTriggerMode_activated(const QString &arg1);
+
+    void on_comboBoxRefTriggerOutput_activated(const QString &arg1);
+
+    void on_comboBoxInputSignal_activated(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
 

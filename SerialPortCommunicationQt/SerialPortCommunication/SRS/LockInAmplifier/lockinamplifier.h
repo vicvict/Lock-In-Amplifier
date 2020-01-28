@@ -37,7 +37,22 @@ protected:
         double SineAmplitude;
     };
 
-    std::vector <std::string> timeConstant;
+    struct LockInAmplifierCommands
+    {
+        std::string Frequence = "FREQ";
+        std::string Harmonic  = "HARM";
+        std::string HarmonicDual;
+        std::string Phase     = "PHAS";
+        std::string AutoPhase = "APHS";
+        std::string SineAmplitude = "SLVL";
+        std::string SineDCLevel ;
+        std::string TimeConstant = "OFLT";
+        std::string RefSource = "FMOD";
+        std::string RefTriggerMode;
+        std::string RefTriggerOutput = "REFZ";
+        std::string InputSignal;
+    };
+
 public:
     LockInAmplifier();
     ~LockInAmplifier();
@@ -81,8 +96,33 @@ public:
     bool setTimeConstant(const std::string &timeConstant) const;
     std::string getTimeConstant() const;
 
+    std::vector<std::string> getRefSourceList() const;
+    int refSourceNumberFromString(const std::string  &refSource_string) const;
+    std::string refSourceStringFromNumber(const int &refSource_number) const;
+    bool setRefSource(const int &refSource) const;
+    bool setRefSource(const std::string &refSource) const;
+    std::string getRefSource() const;
 
+    std::vector<std::string> getRefTriggerModeList() const;
+    int refTriggerModeNumberFromString(const std::string  &refTriggerMode_string) const;
+    std::string refTriggerModeStringFromNumber(const int &refTriggerMode_number) const;
+    bool setRefTriggerMode(const int &refTriggerMode) const;
+    bool setRefTriggerMode(const std::string &refTriggerMode) const;
+    std::string getRefTriggerMode() const;
 
+    std::vector<std::string> getRefTriggerOutputList() const;
+    int refTriggerOutputNumberFromString(const std::string  &refTriggerOutput_string) const;
+    std::string refTriggerOutputStringFromNumber(const int &refTriggerOutput_number) const;
+    bool setRefTriggerOutput(const int &refTriggerOutput) const;
+    bool setRefTriggerOutput(const std::string &refTriggerOutput) const;
+    std::string getRefTriggerOutput() const;
+
+    std::vector<std::string> getInputSignalList() const;
+    int inputSignalNumberFromString(const std::string  &inputSignal_string) const;
+    std::string inputSignalStringFromNumber(const int &inputSignal_number) const;
+    bool setInputSignal(const int &inputSignal) const;
+    bool setInputSignal(const std::string &inputSignal) const;
+    std::string getInputSignal() const;
 
    /* double getMinSineOutAmplitude() const;
     double getMaxSineOutAmplitude() const;
@@ -229,6 +269,13 @@ protected:
 
     LockInAmplifierRanges ranges;
     LockInAmplifierState state;
+    LockInAmplifierCommands commands;
+
+    std::vector <std::string> timeConstant;
+    std::vector <std::string> refSource;
+    std::vector <std::string> refTriggerMode;
+    std::vector <std::string> refTriggerOutput;
+    std::vector <std::string> inputSignal;
 
     void SetRanges(const LockInAmplifierRanges &new_ranges);
 

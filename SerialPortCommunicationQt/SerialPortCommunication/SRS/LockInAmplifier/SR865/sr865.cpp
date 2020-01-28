@@ -18,7 +18,7 @@ bool SR865::isValidDualHarmonic(const int &i) const
 
 bool SR865::setDualHarmonic(const int &i) const
 {
-    std::string command = "HARMDUAL " + std::to_string(i);
+    std::string command = commands.HarmonicDual + " " + std::to_string(i);
     if (isValidHarmonic(i))
         return sendCommand(command);
     else
@@ -27,7 +27,7 @@ bool SR865::setDualHarmonic(const int &i) const
 
 std::string SR865::getDualHarmonic() const
 {
-    std::string answer = ask("HARMDUAL?");
+    std::string answer = ask(commands.HarmonicDual + "?");
     return answer;
 }
 
@@ -49,7 +49,7 @@ bool SR865::isValidSineDCLevel(const double &voltage) const
 
 bool SR865::setSineDCLevel(const double &voltage) const
 {
-    std::string command = "SOFF " + std::to_string(voltage);
+    std::string command = commands.SineDCLevel + " " + std::to_string(voltage);
     if (isValidSineDCLevel(voltage))
         return sendCommand(command);
     else
@@ -58,40 +58,8 @@ bool SR865::setSineDCLevel(const double &voltage) const
 
 std::string SR865::getSineDCLevel() const
 {
-    std::string answer = ask("SOFF?");
+    std::string answer = ask(commands.SineDCLevel + "?");
     return answer;
 }
 
-std::vector<std::string> SR865::getRefSourceList() const
-{
-    return this->refSource;
-}
 
-int SR865::refSourceNumberFromString(const std::string &refSource_string) const
-{
-    return numberFromString(this->refSource, refSource_string);
-}
-
-std::string SR865::refSourceStringFromNumber(const int &refSource_number) const
-{
-    return stringFromNumber(this->refSource, refSource_number);
-}
-
-bool SR865::setRefSource(const int &refSource) const
-{
-    if (!isValidNumber(this->refSource, refSource))
-        return false;
-
-    std::string command = "RSRC " + std::to_string(refSource);
-    return sendCommand(command);
-}
-
-bool SR865::setRefSource(const std::string &refSource) const
-{
-    return setRefSource(refSourceNumberFromString(refSource));
-}
-
-std::string SR865::getRefSource() const
-{
-    return refSourceStringFromNumber(std::stoi(ask("RSRC?")));
-}
