@@ -49,6 +49,13 @@ public:
 
                             "1 V"
                         };
+
+        outData =   {
+                        "X",                    "Y",        "R",        "Theta",
+                        "Aux In1",              "Aux In2",  "Aux In3",  "Aux In4",
+                        "Reference Frequency",
+                        "CH1 display",          "CH2 display"
+                    };
     }
 
 
