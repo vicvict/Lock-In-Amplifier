@@ -437,18 +437,47 @@ std::string LockInAmplifier::getSignalStrength() const {
     return answer;
 }
 
+std::vector<std::string> LockInAmplifier::getSensitivityList() const {
+    return this->sensitivity;
+}
+
+int LockInAmplifier::sensitivityNumberFromString(const std::string &sensitivity_string) const {
+    return numberFromString(this->sensitivity, sensitivity_string);
+}
+
+std::string LockInAmplifier::sensitivityStringFromNumber(const int &sensitivity_number) const {
+    return stringFromNumber(this->sensitivity, sensitivity_number);
+}
+
+bool LockInAmplifier::setSensitivity(const int &sensitivity) const {
+    if (!isValidNumber(this->sensitivity, sensitivity))
+        return false;
+
+    std::string command = commands.Sensitivity + separator + std::to_string(sensitivity);
+    return sendCommand(command);
+}
+
+bool LockInAmplifier::setSensitivity(const std::string &sensitivity) const {
+    return setSensitivity(sensitivityNumberFromString(sensitivity));
+}
+
+std::string LockInAmplifier::getSensitivity() const {
+    return sensitivityStringFromNumber(std::stoi(ask(commands.Sensitivity + query_suffix)));
+}
 
 bool LockInAmplifier:: autoPhase() const {
     return sendCommand(commands.AutoPhase);
 }
 
-bool LockInAmplifier::autoRange() const{
+bool LockInAmplifier::autoRange() const {
     return sendCommand(commands.AutoRange);
 }
 
-bool LockInAmplifier::autoScale() const{
+bool LockInAmplifier::autoScale() const {
     return sendCommand(commands.AutoScale);
 }
+
+
 
 /*double LockInAmplifier::getMinSineOutAmplitude() const
 {
@@ -985,7 +1014,7 @@ bool LockInAmplifier::autoPhase() const
 {
     return sendCommand("APHS");
 }
-/*
+
 bool SR830::autoOffset(const int &i) const
 {
     if (i < 1 || i > 3)

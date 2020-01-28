@@ -57,6 +57,8 @@ protected:
         std::string InputVoltageRange = "IRNG";
         std::string InputCurrentGain = "ICUR";
         std::string SignalStrength = "ILVL";
+        std::string Sensitivity = "SENS";
+
         std::string AutoPhase = "APHS";
         std::string AutoRange = "ARNG";
         std::string AutoScale = "ASCL";
@@ -139,6 +141,7 @@ public:
     bool setInputVoltageMode(const std::string &inputVoltageMode) const;
     std::string getInputVoltageMode() const;
 
+
     std::vector<std::string> getInputVoltageCouplingList() const;
     int inputVoltageCouplingNumberFromString(const std::string  &inputVoltageCoupling_string) const;
     std::string inputVoltageCouplingStringFromNumber(const int &inputVoltageCoupling_number) const;
@@ -168,6 +171,13 @@ public:
     std::string getInputCurrentGain() const;
 
     std::string getSignalStrength() const;
+
+    std::vector<std::string> getSensitivityList() const;
+    int sensitivityNumberFromString(const std::string  &sensitivity_string) const;
+    std::string sensitivityStringFromNumber(const int &sensitivity_number) const;
+    bool setSensitivity(const int &sensitivity) const;
+    bool setSensitivity(const std::string &sensitivity) const;
+    std::string getSensitivity() const;
 
     //auto functions
     bool autoPhase() const;
@@ -331,6 +341,7 @@ protected:
     std::vector <std::string> inputVoltageShields;
     std::vector <std::string> inputVoltageRange;
     std::vector <std::string> inputCurrentGain;
+    std::vector <std::string> sensitivity;
 
     void SetRanges(const LockInAmplifierRanges &new_ranges);
 

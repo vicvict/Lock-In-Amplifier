@@ -63,6 +63,11 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxInputCurrentGain->addItem(to_QString(inputCurrentGain));
     }
 
+    //Добавление sensitivity
+    for (auto sensitivity : obj.getSensitivityList()) {
+        ui->comboBoxSensivitity->addItem(to_QString(sensitivity));
+    }
+
 
 
     /*try {
@@ -96,6 +101,8 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxInputVoltageRange -> setCurrentText(to_QString(obj.getInputVoltageRange()));
         ui->comboBoxInputCurrentGain -> setCurrentText(to_QString(obj.getInputCurrentGain()));
         ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
+        ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
+
 
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString(s));
@@ -168,7 +175,10 @@ void MainWindow::on_pushButtonAutoRange_clicked() {
 }
 
 void MainWindow::on_pushButtonAutoScale_clicked() {
-
+    if (obj.autoScale()) ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
+    else {
+        //do nothing
+    }
 }
 
 void MainWindow::on_pushButtonSineDCLevel_clicked() {
@@ -231,7 +241,6 @@ void MainWindow::on_comboBoxInputVoltageMode_activated(const QString &arg1) {
     }
 }
 
-
 void MainWindow::on_comboBoxInputVoltageCoupling_activated(const QString &arg1) {
     try {
         obj.setInputVoltageCoupling(to_StdString(arg1));
@@ -239,6 +248,16 @@ void MainWindow::on_comboBoxInputVoltageCoupling_activated(const QString &arg1) 
         ui->lineEditError->setText(to_QString(s));
     }
 }
+
+void MainWindow::on_comboBoxSensivitity_activated(const QString &arg1) {
+    try {
+        obj.setSensitivity(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+
 
 void MainWindow::on_comboBoxInputVoltageShields_activated(const QString &arg1) {
     try {
@@ -267,3 +286,4 @@ void MainWindow::on_comboBoxInputCurrentGain_activated(const QString &arg1) {
 void MainWindow::on_pushButtonSignalStrength_clicked() {
     ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
 }
+

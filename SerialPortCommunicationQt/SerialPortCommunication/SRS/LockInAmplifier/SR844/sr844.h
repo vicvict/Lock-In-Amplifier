@@ -29,7 +29,41 @@ protected:
                                                                                                 {  "1",  QSerialPort::OneStop       }
                                                                                                };
 public:
-    SR844();
+    SR844() : LockInAmplifier() {
+        //something about ranges
+
+        //something about commands
+
+        timeConstant = {
+                            "100 us",   "300 us",
+
+                            "1 ms",     "3 ms",
+                            "10 ms",    "30 ms",
+                            "100 ms",   "300 ms",
+
+                            "1 s",     "3 s",
+                            "10 s",    "30 s",
+                            "100 s",   "300 s",
+
+                            "1 ks",     "3 ks",
+                            "10 ks",    "30 ks",
+                            "100 ks",   "300 ks",
+                       };
+
+        sensitivity =   {
+                            "100 nVrms",   "300 nVrms",
+
+                            "1 uVrms",     "3 uVrms",
+                            "10 uVrms",    "30 uVrms",
+                            "100 uVrms",   "300 uVrms",
+
+                            "1 mVrms",     "3 mVrms",
+                            "10 mVrms",    "30 mVrms",
+                            "100 mVrms",   "300 mVrms",
+
+                            "1 Vrms"
+                        };
+    }
 
     bool setConnection(const QString &portName, const int &new_baudrate);
     bool setInternalFrequency(const double &new_frequency) const;
