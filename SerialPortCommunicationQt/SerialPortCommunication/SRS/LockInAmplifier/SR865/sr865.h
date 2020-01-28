@@ -13,18 +13,9 @@ class SR865: public LockInAmplifier
 {
 public:
     SR865() : LockInAmplifier() {
-        //Они должны быть const!
-        LockInAmplifierRanges new_ranges;
-        new_ranges.maxPhase = 180;
-        new_ranges.minPhase = -180;
-        new_ranges.maxHarmonic = 99;
-        new_ranges.minHarmonic = 1;
-        new_ranges.maxInternalFrequency = 4E6;
-        new_ranges.minInternalFrequency = 1E-3;
-        new_ranges.minSineAmplitude = 1E-9;
-        new_ranges.maxSineAmplitude = 2.0;
-
-        SetRanges(new_ranges);
+        ranges.maxInternalFrequency = 4E6;
+        ranges.minSineAmplitude = 1E-9;
+        ranges.maxSineAmplitude = 2.0;
 
         std::vector<std::string> newTimeConstant = {"1 us" , "3 us", "10 us", "30 us", "100 us", "300 us",
                                                     "1 ms" , "3 ms", "10 ms", "30 ms", "100 ms", "300 ms",
@@ -61,6 +52,7 @@ protected:
 
     double SineDCLevel;
 
+//ПЕРЕДЕЛАТЬ
     const std::vector <std:: string> refSource =    {
                                                         "INT", "EXT", "DUAL", "CHOP"
                                                     };

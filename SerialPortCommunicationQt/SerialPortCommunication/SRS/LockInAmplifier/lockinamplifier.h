@@ -14,17 +14,18 @@ class LockInAmplifier : public SRS
 protected:
     struct LockInAmplifierRanges // LockInAmplifierSettings
     {
-        double minInternalFrequency;
-        double maxInternalFrequency;
+        //The worst values of all the models
+        double minInternalFrequency = 1E-3;
+        double maxInternalFrequency = 102E3;
 
-        int minHarmonic;
-        int maxHarmonic;
+        int minHarmonic = 1;
+        int maxHarmonic = 99;
 
-        double minPhase;
-        double maxPhase;
+        double minPhase = -180.0;
+        double maxPhase = +180.0;
 
-        double minSineAmplitude;
-        double maxSineAmplitude;
+        double minSineAmplitude = 4E-3;
+        double maxSineAmplitude = 2.0;
     };
 
     //Как использовать этот state?
