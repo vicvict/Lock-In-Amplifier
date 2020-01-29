@@ -69,6 +69,14 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
 
+    for (auto filterSlope : obj.getFilterSlopeList()) {
+        ui->comboBoxFilterSlope->addItem(to_QString(filterSlope));
+    }
+
+
+    for (auto synchronousFilter : obj.getSynchronousFilterList()) {
+        ui->comboBoxSynchronousFilter->addItem(to_QString(synchronousFilter));
+    }
 
     /*try {
         model = obj.detect("COM4", succeed);
@@ -83,7 +91,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     try {
-        obj.connect("COM7","19200","8","1", "NO", "NO");
+        obj.connect("COM3","19200","8","1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
         ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
         ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
@@ -102,6 +110,8 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxInputCurrentGain -> setCurrentText(to_QString(obj.getInputCurrentGain()));
         ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
         ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
+        ui->comboBoxFilterSlope -> setCurrentText(to_QString(obj.getFilterSlope()));
+        ui->comboBoxSynchronousFilter -> setCurrentText(to_QString(obj.getSynchronousFilter()));
 
 
     } catch (std:: string s) {
@@ -293,3 +303,12 @@ void MainWindow::on_comboBoxInputCurrentGain_activated(const QString &arg1) {
 
 
 
+
+void MainWindow::on_comboBoxFilterSlope_activated(const QString &arg1)
+{
+    try {
+        obj.setFilterSlope(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}

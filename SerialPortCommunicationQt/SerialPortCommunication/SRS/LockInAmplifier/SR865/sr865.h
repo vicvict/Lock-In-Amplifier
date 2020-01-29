@@ -13,7 +13,12 @@ class SR865: public LockInAmplifier
 {
 public:
     SR865() : LockInAmplifier() {
-        ranges.maxInternalFrequency = 4E6;
+        ranges.minInternalFrequency = 0.001;
+        ranges.maxInternalFrequency = 2.5E6;
+        ranges.minPhase = -180;
+        ranges.maxPhase = 180;
+        ranges.minHarmonic = 1;
+        ranges.maxHarmonic = 99;
         ranges.minSineAmplitude = 1E-9;
         ranges.maxSineAmplitude = 2.0;
 
@@ -93,6 +98,14 @@ public:
                             "50 nV",    "20 nV",    "10 nV",
                             "5 nV",     "2 nV",     "1 nV",
                         };
+
+        filterSlope =   {
+                            "6 dB", "12 dB", "18 dB", "24 dB"
+                        };
+
+        synchronousFilter =     {
+                                    "Off", "On"
+                                };
 
         outData =   {
                         "X",        "Y",    "R",    "THETa",

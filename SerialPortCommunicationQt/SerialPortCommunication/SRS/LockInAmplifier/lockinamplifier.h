@@ -58,6 +58,8 @@ protected:
         std::string InputCurrentGain = "ICUR";
         std::string SignalStrength = "ILVL";
         std::string Sensitivity = "SENS";
+        std::string FilterSlope = "OFSL";
+        std::string SynchronousFilter = "SYNC";
 
         std::string AutoPhase = "APHS";
         std::string AutoRange = "ARNG";
@@ -178,6 +180,20 @@ public:
     bool setSensitivity(const int &sensitivity) const;
     bool setSensitivity(const std::string &sensitivity) const;
     std::string getSensitivity() const;
+
+    std::vector<std::string> getFilterSlopeList() const;
+    int filterSlopeNumberFromString(const std::string  &filterSlope_string) const;
+    std::string filterSlopeStringFromNumber(const int &filterSlope_number) const;
+    bool setFilterSlope(const int &filterSlope) const;
+    bool setFilterSlope(const std::string &filterSlope) const;
+    std::string getFilterSlope() const;
+
+    std::vector<std::string> getSynchronousFilterList() const;
+    int synchronousFilterNumberFromString(const std::string  &synchronousFilter_string) const;
+    std::string synchronousFilterStringFromNumber(const int &synchronousFilter_number) const;
+    bool setSynchronousFilter(const int &synchronousFilter) const;
+    bool setSynchronousFilter(const std::string &synchronousFilter) const;
+    std::string getSynchronousFilter() const;
 
     //auto functions
     bool autoPhase() const;
@@ -342,6 +358,8 @@ protected:
     std::vector <std::string> inputVoltageRange;
     std::vector <std::string> inputCurrentGain;
     std::vector <std::string> sensitivity;
+    std::vector <std::string> filterSlope;
+    std::vector <std::string> synchronousFilter;
 
     //output data such as X, Y, R, Theta
     std::vector <std::string> outData;

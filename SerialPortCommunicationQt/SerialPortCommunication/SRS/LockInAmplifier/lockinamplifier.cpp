@@ -465,6 +465,65 @@ std::string LockInAmplifier::getSensitivity() const {
     return sensitivityStringFromNumber(std::stoi(ask(commands.Sensitivity + query_suffix)));
 }
 
+
+std::vector<std::string> LockInAmplifier::getFilterSlopeList() const {
+    return this->filterSlope;
+}
+
+int LockInAmplifier::filterSlopeNumberFromString(const std::string &filterSlope_string) const {
+    return numberFromString(this->filterSlope, filterSlope_string);
+}
+
+std::string LockInAmplifier::filterSlopeStringFromNumber(const int &filterSlope_number) const {
+    return stringFromNumber(this->filterSlope, filterSlope_number);
+}
+
+bool LockInAmplifier::setFilterSlope(const int &filterSlope) const {
+    if (!isValidNumber(this->filterSlope, filterSlope))
+        return false;
+
+    std::string command = commands.FilterSlope + separator + std::to_string(filterSlope);
+    return sendCommand(command);
+}
+
+bool LockInAmplifier::setFilterSlope(const std::string &filterSlope) const {
+    return setFilterSlope(filterSlopeNumberFromString(filterSlope));
+}
+
+std::string LockInAmplifier::getFilterSlope() const {
+    return filterSlopeStringFromNumber(std::stoi(ask(commands.FilterSlope + query_suffix)));
+}
+
+
+std::vector<std::string> LockInAmplifier::getSynchronousFilterList() const {
+    return this->synchronousFilter;
+}
+
+int LockInAmplifier::synchronousFilterNumberFromString(const std::string &synchronousFilter_string) const {
+    return numberFromString(this->synchronousFilter, synchronousFilter_string);
+}
+
+std::string LockInAmplifier::synchronousFilterStringFromNumber(const int &synchronousFilter_number) const {
+    return stringFromNumber(this->synchronousFilter, synchronousFilter_number);
+}
+
+bool LockInAmplifier::setSynchronousFilter(const int &synchronousFilter) const {
+    if (!isValidNumber(this->synchronousFilter, synchronousFilter))
+        return false;
+
+    std::string command = commands.SynchronousFilter + separator + std::to_string(synchronousFilter);
+    return sendCommand(command);
+}
+
+bool LockInAmplifier::setSynchronousFilter(const std::string &synchronousFilter) const {
+    return setSynchronousFilter(synchronousFilterNumberFromString(synchronousFilter));
+}
+
+std::string LockInAmplifier::getSynchronousFilter() const {
+    return synchronousFilterStringFromNumber(std::stoi(ask(commands.SynchronousFilter + query_suffix)));
+}
+
+
 bool LockInAmplifier:: autoPhase() const {
     return sendCommand(commands.AutoPhase);
 }
