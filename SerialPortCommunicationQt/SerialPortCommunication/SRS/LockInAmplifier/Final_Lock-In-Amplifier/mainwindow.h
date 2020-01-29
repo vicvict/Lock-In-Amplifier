@@ -59,6 +59,10 @@ private slots:
 
     void on_comboBoxFilterSlope_activated(const QString &arg1);
 
+    void on_comboBoxOutData_activated(const QString &arg1);
+
+    void on_pushButtonOutData_clicked();
+
 private:
     Ui::MainWindow *ui;
 

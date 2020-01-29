@@ -523,6 +523,29 @@ std::string LockInAmplifier::getSynchronousFilter() const {
     return synchronousFilterStringFromNumber(std::stoi(ask(commands.SynchronousFilter + query_suffix)));
 }
 
+std::vector<std::string> LockInAmplifier::getOutDataList() const {
+    return this->outData;
+}
+
+int LockInAmplifier::outDataNumberFromString(const std::string &outData_string) const {
+    return numberFromString(this->outData, outData_string);
+}
+
+std::string LockInAmplifier::outDataStringFromNumber(const int &outData_number) const {
+    return stringFromNumber(this->outData, outData_number);
+}
+
+
+std::string LockInAmplifier::getOutData(const int& outData) const {
+    if (!isValidNumber(this->outData, outData))
+        return invalidData;
+    return outDataStringFromNumber(std::stoi(ask(commands.OutData + query_suffix + separator + std::to_string(outData))));
+}
+
+std::string LockInAmplifier::getOutData(const std::string &outData) const{
+    return getOutData(std::stoi(outData));
+}
+
 
 bool LockInAmplifier:: autoPhase() const {
     return sendCommand(commands.AutoPhase);

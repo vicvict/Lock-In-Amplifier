@@ -60,6 +60,7 @@ protected:
         std::string Sensitivity = "SENS";
         std::string FilterSlope = "OFSL";
         std::string SynchronousFilter = "SYNC";
+        std::string OutData = "OUTP";
 
         std::string AutoPhase = "APHS";
         std::string AutoRange = "ARNG";
@@ -199,6 +200,15 @@ public:
     bool autoPhase() const;
     bool autoRange() const;
     bool autoScale() const;
+
+    //output data functions
+    std::vector<std::string> getOutDataList() const;
+    int outDataNumberFromString(const std::string  &outData_string) const;
+    std::string outDataStringFromNumber(const int &outData_number) const;
+    bool setOutData(const int &outData) const;
+    bool setOutData(const std::string &outData) const;
+    std::string getOutData(const int &outData) const;
+    std::string getOutData(const std::string &outData) const;
 
    /* double getMinSineOutAmplitude() const;
     double getMaxSineOutAmplitude() const;
@@ -385,7 +395,7 @@ protected:
     std::unordered_map < std::string , QSerialPort::FlowControl > lockinAmplifier_string_to_flow_control = {
                                                                                                 {  "NO", QSerialPort::NoFlowControl  }
                                                                                                };
-
+    std::string invalidData = "-1";
     const double sensivityReserve = 1.5;
     const double inputRangeReserve = 3;
 
