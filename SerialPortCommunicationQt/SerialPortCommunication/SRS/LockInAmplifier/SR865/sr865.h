@@ -107,6 +107,10 @@ public:
                                     "Off", "On"
                                 };
 
+        advanceFilter = {
+                            "Off", "On"
+                        };
+
         outData =   {
                         "X",        "Y",    "R",    "THETa",
                         "IN1",      "IN2",  "IN3",  "IN4",

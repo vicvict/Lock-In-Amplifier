@@ -60,6 +60,7 @@ protected:
         std::string Sensitivity = "SENS";
         std::string FilterSlope = "OFSL";
         std::string SynchronousFilter = "SYNC";
+        std::string AdvanceFilter = "ADVFILT";
 
         std::string AutoPhase = "APHS";
         std::string AutoRange = "ARNG";
@@ -194,6 +195,13 @@ public:
     bool setSynchronousFilter(const int &synchronousFilter) const;
     bool setSynchronousFilter(const std::string &synchronousFilter) const;
     std::string getSynchronousFilter() const;
+
+    std::vector<std::string> getAdvanceFilterList() const;
+    int advanceFilterNumberFromString(const std::string  &advanceFilter_string) const;
+    std::string advanceFilterStringFromNumber(const int &advanceFilter_number) const;
+    bool setAdvanceFilter(const int &advanceFilter) const;
+    bool setAdvanceFilter(const std::string &advanceFilter) const;
+    std::string getAdvanceFilter() const;
 
     //auto functions
     bool autoPhase() const;
@@ -360,6 +368,7 @@ protected:
     std::vector <std::string> sensitivity;
     std::vector <std::string> filterSlope;
     std::vector <std::string> synchronousFilter;
+    std::vector <std::string> advanceFilter;
 
     //output data such as X, Y, R, Theta
     std::vector <std::string> outData;

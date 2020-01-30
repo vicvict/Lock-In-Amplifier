@@ -78,6 +78,11 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxSynchronousFilter->addItem(to_QString(synchronousFilter));
     }
 
+
+    for (auto advanceFilter : obj.getAdvanceFilterList()) {
+        ui->comboBoxAdvanceFilter->addItem(to_QString(advanceFilter));
+    }
+
     /*try {
         model = obj.detect("COM4", succeed);
         obj.connect("COM4");
@@ -112,7 +117,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
         ui->comboBoxFilterSlope -> setCurrentText(to_QString(obj.getFilterSlope()));
         ui->comboBoxSynchronousFilter -> setCurrentText(to_QString(obj.getSynchronousFilter()));
-
+        ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));
 
     } catch (std:: string s) {
         ui->lineEditResponse->setText(to_QString(s));
@@ -308,6 +313,24 @@ void MainWindow::on_comboBoxFilterSlope_activated(const QString &arg1)
 {
     try {
         obj.setFilterSlope(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxAdvanceFilter_activated(const QString &arg1)
+{
+    try {
+        obj.setAdvanceFilter(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxSynchronousFilter_activated(const QString &arg1)
+{
+    try {
+        obj.setSynchronousFilter(to_StdString(arg1));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }

@@ -524,6 +524,36 @@ std::string LockInAmplifier::getSynchronousFilter() const {
 }
 
 
+
+std::vector<std::string> LockInAmplifier::getAdvanceFilterList() const {
+    return this->advanceFilter;
+}
+
+int LockInAmplifier::advanceFilterNumberFromString(const std::string &advanceFilter_string) const {
+    return numberFromString(this->advanceFilter, advanceFilter_string);
+}
+
+std::string LockInAmplifier::advanceFilterStringFromNumber(const int &advanceFilter_number) const {
+    return stringFromNumber(this->advanceFilter, advanceFilter_number);
+}
+
+bool LockInAmplifier::setAdvanceFilter(const int &advanceFilter) const {
+    if (!isValidNumber(this->advanceFilter, advanceFilter))
+        return false;
+
+    std::string command = commands.AdvanceFilter + separator + std::to_string(advanceFilter);
+    return sendCommand(command);
+}
+
+bool LockInAmplifier::setAdvanceFilter(const std::string &advanceFilter) const {
+    return setAdvanceFilter(advanceFilterNumberFromString(advanceFilter));
+}
+
+std::string LockInAmplifier::getAdvanceFilter() const {
+    return advanceFilterStringFromNumber(std::stoi(ask(commands.AdvanceFilter + query_suffix)));
+}
+
+
 bool LockInAmplifier:: autoPhase() const {
     return sendCommand(commands.AutoPhase);
 }
