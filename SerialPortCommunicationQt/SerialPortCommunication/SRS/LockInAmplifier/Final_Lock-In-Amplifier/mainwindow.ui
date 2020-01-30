@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>429</width>
+    <width>607</width>
     <height>390</height>
    </rect>
   </property>
@@ -351,13 +351,49 @@
      </rect>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBoxAdvanceFilter">
+
+    <widget class="QComboBox" name="comboBoxAdvanceFilter">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>220</y>
+       <width>69</width>
+       <height>22</height>
+      </rect>
+    </property>
+   </widget>
+
+   <widget class="QComboBox" name="comboBoxOutData">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>220</y>
+      <x>430</x>
+      <y>40</y>
       <width>69</width>
       <height>22</height>
+     </rect>
+    </property>
+   </widget>
+
+   <widget class="QPushButton" name="pushButtonOutData">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>40</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Get X</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditOutData">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>70</y>
+      <width>141</width>
+      <height>20</height>
      </rect>
     </property>
    </widget>
@@ -367,7 +403,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>429</width>
+     <width>607</width>
      <height>21</height>
     </rect>
    </property>
