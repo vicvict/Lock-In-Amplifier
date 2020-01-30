@@ -22,6 +22,7 @@ public:
         ranges.minSineAmplitude = 1E-9;
         ranges.maxSineAmplitude = 2.0;
 
+        commands.FrequencyDetect = "FREQDET";
         commands.RefSource = "RSRC";
         commands.HarmonicDual = "HARMDUAL";
         commands.SineDCLevel = "SOFF";

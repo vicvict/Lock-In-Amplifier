@@ -29,16 +29,17 @@ CONFIG += c++1z
 
 SOURCES += \
         ../../../../Timer.cpp \
-        ../SR844/sr844.cpp \
         ../../../../QtSTLConvertion.cpp \
         ../../SRS.cpp \
         ../../../SerialPortCommunication.cpp \
         ../../../../SerialPortCommunicationQt.cpp \
+        ../SR844/sr844.cpp \
         ../lockinamplifier.cpp \
         main.cpp \
         mainwindow.cpp \
         ../SR830/sr830.cpp \
-        ../SR865/sr865.cpp
+        ../SR865/sr865.cpp \
+        sr844graphics.cpp
 
 HEADERS += \
         ../../../../QtSTLConvertion.h \
@@ -46,14 +47,16 @@ HEADERS += \
         ../../../SerialPortCommunication.h \
         ../../../../SerialPortCommunicationQt.h \
         ../../../../Timer.h \
+        ../SR844/sr844.h \
         ../lockinamplifier.h \
         mainwindow.h \
         ../SR830/sr830.h \
-        ../SR844/sr844.h \
-        ../SR865/sr865.h
+        ../SR865/sr865.h \
+        sr844graphics.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+        sr844graphics.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

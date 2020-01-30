@@ -84,7 +84,7 @@ std::string LockInAmplifier:: getExternalFrequency() const {
 }
 
 std::string LockInAmplifier:: getFrequencyDetect() const {
-    std::string answer = ask(commands.Frequence + "DET" + query_suffix);
+    std::string answer = ask(commands.FrequencyDetect + query_suffix);
     return answer;
 }
 

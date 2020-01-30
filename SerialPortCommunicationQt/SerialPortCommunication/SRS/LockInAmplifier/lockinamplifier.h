@@ -41,6 +41,7 @@ protected:
     struct LockInAmplifierCommands
     {
         std::string Frequence = "FREQ";
+        std::string FrequencyDetect = "FRAQ";
         std::string Harmonic  = "HARM";
         std::string HarmonicDual;
         std::string Phase     = "PHAS";
@@ -61,12 +62,16 @@ protected:
         std::string FilterSlope = "OFSL";
         std::string SynchronousFilter = "SYNC";
         std::string AdvanceFilter = "ADVFILT";
+        std::string InputSignalZ;
+        std::string CloseReserveMode;
 
         std::string OutData = "OUTP";
 
         std::string AutoPhase = "APHS";
         std::string AutoRange = "ARNG";
         std::string AutoScale = "ASCL";
+        std::string AutoWideReverse;
+        std::string AutoReserve;
     };
 
 public:
