@@ -100,36 +100,42 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->lineEditResponse->setText(to_QString(s));
     }*/
 
+    ui->pushButtonConnect->setText("Connect");
 
+    ui->lineEditPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditSignalStrength->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
-    try {
-        obj.connect("COM4","19200","8","1", "NO", "NO");
-        ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
-        ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
-        ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
-        ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
-        ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
-        ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
-        ui->comboBoxTimeConstant -> setCurrentText(to_QString(obj.getTimeConstant()));
-        ui->comboBoxRefSource -> setCurrentText(to_QString(obj.getRefSource()));
-        ui->comboBoxRefTriggerMode -> setCurrentText(to_QString(obj.getRefTriggerMode()));
-        ui->comboBoxRefTriggerOutput -> setCurrentText(to_QString(obj.getRefTriggerOutput()));
-        ui->comboBoxInputSignal -> setCurrentText(to_QString(obj.getInputSignal()));
-        ui->comboBoxInputVoltageMode -> setCurrentText(to_QString(obj.getInputVoltageMode()));
-        ui->comboBoxInputVoltageCoupling -> setCurrentText(to_QString(obj.getInputVoltageCoupling()));
-        ui->comboBoxInputVoltageShields -> setCurrentText(to_QString(obj.getInputVoltageShields()));
-        ui->comboBoxInputVoltageRange -> setCurrentText(to_QString(obj.getInputVoltageRange()));
-        ui->comboBoxInputCurrentGain -> setCurrentText(to_QString(obj.getInputCurrentGain()));
-        ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
-        ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
-        ui->comboBoxFilterSlope -> setCurrentText(to_QString(obj.getFilterSlope()));
-        ui->comboBoxSynchronousFilter -> setCurrentText(to_QString(obj.getSynchronousFilter()));
-        ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));
+    ui->pushButtonPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonAutoPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonAutoRange->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonAutoScale->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
+    ui->comboBoxOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxRefSource->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxFilterSlope->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxInputSignal->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxSensivitity->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxTimeConstant->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxAdvanceFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxRefTriggerMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxInputCurrentGain->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxInputVoltageMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxRefTriggerOutput->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxInputVoltageRange->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxSynchronousFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxInputVoltageShields->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxInputVoltageCoupling->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
-    } catch (std:: string s) {
-        ui->lineEditResponse->setText(to_QString(s));
-    }
 }
 
 MainWindow::~MainWindow()
@@ -355,5 +361,114 @@ void MainWindow::on_pushButtonOutData_clicked() {
         ui->lineEditOutData->setText(to_QString(obj.getOutData(to_StdString(data))));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_pushButtonConnect_clicked()
+{
+    if(ui->pushButtonConnect->text() == "Connect"){
+        try {
+            obj.connect("COM7","19200","8","1", "NO", "NO");
+            ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
+            ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
+            ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
+            ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
+            ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
+            ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
+            ui->comboBoxTimeConstant -> setCurrentText(to_QString(obj.getTimeConstant()));
+            ui->comboBoxRefSource -> setCurrentText(to_QString(obj.getRefSource()));
+            ui->comboBoxRefTriggerMode -> setCurrentText(to_QString(obj.getRefTriggerMode()));
+            ui->comboBoxRefTriggerOutput -> setCurrentText(to_QString(obj.getRefTriggerOutput()));
+            ui->comboBoxInputSignal -> setCurrentText(to_QString(obj.getInputSignal()));
+            ui->comboBoxInputVoltageMode -> setCurrentText(to_QString(obj.getInputVoltageMode()));
+            ui->comboBoxInputVoltageCoupling -> setCurrentText(to_QString(obj.getInputVoltageCoupling()));
+            ui->comboBoxInputVoltageShields -> setCurrentText(to_QString(obj.getInputVoltageShields()));
+            ui->comboBoxInputVoltageRange -> setCurrentText(to_QString(obj.getInputVoltageRange()));
+            ui->comboBoxInputCurrentGain -> setCurrentText(to_QString(obj.getInputCurrentGain()));
+            ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
+            ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
+            ui->comboBoxFilterSlope -> setCurrentText(to_QString(obj.getFilterSlope()));
+            ui->comboBoxSynchronousFilter -> setCurrentText(to_QString(obj.getSynchronousFilter()));
+            ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));
+
+            ui->pushButtonConnect->setText("Disconnect");
+
+
+            ui->lineEditPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->lineEditHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->lineEditFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->lineEditOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->lineEditSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->lineEditSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->lineEditSignalStrength->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+
+            ui->pushButtonPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonAutoPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonAutoRange->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonAutoScale->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+
+            ui->comboBoxOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxRefSource->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxFilterSlope->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxInputSignal->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxSensivitity->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxTimeConstant->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxAdvanceFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxRefTriggerMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxInputCurrentGain->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxInputVoltageMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxRefTriggerOutput->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxInputVoltageRange->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxSynchronousFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxInputVoltageShields->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxInputVoltageCoupling->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+
+        } catch (std:: string s) {
+            ui->lineEditResponse->setText(to_QString(s));
+        }
+    }
+    else {
+        ui->pushButtonConnect->setText("Connect");
+        obj.disconnect();
+
+
+        ui->lineEditPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->lineEditHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->lineEditFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->lineEditOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->lineEditSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->lineEditSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->lineEditSignalStrength->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+
+        ui->pushButtonPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonAutoPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonAutoRange->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonAutoScale->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+
+        ui->comboBoxOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxRefSource->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxFilterSlope->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxInputSignal->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxSensivitity->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxTimeConstant->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxAdvanceFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxRefTriggerMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxInputCurrentGain->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxInputVoltageMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxRefTriggerOutput->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxInputVoltageRange->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxSynchronousFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxInputVoltageShields->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxInputVoltageCoupling->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     }
 }

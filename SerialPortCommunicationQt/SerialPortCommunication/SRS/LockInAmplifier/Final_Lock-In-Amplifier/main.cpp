@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     MainWindow w;
-    SR844Graphics q;
-    q.show();
+    //SR844Graphics q;
+    w.show();
 
     return a.exec();
 }

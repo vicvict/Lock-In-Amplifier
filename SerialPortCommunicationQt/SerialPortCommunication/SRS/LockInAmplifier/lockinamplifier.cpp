@@ -539,13 +539,22 @@ std::string LockInAmplifier::outDataStringFromNumber(const int &outData_number) 
 std::string LockInAmplifier::getOutData(const int& outData) const {
     if (!isValidNumber(this->outData, outData))
         return invalidData;
-    return outDataStringFromNumber(std::stoi(ask(commands.OutData + query_suffix + separator + std::to_string(outData))));
+    return ask(commands.OutData + query_suffix + separator + std::to_string(outData));
 }
 
 std::string LockInAmplifier::getOutData(const std::string &outData) const{
-    return getOutData(std::stoi(outData));
+    return getOutData(outDataNumberFromString(outData));
 }
 
+/*bool LockInAmplifier::getOutDataAB(const int &A, std::string &AValue, const int &B, std::string &BValue) const {
+    if ((!isValidNumber(this->outData, A)) && (!isValidNumber(this->outData, B)))
+        return false;
+    std::string command = commands.CoupleOfData + query_suffix + separator + std::to_string(A) + comma + std::to_string(B);
+    std::string response;
+    sendQuery(command, response);
+    std::vector responselist = response.
+
+}*/
 
 
 std::vector<std::string> LockInAmplifier::getAdvanceFilterList() const {

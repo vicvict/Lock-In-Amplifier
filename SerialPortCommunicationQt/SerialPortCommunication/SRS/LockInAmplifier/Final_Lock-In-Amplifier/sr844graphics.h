@@ -33,17 +33,21 @@ private slots:
 
     void on_pushButtonAutoWideReverse_clicked();
 
-    void on_comboBoxRefTriggerInputSignalZ_activated(const QString &arg1);
-
-    void on_comboBoxInputSensitivity_activated(const QString &arg1);
-
     void on_pushButtonAutoScale_clicked();
 
     void on_pushButtonAutoReserve_clicked();
 
-    void on_comboBoxCloseTimeConstant_activated(const QString &arg1);
-
     void on_comboBoxFilterSlope_activated(const QString &arg1);
+
+    void on_pushButtonSend_clicked();
+
+    void on_comboBoxInputSignalZ_activated(const QString &arg1);
+
+    void on_comboBoxSensitivity_activated(const QString &arg1);
+
+    void on_comboBoxTimeConstant_activated(const QString &arg1);
+
+    void on_comboBoxCloseReserveMode_activated(const QString &arg1);
 
 private:
     Ui::SR844Graphics *ui;

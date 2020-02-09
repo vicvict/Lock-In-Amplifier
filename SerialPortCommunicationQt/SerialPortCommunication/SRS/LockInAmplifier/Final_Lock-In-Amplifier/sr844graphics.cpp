@@ -43,7 +43,7 @@ SR844Graphics::SR844Graphics(QWidget *parent) :
     }
 
     try {
-        obj.connect("COM7","9600","8","1", "NO", "NO");
+        obj.connect("COM7","19200","8","1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
         ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
         ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
@@ -120,10 +120,10 @@ void SR844Graphics::on_pushButtonPhase_clicked(){
 }
 
 void SR844Graphics::on_pushButtonAutoPhase_clicked(){
-    if (obj.autoPhase()) ui->lineEditPhase->setText(to_QString(obj.getPhase()));
-    else {
+    obj.autoPhase(); //ui->lineEditPhase->setText(to_QString(obj.getPhase()));
+    //else //{
         //do nothing
-    }
+    //}
 }
 
 void SR844Graphics::on_comboBoxRefTriggerOutput_activated(const QString &arg1){
@@ -138,29 +138,11 @@ void SR844Graphics::on_pushButtonAutoWideReverse_clicked(){
     obj.autoWideReverse();
 }
 
-void SR844Graphics::on_comboBoxRefTriggerInputSignalZ_activated(const QString &arg1)
-{
-    try {
-        obj.setInputSignalZ(to_StdString(arg1));
-    } catch (std::string s) {
-        ui->lineEditError->setText(to_QString(s));
-    }
-}
-
-
-void SR844Graphics::on_comboBoxInputSensitivity_activated(const QString &arg1) {
-    try {
-        obj.setSensitivity(to_StdString(arg1));
-    } catch (std::string s) {
-        ui->lineEditError->setText(to_QString(s));
-    }
-}
-
 void SR844Graphics::on_pushButtonAutoScale_clicked() {
-    if (obj.autoScale()) ui->comboBoxSensitivity -> setCurrentText(to_QString(obj.getSensitivity()));
-    else {
+    obj.autoScale(); //ui->comboBoxSensitivity -> setCurrentText(to_QString(obj.getSensitivity()));
+    //else {
         //do nothing
-    }
+    //}
 }
 
 void SR844Graphics::on_pushButtonAutoReserve_clicked() {
@@ -170,7 +152,42 @@ void SR844Graphics::on_pushButtonAutoReserve_clicked() {
     }
 }
 
-void SR844Graphics::on_comboBoxCloseTimeConstant_activated(const QString &arg1) {
+void SR844Graphics::on_comboBoxFilterSlope_activated(const QString &arg1) {
+    try {
+        obj.setFilterSlope(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void SR844Graphics::on_pushButtonSend_clicked() {
+    std::string answer;
+    try {
+        obj.sendQuery(to_StdString(ui->lineEditSend->text()), answer);
+        ui -> lineEditRecieve -> setText(to_QString(answer));
+    } catch (std::string s) {
+        ui -> lineEditError->setText(to_QString(s));
+    }
+
+}
+
+void SR844Graphics::on_comboBoxInputSignalZ_activated(const QString &arg1) {
+    try {
+        obj.setInputSignalZ(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void SR844Graphics::on_comboBoxSensitivity_activated(const QString &arg1) {
+    try {
+        obj.setSensitivity(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void SR844Graphics::on_comboBoxTimeConstant_activated(const QString &arg1){
     try {
         obj.setTimeConstant(to_StdString(arg1));
     } catch (std::string s) {
@@ -178,9 +195,9 @@ void SR844Graphics::on_comboBoxCloseTimeConstant_activated(const QString &arg1) 
     }
 }
 
-void SR844Graphics::on_comboBoxFilterSlope_activated(const QString &arg1) {
+void SR844Graphics::on_comboBoxCloseReserveMode_activated(const QString &arg1){
     try {
-        obj.setFilterSlope(to_StdString(arg1));
+        obj.setCloseReserveMode(to_StdString(arg1));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }

@@ -43,6 +43,7 @@ protected:
 
     inline static const std::string query_suffix = "?";
     inline static const std::string separator    = " ";
+    inline static const std::string comma        = ",";
 
     inline static const std::string IDN = "*IDN";
 

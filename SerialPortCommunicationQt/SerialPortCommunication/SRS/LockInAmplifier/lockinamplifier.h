@@ -66,6 +66,7 @@ protected:
         std::string CloseReserveMode;
 
         std::string OutData = "OUTP";
+        std::string CoupleOfData = "SNAP";
 
         std::string AutoPhase = "APHS";
         std::string AutoRange = "ARNG";
@@ -219,10 +220,11 @@ public:
     std::vector<std::string> getOutDataList() const;
     int outDataNumberFromString(const std::string  &outData_string) const;
     std::string outDataStringFromNumber(const int &outData_number) const;
-    bool setOutData(const int &outData) const;
-    bool setOutData(const std::string &outData) const;
     std::string getOutData(const int &outData) const;
     std::string getOutData(const std::string &outData) const;
+    bool getOutDataAB(const int &A, std::string &AValue, const int &B, std::string &BValue) const;
+    bool getOUtDataABC(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue);
+    bool getOutDataAB(const std::string A, const std::string B);
 
    /* double getMinSineOutAmplitude() const;
     double getMaxSineOutAmplitude() const;

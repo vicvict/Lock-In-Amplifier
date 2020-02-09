@@ -67,6 +67,8 @@ private slots:
 
     void on_pushButtonOutData_clicked();
 
+    void on_pushButtonConnect_clicked();
+
 private:
     Ui::MainWindow *ui;
 
