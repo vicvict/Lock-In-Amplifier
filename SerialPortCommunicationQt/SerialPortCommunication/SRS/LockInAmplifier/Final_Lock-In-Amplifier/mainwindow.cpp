@@ -369,7 +369,7 @@ void MainWindow::on_pushButtonConnect_clicked()
 {
     if(ui->pushButtonConnect->text() == "Connect"){
         try {
-            obj.connect("COM7","19200","8","1", "NO", "NO");
+            obj.connect("COM5","19200","8","1", "NO", "NO");
             ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
             ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
             ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));

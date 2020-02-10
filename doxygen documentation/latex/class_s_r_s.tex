@@ -1,0 +1,168 @@
+\hypertarget{class_s_r_s}{}\doxysection{S\+RS Class Reference}
+\label{class_s_r_s}\index{SRS@{SRS}}
+Inheritance diagram for S\+RS\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_s_r_s}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_s_r_s_a1b4db5c433b85b50f01ad125a2da0b2b}\label{class_s_r_s_a1b4db5c433b85b50f01ad125a2da0b2b}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Supported\+List} () const
+\item 
+\mbox{\Hypertarget{class_s_r_s_ad7c34c2fd664ad128bfcab691ada292f}\label{class_s_r_s_ad7c34c2fd664ad128bfcab691ada292f}} 
+int {\bfseries get\+Attempts\+To\+Connect} () const
+\item 
+\mbox{\Hypertarget{class_s_r_s_ac4950333e2ed4bb22bec76a05a921f9f}\label{class_s_r_s_ac4950333e2ed4bb22bec76a05a921f9f}} 
+void {\bfseries set\+Attempts\+To\+Connect} (const int \&new\+\_\+attempts\+\_\+to\+\_\+connect)
+\item 
+\mbox{\Hypertarget{class_s_r_s_a98a40740b8cd9cdc8ebdf819c94015d6}\label{class_s_r_s_a98a40740b8cd9cdc8ebdf819c94015d6}} 
+std\+::string {\bfseries get\+I\+DN} (bool $\ast$succeed=nullptr) const
+\item 
+\mbox{\Hypertarget{class_s_r_s_a3a9c4356c7ac41d89dd3c4dbcfd02bf1}\label{class_s_r_s_a3a9c4356c7ac41d89dd3c4dbcfd02bf1}} 
+std\+::string {\bfseries get\+Model} (bool $\ast$succeed=nullptr) const
+\item 
+\mbox{\Hypertarget{class_s_r_s_ae8691deab41108964de31b8b3f2f5e86}\label{class_s_r_s_ae8691deab41108964de31b8b3f2f5e86}} 
+bool {\bfseries is\+Active} () const
+\item 
+\mbox{\Hypertarget{class_s_r_s_abd9a1a91bd897dc8179e19799d1df140}\label{class_s_r_s_abd9a1a91bd897dc8179e19799d1df140}} 
+std\+::string {\bfseries detect} (const std\+::string \&port\+\_\+name, bool $\ast$succeed=nullptr) const
+\item 
+\mbox{\Hypertarget{class_s_r_s_a9ce126cd4ed771f339ca796458a0bc8b}\label{class_s_r_s_a9ce126cd4ed771f339ca796458a0bc8b}} 
+std\+::map$<$ std\+::string, std\+::vector$<$ std\+::string $>$ $>$ {\bfseries scan\+All\+Ports} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ {\bfseries supported\+\_\+models}
+\item 
+\mbox{\Hypertarget{class_s_r_s_afe0060ca3acab2decb878b1a9372af99}\label{class_s_r_s_afe0060ca3acab2decb878b1a9372af99}} 
+int {\bfseries attempts\+\_\+to\+\_\+connect} = 5
+\item 
+std\+::vector$<$ std\+::string $>$ {\bfseries S\+R\+S\+\_\+vector\+\_\+to\+\_\+baud\+\_\+rate}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Data\+Bits $>$ {\bfseries S\+R\+S\+\_\+string\+\_\+to\+\_\+data\+\_\+bits}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Flow\+Control $>$ {\bfseries S\+R\+S\+\_\+string\+\_\+to\+\_\+flow\+\_\+control}
+\item 
+std\+::vector$<$ std\+::string $>$ {\bfseries S\+R\+S\+\_\+vector\+\_\+to\+\_\+parity}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Stop\+Bits $>$ {\bfseries S\+R\+S\+\_\+string\+\_\+to\+\_\+stop\+\_\+bits}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_s_r_s_afe921f5511547af98ed7f72eb7d8a465}\label{class_s_r_s_afe921f5511547af98ed7f72eb7d8a465}} 
+static const std\+::string {\bfseries command\+\_\+terminator} = \char`\"{}\textbackslash{}n\char`\"{}
+\item 
+\mbox{\Hypertarget{class_s_r_s_a2e3b4c5d727a726e886da6796b74f4bc}\label{class_s_r_s_a2e3b4c5d727a726e886da6796b74f4bc}} 
+static const std\+::string {\bfseries query\+\_\+suffix} = \char`\"{}?\char`\"{}
+\item 
+\mbox{\Hypertarget{class_s_r_s_afc7ab5c29508e4ef7d820f78417bba58}\label{class_s_r_s_afc7ab5c29508e4ef7d820f78417bba58}} 
+static const std\+::string {\bfseries separator} = \char`\"{} \char`\"{}
+\item 
+\mbox{\Hypertarget{class_s_r_s_ac03148aeaa48fc410366187e2cd96717}\label{class_s_r_s_ac03148aeaa48fc410366187e2cd96717}} 
+static const std\+::string {\bfseries comma} = \char`\"{},\char`\"{}
+\item 
+\mbox{\Hypertarget{class_s_r_s_aacf1388c8ebeb15cb838b9c0a75e389e}\label{class_s_r_s_aacf1388c8ebeb15cb838b9c0a75e389e}} 
+static const std\+::string {\bfseries I\+DN} = \char`\"{}$\ast$I\+DN\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_r_s_a385c3f18da0890a1bc8ad352ff4bbfee}\label{class_s_r_s_a385c3f18da0890a1bc8ad352ff4bbfee}} 
+\index{SRS@{SRS}!SRS\_string\_to\_data\_bits@{SRS\_string\_to\_data\_bits}}
+\index{SRS\_string\_to\_data\_bits@{SRS\_string\_to\_data\_bits}!SRS@{SRS}}
+\doxysubsubsection{\texorpdfstring{SRS\_string\_to\_data\_bits}{SRS\_string\_to\_data\_bits}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string , Q\+Serial\+Port\+::\+Data\+Bits $>$ S\+R\+S\+::\+S\+R\+S\+\_\+string\+\_\+to\+\_\+data\+\_\+bits\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{                                                                                                \{\textcolor{stringliteral}{"8"}, QSerialPort::Data8\}}
+\DoxyCodeLine{                                                                                               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_r_s_a46f97acc1e5646b8e40d1adc1efd7ca8}\label{class_s_r_s_a46f97acc1e5646b8e40d1adc1efd7ca8}} 
+\index{SRS@{SRS}!SRS\_string\_to\_flow\_control@{SRS\_string\_to\_flow\_control}}
+\index{SRS\_string\_to\_flow\_control@{SRS\_string\_to\_flow\_control}!SRS@{SRS}}
+\doxysubsubsection{\texorpdfstring{SRS\_string\_to\_flow\_control}{SRS\_string\_to\_flow\_control}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string , Q\+Serial\+Port\+::\+Flow\+Control $>$ S\+R\+S\+::\+S\+R\+S\+\_\+string\+\_\+to\+\_\+flow\+\_\+control\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{                                                                                                \{  \textcolor{stringliteral}{"NO"}, QSerialPort::NoFlowControl  \},}
+\DoxyCodeLine{                                                                                                \{\textcolor{stringliteral}{"HARD"}, QSerialPort::HardwareControl\}}
+\DoxyCodeLine{                                                                                               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_r_s_a9e36321e05daf39dbe85cf2830850af4}\label{class_s_r_s_a9e36321e05daf39dbe85cf2830850af4}} 
+\index{SRS@{SRS}!SRS\_string\_to\_stop\_bits@{SRS\_string\_to\_stop\_bits}}
+\index{SRS\_string\_to\_stop\_bits@{SRS\_string\_to\_stop\_bits}!SRS@{SRS}}
+\doxysubsubsection{\texorpdfstring{SRS\_string\_to\_stop\_bits}{SRS\_string\_to\_stop\_bits}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string , Q\+Serial\+Port\+::\+Stop\+Bits $>$ S\+R\+S\+::\+S\+R\+S\+\_\+string\+\_\+to\+\_\+stop\+\_\+bits\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{                                                                                                \{  \textcolor{stringliteral}{"1"},  QSerialPort::OneStop       \},}
+\DoxyCodeLine{                                                                                                \{  \textcolor{stringliteral}{"2"},  QSerialPort::TwoStop       \}}
+\DoxyCodeLine{                                                                                               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_r_s_a02be7b277d46470b10f44a31ec7c1d8e}\label{class_s_r_s_a02be7b277d46470b10f44a31ec7c1d8e}} 
+\index{SRS@{SRS}!SRS\_vector\_to\_baud\_rate@{SRS\_vector\_to\_baud\_rate}}
+\index{SRS\_vector\_to\_baud\_rate@{SRS\_vector\_to\_baud\_rate}!SRS@{SRS}}
+\doxysubsubsection{\texorpdfstring{SRS\_vector\_to\_baud\_rate}{SRS\_vector\_to\_baud\_rate}}
+{\footnotesize\ttfamily std\+:: vector$<$ std\+::string $>$ S\+R\+S\+::\+S\+R\+S\+\_\+vector\+\_\+to\+\_\+baud\+\_\+rate\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{                                                                \textcolor{stringliteral}{"1200"}, \textcolor{stringliteral}{"2400"},}
+\DoxyCodeLine{                                                                \textcolor{stringliteral}{"4800"}, \textcolor{stringliteral}{"9600"},}
+\DoxyCodeLine{                                                                \textcolor{stringliteral}{"19200"}, \textcolor{stringliteral}{"38400"},}
+\DoxyCodeLine{                                                                \textcolor{stringliteral}{"57600"}, \textcolor{stringliteral}{"115200"}}
+\DoxyCodeLine{                                                            \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_r_s_a3afe379d13a57908a4f8ddee2435e46b}\label{class_s_r_s_a3afe379d13a57908a4f8ddee2435e46b}} 
+\index{SRS@{SRS}!SRS\_vector\_to\_parity@{SRS\_vector\_to\_parity}}
+\index{SRS\_vector\_to\_parity@{SRS\_vector\_to\_parity}!SRS@{SRS}}
+\doxysubsubsection{\texorpdfstring{SRS\_vector\_to\_parity}{SRS\_vector\_to\_parity}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ S\+R\+S\+::\+S\+R\+S\+\_\+vector\+\_\+to\+\_\+parity\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{                                                                \textcolor{stringliteral}{"NO"},}
+\DoxyCodeLine{                                                                \textcolor{stringliteral}{"EVEN"},}
+\DoxyCodeLine{                                                                \textcolor{stringliteral}{"ODD"}}
+\DoxyCodeLine{                                                             \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_r_s_ac1ce9b08407b5ad780628d637be6cb9c}\label{class_s_r_s_ac1ce9b08407b5ad780628d637be6cb9c}} 
+\index{SRS@{SRS}!supported\_models@{supported\_models}}
+\index{supported\_models@{supported\_models}!SRS@{SRS}}
+\doxysubsubsection{\texorpdfstring{supported\_models}{supported\_models}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ S\+R\+S\+::supported\+\_\+models\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{                                                    \textcolor{stringliteral}{"DS335"}, \textcolor{stringliteral}{"DS345"},}
+\DoxyCodeLine{                                                    \textcolor{stringliteral}{"SR830"}, \textcolor{stringliteral}{"SR844"}, \textcolor{stringliteral}{"SR865"}, \textcolor{stringliteral}{"SR865A"},}
+\DoxyCodeLine{                                                    \textcolor{stringliteral}{"PTC10"}}
+\DoxyCodeLine{                                                   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Serial\+Port\+Communication\+Qt/\+Serial\+Port\+Communication/\+S\+R\+S/S\+R\+S.\+h\item 
+Serial\+Port\+Communication\+Qt/\+Serial\+Port\+Communication/\+S\+R\+S/S\+R\+S.\+cpp\end{DoxyCompactItemize}

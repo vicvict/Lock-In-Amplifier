@@ -1,0 +1,577 @@
+\hypertarget{class_lock_in_amplifier}{}\doxysection{Lock\+In\+Amplifier Class Reference}
+\label{class_lock_in_amplifier}\index{LockInAmplifier@{LockInAmplifier}}
+
+
+Common class for \mbox{\hyperlink{class_s_r_s}{S\+RS}} Lock-\/in Amplifiers.  
+
+
+
+
+{\ttfamily \#include $<$lockinamplifier.\+h$>$}
+
+Inheritance diagram for Lock\+In\+Amplifier\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_lock_in_amplifier}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_lock_in_amplifier_1_1_lock_in_amplifier_commands}{Lock\+In\+Amplifier\+Commands}}
+\begin{DoxyCompactList}\small\item\em Commands that are available on at least one Lock-\/in Amplifier. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_lock_in_amplifier_1_1_lock_in_amplifier_ranges}{Lock\+In\+Amplifier\+Ranges}}
+\begin{DoxyCompactList}\small\item\em The worst values of all the models. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_lock_in_amplifier_1_1_lock_in_amplifier_state}{Lock\+In\+Amplifier\+State}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_lock_in_amplifier_a7706e4b0511e076984711148da0e844e}{number\+From\+String}} (const std\+::vector$<$ std\+::string $>$ \&vector, const std\+::string \&string) const
+\begin{DoxyCompactList}\small\item\em Returns the number of the source string value in the detector specification. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_lock_in_amplifier_a68a767fa972ddd85f6ee2f748fc7d532}{string\+From\+Number}} (const std\+::vector$<$ std\+::string $>$ \&vector, const int \&number) const
+\begin{DoxyCompactList}\small\item\em Returns the dest string from the list available by its number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ad0d3174eb1e6ac78c95261127c0d35c5}\label{class_lock_in_amplifier_ad0d3174eb1e6ac78c95261127c0d35c5}} 
+bool {\bfseries is\+Valid\+String} (const std\+::vector$<$ std\+::string $>$ \&vector, const std\+::string \&string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a754386635ecea573f39c49e5059f6189}\label{class_lock_in_amplifier_a754386635ecea573f39c49e5059f6189}} 
+bool {\bfseries is\+Valid\+Number} (const std\+::vector$<$ std\+::string $>$ \&vector, const int \&number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ab2702c8c84f42ca893f670631aaea291}\label{class_lock_in_amplifier_ab2702c8c84f42ca893f670631aaea291}} 
+bool {\bfseries is\+Valid\+Phase} (const double \&phase) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3479408b594e51026eed6c0b3f37e05b}\label{class_lock_in_amplifier_a3479408b594e51026eed6c0b3f37e05b}} 
+bool {\bfseries set\+Internal\+Phase} (const double \&phase) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_abcb62c92ae4c3880f1a29dda6149ed42}\label{class_lock_in_amplifier_abcb62c92ae4c3880f1a29dda6149ed42}} 
+std\+::string {\bfseries get\+Phase} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aa98a39c433eb3694ef787a31512104ef}\label{class_lock_in_amplifier_aa98a39c433eb3694ef787a31512104ef}} 
+double {\bfseries get\+Min\+Internal\+Frequency} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a6e8d7c54487493eded4e9c6dc653242b}\label{class_lock_in_amplifier_a6e8d7c54487493eded4e9c6dc653242b}} 
+double {\bfseries get\+Max\+Internal\+Frequency} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a7492ef98a3b13574b57dff6722b4e339}\label{class_lock_in_amplifier_a7492ef98a3b13574b57dff6722b4e339}} 
+bool {\bfseries is\+Valid\+Internal\+Frequency} (const double \&frequency) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a797ea5358c7c69ee25b99da505a3c8fa}\label{class_lock_in_amplifier_a797ea5358c7c69ee25b99da505a3c8fa}} 
+bool {\bfseries set\+Internal\+Frequency} (const double \&frequency) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a6601c355ca56376ca32ddb0fbc6ebe50}\label{class_lock_in_amplifier_a6601c355ca56376ca32ddb0fbc6ebe50}} 
+std\+::string {\bfseries get\+Internal\+Frequency} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aea5d80d3fe6f9d67042a1e07ef7934a8}\label{class_lock_in_amplifier_aea5d80d3fe6f9d67042a1e07ef7934a8}} 
+std\+::string {\bfseries get\+External\+Frequency} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_affab6b4c72eabc0273caddc9ae112d9e}\label{class_lock_in_amplifier_affab6b4c72eabc0273caddc9ae112d9e}} 
+std\+::string {\bfseries get\+Frequency\+Detect} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a237d3b3c128df0b042236e4e7811b4ed}\label{class_lock_in_amplifier_a237d3b3c128df0b042236e4e7811b4ed}} 
+std\+::string {\bfseries get\+Frequency} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a19ef03edfe36a9783cb54b56dbd7ccf8}\label{class_lock_in_amplifier_a19ef03edfe36a9783cb54b56dbd7ccf8}} 
+int {\bfseries get\+Min\+Harmonic} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a2e58410dccf136e74dc6e28071dbb2b4}\label{class_lock_in_amplifier_a2e58410dccf136e74dc6e28071dbb2b4}} 
+int {\bfseries get\+Max\+Harmonic} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a4265fb8139d6a24b7c45e6056dc7eb35}\label{class_lock_in_amplifier_a4265fb8139d6a24b7c45e6056dc7eb35}} 
+bool {\bfseries is\+Valid\+Harmonic} (const int \&i) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a11cfb7008c221c787c21d7b881e2e4fd}\label{class_lock_in_amplifier_a11cfb7008c221c787c21d7b881e2e4fd}} 
+bool {\bfseries set\+Harmonic} (const int \&i) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a8e89fb45f70760941b823274edffbcaa}\label{class_lock_in_amplifier_a8e89fb45f70760941b823274edffbcaa}} 
+std\+::string {\bfseries get\+Harmonic} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ac30d782dd81a29ebb9d4642267e58269}\label{class_lock_in_amplifier_ac30d782dd81a29ebb9d4642267e58269}} 
+double {\bfseries get\+Min\+Sine\+Amplitude} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a2b304825e32e36e10d8e820d91e4dbce}\label{class_lock_in_amplifier_a2b304825e32e36e10d8e820d91e4dbce}} 
+double {\bfseries get\+Max\+Sine\+Amplitude} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aad093ff32b8fd601ccaa687bb7b23506}\label{class_lock_in_amplifier_aad093ff32b8fd601ccaa687bb7b23506}} 
+bool {\bfseries is\+Valid\+Sine\+Amplitude} (const double \&voltage) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a77647a1f43b36eff9762dfdf2e1f9d41}\label{class_lock_in_amplifier_a77647a1f43b36eff9762dfdf2e1f9d41}} 
+bool {\bfseries set\+Sine\+Amplitude} (const double \&voltage) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3a4d37682f0006041233019b277b9635}\label{class_lock_in_amplifier_a3a4d37682f0006041233019b277b9635}} 
+std\+::string {\bfseries get\+Sine\+Amplitude} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a182f31d31cda0d1d0edf76031d506fa3}\label{class_lock_in_amplifier_a182f31d31cda0d1d0edf76031d506fa3}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Time\+Constant\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3505c2800673122279d25d21301db971}\label{class_lock_in_amplifier_a3505c2800673122279d25d21301db971}} 
+int {\bfseries time\+Constant\+Number\+From\+String} (const std\+::string \&time\+Constant\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3b30e68a836945c4ce6b8f85a6d65aa8}\label{class_lock_in_amplifier_a3b30e68a836945c4ce6b8f85a6d65aa8}} 
+std\+::string {\bfseries time\+Constant\+String\+From\+Number} (const int \&time\+Constant\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_afa3d3059bca581866d933a8614f227a2}\label{class_lock_in_amplifier_afa3d3059bca581866d933a8614f227a2}} 
+bool {\bfseries set\+Time\+Constant} (const int \&time\+Constant) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a0a5c9c2b7664ba4eaab87eff87eaa108}\label{class_lock_in_amplifier_a0a5c9c2b7664ba4eaab87eff87eaa108}} 
+bool {\bfseries set\+Time\+Constant} (const std\+::string \&time\+Constant) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a9dd2e4399d5e30ce6c7652cce0d89fa5}\label{class_lock_in_amplifier_a9dd2e4399d5e30ce6c7652cce0d89fa5}} 
+std\+::string {\bfseries get\+Time\+Constant} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_abc39d3db17fb2f79cab60a2df8f41573}\label{class_lock_in_amplifier_abc39d3db17fb2f79cab60a2df8f41573}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Ref\+Source\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ab4498a470990f2e8c4adb2c1a5cfc651}\label{class_lock_in_amplifier_ab4498a470990f2e8c4adb2c1a5cfc651}} 
+int {\bfseries ref\+Source\+Number\+From\+String} (const std\+::string \&ref\+Source\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_adfcd2a8104ef2695ee1d9be2ab939509}\label{class_lock_in_amplifier_adfcd2a8104ef2695ee1d9be2ab939509}} 
+std\+::string {\bfseries ref\+Source\+String\+From\+Number} (const int \&ref\+Source\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ae20b7b2399e2050d352cc6445db53bec}\label{class_lock_in_amplifier_ae20b7b2399e2050d352cc6445db53bec}} 
+bool {\bfseries set\+Ref\+Source} (const int \&ref\+Source) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a7e3a1e7d3b13354d95ce4afc83cbb876}\label{class_lock_in_amplifier_a7e3a1e7d3b13354d95ce4afc83cbb876}} 
+bool {\bfseries set\+Ref\+Source} (const std\+::string \&ref\+Source) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ad037fd3045a55ebd93ed35212412db8c}\label{class_lock_in_amplifier_ad037fd3045a55ebd93ed35212412db8c}} 
+std\+::string {\bfseries get\+Ref\+Source} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_adf4c9119509ccd29c5067b2094cf3640}\label{class_lock_in_amplifier_adf4c9119509ccd29c5067b2094cf3640}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Ref\+Trigger\+Mode\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3aabc1585382da79c41fe519c97d679f}\label{class_lock_in_amplifier_a3aabc1585382da79c41fe519c97d679f}} 
+int {\bfseries ref\+Trigger\+Mode\+Number\+From\+String} (const std\+::string \&ref\+Trigger\+Mode\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a11967ba582a1cab38ea3281bcb4b7733}\label{class_lock_in_amplifier_a11967ba582a1cab38ea3281bcb4b7733}} 
+std\+::string {\bfseries ref\+Trigger\+Mode\+String\+From\+Number} (const int \&ref\+Trigger\+Mode\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a4f8729e006e446b01f272f9009a3994a}\label{class_lock_in_amplifier_a4f8729e006e446b01f272f9009a3994a}} 
+bool {\bfseries set\+Ref\+Trigger\+Mode} (const int \&ref\+Trigger\+Mode) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a2842c2b0424c3b393d1c99222c49cdf6}\label{class_lock_in_amplifier_a2842c2b0424c3b393d1c99222c49cdf6}} 
+bool {\bfseries set\+Ref\+Trigger\+Mode} (const std\+::string \&ref\+Trigger\+Mode) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a79b45fea1ce8946e0d8a815f2fd42e87}\label{class_lock_in_amplifier_a79b45fea1ce8946e0d8a815f2fd42e87}} 
+std\+::string {\bfseries get\+Ref\+Trigger\+Mode} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_afee5e05e71fc04c5102dcab2db330aff}\label{class_lock_in_amplifier_afee5e05e71fc04c5102dcab2db330aff}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Ref\+Trigger\+Output\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_af0e68881ce1660b13fc16934434a1672}\label{class_lock_in_amplifier_af0e68881ce1660b13fc16934434a1672}} 
+int {\bfseries ref\+Trigger\+Output\+Number\+From\+String} (const std\+::string \&ref\+Trigger\+Output\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ad5fcc91b2f588de50ad7ca1ea8a091b3}\label{class_lock_in_amplifier_ad5fcc91b2f588de50ad7ca1ea8a091b3}} 
+std\+::string {\bfseries ref\+Trigger\+Output\+String\+From\+Number} (const int \&ref\+Trigger\+Output\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ae86e5ff7ccbcd50dc2e0b5d80f9255e8}\label{class_lock_in_amplifier_ae86e5ff7ccbcd50dc2e0b5d80f9255e8}} 
+bool {\bfseries set\+Ref\+Trigger\+Output} (const int \&ref\+Trigger\+Output) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_af321f1f38a584e059aaf6c45cf37156d}\label{class_lock_in_amplifier_af321f1f38a584e059aaf6c45cf37156d}} 
+bool {\bfseries set\+Ref\+Trigger\+Output} (const std\+::string \&ref\+Trigger\+Output) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a60eb27d440407188f348aa6add7e8c7d}\label{class_lock_in_amplifier_a60eb27d440407188f348aa6add7e8c7d}} 
+std\+::string {\bfseries get\+Ref\+Trigger\+Output} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a15eedb0595a2d85de0c1060fe49fe177}\label{class_lock_in_amplifier_a15eedb0595a2d85de0c1060fe49fe177}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Input\+Signal\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a17d0babaff21147c468fdab12966170a}\label{class_lock_in_amplifier_a17d0babaff21147c468fdab12966170a}} 
+int {\bfseries input\+Signal\+Number\+From\+String} (const std\+::string \&input\+Signal\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aa533ded1df9507f3e8821b472a568192}\label{class_lock_in_amplifier_aa533ded1df9507f3e8821b472a568192}} 
+std\+::string {\bfseries input\+Signal\+String\+From\+Number} (const int \&input\+Signal\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a215663f180a68c23261419d00fc21a7a}\label{class_lock_in_amplifier_a215663f180a68c23261419d00fc21a7a}} 
+bool {\bfseries set\+Input\+Signal} (const int \&input\+Signal) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aa808abf4b56a07131dd38c279f4e3c89}\label{class_lock_in_amplifier_aa808abf4b56a07131dd38c279f4e3c89}} 
+bool {\bfseries set\+Input\+Signal} (const std\+::string \&input\+Signal) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aea538f4ad4e57805f4ce44de6e163d00}\label{class_lock_in_amplifier_aea538f4ad4e57805f4ce44de6e163d00}} 
+std\+::string {\bfseries get\+Input\+Signal} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a524d75b0f09efa23bcdd7535b06f0532}\label{class_lock_in_amplifier_a524d75b0f09efa23bcdd7535b06f0532}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Input\+Voltage\+Mode\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_af60b595048a7e43a702588cb5ac1667e}\label{class_lock_in_amplifier_af60b595048a7e43a702588cb5ac1667e}} 
+int {\bfseries input\+Voltage\+Mode\+Number\+From\+String} (const std\+::string \&input\+Voltage\+Mode\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aac3d1c65e8e2725bdcafb0f5b99228d8}\label{class_lock_in_amplifier_aac3d1c65e8e2725bdcafb0f5b99228d8}} 
+std\+::string {\bfseries input\+Voltage\+Mode\+String\+From\+Number} (const int \&input\+Voltage\+Mode\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a6b0426fdee667b085576e72847470ffc}\label{class_lock_in_amplifier_a6b0426fdee667b085576e72847470ffc}} 
+bool {\bfseries set\+Input\+Voltage\+Mode} (const int \&input\+Voltage\+Mode) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a48671c41120169f1dd6f58b5332d695a}\label{class_lock_in_amplifier_a48671c41120169f1dd6f58b5332d695a}} 
+bool {\bfseries set\+Input\+Voltage\+Mode} (const std\+::string \&input\+Voltage\+Mode) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aa5069841a75140ac0da1f3812afb3bd8}\label{class_lock_in_amplifier_aa5069841a75140ac0da1f3812afb3bd8}} 
+std\+::string {\bfseries get\+Input\+Voltage\+Mode} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a9f7314a36154d63bd4756e1a4e814ae3}\label{class_lock_in_amplifier_a9f7314a36154d63bd4756e1a4e814ae3}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Input\+Voltage\+Coupling\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aaa1f3666f1b819f77031098ed7e07788}\label{class_lock_in_amplifier_aaa1f3666f1b819f77031098ed7e07788}} 
+int {\bfseries input\+Voltage\+Coupling\+Number\+From\+String} (const std\+::string \&input\+Voltage\+Coupling\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a18f900e609818519b027c69ecedf4556}\label{class_lock_in_amplifier_a18f900e609818519b027c69ecedf4556}} 
+std\+::string {\bfseries input\+Voltage\+Coupling\+String\+From\+Number} (const int \&input\+Voltage\+Coupling\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a2c7fc8fda6971a938206b374eb7526fc}\label{class_lock_in_amplifier_a2c7fc8fda6971a938206b374eb7526fc}} 
+bool {\bfseries set\+Input\+Voltage\+Coupling} (const int \&input\+Voltage\+Coupling) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a6924409515fdede37bd7518112334656}\label{class_lock_in_amplifier_a6924409515fdede37bd7518112334656}} 
+bool {\bfseries set\+Input\+Voltage\+Coupling} (const std\+::string \&input\+Voltage\+Coupling) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a1d6d1d7c917472fa19529c5f8fd2552b}\label{class_lock_in_amplifier_a1d6d1d7c917472fa19529c5f8fd2552b}} 
+std\+::string {\bfseries get\+Input\+Voltage\+Coupling} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a6f4e1c5b0d930c9d263e4f691379a4a8}\label{class_lock_in_amplifier_a6f4e1c5b0d930c9d263e4f691379a4a8}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Input\+Voltage\+Shields\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aa81bf66bda68e9c946b379e8d7825549}\label{class_lock_in_amplifier_aa81bf66bda68e9c946b379e8d7825549}} 
+int {\bfseries input\+Voltage\+Shields\+Number\+From\+String} (const std\+::string \&input\+Voltage\+Shields\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a1d6efec41fbd2beb9ebc23077b8f9281}\label{class_lock_in_amplifier_a1d6efec41fbd2beb9ebc23077b8f9281}} 
+std\+::string {\bfseries input\+Voltage\+Shields\+String\+From\+Number} (const int \&input\+Voltage\+Shields\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a7a4379c2253e139d94a19a276f5269e1}\label{class_lock_in_amplifier_a7a4379c2253e139d94a19a276f5269e1}} 
+bool {\bfseries set\+Input\+Voltage\+Shields} (const int \&input\+Voltage\+Shields) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a6738d47459cfe0174d9e52afb00123f2}\label{class_lock_in_amplifier_a6738d47459cfe0174d9e52afb00123f2}} 
+bool {\bfseries set\+Input\+Voltage\+Shields} (const std\+::string \&input\+Voltage\+Shields) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a23c6586da4c41eab2bfbaf277ea64856}\label{class_lock_in_amplifier_a23c6586da4c41eab2bfbaf277ea64856}} 
+std\+::string {\bfseries get\+Input\+Voltage\+Shields} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a5e8b905e1230669aa93642d79c890ac4}\label{class_lock_in_amplifier_a5e8b905e1230669aa93642d79c890ac4}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Input\+Voltage\+Range\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a63cd247c8532fba835d253a943669d4c}\label{class_lock_in_amplifier_a63cd247c8532fba835d253a943669d4c}} 
+int {\bfseries input\+Voltage\+Range\+Number\+From\+String} (const std\+::string \&input\+Voltage\+Range\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a7c6a49b5c7e62399478f13c7ac708986}\label{class_lock_in_amplifier_a7c6a49b5c7e62399478f13c7ac708986}} 
+std\+::string {\bfseries input\+Voltage\+Range\+String\+From\+Number} (const int \&input\+Voltage\+Range\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ae44e5a9672cb3153fb05bd71b3f8df0e}\label{class_lock_in_amplifier_ae44e5a9672cb3153fb05bd71b3f8df0e}} 
+bool {\bfseries set\+Input\+Voltage\+Range} (const int \&input\+Voltage\+Range) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a8f83a94e48d9902d2bdbed6bea5a8b19}\label{class_lock_in_amplifier_a8f83a94e48d9902d2bdbed6bea5a8b19}} 
+bool {\bfseries set\+Input\+Voltage\+Range} (const std\+::string \&input\+Voltage\+Range) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ac057899de3092a7b626f10f3839d0e85}\label{class_lock_in_amplifier_ac057899de3092a7b626f10f3839d0e85}} 
+std\+::string {\bfseries get\+Input\+Voltage\+Range} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a2067494b0c97275b8d20c1f65b963337}\label{class_lock_in_amplifier_a2067494b0c97275b8d20c1f65b963337}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Input\+Current\+Gain\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ad423f02fd1c631343c0f8925112824c3}\label{class_lock_in_amplifier_ad423f02fd1c631343c0f8925112824c3}} 
+int {\bfseries input\+Current\+Gain\+Number\+From\+String} (const std\+::string \&input\+Current\+Gain\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ad720873a220232f6f4947bf6130cc9b9}\label{class_lock_in_amplifier_ad720873a220232f6f4947bf6130cc9b9}} 
+std\+::string {\bfseries input\+Current\+Gain\+String\+From\+Number} (const int \&input\+Current\+Gain\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a148c521e4487b21e563723cbff3bd324}\label{class_lock_in_amplifier_a148c521e4487b21e563723cbff3bd324}} 
+bool {\bfseries set\+Input\+Current\+Gain} (const int \&input\+Current\+Gain) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3f48febd8a64a94d0528d8d2531d7868}\label{class_lock_in_amplifier_a3f48febd8a64a94d0528d8d2531d7868}} 
+bool {\bfseries set\+Input\+Current\+Gain} (const std\+::string \&input\+Current\+Gain) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ada17d2dd5bb478e551b17102b8e03a60}\label{class_lock_in_amplifier_ada17d2dd5bb478e551b17102b8e03a60}} 
+std\+::string {\bfseries get\+Input\+Current\+Gain} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a2d814cea870c0c50c6bc58ca98bd8bbd}\label{class_lock_in_amplifier_a2d814cea870c0c50c6bc58ca98bd8bbd}} 
+std\+::string {\bfseries get\+Signal\+Strength} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a9fd2fd9bd12dc70e5e871ec7788a626d}\label{class_lock_in_amplifier_a9fd2fd9bd12dc70e5e871ec7788a626d}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Sensitivity\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a51f3b631e49047aa9d82022ff52caabd}\label{class_lock_in_amplifier_a51f3b631e49047aa9d82022ff52caabd}} 
+int {\bfseries sensitivity\+Number\+From\+String} (const std\+::string \&sensitivity\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a7e311464f216c6a002f218ac52e79182}\label{class_lock_in_amplifier_a7e311464f216c6a002f218ac52e79182}} 
+std\+::string {\bfseries sensitivity\+String\+From\+Number} (const int \&sensitivity\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_afbbbc695b3e1fd11609b95cb043734d9}\label{class_lock_in_amplifier_afbbbc695b3e1fd11609b95cb043734d9}} 
+bool {\bfseries set\+Sensitivity} (const int \&sensitivity) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a200e44227e634c21663a9b0164c99e4e}\label{class_lock_in_amplifier_a200e44227e634c21663a9b0164c99e4e}} 
+bool {\bfseries set\+Sensitivity} (const std\+::string \&sensitivity) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_acaf93a553c9ea6feadc0446637fcec0f}\label{class_lock_in_amplifier_acaf93a553c9ea6feadc0446637fcec0f}} 
+std\+::string {\bfseries get\+Sensitivity} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ae9eee321440b1b054afb5d3d0fee09a1}\label{class_lock_in_amplifier_ae9eee321440b1b054afb5d3d0fee09a1}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Filter\+Slope\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aee836667829b53b5dea14f0c26d12183}\label{class_lock_in_amplifier_aee836667829b53b5dea14f0c26d12183}} 
+int {\bfseries filter\+Slope\+Number\+From\+String} (const std\+::string \&filter\+Slope\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a595f601420da519de3d5f43cd68e8e78}\label{class_lock_in_amplifier_a595f601420da519de3d5f43cd68e8e78}} 
+std\+::string {\bfseries filter\+Slope\+String\+From\+Number} (const int \&filter\+Slope\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a0a1b5136c4c0f8a1285a565d43f9a9ac}\label{class_lock_in_amplifier_a0a1b5136c4c0f8a1285a565d43f9a9ac}} 
+bool {\bfseries set\+Filter\+Slope} (const int \&filter\+Slope) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a903aec3bf5b497e4f359a7ca76cfefd3}\label{class_lock_in_amplifier_a903aec3bf5b497e4f359a7ca76cfefd3}} 
+bool {\bfseries set\+Filter\+Slope} (const std\+::string \&filter\+Slope) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_addf48d000739511eed9da22185908fee}\label{class_lock_in_amplifier_addf48d000739511eed9da22185908fee}} 
+std\+::string {\bfseries get\+Filter\+Slope} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aa635c34a8e81592970c36c6a6f7f299c}\label{class_lock_in_amplifier_aa635c34a8e81592970c36c6a6f7f299c}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Synchronous\+Filter\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ae9d392d2e38071c9d18db89bbc68e65d}\label{class_lock_in_amplifier_ae9d392d2e38071c9d18db89bbc68e65d}} 
+int {\bfseries synchronous\+Filter\+Number\+From\+String} (const std\+::string \&synchronous\+Filter\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a89c0c3c1ef1e8683195e5eb5f05bc900}\label{class_lock_in_amplifier_a89c0c3c1ef1e8683195e5eb5f05bc900}} 
+std\+::string {\bfseries synchronous\+Filter\+String\+From\+Number} (const int \&synchronous\+Filter\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a4ee7da54bca928250d2e18618486c116}\label{class_lock_in_amplifier_a4ee7da54bca928250d2e18618486c116}} 
+bool {\bfseries set\+Synchronous\+Filter} (const int \&synchronous\+Filter) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3af35f5ee9c11d9eb0a7d9a2179f1ec8}\label{class_lock_in_amplifier_a3af35f5ee9c11d9eb0a7d9a2179f1ec8}} 
+bool {\bfseries set\+Synchronous\+Filter} (const std\+::string \&synchronous\+Filter) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_adf9e68e0dcead7291e33d50e210f3a2b}\label{class_lock_in_amplifier_adf9e68e0dcead7291e33d50e210f3a2b}} 
+std\+::string {\bfseries get\+Synchronous\+Filter} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aba32e05d24fccf957413be9d2038ef32}\label{class_lock_in_amplifier_aba32e05d24fccf957413be9d2038ef32}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Advance\+Filter\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ae1b9ba8b77a7980749d055e9d2df9764}\label{class_lock_in_amplifier_ae1b9ba8b77a7980749d055e9d2df9764}} 
+int {\bfseries advance\+Filter\+Number\+From\+String} (const std\+::string \&advance\+Filter\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a9b024a9fe903a2c91c6d89fa0f78d71f}\label{class_lock_in_amplifier_a9b024a9fe903a2c91c6d89fa0f78d71f}} 
+std\+::string {\bfseries advance\+Filter\+String\+From\+Number} (const int \&advance\+Filter\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a62e0a67455bf8d0dafb217c5014ff991}\label{class_lock_in_amplifier_a62e0a67455bf8d0dafb217c5014ff991}} 
+bool {\bfseries set\+Advance\+Filter} (const int \&advance\+Filter) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a394b4a2f1f0e16c99f461a9ec42655b4}\label{class_lock_in_amplifier_a394b4a2f1f0e16c99f461a9ec42655b4}} 
+bool {\bfseries set\+Advance\+Filter} (const std\+::string \&advance\+Filter) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a76df04299c64e9a96fd0ff81f7afee7c}\label{class_lock_in_amplifier_a76df04299c64e9a96fd0ff81f7afee7c}} 
+std\+::string {\bfseries get\+Advance\+Filter} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a6f121af88d4d8ba76c83c86de2072d6d}\label{class_lock_in_amplifier_a6f121af88d4d8ba76c83c86de2072d6d}} 
+bool {\bfseries auto\+Phase} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a88bcd8e384976f95ee6aa762c6878878}\label{class_lock_in_amplifier_a88bcd8e384976f95ee6aa762c6878878}} 
+bool {\bfseries auto\+Range} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_af91abb26c9f17f60491848343de5625a}\label{class_lock_in_amplifier_af91abb26c9f17f60491848343de5625a}} 
+bool {\bfseries auto\+Scale} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ad78e753f4a4c03491d2a491551a45850}\label{class_lock_in_amplifier_ad78e753f4a4c03491d2a491551a45850}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Out\+Data\+List} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ad9da5d88ec7918f7f8971fc0af1e95d4}\label{class_lock_in_amplifier_ad9da5d88ec7918f7f8971fc0af1e95d4}} 
+int {\bfseries out\+Data\+Number\+From\+String} (const std\+::string \&out\+Data\+\_\+string) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3b5b608a76fd7ad3f46d9773f30f063a}\label{class_lock_in_amplifier_a3b5b608a76fd7ad3f46d9773f30f063a}} 
+std\+::string {\bfseries out\+Data\+String\+From\+Number} (const int \&out\+Data\+\_\+number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a7a4b47b4d7d5d44d7c4f3ee4e90ea685}\label{class_lock_in_amplifier_a7a4b47b4d7d5d44d7c4f3ee4e90ea685}} 
+std\+::string {\bfseries get\+Out\+Data} (const int \&out\+Data) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ad9c22d9088821aeba2e9a2490b6631d1}\label{class_lock_in_amplifier_ad9c22d9088821aeba2e9a2490b6631d1}} 
+std\+::string {\bfseries get\+Out\+Data} (const std\+::string \&out\+Data) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a5f7754b58f0578eeeb1628c4fb45d40d}\label{class_lock_in_amplifier_a5f7754b58f0578eeeb1628c4fb45d40d}} 
+bool {\bfseries get\+Out\+Data\+AB} (const int \&A, std\+::string \&A\+Value, const int \&B, std\+::string \&B\+Value) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aba1b508fbd74008519e2a72252166f4a}\label{class_lock_in_amplifier_aba1b508fbd74008519e2a72252166f4a}} 
+bool {\bfseries get\+O\+Ut\+Data\+A\+BC} (const int \&A, std\+::string \&A\+Value, const int \&B, std\+::string \&B\+Value, const int \&C, std\+::string \&C\+Value)
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a15ecf2d404c0ddedc76b6879f684746d}\label{class_lock_in_amplifier_a15ecf2d404c0ddedc76b6879f684746d}} 
+bool {\bfseries get\+Out\+Data\+AB} (const std\+::string A, const std\+::string B)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_af18a999f6b169d765b652b891d8f2462}\label{class_lock_in_amplifier_af18a999f6b169d765b652b891d8f2462}} 
+void {\bfseries Set\+Ranges} (const \mbox{\hyperlink{struct_lock_in_amplifier_1_1_lock_in_amplifier_ranges}{Lock\+In\+Amplifier\+Ranges}} \&new\+\_\+ranges)
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3f6645a66303f1f6022b3012d8df43ad}\label{class_lock_in_amplifier_a3f6645a66303f1f6022b3012d8df43ad}} 
+void {\bfseries Set\+Time\+Constant\+List} (const std\+::vector$<$ std\+::string $>$ \&new\+\_\+time\+\_\+constantlist)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_acc67c70f9a482de3dcb1456586ea4ec4}\label{class_lock_in_amplifier_acc67c70f9a482de3dcb1456586ea4ec4}} 
+\mbox{\hyperlink{struct_lock_in_amplifier_1_1_lock_in_amplifier_ranges}{Lock\+In\+Amplifier\+Ranges}} {\bfseries ranges}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ae2d35108e279af54c2d9e830255b2826}\label{class_lock_in_amplifier_ae2d35108e279af54c2d9e830255b2826}} 
+\mbox{\hyperlink{struct_lock_in_amplifier_1_1_lock_in_amplifier_state}{Lock\+In\+Amplifier\+State}} {\bfseries state}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a250b0ff752cb19a85d51a862a46659cc}\label{class_lock_in_amplifier_a250b0ff752cb19a85d51a862a46659cc}} 
+\mbox{\hyperlink{struct_lock_in_amplifier_1_1_lock_in_amplifier_commands}{Lock\+In\+Amplifier\+Commands}} {\bfseries commands}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a63016d480b879ae30fec9aa5d151cfa6}\label{class_lock_in_amplifier_a63016d480b879ae30fec9aa5d151cfa6}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries time\+Constant}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aa6259bbbfeec66f638f309251129ef95}\label{class_lock_in_amplifier_aa6259bbbfeec66f638f309251129ef95}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries ref\+Source}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a712f9fbf381da158d9392154b019988f}\label{class_lock_in_amplifier_a712f9fbf381da158d9392154b019988f}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries ref\+Trigger\+Mode}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a5f396ca487e3c2c85526f93df1442235}\label{class_lock_in_amplifier_a5f396ca487e3c2c85526f93df1442235}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries ref\+Trigger\+Output}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a4c124516ce2d0f97041f18b12074d035}\label{class_lock_in_amplifier_a4c124516ce2d0f97041f18b12074d035}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries input\+Signal}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a7e42441d727191bd5221fe1e9f15bb12}\label{class_lock_in_amplifier_a7e42441d727191bd5221fe1e9f15bb12}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries input\+Voltage\+Mode}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_af8ed37d265928765bf3a497652e20026}\label{class_lock_in_amplifier_af8ed37d265928765bf3a497652e20026}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries input\+Voltage\+Coupling}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a382de953a55f26ede70cb274f590fdbe}\label{class_lock_in_amplifier_a382de953a55f26ede70cb274f590fdbe}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries input\+Voltage\+Shields}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a54ff453fb168438f26eaaf03d7229591}\label{class_lock_in_amplifier_a54ff453fb168438f26eaaf03d7229591}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries input\+Voltage\+Range}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a3ebbda3bf5140307c0d9981edd2b372e}\label{class_lock_in_amplifier_a3ebbda3bf5140307c0d9981edd2b372e}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries input\+Current\+Gain}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a114b8fe8323ee670ab79167c5a0ac1cf}\label{class_lock_in_amplifier_a114b8fe8323ee670ab79167c5a0ac1cf}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries sensitivity}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a347a3bc3e8a7e7d6dfe1b93aab4a042f}\label{class_lock_in_amplifier_a347a3bc3e8a7e7d6dfe1b93aab4a042f}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries filter\+Slope}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a237e46bc10cbb6984af1345744d0ff1e}\label{class_lock_in_amplifier_a237e46bc10cbb6984af1345744d0ff1e}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries synchronous\+Filter}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aa29a8a5ef46b6211dd8ca1ea8e7ba095}\label{class_lock_in_amplifier_aa29a8a5ef46b6211dd8ca1ea8e7ba095}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries advance\+Filter}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ab2b30cfc2e420703775ac0ca96a9e44f}\label{class_lock_in_amplifier_ab2b30cfc2e420703775ac0ca96a9e44f}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries out\+Data}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Baud\+Rate $>$ {\bfseries lockin\+Amplifier\+\_\+string\+\_\+to\+\_\+baud\+\_\+rate}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Stop\+Bits $>$ {\bfseries lockin\+Amplifier\+\_\+string\+\_\+to\+\_\+stop\+\_\+bits}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Flow\+Control $>$ {\bfseries lockin\+Amplifier\+\_\+string\+\_\+to\+\_\+flow\+\_\+control}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a1a78bf8d20b796949594d2b9813cd613}\label{class_lock_in_amplifier_a1a78bf8d20b796949594d2b9813cd613}} 
+std\+::string {\bfseries invalid\+Data} = \char`\"{}-\/1\char`\"{}
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ae84c695a845a60dc5d451968825f9832}\label{class_lock_in_amplifier_ae84c695a845a60dc5d451968825f9832}} 
+const double {\bfseries sensivity\+Reserve} = 1.\+5
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_aa092c3f33f68c968637ea113af6a32a8}\label{class_lock_in_amplifier_aa092c3f33f68c968637ea113af6a32a8}} 
+const double {\bfseries input\+Range\+Reserve} = 3
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_ade3a445f0734eaa5753dbfd557159475}\label{class_lock_in_amplifier_ade3a445f0734eaa5753dbfd557159475}} 
+const double {\bfseries Err} = 1E-\/11
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Common class for \mbox{\hyperlink{class_s_r_s}{S\+RS}} Lock-\/in Amplifiers. 
+
+The class contains a description of the methods common to all Lock-\/in Amplifiers 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lock_in_amplifier_a7706e4b0511e076984711148da0e844e}\label{class_lock_in_amplifier_a7706e4b0511e076984711148da0e844e}} 
+\index{LockInAmplifier@{LockInAmplifier}!numberFromString@{numberFromString}}
+\index{numberFromString@{numberFromString}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{numberFromString()}{numberFromString()}}
+{\footnotesize\ttfamily int Lock\+In\+Amplifier\+::number\+From\+String (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{vector,  }\item[{const std\+::string \&}]{string }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of the source string value in the detector specification. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em vector} & The set of aviable values \\
+\hline
+\mbox{\texttt{ out}}  & {\em string} & Source string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of source string in the aviable strings list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_a68a767fa972ddd85f6ee2f748fc7d532}\label{class_lock_in_amplifier_a68a767fa972ddd85f6ee2f748fc7d532}} 
+\index{LockInAmplifier@{LockInAmplifier}!stringFromNumber@{stringFromNumber}}
+\index{stringFromNumber@{stringFromNumber}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{stringFromNumber()}{stringFromNumber()}}
+{\footnotesize\ttfamily std\+::string Lock\+In\+Amplifier\+::string\+From\+Number (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{vector,  }\item[{const int \&}]{number }\end{DoxyParamCaption}) const}
+
+
+
+Returns the dest string from the list available by its number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em vector} & The set of aviable values \\
+\hline
+\mbox{\texttt{ out}}  & {\em number} & Source number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dest string from the list available by its number 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_lock_in_amplifier_a78610ab344293f2be6770bf7cf01b048}\label{class_lock_in_amplifier_a78610ab344293f2be6770bf7cf01b048}} 
+\index{LockInAmplifier@{LockInAmplifier}!lockinAmplifier\_string\_to\_baud\_rate@{lockinAmplifier\_string\_to\_baud\_rate}}
+\index{lockinAmplifier\_string\_to\_baud\_rate@{lockinAmplifier\_string\_to\_baud\_rate}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{lockinAmplifier\_string\_to\_baud\_rate}{lockinAmplifier\_string\_to\_baud\_rate}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string , Q\+Serial\+Port\+::\+Baud\+Rate $>$ Lock\+In\+Amplifier\+::lockin\+Amplifier\+\_\+string\+\_\+to\+\_\+baud\+\_\+rate\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{                                                                                           }
+\DoxyCodeLine{                                                                                           }
+\DoxyCodeLine{                                                                                            }
+\DoxyCodeLine{                                                                                            \{  \textcolor{stringliteral}{"9600"}, QSerialPort::Baud9600  \},}
+\DoxyCodeLine{                                                                                            \{ \textcolor{stringliteral}{"19200"}, QSerialPort::Baud19200 \},}
+\DoxyCodeLine{                                                                                            }
+\DoxyCodeLine{                                                                                            }
+\DoxyCodeLine{                                                                                           \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_lock_in_amplifier_a961dfcfa4ab343a0a553e005dcb0ef85}\label{class_lock_in_amplifier_a961dfcfa4ab343a0a553e005dcb0ef85}} 
+\index{LockInAmplifier@{LockInAmplifier}!lockinAmplifier\_string\_to\_flow\_control@{lockinAmplifier\_string\_to\_flow\_control}}
+\index{lockinAmplifier\_string\_to\_flow\_control@{lockinAmplifier\_string\_to\_flow\_control}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{lockinAmplifier\_string\_to\_flow\_control}{lockinAmplifier\_string\_to\_flow\_control}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string , Q\+Serial\+Port\+::\+Flow\+Control $>$ Lock\+In\+Amplifier\+::lockin\+Amplifier\+\_\+string\+\_\+to\+\_\+flow\+\_\+control\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{                                                                                                \{  \textcolor{stringliteral}{"NO"}, QSerialPort::NoFlowControl  \}}
+\DoxyCodeLine{                                                                                               \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_lock_in_amplifier_a6eb96eb919de420d3e92050fc3cd0db1}\label{class_lock_in_amplifier_a6eb96eb919de420d3e92050fc3cd0db1}} 
+\index{LockInAmplifier@{LockInAmplifier}!lockinAmplifier\_string\_to\_stop\_bits@{lockinAmplifier\_string\_to\_stop\_bits}}
+\index{lockinAmplifier\_string\_to\_stop\_bits@{lockinAmplifier\_string\_to\_stop\_bits}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{lockinAmplifier\_string\_to\_stop\_bits}{lockinAmplifier\_string\_to\_stop\_bits}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string , Q\+Serial\+Port\+::\+Stop\+Bits $>$ Lock\+In\+Amplifier\+::lockin\+Amplifier\+\_\+string\+\_\+to\+\_\+stop\+\_\+bits\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{                                                                                                \{  \textcolor{stringliteral}{"1"},  QSerialPort::OneStop       \}}
+\DoxyCodeLine{                                                                                               \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Serial\+Port\+Communication\+Qt/\+Serial\+Port\+Communication/\+S\+R\+S/\+Lock\+In\+Amplifier/\mbox{\hyperlink{lockinamplifier_8h}{lockinamplifier.\+h}}\item 
+Serial\+Port\+Communication\+Qt/\+Serial\+Port\+Communication/\+S\+R\+S/\+Lock\+In\+Amplifier/lockinamplifier.\+cpp\end{DoxyCompactItemize}

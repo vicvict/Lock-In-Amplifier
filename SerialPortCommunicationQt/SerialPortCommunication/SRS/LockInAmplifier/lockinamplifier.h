@@ -1,3 +1,14 @@
+/**
+ * @file
+ * @brief
+ * @details The file contains a description of the Lock-in Amplifier class.
+*/
+
+/**
+ * @brief Common class for SRS Lock-in Amplifiers
+ * @details The class contains a description of the methods common to all Lock-in Amplifiers
+ */
+
 #ifndef LOCKINAMPLIFAER_H
 #define LOCKINAMPLIFAER_H
 
@@ -14,9 +25,9 @@
 class LockInAmplifier : public SRS
 {
 protected:
-    struct LockInAmplifierRanges // LockInAmplifierSettings
+    /// The worst values of all the models
+    struct LockInAmplifierRanges
     {
-        //The worst values of all the models
         double minInternalFrequency = 1E-3;
         double maxInternalFrequency = 102E3;
 
@@ -40,12 +51,17 @@ protected:
         double SineAmplitude;
     };
 
+    /**
+     * @brief Commands that are available on at least one Lock-in Amplifier
+     * @details The structure contains commands that are available on at least one Lock-in Amplifier.
+     * If necessary, in the successor constructors, commands are reinitialized
+     */
     struct LockInAmplifierCommands
     {
         std::string Frequence = "FREQ";
         std::string FrequencyDetect = "FRAQ";
         std::string Harmonic  = "HARM";
-        std::string HarmonicDual;
+        std::string HarmonicDual;   ///< For 865A: harmonic search in dual ref mode
         std::string Phase     = "PHAS";
         std::string SineAmplitude = "SLVL";
         std::string SineDCLevel ;
@@ -81,9 +97,25 @@ public:
     LockInAmplifier();
     ~LockInAmplifier();
 
+<<<<<<< HEAD
     double getEpsilon() const;
 
+=======
+    /**
+     * @brief Returns the number of the source string value in the detector specification
+     * @param[out] vector The set of aviable values
+     * @param[out] string Source string
+     * @return The number of source string in the aviable strings list
+     */
+>>>>>>> doxygening started
     int numberFromString(const std::vector< std::string> &vector, const std::string &string) const;
+
+    /**
+     * @brief Returns the dest string from the list available by its number
+     * @param[out] vector The set of aviable values
+     * @param[out] number Source number
+     * @return The dest string from the list available by its number
+     */
     std::string stringFromNumber(const std::vector< std::string> &vector, const int &number) const;
     bool isValidString(const std::vector< std::string> &vector, const std::string &string) const;
     bool isValidNumber(const std::vector< std::string> &vector, const int &number) const;
@@ -254,7 +286,7 @@ protected:
     std::vector <std::string> synchronousFilter;
     std::vector <std::string> advanceFilter;
 
-    //output data such as X, Y, R, Theta
+    ///output data such as X, Y, R, Theta
     std::vector <std::string> outData;
 
     void SetRanges(const LockInAmplifierRanges &new_ranges);
