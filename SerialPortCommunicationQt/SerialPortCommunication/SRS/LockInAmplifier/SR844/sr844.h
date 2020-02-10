@@ -30,6 +30,8 @@ public:
         commands.AutoScale = "AGAN";
         commands.CloseReserveMode = "CRSV";
         commands.AutoReserve = "ACRS";
+        commands.OutData = "DDEF";
+        commands.AutoZero = "AOFF";
 
 
         timeConstant = {
@@ -73,19 +75,22 @@ public:
 
 
 
-        outData =   {
-                        "X",                    "Y",
+        outDataChannel1 =   {
+                        "X",                    "R [V]",
 
-                        "R [V]",                "R [dBm]",      "Theta",
+                        "R [dBm]",              "X noise",
 
-                        "AUX IN1",              "AUX IN2",
+                        "AUX IN1"
 
-                        "OUT1",                 "OUT2",
+                        };
 
-                        "Reference Frequency",
+        outDataChannel2  = {
+                                     "Y",
 
-                        "CH1 display",          "CH2 display"
-                    };
+                                    "Theta",                 "Y noise [V]",
+
+                                    "Y noise [dBm]",         "AUX IN2"
+        };
 
         refSource = {
                         "Ext", "Int"
@@ -117,6 +122,23 @@ public:
     bool setCloseReserveMode(const int &closeReserveMode) const;
     bool setCloseReserveMode(const std::string &icloseReserveMode) const;
     std::string getCloseReserveMode() const;
+
+    std::vector<std::string> getOutDataChannel1List() const;
+    int outDataChannel1NumberFromString(const std::string  &outDataChannel1_string) const;
+    std::string outDataChannel1StringFromNumber(const int &outDataChannel1_number) const;
+    std::string getOutDataChannel1(const int &outDataChannel1) const;
+    std::string getOutDataChannel1(const std::string &outDataChannel1) const;
+
+    std::vector<std::string> getOutDataChannel2List() const;
+    int outDataChannel2NumberFromString(const std::string  &outDataChannel2_string) const;
+    std::string outDataChannel2StringFromNumber(const int &outDataChannel2_number) const;
+    std::string getOutDataChannel2(const int &outDataChannel2) const;
+    std::string getOutDataChannel2(const std::string &outDataChannel2) const;
+
+    bool outDataAutoZeroChannel1(const int &outDataChannel1) const;
+    bool outDataAutoZeroChannel1(const std::string &outDataChannel1) const;
+    bool outDataAutoZeroChannel2(const int &outDataChannel2) const;
+    bool outDataAutoZeroChannel2(const std::string &outDataChannel2) const;
 };
 
 

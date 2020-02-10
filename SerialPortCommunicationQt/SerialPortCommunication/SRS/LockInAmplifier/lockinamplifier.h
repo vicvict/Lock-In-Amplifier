@@ -91,6 +91,7 @@ protected:
         std::string AutoScale = "ASCL";
         std::string AutoWideReverse;
         std::string AutoReserve;
+        std::string AutoZero;
     };
 
 public:
@@ -286,6 +287,8 @@ protected:
 
     ///output data such as X, Y, R, Theta
     std::vector <std::string> outData;
+    std::vector <std::string> outDataChannel1;
+    std::vector <std::string> outDataChannel2;
 
     void SetRanges(const LockInAmplifierRanges &new_ranges);
 
