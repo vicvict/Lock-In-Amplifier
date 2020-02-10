@@ -97,17 +97,15 @@ public:
     LockInAmplifier();
     ~LockInAmplifier();
 
-<<<<<<< HEAD
     double getEpsilon() const;
 
-=======
     /**
      * @brief Returns the number of the source string value in the detector specification
      * @param[out] vector The set of aviable values
      * @param[out] string Source string
      * @return The number of source string in the aviable strings list
      */
->>>>>>> doxygening started
+
     int numberFromString(const std::vector< std::string> &vector, const std::string &string) const;
 
     /**

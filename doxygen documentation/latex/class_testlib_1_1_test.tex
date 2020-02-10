@@ -1,0 +1,85 @@
+\hypertarget{class_testlib_1_1_test}{}\doxysection{Testlib\+::Test Class Reference}
+\label{class_testlib_1_1_test}\index{Testlib::Test@{Testlib::Test}}
+
+
+Class for unit testing.  
+
+
+
+
+{\ttfamily \#include $<$testlib.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Test\+Function $>$ }\\void \mbox{\hyperlink{class_testlib_1_1_test_ae7d5e73e40d7ef16b1597852f9720499}{run\+Test}} (Test\+Function func, const std\+::string \&test\+\_\+name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Function for test running. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_testlib_1_1_test_a1cb64db7aa7594bbc0fbaea76d498d27}{fail\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get fail count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_testlib_1_1_test_a1fd24e8b6be239a11abaf65590ea5e1f}{reset\+Fail\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Fail count reset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_testlib_1_1_test_a562ff33da4cec7c2b1975e049f444d10}{$\sim$\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_testlib_1_1_test_ac65decf6a3ebf1eeacbbed8ab822adfb}\label{class_testlib_1_1_test_ac65decf6a3ebf1eeacbbed8ab822adfb}} 
+int \mbox{\hyperlink{class_testlib_1_1_test_ac65decf6a3ebf1eeacbbed8ab822adfb}{fail\+\_\+count}} = 0
+\begin{DoxyCompactList}\small\item\em Amount of failed tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for unit testing. 
+
+Class for unit testing 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_testlib_1_1_test_a562ff33da4cec7c2b1975e049f444d10}\label{class_testlib_1_1_test_a562ff33da4cec7c2b1975e049f444d10}} 
+\index{Testlib::Test@{Testlib::Test}!````~Test@{$\sim$Test}}
+\index{````~Test@{$\sim$Test}!Testlib::Test@{Testlib::Test}}
+\doxysubsubsection{\texorpdfstring{$\sim$Test()}{~Test()}}
+{\footnotesize\ttfamily Testlib\+::\+Test\+::$\sim$\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+Destructor prints amount of failed tests and throws exception is the settings oblige P\+VS V509 -\/ throw inside destructor is illegal
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_testlib_1_1_test_a1cb64db7aa7594bbc0fbaea76d498d27}\label{class_testlib_1_1_test_a1cb64db7aa7594bbc0fbaea76d498d27}} 
+\index{Testlib::Test@{Testlib::Test}!failCount@{failCount}}
+\index{failCount@{failCount}!Testlib::Test@{Testlib::Test}}
+\doxysubsubsection{\texorpdfstring{failCount()}{failCount()}}
+{\footnotesize\ttfamily int Testlib\+::\+Test\+::fail\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get fail count. 
+
+Get fail count \mbox{\Hypertarget{class_testlib_1_1_test_a1fd24e8b6be239a11abaf65590ea5e1f}\label{class_testlib_1_1_test_a1fd24e8b6be239a11abaf65590ea5e1f}} 
+\index{Testlib::Test@{Testlib::Test}!resetFailCount@{resetFailCount}}
+\index{resetFailCount@{resetFailCount}!Testlib::Test@{Testlib::Test}}
+\doxysubsubsection{\texorpdfstring{resetFailCount()}{resetFailCount()}}
+{\footnotesize\ttfamily void Testlib\+::\+Test\+::reset\+Fail\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fail count reset. 
+
+Fail count reset \mbox{\Hypertarget{class_testlib_1_1_test_ae7d5e73e40d7ef16b1597852f9720499}\label{class_testlib_1_1_test_ae7d5e73e40d7ef16b1597852f9720499}} 
+\index{Testlib::Test@{Testlib::Test}!runTest@{runTest}}
+\index{runTest@{runTest}!Testlib::Test@{Testlib::Test}}
+\doxysubsubsection{\texorpdfstring{runTest()}{runTest()}}
+{\footnotesize\ttfamily template$<$class Test\+Function $>$ \\
+void Testlib\+::\+Test\+::run\+Test (\begin{DoxyParamCaption}\item[{Test\+Function}]{func,  }\item[{const std\+::string \&}]{test\+\_\+name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function for test running. 
+
+Function for test running 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Serial\+Port\+Communication\+Qt/\+Serial\+Port\+Communication/\+S\+R\+S/\+Lock\+In\+Amplifier/\+Final\+\_\+\+Lock-\/\+In-\/\+Amplifier/testlib.\+h\end{DoxyCompactItemize}

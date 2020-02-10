@@ -1,0 +1,67 @@
+\hypertarget{namespace_testlib}{}\doxysection{Testlib Namespace Reference}
+\label{namespace_testlib}\index{Testlib@{Testlib}}
+
+
+Namespace with functions ans classes for unit testing.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_testlib_1_1_test}{Test}}
+\begin{DoxyCompactList}\small\item\em Class for unit testing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T , class V $>$ }\\bool \mbox{\hyperlink{namespace_testlib_aa9192f01ad3eb044518b9b3f0068ae80}{Assert\+Equal}} (const T \&rhs, const V \&lhs, const std\+::string \&info=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Assert function for equality check. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespace_testlib_aee2fd51df49150daeb930a5fe89a6dbd}{Assert}} (const bool \&value, const std\+::string \&info=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Assert function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_testlib_a8c063ac6ab23e68a26d7560a75db41c0}\label{namespace_testlib_a8c063ac6ab23e68a26d7560a75db41c0}} 
+bool \mbox{\hyperlink{namespace_testlib_a8c063ac6ab23e68a26d7560a75db41c0}{\+\_\+\+\_\+assert\+\_\+print\+\_\+to\+\_\+stderr}} = true
+\begin{DoxyCompactList}\small\item\em Turn on to enable std\+::cerr output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_testlib_a5d14d84bc015c372be8086fb8307488b}\label{namespace_testlib_a5d14d84bc015c372be8086fb8307488b}} 
+bool \mbox{\hyperlink{namespace_testlib_a5d14d84bc015c372be8086fb8307488b}{\+\_\+\+\_\+assert\+\_\+print\+\_\+if\+\_\+ok}} = false
+\begin{DoxyCompactList}\small\item\em Print if test is passed, not only fails. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_testlib_a3d43b591ee9477562a062631dcf3fa95}\label{namespace_testlib_a3d43b591ee9477562a062631dcf3fa95}} 
+bool \mbox{\hyperlink{namespace_testlib_a3d43b591ee9477562a062631dcf3fa95}{\+\_\+\+\_\+assert\+\_\+throw\+\_\+exception}} = true
+\begin{DoxyCompactList}\small\item\em Throw exception if test is failed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_testlib_a4a3dbff850c04a08ccab89cb1d84e289}\label{namespace_testlib_a4a3dbff850c04a08ccab89cb1d84e289}} 
+bool \mbox{\hyperlink{namespace_testlib_a4a3dbff850c04a08ccab89cb1d84e289}{\+\_\+\+\_\+test\+\_\+print\+\_\+to\+\_\+stderr}} = true
+\begin{DoxyCompactList}\small\item\em Print to std\+::cerr during testing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_testlib_a34d4f0dd6012391f0f99c81e917f64fa}\label{namespace_testlib_a34d4f0dd6012391f0f99c81e917f64fa}} 
+bool \mbox{\hyperlink{namespace_testlib_a34d4f0dd6012391f0f99c81e917f64fa}{\+\_\+\+\_\+test\+\_\+throw\+\_\+exception}} = false
+\begin{DoxyCompactList}\small\item\em Throw exception during testing if test is failed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace with functions ans classes for unit testing. 
+
+Namespace with functions ans classes for unit testing 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_testlib_aee2fd51df49150daeb930a5fe89a6dbd}\label{namespace_testlib_aee2fd51df49150daeb930a5fe89a6dbd}} 
+\index{Testlib@{Testlib}!Assert@{Assert}}
+\index{Assert@{Assert}!Testlib@{Testlib}}
+\doxysubsubsection{\texorpdfstring{Assert()}{Assert()}}
+{\footnotesize\ttfamily bool Testlib\+::\+Assert (\begin{DoxyParamCaption}\item[{const bool \&}]{value,  }\item[{const std\+::string \&}]{info = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assert function. 
+
+Assert function \mbox{\Hypertarget{namespace_testlib_aa9192f01ad3eb044518b9b3f0068ae80}\label{namespace_testlib_aa9192f01ad3eb044518b9b3f0068ae80}} 
+\index{Testlib@{Testlib}!AssertEqual@{AssertEqual}}
+\index{AssertEqual@{AssertEqual}!Testlib@{Testlib}}
+\doxysubsubsection{\texorpdfstring{AssertEqual()}{AssertEqual()}}
+{\footnotesize\ttfamily template$<$class T , class V $>$ \\
+bool Testlib\+::\+Assert\+Equal (\begin{DoxyParamCaption}\item[{const T \&}]{rhs,  }\item[{const V \&}]{lhs,  }\item[{const std\+::string \&}]{info = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Assert function for equality check. 
+
+Assert function for equality check 

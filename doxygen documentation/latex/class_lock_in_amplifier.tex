@@ -27,6 +27,9 @@ struct \mbox{\hyperlink{struct_lock_in_amplifier_1_1_lock_in_amplifier_state}{Lo
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a066a667e511224ecfc0e0baf453dba40}\label{class_lock_in_amplifier_a066a667e511224ecfc0e0baf453dba40}} 
+double {\bfseries get\+Epsilon} () const
+\item 
 int \mbox{\hyperlink{class_lock_in_amplifier_a7706e4b0511e076984711148da0e844e}{number\+From\+String}} (const std\+::vector$<$ std\+::string $>$ \&vector, const std\+::string \&string) const
 \begin{DoxyCompactList}\small\item\em Returns the number of the source string value in the detector specification. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_lock_in_amplifier_a68a767fa972ddd85f6ee2f748fc7d532}{string\+From\+Number}} (const std\+::vector$<$ std\+::string $>$ \&vector, const int \&number) const
@@ -36,6 +39,12 @@ bool {\bfseries is\+Valid\+String} (const std\+::vector$<$ std\+::string $>$ \&v
 \item 
 \mbox{\Hypertarget{class_lock_in_amplifier_a754386635ecea573f39c49e5059f6189}\label{class_lock_in_amplifier_a754386635ecea573f39c49e5059f6189}} 
 bool {\bfseries is\+Valid\+Number} (const std\+::vector$<$ std\+::string $>$ \&vector, const int \&number) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a224538b4ddd7afc21c1ef8b7d88da81a}\label{class_lock_in_amplifier_a224538b4ddd7afc21c1ef8b7d88da81a}} 
+double {\bfseries get\+Min\+Phase} () const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a2f0fa8bad5dcab60eae26ef88ff44f82}\label{class_lock_in_amplifier_a2f0fa8bad5dcab60eae26ef88ff44f82}} 
+double {\bfseries get\+Max\+Phase} () const
 \item 
 \mbox{\Hypertarget{class_lock_in_amplifier_ab2702c8c84f42ca893f670631aaea291}\label{class_lock_in_amplifier_ab2702c8c84f42ca893f670631aaea291}} 
 bool {\bfseries is\+Valid\+Phase} (const double \&phase) const
@@ -374,19 +383,22 @@ int {\bfseries out\+Data\+Number\+From\+String} (const std\+::string \&out\+Data
 std\+::string {\bfseries out\+Data\+String\+From\+Number} (const int \&out\+Data\+\_\+number) const
 \item 
 \mbox{\Hypertarget{class_lock_in_amplifier_a7a4b47b4d7d5d44d7c4f3ee4e90ea685}\label{class_lock_in_amplifier_a7a4b47b4d7d5d44d7c4f3ee4e90ea685}} 
-std\+::string {\bfseries get\+Out\+Data} (const int \&out\+Data) const
+std\+::string {\bfseries get\+Out\+Data} (const int \&\mbox{\hyperlink{class_lock_in_amplifier_ab2b30cfc2e420703775ac0ca96a9e44f}{out\+Data}}) const
 \item 
 \mbox{\Hypertarget{class_lock_in_amplifier_ad9c22d9088821aeba2e9a2490b6631d1}\label{class_lock_in_amplifier_ad9c22d9088821aeba2e9a2490b6631d1}} 
-std\+::string {\bfseries get\+Out\+Data} (const std\+::string \&out\+Data) const
+std\+::string {\bfseries get\+Out\+Data} (const std\+::string \&\mbox{\hyperlink{class_lock_in_amplifier_ab2b30cfc2e420703775ac0ca96a9e44f}{out\+Data}}) const
 \item 
 \mbox{\Hypertarget{class_lock_in_amplifier_a5f7754b58f0578eeeb1628c4fb45d40d}\label{class_lock_in_amplifier_a5f7754b58f0578eeeb1628c4fb45d40d}} 
 bool {\bfseries get\+Out\+Data\+AB} (const int \&A, std\+::string \&A\+Value, const int \&B, std\+::string \&B\+Value) const
 \item 
-\mbox{\Hypertarget{class_lock_in_amplifier_aba1b508fbd74008519e2a72252166f4a}\label{class_lock_in_amplifier_aba1b508fbd74008519e2a72252166f4a}} 
-bool {\bfseries get\+O\+Ut\+Data\+A\+BC} (const int \&A, std\+::string \&A\+Value, const int \&B, std\+::string \&B\+Value, const int \&C, std\+::string \&C\+Value)
+\mbox{\Hypertarget{class_lock_in_amplifier_aaa561b5ba07f8488ca3da279599036c1}\label{class_lock_in_amplifier_aaa561b5ba07f8488ca3da279599036c1}} 
+bool {\bfseries get\+Out\+Data\+A\+BC} (const int \&A, std\+::string \&A\+Value, const int \&B, std\+::string \&B\+Value, const int \&C, std\+::string \&C\+Value) const
 \item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a15ecf2d404c0ddedc76b6879f684746d}\label{class_lock_in_amplifier_a15ecf2d404c0ddedc76b6879f684746d}} 
-bool {\bfseries get\+Out\+Data\+AB} (const std\+::string A, const std\+::string B)
+\mbox{\Hypertarget{class_lock_in_amplifier_af91a4fd7e996e573eef1bbab8109ee6c}\label{class_lock_in_amplifier_af91a4fd7e996e573eef1bbab8109ee6c}} 
+bool {\bfseries get\+Out\+Data\+AB} (const std\+::string \&A, std\+::string \&A\+Value, const std\+::string \&B, std\+::string \&B\+Value) const
+\item 
+\mbox{\Hypertarget{class_lock_in_amplifier_a133abfb44c62a1265b6f0dfcc59de0a9}\label{class_lock_in_amplifier_a133abfb44c62a1265b6f0dfcc59de0a9}} 
+bool {\bfseries get\+Out\+Data\+A\+BC} (const std\+::string \&A, std\+::string \&A\+Value, const std\+::string \&B, std\+::string \&B\+Value, const std\+::string \&C, std\+::string \&C\+Value) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -452,8 +464,8 @@ std\+::vector$<$ std\+::string $>$ {\bfseries synchronous\+Filter}
 std\+::vector$<$ std\+::string $>$ {\bfseries advance\+Filter}
 \item 
 \mbox{\Hypertarget{class_lock_in_amplifier_ab2b30cfc2e420703775ac0ca96a9e44f}\label{class_lock_in_amplifier_ab2b30cfc2e420703775ac0ca96a9e44f}} 
-std\+::vector$<$ std\+::string $>$ {\bfseries out\+Data}
-\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_lock_in_amplifier_ab2b30cfc2e420703775ac0ca96a9e44f}{out\+Data}}
+\begin{DoxyCompactList}\small\item\em output data such as X, Y, R, Theta \end{DoxyCompactList}\item 
 std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Baud\+Rate $>$ {\bfseries lockin\+Amplifier\+\_\+string\+\_\+to\+\_\+baud\+\_\+rate}
 \item 
 std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Stop\+Bits $>$ {\bfseries lockin\+Amplifier\+\_\+string\+\_\+to\+\_\+stop\+\_\+bits}
@@ -463,14 +475,8 @@ std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Flow\+Control $
 \mbox{\Hypertarget{class_lock_in_amplifier_a1a78bf8d20b796949594d2b9813cd613}\label{class_lock_in_amplifier_a1a78bf8d20b796949594d2b9813cd613}} 
 std\+::string {\bfseries invalid\+Data} = \char`\"{}-\/1\char`\"{}
 \item 
-\mbox{\Hypertarget{class_lock_in_amplifier_ae84c695a845a60dc5d451968825f9832}\label{class_lock_in_amplifier_ae84c695a845a60dc5d451968825f9832}} 
-const double {\bfseries sensivity\+Reserve} = 1.\+5
-\item 
-\mbox{\Hypertarget{class_lock_in_amplifier_aa092c3f33f68c968637ea113af6a32a8}\label{class_lock_in_amplifier_aa092c3f33f68c968637ea113af6a32a8}} 
-const double {\bfseries input\+Range\+Reserve} = 3
-\item 
-\mbox{\Hypertarget{class_lock_in_amplifier_ade3a445f0734eaa5753dbfd557159475}\label{class_lock_in_amplifier_ade3a445f0734eaa5753dbfd557159475}} 
-const double {\bfseries Err} = 1E-\/11
+\mbox{\Hypertarget{class_lock_in_amplifier_a9238ce07d9616395b2324ac06fb02dd9}\label{class_lock_in_amplifier_a9238ce07d9616395b2324ac06fb02dd9}} 
+double {\bfseries epsilont} = 0.\+01
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 

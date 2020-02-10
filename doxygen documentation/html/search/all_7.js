@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ui_5fmainwindow_20',['Ui_MainWindow',['../class_ui___main_window.html',1,'']]],
-  ['ui_5fsr844graphics_21',['Ui_SR844Graphics',['../class_ui___s_r844_graphics.html',1,'']]]
+  ['outdata_18',['outData',['../class_lock_in_amplifier.html#ab2b30cfc2e420703775ac0ca96a9e44f',1,'LockInAmplifier']]]
 ];

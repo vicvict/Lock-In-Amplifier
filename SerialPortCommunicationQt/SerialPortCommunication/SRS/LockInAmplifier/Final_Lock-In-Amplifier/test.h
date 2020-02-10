@@ -24,7 +24,7 @@ void TestAll();
 
 void Test1() {
     SR865 obj;
-    obj.connect("COM7","19200","8","1", "NO", "NO");
+    obj.connect("COM5","19200","8","1", "NO", "NO");
     for (auto timeConstant: obj.getTimeConstantList()){
         obj.setTimeConstant(timeConstant);
         ASSERT_MSG(obj.getTimeConstant() == timeConstant, "correct timeConstant" + timeConstant);
@@ -34,7 +34,7 @@ void Test1() {
 
 void Test2() {
     SR865 obj;
-    obj.connect("COM7","19200","8","1", "NO", "NO");
+    obj.connect("COM5","19200","8","1", "NO", "NO");
     for (auto sensitivity: obj.getSensitivityList()){
         obj.setSensitivity(sensitivity);
         ASSERT_MSG(obj.getSensitivity() == sensitivity, "correct sensetivity" + sensitivity);
@@ -44,7 +44,7 @@ void Test2() {
 
 void Test3() {
     SR865 obj;
-    obj.connect("COM7","19200","8","1", "NO", "NO");
+    obj.connect("COM5","19200","8","1", "NO", "NO");
     for (auto refSourse : obj.getRefSourceList()){
         obj.setRefSource(refSourse);
         ASSERT_MSG(obj.getRefSource() == refSourse, "correct refSourse" + refSourse);
@@ -54,7 +54,7 @@ void Test3() {
 
 void Test4() {
     SR865 obj;
-    obj.connect("COM7","19200","8","1", "NO", "NO");
+    obj.connect("COM5","19200","8","1", "NO", "NO");
     for (auto refTriggerMode : obj.getRefTriggerModeList()){
         obj.setRefTriggerMode(refTriggerMode);
         ASSERT_MSG(obj.getRefTriggerMode() == refTriggerMode, "correct refSourse" + refTriggerMode);
@@ -64,7 +64,7 @@ void Test4() {
 
 void Test5() {
     SR865 obj;
-    obj.connect("COM7","19200","8","1", "NO", "NO");
+    obj.connect("COM5","19200","8","1", "NO", "NO");
     double currentPhase = obj.getMinPhase()+1;
     double step = 1;
     while(currentPhase < obj.getMaxPhase()){

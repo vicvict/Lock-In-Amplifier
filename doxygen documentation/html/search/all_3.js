@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numberfromstring_8',['numberFromString',['../class_lock_in_amplifier.html#a7706e4b0511e076984711148da0e844e',1,'LockInAmplifier']]]
+  ['harmonicdual_9',['HarmonicDual',['../struct_lock_in_amplifier_1_1_lock_in_amplifier_commands.html#a87abfbbf514ce74d0dad059cc80f125b',1,'LockInAmplifier::LockInAmplifierCommands']]]
 ];

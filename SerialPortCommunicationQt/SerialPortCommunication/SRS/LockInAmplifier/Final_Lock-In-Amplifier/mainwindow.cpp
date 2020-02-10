@@ -480,7 +480,7 @@ void MainWindow::on_Test_clicked()
     try {
         obj.disconnect();
         TestAll();
-        obj.connect("COM7","19200","8","1", "NO", "NO");
+        obj.connect("COM5","19200","8","1", "NO", "NO");
         obj.setTimeConstant(to_StdString(ui->comboBoxTimeConstant->currentText()));
         obj.setSensitivity(to_StdString(ui->comboBoxSensivitity->currentText()));
         obj.setRefSource(to_StdString(ui->comboBoxRefSource->currentText()));
