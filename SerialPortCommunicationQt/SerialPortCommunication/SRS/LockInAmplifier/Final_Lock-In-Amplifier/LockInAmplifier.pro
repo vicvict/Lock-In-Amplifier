@@ -52,7 +52,9 @@ HEADERS += \
         mainwindow.h \
         ../SR830/sr830.h \
         ../SR865/sr865.h \
-        sr844graphics.h
+        sr844graphics.h \
+        test.h \
+        testlib.h
 
 FORMS += \
         mainwindow.ui \

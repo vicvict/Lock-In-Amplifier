@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "../lockinamplifier.h"
+#include "test.h"
 //Проблема: при попытке detect'a не receiv'ит сингналы, пока не поменяешь read_wait_timeout
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -471,4 +472,21 @@ void MainWindow::on_pushButtonConnect_clicked()
         ui->comboBoxInputVoltageShields->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxInputVoltageCoupling->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     }
+}
+// вначале обязательно конектиться. Потом только можно делать тест
+// Тест это костыль погоняющий костыль(потому что я ленивая жопа)
+void MainWindow::on_Test_clicked()
+{
+    try {
+        obj.disconnect();
+        TestAll();
+        obj.connect("COM7","19200","8","1", "NO", "NO");
+        obj.setTimeConstant(to_StdString(ui->comboBoxTimeConstant->currentText()));
+        obj.setSensitivity(to_StdString(ui->comboBoxSensivitity->currentText()));
+        obj.setRefSource(to_StdString(ui->comboBoxRefSource->currentText()));
+        obj.setRefTriggerMode(to_StdString(ui->comboBoxRefTriggerMode->currentText()));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+
 }

@@ -69,6 +69,8 @@ private slots:
 
     void on_pushButtonConnect_clicked();
 
+    void on_Test_clicked();
+
 private:
     Ui::MainWindow *ui;
 
