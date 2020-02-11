@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['qt_5fmeta_5fstringdata_5fmainwindow_5ft_19',['qt_meta_stringdata_MainWindow_t',['../structqt__meta__stringdata___main_window__t.html',1,'']]],
-  ['qt_5fmeta_5fstringdata_5fsr844graphics_5ft_20',['qt_meta_stringdata_SR844Graphics_t',['../structqt__meta__stringdata___s_r844_graphics__t.html',1,'']]]
+  ['outdata_27',['outData',['../class_lock_in_amplifier.html#ab2b30cfc2e420703775ac0ca96a9e44f',1,'LockInAmplifier']]]
 ];

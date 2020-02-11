@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['outdata_18',['outData',['../class_lock_in_amplifier.html#ab2b30cfc2e420703775ac0ca96a9e44f',1,'LockInAmplifier']]]
+  ['numberfromstring_26',['numberFromString',['../class_lock_in_amplifier.html#a7706e4b0511e076984711148da0e844e',1,'LockInAmplifier']]]
 ];

@@ -375,7 +375,7 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
             ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
             ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
-            ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
+            /*ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
             ui->comboBoxTimeConstant -> setCurrentText(to_QString(obj.getTimeConstant()));
             ui->comboBoxRefSource -> setCurrentText(to_QString(obj.getRefSource()));
             ui->comboBoxRefTriggerMode -> setCurrentText(to_QString(obj.getRefTriggerMode()));
@@ -390,7 +390,7 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
             ui->comboBoxFilterSlope -> setCurrentText(to_QString(obj.getFilterSlope()));
             ui->comboBoxSynchronousFilter -> setCurrentText(to_QString(obj.getSynchronousFilter()));
-            ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));
+            ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));*/
 
             ui->pushButtonConnect->setText("Disconnect");
 
@@ -430,7 +430,7 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->comboBoxInputVoltageCoupling->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
         } catch (std:: string s) {
-            ui->lineEditResponse->setText(to_QString(s));
+            ui->lineEditError->setText(to_QString(s));
         }
     }
     else {

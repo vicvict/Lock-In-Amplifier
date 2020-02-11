@@ -13,7 +13,7 @@ LockInAmplifier::~LockInAmplifier() {
 }
 
 double LockInAmplifier::getEpsilon() const{
-    return this->epsilont;
+    return this->epsilon;
 }
 
 int LockInAmplifier::numberFromString(const std::vector < std::string > &vector, const std::string &string) const {
