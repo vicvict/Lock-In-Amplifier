@@ -35,6 +35,7 @@ SOURCES += \
         ../../../../SerialPortCommunicationQt.cpp \
         ../SR844/sr844.cpp \
         ../lockinamplifier.cpp \
+        finallockinamplifier.cpp \
         main.cpp \
         mainwindow.cpp \
         ../SR830/sr830.cpp \
@@ -49,6 +50,7 @@ HEADERS += \
         ../../../../Timer.h \
         ../SR844/sr844.h \
         ../lockinamplifier.h \
+        finallockinamplifier.h \
         mainwindow.h \
         ../SR830/sr830.h \
         ../SR865/sr865.h \

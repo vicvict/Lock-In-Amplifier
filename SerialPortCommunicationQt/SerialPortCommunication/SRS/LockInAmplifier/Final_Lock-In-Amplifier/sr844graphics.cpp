@@ -42,6 +42,20 @@ SR844Graphics::SR844Graphics(QWidget *parent) :
         ui->comboBoxFilterSlope->addItem(to_QString(filterSlope));
     }
 
+    //добавление данных
+    for (auto data : obj.getOutDataChannel1List()) {
+        ui->comboBoxOutDataChannel1->addItem(to_QString(data));
+    }
+
+    for (auto data : obj.getOutDataChannel2List()) {
+        ui->comboBoxOutDataChannel2->addItem(to_QString(data));
+    }
+
+    for (auto data : obj.getOutDataList()) {
+        ui->comboBoxOutData->addItem(to_QString(data));
+    }
+
+
     try {
         obj.connect("COM7","19200","8","1", "NO", "NO");
         ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
@@ -198,6 +212,75 @@ void SR844Graphics::on_comboBoxTimeConstant_activated(const QString &arg1){
 void SR844Graphics::on_comboBoxCloseReserveMode_activated(const QString &arg1){
     try {
         obj.setCloseReserveMode(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void SR844Graphics::on_comboBoxOutDataChannel1_activated(const QString &arg1) {
+    const QString cmd = to_QString("Get ") + arg1;
+    const QString zero = "Zero " + arg1;
+    ui->pushButtonOutDataChannel1->setText(cmd);
+    ui->pushButtonAutoZeroChannel1->setText(zero);
+}
+
+void SR844Graphics::on_pushButtonOutDataChannel1_clicked() {
+    try {
+        QString data = ui->comboBoxOutDataChannel1->currentText();
+        obj.setOutDataChannel1(to_StdString(data));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void SR844Graphics::on_pushButtonAutoZeroChannel1_clicked() {
+    try {
+        QString data = ui->comboBoxOutDataChannel1->currentText();
+        obj.outDataAutoZeroChannel1(to_StdString(data));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+
+void SR844Graphics::on_comboBoxOutDataChannel2_activated(const QString &arg1) {
+    const QString cmd = to_QString("Get ") + arg1;
+    const QString zero = "Zero " + arg1;
+    ui->pushButtonOutDataChannel2->setText(cmd);
+    ui->pushButtonAutoZeroChannel2->setText(zero);
+}
+
+void SR844Graphics::on_pushButtonOutDataChannel2_clicked() {
+    try {
+        QString data = ui->comboBoxOutDataChannel2->currentText();
+        obj.setOutDataChannel2(to_StdString(data));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void SR844Graphics::on_pushButtonAutoZeroChannel2_clicked() {
+    try {
+        QString data = ui->comboBoxOutDataChannel2->currentText();
+        obj.outDataAutoZeroChannel2(to_StdString(data));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+
+
+void SR844Graphics::on_comboBoxOutData_activated(const QString &arg1)
+{
+    const QString cmd = to_QString("Get ") + arg1;
+    ui->pushButtonOutData->setText(cmd);
+}
+
+void SR844Graphics::on_pushButtonOutData_clicked()
+{
+    try {
+        QString data = ui->comboBoxOutData->currentText();
+        ui->lineEditOutData->setText(to_QString(obj.getOutData(to_StdString(data))));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }

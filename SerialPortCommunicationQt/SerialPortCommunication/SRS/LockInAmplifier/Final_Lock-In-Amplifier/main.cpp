@@ -7,9 +7,9 @@ int main(int argc, char *argv[])
 {
 
     QApplication a(argc, argv);
-    MainWindow w;
-    //SR844Graphics q;
-    w.show();
+    //MainWindow w;
+    SR844Graphics q;
+    q.show();
 
     return a.exec();
 }

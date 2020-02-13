@@ -49,6 +49,22 @@ private slots:
 
     void on_comboBoxCloseReserveMode_activated(const QString &arg1);
 
+    void on_comboBoxOutDataChannel1_activated(const QString &arg1);
+
+    void on_pushButtonOutDataChannel1_clicked();
+
+    void on_pushButtonAutoZeroChannel1_clicked();
+
+    void on_comboBoxOutDataChannel2_activated(const QString &arg1);
+
+    void on_pushButtonOutDataChannel2_clicked();
+
+    void on_pushButtonAutoZeroChannel2_clicked();
+
+    void on_comboBoxOutData_activated(const QString &arg1);
+
+    void on_pushButtonOutData_clicked();
+
 private:
     Ui::SR844Graphics *ui;
 

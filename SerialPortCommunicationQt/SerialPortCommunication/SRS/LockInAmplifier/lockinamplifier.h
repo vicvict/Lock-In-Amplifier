@@ -70,7 +70,7 @@ protected:
         std::string RefTriggerMode;
         std::string RefTriggerOutput = "REFZ";
         std::string InputSignal;
-        std::string InputVoltageMode = "ISRC";
+        std::string InputVoltageMode;
         std::string InputVoltageCoupling = "ICPL";
         std::string InputVoltageShields = "IGND";
         std::string InputVoltageRange = "IRNG";
@@ -79,19 +79,27 @@ protected:
         std::string Sensitivity = "SENS";
         std::string FilterSlope = "OFSL";
         std::string SynchronousFilter = "SYNC";
-        std::string AdvanceFilter = "ADVFILT";
+        std::string AdvanceFilter;
         std::string InputSignalZ;
         std::string CloseReserveMode;
 
         std::string OutData = "OUTP";
         std::string CoupleOfData = "SNAP";
+        std::string SetOutData = "DDEF";
 
         std::string AutoPhase = "APHS";
         std::string AutoRange = "ARNG";
-        std::string AutoScale = "ASCL";
+        std::string AutoScale = "AGAN"; //не факт что в 830 она делает то что надо. Надо проверить
         std::string AutoWideReverse;
         std::string AutoReserve;
         std::string AutoZero;
+        ///buffer commands exist only 844 830
+        std::string BufferMode = "SEND";
+        std::string StartBuffer = "STRT";
+        std::string PauseBuffer = "PAUS";
+        std::string StopBuffer =  "REST";
+        std::string BufferSize =  "SPTS";
+        std::string GetPointFromBuffer = "TRCA";
     };
 
 public:
@@ -248,10 +256,12 @@ public:
     bool setAdvanceFilter(const std::string &advanceFilter) const;
     std::string getAdvanceFilter() const;
 
+
     //auto functions
     bool autoPhase() const;
     bool autoRange() const;
     bool autoScale() const;
+    // не уверен что это функция одинаковая в 830 и 844
 
     //output data functions
     std::vector<std::string> getOutDataList() const;
@@ -259,6 +269,10 @@ public:
     std::string outDataStringFromNumber(const int &outData_number) const;
     std::string getOutData(const int &outData) const;
     std::string getOutData(const std::string &outData) const;
+
+    std::vector<std::string> getOutDataCoupleList() const;
+    int outDataCoupleNumberFromString(const std::string  &outDataCouple_string) const;
+    std::string outDataCoupleStringFromNumber(const int &outDataCouple_number) const;
     bool getOutDataAB(const int &A, std::string &AValue, const int &B, std::string &BValue) const;
     bool getOutDataABC(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue) const;
     bool getOutDataAB(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue) const;
@@ -284,11 +298,18 @@ protected:
     std::vector <std::string> filterSlope;
     std::vector <std::string> synchronousFilter;
     std::vector <std::string> advanceFilter;
+    std::vector <std::string> inputSignalZ;
+    std::vector <std::string> closeReserveMode;
+
+    std::vector <std::string> bufferMode;
+
 
     ///output data such as X, Y, R, Theta
     std::vector <std::string> outData;
+    std::vector <std::string> outDataCouple;
     std::vector <std::string> outDataChannel1;
     std::vector <std::string> outDataChannel2;
+
 
     void SetRanges(const LockInAmplifierRanges &new_ranges);
 

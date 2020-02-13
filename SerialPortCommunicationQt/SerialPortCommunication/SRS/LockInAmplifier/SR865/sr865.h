@@ -29,6 +29,9 @@ public:
         commands.RefTriggerMode = "RTRG";
         commands.InputSignal = "IVMD";
         commands.Sensitivity = "SCAL";
+        commands.InputVoltageMode = "ISRC";
+        commands.AdvanceFilter = "ADVFILT";
+        commands.AutoScale = "ASCL";
 
         timeConstant = {
                             "1 us",     "3 us",
@@ -120,6 +123,15 @@ public:
                         "PHAse",    "SAMp",  "LEVel",
                         "FINT",     "FEXT"
                     };
+
+        outDataCouple =    {
+                                "X",        "Y",    "R",    "THETa",
+                                "IN1",      "IN2",  "IN3",  "IN4",
+                                "OUT1",     "OUT2",
+                                "XNOise",   "YNOise",
+                                "PHAse",    "SAMp",  "LEVel",
+                                "FINT",     "FEXT"
+                            };
     }
 
     int getMinDualHarmonic() const;

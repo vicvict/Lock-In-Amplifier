@@ -8,12 +8,6 @@
 
 class SR844 : public LockInAmplifier{
 protected:
-    std::vector <std::string> inputSignalZ =    {
-                                                    "50 Ohm", "1 MOhm"
-                                                };
-    std::vector <std::string> closeReserveMode =    {
-                                                        "High", "Normal", "Low"
-                                                    };
 
 public:
     SR844() : LockInAmplifier() {
@@ -27,11 +21,10 @@ public:
         commands.FrequencyDetect = "FRAQ";
         commands.AutoWideReverse = "AWRS";
         commands.InputSignalZ = "INPZ";
-        commands.AutoScale = "AGAN";
         commands.CloseReserveMode = "CRSV";
         commands.AutoReserve = "ACRS";
-        commands.OutData = "DDEF";
         commands.AutoZero = "AOFF";
+
 
 
         timeConstant = {
@@ -73,7 +66,9 @@ public:
                             "1 Vrms"
                         };
 
-
+        outData  = {
+                        " ", "X", "Y", "R [V]", "R [dBm]", "Theta"
+                   };
 
         outDataChannel1 =   {
                         "X",                    "R [V]",
@@ -92,6 +87,12 @@ public:
                                     "Y noise [dBm]",         "AUX IN2"
         };
 
+        outDataCouple = {
+                            "X", "Y", "R [V]", "R [dBm]", "Theta",
+                            "AUX IN1", "AUX IN2", "Ref Frequency",
+                            "CH!", "CH2"
+                        };
+
         refSource = {
                         "Ext", "Int"
                     };
@@ -103,6 +104,18 @@ public:
         filterSlope =   {
                             "No", "6 dB", "12 dB", "18 dB", "24 dB"
                         };
+
+        bufferMode  =   {
+                            "Shot", "Loop"
+                        };
+
+        inputSignalZ =    {
+                               "50 Ohm", "1 MOhm"
+                          };
+        closeReserveMode =    {
+                                    "High", "Normal", "Low"
+                              };
+
 
     }
 
@@ -123,22 +136,46 @@ public:
     bool setCloseReserveMode(const std::string &icloseReserveMode) const;
     std::string getCloseReserveMode() const;
 
-    std::vector<std::string> getOutDataChannel1List() const;
-    int outDataChannel1NumberFromString(const std::string  &outDataChannel1_string) const;
-    std::string outDataChannel1StringFromNumber(const int &outDataChannel1_number) const;
-    std::string getOutDataChannel1(const int &outDataChannel1) const;
-    std::string getOutDataChannel1(const std::string &outDataChannel1) const;
-
-    std::vector<std::string> getOutDataChannel2List() const;
-    int outDataChannel2NumberFromString(const std::string  &outDataChannel2_string) const;
-    std::string outDataChannel2StringFromNumber(const int &outDataChannel2_number) const;
-    std::string getOutDataChannel2(const int &outDataChannel2) const;
-    std::string getOutDataChannel2(const std::string &outDataChannel2) const;
-
     bool outDataAutoZeroChannel1(const int &outDataChannel1) const;
     bool outDataAutoZeroChannel1(const std::string &outDataChannel1) const;
     bool outDataAutoZeroChannel2(const int &outDataChannel2) const;
     bool outDataAutoZeroChannel2(const std::string &outDataChannel2) const;
+
+    std::string getPointFromBufferChannel1(const int &number) const;
+    std::string getPointFromBufferChannel2(const int &number) const;
+    std::vector <std::string> getChannel1FromBuffer() const;
+    std::vector <std::string> getChannel2FromBuffer() const;
+
+    bool getOutDataABCD(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue) const;
+    bool getOutDataABCDE(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue) const;
+    bool getOutDataABCDEF(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue, const int &F, std::string &FValue) const;
+    bool getOutDataABCD(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue) const;
+    bool getOutDataABCDE(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue, const std::string &E, std::string &EValue) const;
+    bool getOutDataABCDEF(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue, const std::string &E, std::string &EValue, const std::string &F, std::string &FValue) const;
+
+    std::vector<std::string> getOutDataChannel1List() const;
+    int outDataChannel1NumberFromString(const std::string  &outDataChannel1_string) const;
+    std::string outDataChannel1StringFromNumber(const int &outDataChannel1_number) const;
+    bool setOutDataChannel1(const int &outDataChannel1) const;
+    bool setOutDataChannel1(const std::string &outDataChannel1) const;
+
+    std::vector<std::string> getOutDataChannel2List() const;
+    int outDataChannel2NumberFromString(const std::string  &outDataChannel2_string) const;
+    std::string outDataChannel2StringFromNumber(const int &outDataChannel2_number) const;
+    bool setOutDataChannel2(const int &outDataChannel2) const;
+    bool setOutDataChannel2(const std::string &outDataChannel2) const;
+
+    std::vector<std::string> getBufferModeList() const;
+    int bufferModeNumberFromString(const std::string  &bufferMode_string) const;
+    std::string bufferModeStringFromNumber(const int &bufferMode_number) const;
+    bool setBufferMode(const int &bufferMode) const;
+    bool setBufferMode(const std::string &bufferMode) const;
+    std::string getBufferMode() const;
+
+    bool startBuffer() const;
+    bool pauseBuffer() const;
+    bool stopBuffer() const;
+    int getBufferSize() const;
 };
 
 

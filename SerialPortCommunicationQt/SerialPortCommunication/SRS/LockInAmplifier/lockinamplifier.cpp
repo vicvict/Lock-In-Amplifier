@@ -558,8 +558,21 @@ std::string LockInAmplifier::getOutData(const std::string &outData) const{
     return getOutData(outDataNumberFromString(outData));
 }
 
+
+std::vector<std::string> LockInAmplifier::getOutDataCoupleList() const {
+    return this->outDataCouple;
+}
+
+int LockInAmplifier::outDataCoupleNumberFromString(const std::string &outDataCouple_string) const {
+    return numberFromString(this->outDataCouple, outDataCouple_string);
+}
+
+std::string LockInAmplifier::outDataCoupleStringFromNumber(const int &outDataCouple_number) const {
+    return stringFromNumber(this->outDataCouple, outDataCouple_number);
+}
+
 bool LockInAmplifier::getOutDataAB(const int &A, std::string &AValue, const int &B, std::string &BValue) const {
-    if ((!isValidNumber(this->outData, A)) && (!isValidNumber(this->outData, B)))
+    if ((!isValidNumber(this->outDataCouple, A)) && (!isValidNumber(this->outDataCouple, B)))
         return false;
     std::string command = commands.CoupleOfData + query_suffix + separator + std::to_string(A) + comma + std::to_string(B);
     std::string response;
@@ -578,9 +591,9 @@ bool LockInAmplifier::getOutDataAB(const int &A, std::string &AValue, const int 
 }
 
 bool LockInAmplifier::getOutDataABC(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue) const {
-    if ((!isValidNumber(this->outData, A)) && (!isValidNumber(this->outData, B)))
+    if ((!isValidNumber(this->outDataCouple, A)) && (!isValidNumber(this->outDataCouple, B)))
         return false;
-    std::string command = commands.CoupleOfData + query_suffix + separator + std::to_string(A) + comma + std::to_string(B) + comma =std::to_string(C);
+    std::string command = commands.CoupleOfData + query_suffix + separator + std::to_string(A) + comma + std::to_string(B) + comma + std::to_string(C);
     std::string response;
     sendQuery(command, response);
     std::stringstream ss(response);
@@ -598,11 +611,11 @@ bool LockInAmplifier::getOutDataABC(const int &A, std::string &AValue, const int
 }
 
 bool LockInAmplifier::getOutDataAB(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue) const {
-    return getOutDataAB(outDataNumberFromString(A), AValue, outDataNumberFromString(B), BValue);
+    return getOutDataAB(outDataCoupleNumberFromString(A), AValue, outDataCoupleNumberFromString(B), BValue);
 }
 
 bool LockInAmplifier::getOutDataABC(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue) const {
-    return getOutDataABC(outDataNumberFromString(A), AValue, outDataNumberFromString(B), BValue, outDataNumberFromString(C), CValue);
+    return getOutDataABC(outDataCoupleNumberFromString(A), AValue, outDataCoupleNumberFromString(B), BValue, outDataCoupleNumberFromString(C), CValue);
 }
 
 
@@ -648,15 +661,3 @@ bool LockInAmplifier::autoScale() const {
 }
 
 
-
-
-
-void LockInAmplifier::SetRanges(const LockInAmplifierRanges &new_ranges) {
-    ranges = new_ranges;
-    return;
-}
-
-void LockInAmplifier::SetTimeConstantList(const std::vector<std::string> &new_time_constantlist) {
-    timeConstant = new_time_constantlist;
-    return;
-}
