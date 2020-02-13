@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7etest_36',['~Test',['../class_testlib_1_1_test.html#a562ff33da4cec7c2b1975e049f444d10',1,'Testlib::Test']]]
+  ['ui_5fmainwindow_50',['Ui_MainWindow',['../class_ui___main_window.html',1,'']]],
+  ['ui_5fsr844graphics_51',['Ui_SR844Graphics',['../class_ui___s_r844_graphics.html',1,'']]]
 ];

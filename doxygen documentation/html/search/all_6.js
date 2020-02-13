@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numberfromstring_17',['numberFromString',['../class_lock_in_amplifier.html#a7706e4b0511e076984711148da0e844e',1,'LockInAmplifier']]]
+  ['mainwindow_25',['MainWindow',['../class_ui_1_1_main_window.html',1,'Ui::MainWindow'],['../class_main_window.html',1,'MainWindow']]]
 ];

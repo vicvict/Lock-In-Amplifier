@@ -49,12 +49,10 @@ double {\bfseries get\+Max\+Phase} () const
 \mbox{\Hypertarget{class_lock_in_amplifier_ab2702c8c84f42ca893f670631aaea291}\label{class_lock_in_amplifier_ab2702c8c84f42ca893f670631aaea291}} 
 bool {\bfseries is\+Valid\+Phase} (const double \&phase) const
 \item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a3479408b594e51026eed6c0b3f37e05b}\label{class_lock_in_amplifier_a3479408b594e51026eed6c0b3f37e05b}} 
-bool {\bfseries set\+Internal\+Phase} (const double \&phase) const
-\item 
-\mbox{\Hypertarget{class_lock_in_amplifier_abcb62c92ae4c3880f1a29dda6149ed42}\label{class_lock_in_amplifier_abcb62c92ae4c3880f1a29dda6149ed42}} 
-std\+::string {\bfseries get\+Phase} () const
-\item 
+bool \mbox{\hyperlink{class_lock_in_amplifier_a3479408b594e51026eed6c0b3f37e05b}{set\+Internal\+Phase}} (const double \&phase) const
+\begin{DoxyCompactList}\small\item\em Set the reference phase shift to \textquotesingle{}phase\textquotesingle{} degrees. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_lock_in_amplifier_abcb62c92ae4c3880f1a29dda6149ed42}{get\+Phase}} () const
+\begin{DoxyCompactList}\small\item\em Get the reference phase. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lock_in_amplifier_aa98a39c433eb3694ef787a31512104ef}\label{class_lock_in_amplifier_aa98a39c433eb3694ef787a31512104ef}} 
 double {\bfseries get\+Min\+Internal\+Frequency} () const
 \item 
@@ -64,21 +62,16 @@ double {\bfseries get\+Max\+Internal\+Frequency} () const
 \mbox{\Hypertarget{class_lock_in_amplifier_a7492ef98a3b13574b57dff6722b4e339}\label{class_lock_in_amplifier_a7492ef98a3b13574b57dff6722b4e339}} 
 bool {\bfseries is\+Valid\+Internal\+Frequency} (const double \&frequency) const
 \item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a797ea5358c7c69ee25b99da505a3c8fa}\label{class_lock_in_amplifier_a797ea5358c7c69ee25b99da505a3c8fa}} 
-bool {\bfseries set\+Internal\+Frequency} (const double \&frequency) const
-\item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a6601c355ca56376ca32ddb0fbc6ebe50}\label{class_lock_in_amplifier_a6601c355ca56376ca32ddb0fbc6ebe50}} 
-std\+::string {\bfseries get\+Internal\+Frequency} () const
-\item 
-\mbox{\Hypertarget{class_lock_in_amplifier_aea5d80d3fe6f9d67042a1e07ef7934a8}\label{class_lock_in_amplifier_aea5d80d3fe6f9d67042a1e07ef7934a8}} 
-std\+::string {\bfseries get\+External\+Frequency} () const
-\item 
-\mbox{\Hypertarget{class_lock_in_amplifier_affab6b4c72eabc0273caddc9ae112d9e}\label{class_lock_in_amplifier_affab6b4c72eabc0273caddc9ae112d9e}} 
-std\+::string {\bfseries get\+Frequency\+Detect} () const
-\item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a237d3b3c128df0b042236e4e7811b4ed}\label{class_lock_in_amplifier_a237d3b3c128df0b042236e4e7811b4ed}} 
-std\+::string {\bfseries get\+Frequency} () const
-\item 
+bool \mbox{\hyperlink{class_lock_in_amplifier_a797ea5358c7c69ee25b99da505a3c8fa}{set\+Internal\+Frequency}} (const double \&frequency) const
+\begin{DoxyCompactList}\small\item\em Sets the internal frequency to $ f $. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_lock_in_amplifier_a6601c355ca56376ca32ddb0fbc6ebe50}{get\+Internal\+Frequency}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of internal frequency. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_lock_in_amplifier_aea5d80d3fe6f9d67042a1e07ef7934a8}{get\+External\+Frequency}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of external reference frequency. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_lock_in_amplifier_affab6b4c72eabc0273caddc9ae112d9e}{get\+Frequency\+Detect}} () const
+\begin{DoxyCompactList}\small\item\em Returns the actual detection frequency. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_lock_in_amplifier_a237d3b3c128df0b042236e4e7811b4ed}{get\+Frequency}} () const
+\begin{DoxyCompactList}\small\item\em Returns the internal or external frequency. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lock_in_amplifier_a19ef03edfe36a9783cb54b56dbd7ccf8}\label{class_lock_in_amplifier_a19ef03edfe36a9783cb54b56dbd7ccf8}} 
 int {\bfseries get\+Min\+Harmonic} () const
 \item 
@@ -88,12 +81,10 @@ int {\bfseries get\+Max\+Harmonic} () const
 \mbox{\Hypertarget{class_lock_in_amplifier_a4265fb8139d6a24b7c45e6056dc7eb35}\label{class_lock_in_amplifier_a4265fb8139d6a24b7c45e6056dc7eb35}} 
 bool {\bfseries is\+Valid\+Harmonic} (const int \&i) const
 \item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a11cfb7008c221c787c21d7b881e2e4fd}\label{class_lock_in_amplifier_a11cfb7008c221c787c21d7b881e2e4fd}} 
-bool {\bfseries set\+Harmonic} (const int \&i) const
-\item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a8e89fb45f70760941b823274edffbcaa}\label{class_lock_in_amplifier_a8e89fb45f70760941b823274edffbcaa}} 
-std\+::string {\bfseries get\+Harmonic} () const
-\item 
+bool \mbox{\hyperlink{class_lock_in_amplifier_a11cfb7008c221c787c21d7b881e2e4fd}{set\+Harmonic}} (const int \&i) const
+\begin{DoxyCompactList}\small\item\em Sets the lock-\/in to detect at the i-\/th harmonic of the reference frequency. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_lock_in_amplifier_a8e89fb45f70760941b823274edffbcaa}{get\+Harmonic}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of actual harmonic. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lock_in_amplifier_ac30d782dd81a29ebb9d4642267e58269}\label{class_lock_in_amplifier_ac30d782dd81a29ebb9d4642267e58269}} 
 double {\bfseries get\+Min\+Sine\+Amplitude} () const
 \item 
@@ -103,12 +94,10 @@ double {\bfseries get\+Max\+Sine\+Amplitude} () const
 \mbox{\Hypertarget{class_lock_in_amplifier_aad093ff32b8fd601ccaa687bb7b23506}\label{class_lock_in_amplifier_aad093ff32b8fd601ccaa687bb7b23506}} 
 bool {\bfseries is\+Valid\+Sine\+Amplitude} (const double \&voltage) const
 \item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a77647a1f43b36eff9762dfdf2e1f9d41}\label{class_lock_in_amplifier_a77647a1f43b36eff9762dfdf2e1f9d41}} 
-bool {\bfseries set\+Sine\+Amplitude} (const double \&voltage) const
-\item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a3a4d37682f0006041233019b277b9635}\label{class_lock_in_amplifier_a3a4d37682f0006041233019b277b9635}} 
-std\+::string {\bfseries get\+Sine\+Amplitude} () const
-\item 
+bool \mbox{\hyperlink{class_lock_in_amplifier_a77647a1f43b36eff9762dfdf2e1f9d41}{set\+Sine\+Amplitude}} (const double \&voltage) const
+\begin{DoxyCompactList}\small\item\em Sets the sine amplitude to voltage. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_lock_in_amplifier_a3a4d37682f0006041233019b277b9635}{get\+Sine\+Amplitude}} () const
+\begin{DoxyCompactList}\small\item\em Returns the sine out amplitude. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lock_in_amplifier_a182f31d31cda0d1d0edf76031d506fa3}\label{class_lock_in_amplifier_a182f31d31cda0d1d0edf76031d506fa3}} 
 std\+::vector$<$ std\+::string $>$ {\bfseries get\+Time\+Constant\+List} () const
 \item 
@@ -118,9 +107,8 @@ int {\bfseries time\+Constant\+Number\+From\+String} (const std\+::string \&time
 \mbox{\Hypertarget{class_lock_in_amplifier_a3b30e68a836945c4ce6b8f85a6d65aa8}\label{class_lock_in_amplifier_a3b30e68a836945c4ce6b8f85a6d65aa8}} 
 std\+::string {\bfseries time\+Constant\+String\+From\+Number} (const int \&time\+Constant\+\_\+number) const
 \item 
-\mbox{\Hypertarget{class_lock_in_amplifier_afa3d3059bca581866d933a8614f227a2}\label{class_lock_in_amplifier_afa3d3059bca581866d933a8614f227a2}} 
-bool {\bfseries set\+Time\+Constant} (const int \&time\+Constant) const
-\item 
+bool \mbox{\hyperlink{class_lock_in_amplifier_afa3d3059bca581866d933a8614f227a2}{set\+Time\+Constant}} (const int \&time\+Constant) const
+\begin{DoxyCompactList}\small\item\em Sets the time constant according to the specification table. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_lock_in_amplifier_a0a5c9c2b7664ba4eaab87eff87eaa108}\label{class_lock_in_amplifier_a0a5c9c2b7664ba4eaab87eff87eaa108}} 
 bool {\bfseries set\+Time\+Constant} (const std\+::string \&time\+Constant) const
 \item 
@@ -475,8 +463,8 @@ std\+::unordered\+\_\+map$<$ std\+::string, Q\+Serial\+Port\+::\+Flow\+Control $
 \mbox{\Hypertarget{class_lock_in_amplifier_a1a78bf8d20b796949594d2b9813cd613}\label{class_lock_in_amplifier_a1a78bf8d20b796949594d2b9813cd613}} 
 std\+::string {\bfseries invalid\+Data} = \char`\"{}-\/1\char`\"{}
 \item 
-\mbox{\Hypertarget{class_lock_in_amplifier_a9238ce07d9616395b2324ac06fb02dd9}\label{class_lock_in_amplifier_a9238ce07d9616395b2324ac06fb02dd9}} 
-double {\bfseries epsilont} = 0.\+01
+\mbox{\Hypertarget{class_lock_in_amplifier_ad0f2333aea8375f976502792458b4259}\label{class_lock_in_amplifier_ad0f2333aea8375f976502792458b4259}} 
+double {\bfseries epsilon} = 0.\+01
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -487,6 +475,97 @@ Common class for \mbox{\hyperlink{class_s_r_s}{S\+RS}} Lock-\/in Amplifiers.
 The class contains a description of the methods common to all Lock-\/in Amplifiers 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lock_in_amplifier_aea5d80d3fe6f9d67042a1e07ef7934a8}\label{class_lock_in_amplifier_aea5d80d3fe6f9d67042a1e07ef7934a8}} 
+\index{LockInAmplifier@{LockInAmplifier}!getExternalFrequency@{getExternalFrequency}}
+\index{getExternalFrequency@{getExternalFrequency}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{getExternalFrequency()}{getExternalFrequency()}}
+{\footnotesize\ttfamily std\+::string Lock\+In\+Amplifier\+::get\+External\+Frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value of external reference frequency. 
+
+\begin{DoxyReturn}{Returns}
+The value of external reference frequency in Hz 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_a237d3b3c128df0b042236e4e7811b4ed}\label{class_lock_in_amplifier_a237d3b3c128df0b042236e4e7811b4ed}} 
+\index{LockInAmplifier@{LockInAmplifier}!getFrequency@{getFrequency}}
+\index{getFrequency@{getFrequency}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{getFrequency()}{getFrequency()}}
+{\footnotesize\ttfamily std\+::string Lock\+In\+Amplifier\+::get\+Frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the internal or external frequency. 
+
+Returns the internal reference frequency whenever the reference mode is either Internal, Dual, or Chop. The query returns the external frequency when operating in External mode. This behavior mirrors the value displayed in the info bar at the top of the display \begin{DoxyReturn}{Returns}
+The internal or external frequency in Hz 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_affab6b4c72eabc0273caddc9ae112d9e}\label{class_lock_in_amplifier_affab6b4c72eabc0273caddc9ae112d9e}} 
+\index{LockInAmplifier@{LockInAmplifier}!getFrequencyDetect@{getFrequencyDetect}}
+\index{getFrequencyDetect@{getFrequencyDetect}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{getFrequencyDetect()}{getFrequencyDetect()}}
+{\footnotesize\ttfamily std\+::string Lock\+In\+Amplifier\+::get\+Frequency\+Detect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the actual detection frequency. 
+
+This is helpful in dual reference mode or harmonic detection. Otherwise, the detection frequency is either the internal or external reference frequency. \begin{DoxyReturn}{Returns}
+The actual detection frequency in Hz 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_a8e89fb45f70760941b823274edffbcaa}\label{class_lock_in_amplifier_a8e89fb45f70760941b823274edffbcaa}} 
+\index{LockInAmplifier@{LockInAmplifier}!getHarmonic@{getHarmonic}}
+\index{getHarmonic@{getHarmonic}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{getHarmonic()}{getHarmonic()}}
+{\footnotesize\ttfamily std\+::string Lock\+In\+Amplifier\+::get\+Harmonic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value of actual harmonic. 
+
+\begin{DoxyReturn}{Returns}
+The value of external reference frequency in Hz 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_a6601c355ca56376ca32ddb0fbc6ebe50}\label{class_lock_in_amplifier_a6601c355ca56376ca32ddb0fbc6ebe50}} 
+\index{LockInAmplifier@{LockInAmplifier}!getInternalFrequency@{getInternalFrequency}}
+\index{getInternalFrequency@{getInternalFrequency}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{getInternalFrequency()}{getInternalFrequency()}}
+{\footnotesize\ttfamily std\+::string Lock\+In\+Amplifier\+::get\+Internal\+Frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value of internal frequency. 
+
+\begin{DoxyReturn}{Returns}
+The value of internal frequency in Hz 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_abcb62c92ae4c3880f1a29dda6149ed42}\label{class_lock_in_amplifier_abcb62c92ae4c3880f1a29dda6149ed42}} 
+\index{LockInAmplifier@{LockInAmplifier}!getPhase@{getPhase}}
+\index{getPhase@{getPhase}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{getPhase()}{getPhase()}}
+{\footnotesize\ttfamily std\+::string Lock\+In\+Amplifier\+::get\+Phase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the reference phase. 
+
+\begin{DoxyReturn}{Returns}
+The reference phase in degrees 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_a3a4d37682f0006041233019b277b9635}\label{class_lock_in_amplifier_a3a4d37682f0006041233019b277b9635}} 
+\index{LockInAmplifier@{LockInAmplifier}!getSineAmplitude@{getSineAmplitude}}
+\index{getSineAmplitude@{getSineAmplitude}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{getSineAmplitude()}{getSineAmplitude()}}
+{\footnotesize\ttfamily std\+::string Lock\+In\+Amplifier\+::get\+Sine\+Amplitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the sine out amplitude. 
+
+\begin{DoxyReturn}{Returns}
+Returns the sine out amplitude in Voltsz 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_lock_in_amplifier_a7706e4b0511e076984711148da0e844e}\label{class_lock_in_amplifier_a7706e4b0511e076984711148da0e844e}} 
 \index{LockInAmplifier@{LockInAmplifier}!numberFromString@{numberFromString}}
 \index{numberFromString@{numberFromString}!LockInAmplifier@{LockInAmplifier}}
@@ -499,13 +578,103 @@ Returns the number of the source string value in the detector specification.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ out}}  & {\em vector} & The set of aviable values \\
+\mbox{\texttt{ in}}  & {\em vector} & The set of aviable values \\
 \hline
-\mbox{\texttt{ out}}  & {\em string} & Source string \\
+\mbox{\texttt{ in}}  & {\em string} & Source string \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The number of source string in the aviable strings list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_a11cfb7008c221c787c21d7b881e2e4fd}\label{class_lock_in_amplifier_a11cfb7008c221c787c21d7b881e2e4fd}} 
+\index{LockInAmplifier@{LockInAmplifier}!setHarmonic@{setHarmonic}}
+\index{setHarmonic@{setHarmonic}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{setHarmonic()}{setHarmonic()}}
+{\footnotesize\ttfamily bool Lock\+In\+Amplifier\+::set\+Harmonic (\begin{DoxyParamCaption}\item[{const int \&}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Sets the lock-\/in to detect at the i-\/th harmonic of the reference frequency. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i} & The number of harmonic i is limited\+: $ 0 \leq i \geq 99 $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the harmonic number is valid and sending is correct 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_a797ea5358c7c69ee25b99da505a3c8fa}\label{class_lock_in_amplifier_a797ea5358c7c69ee25b99da505a3c8fa}} 
+\index{LockInAmplifier@{LockInAmplifier}!setInternalFrequency@{setInternalFrequency}}
+\index{setInternalFrequency@{setInternalFrequency}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{setInternalFrequency()}{setInternalFrequency()}}
+{\footnotesize\ttfamily bool Lock\+In\+Amplifier\+::set\+Internal\+Frequency (\begin{DoxyParamCaption}\item[{const double \&}]{frequency }\end{DoxyParamCaption}) const}
+
+
+
+Sets the internal frequency to $ f $. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Frequency} & the value of frequency in Hz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if frequency is valid and sending is correct 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_a3479408b594e51026eed6c0b3f37e05b}\label{class_lock_in_amplifier_a3479408b594e51026eed6c0b3f37e05b}} 
+\index{LockInAmplifier@{LockInAmplifier}!setInternalPhase@{setInternalPhase}}
+\index{setInternalPhase@{setInternalPhase}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{setInternalPhase()}{setInternalPhase()}}
+{\footnotesize\ttfamily bool Lock\+In\+Amplifier\+::set\+Internal\+Phase (\begin{DoxyParamCaption}\item[{const double \&}]{phase }\end{DoxyParamCaption}) const}
+
+
+
+Set the reference phase shift to \textquotesingle{}phase\textquotesingle{} degrees. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em phase} & The value of phase in degrees is limited\+: $ -180 \leq phase < 180 $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if phase is valid and sending is correct 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_a77647a1f43b36eff9762dfdf2e1f9d41}\label{class_lock_in_amplifier_a77647a1f43b36eff9762dfdf2e1f9d41}} 
+\index{LockInAmplifier@{LockInAmplifier}!setSineAmplitude@{setSineAmplitude}}
+\index{setSineAmplitude@{setSineAmplitude}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{setSineAmplitude()}{setSineAmplitude()}}
+{\footnotesize\ttfamily bool Lock\+In\+Amplifier\+::set\+Sine\+Amplitude (\begin{DoxyParamCaption}\item[{const double \&}]{voltage }\end{DoxyParamCaption}) const}
+
+
+
+Sets the sine amplitude to voltage. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em voltage} & The value is to be rounded to 3 digits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the voltage is valid and sending is correct 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_lock_in_amplifier_afa3d3059bca581866d933a8614f227a2}\label{class_lock_in_amplifier_afa3d3059bca581866d933a8614f227a2}} 
+\index{LockInAmplifier@{LockInAmplifier}!setTimeConstant@{setTimeConstant}}
+\index{setTimeConstant@{setTimeConstant}!LockInAmplifier@{LockInAmplifier}}
+\doxysubsubsection{\texorpdfstring{setTimeConstant()}{setTimeConstant()}}
+{\footnotesize\ttfamily bool Lock\+In\+Amplifier\+::set\+Time\+Constant (\begin{DoxyParamCaption}\item[{const int \&}]{time\+Constant }\end{DoxyParamCaption}) const}
+
+
+
+Sets the time constant according to the specification table. 
+
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em time\+Constant} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_lock_in_amplifier_a68a767fa972ddd85f6ee2f748fc7d532}\label{class_lock_in_amplifier_a68a767fa972ddd85f6ee2f748fc7d532}} 
 \index{LockInAmplifier@{LockInAmplifier}!stringFromNumber@{stringFromNumber}}
@@ -519,9 +688,9 @@ Returns the dest string from the list available by its number.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ out}}  & {\em vector} & The set of aviable values \\
+\mbox{\texttt{ in}}  & {\em vector} & The set of aviable values \\
 \hline
-\mbox{\texttt{ out}}  & {\em number} & Source number \\
+\mbox{\texttt{ in}}  & {\em number} & Source number \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
