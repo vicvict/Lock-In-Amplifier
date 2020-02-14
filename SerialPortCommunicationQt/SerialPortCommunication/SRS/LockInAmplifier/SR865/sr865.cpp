@@ -52,4 +52,30 @@ std::string SR865::getSineDCLevel() const {
     return answer;
 }
 
+std::vector<std::string> SR865::getSynchronousFilterList() const {
+    return this->synchronousFilter;
+}
 
+int SR865::synchronousFilterNumberFromString(const std::string &synchronousFilter_string) const {
+    return numberFromString(this->synchronousFilter, synchronousFilter_string);
+}
+
+std::string SR865::synchronousFilterStringFromNumber(const int &synchronousFilter_number) const {
+    return stringFromNumber(this->synchronousFilter, synchronousFilter_number);
+}
+
+bool SR865::setSynchronousFilter(const int &synchronousFilter) const {
+    if (!isValidNumber(this->synchronousFilter, synchronousFilter))
+        return false;
+
+    std::string command = commands.SynchronousFilter + separator + std::to_string(synchronousFilter);
+    return sendCommand(command);
+}
+
+bool SR865::setSynchronousFilter(const std::string &synchronousFilter) const {
+    return setSynchronousFilter(synchronousFilterNumberFromString(synchronousFilter));
+}
+
+std::string SR865::getSynchronousFilter() const {
+    return synchronousFilterStringFromNumber(std::stoi(ask(commands.SynchronousFilter + query_suffix)));
+}

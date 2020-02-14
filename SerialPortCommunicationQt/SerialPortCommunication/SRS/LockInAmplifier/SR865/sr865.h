@@ -146,6 +146,12 @@ public:
     bool setSineDCLevel(const double &voltage) const;
     std::string getSineDCLevel() const;
 
+    std::vector<std::string> getSynchronousFilterList() const;
+    int synchronousFilterNumberFromString(const std::string  &synchronousFilter_string) const;
+    std::string synchronousFilterStringFromNumber(const int &synchronousFilter_number) const;
+    bool setSynchronousFilter(const int &synchronousFilter) const;
+    bool setSynchronousFilter(const std::string &synchronousFilter) const;
+    std::string getSynchronousFilter() const;
 
 protected:
     const int minHarmDual = 1;

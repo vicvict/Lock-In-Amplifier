@@ -351,12 +351,6 @@ public:
     bool setFilterSlope(const std::string &filterSlope) const;
     std::string getFilterSlope() const;
 
-    std::vector<std::string> getSynchronousFilterList() const;
-    int synchronousFilterNumberFromString(const std::string  &synchronousFilter_string) const;
-    std::string synchronousFilterStringFromNumber(const int &synchronousFilter_number) const;
-    bool setSynchronousFilter(const int &synchronousFilter) const;
-    bool setSynchronousFilter(const std::string &synchronousFilter) const;
-    std::string getSynchronousFilter() const;
 
     std::vector<std::string> getAdvanceFilterList() const;
     int advanceFilterNumberFromString(const std::string  &advanceFilter_string) const;
@@ -405,6 +399,7 @@ protected:
     std::vector <std::string> inputCurrentGain;
     std::vector <std::string> sensitivity;
     std::vector <std::string> filterSlope;
+    ///Надо ли его перемещать в 865 и 830, если его нет в 844?
     std::vector <std::string> synchronousFilter;
     std::vector <std::string> advanceFilter;
     std::vector <std::string> inputSignalZ;

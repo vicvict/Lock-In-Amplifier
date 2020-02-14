@@ -506,35 +506,6 @@ std::string LockInAmplifier::getFilterSlope() const {
     return filterSlopeStringFromNumber(std::stoi(ask(commands.FilterSlope + query_suffix)));
 }
 
-
-std::vector<std::string> LockInAmplifier::getSynchronousFilterList() const {
-    return this->synchronousFilter;
-}
-
-int LockInAmplifier::synchronousFilterNumberFromString(const std::string &synchronousFilter_string) const {
-    return numberFromString(this->synchronousFilter, synchronousFilter_string);
-}
-
-std::string LockInAmplifier::synchronousFilterStringFromNumber(const int &synchronousFilter_number) const {
-    return stringFromNumber(this->synchronousFilter, synchronousFilter_number);
-}
-
-bool LockInAmplifier::setSynchronousFilter(const int &synchronousFilter) const {
-    if (!isValidNumber(this->synchronousFilter, synchronousFilter))
-        return false;
-
-    std::string command = commands.SynchronousFilter + separator + std::to_string(synchronousFilter);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setSynchronousFilter(const std::string &synchronousFilter) const {
-    return setSynchronousFilter(synchronousFilterNumberFromString(synchronousFilter));
-}
-
-std::string LockInAmplifier::getSynchronousFilter() const {
-    return synchronousFilterStringFromNumber(std::stoi(ask(commands.SynchronousFilter + query_suffix)));
-}
-
 std::vector<std::string> LockInAmplifier::getOutDataList() const {
     return this->outData;
 }
