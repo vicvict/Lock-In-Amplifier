@@ -1,5 +1,10 @@
 #include "sr844.h"
 
+std::string SR844:: getFrequencyDetect() const {
+    std::string answer = ask(commands.FrequencyDetect + query_suffix);
+    return answer;
+}
+
 bool SR844:: autoReserve() const {
     return sendCommand(commands.AutoReserve);
 }

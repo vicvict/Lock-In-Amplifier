@@ -115,7 +115,7 @@ void SR844Graphics::on_pushButtonFrequency_clicked()
     bool succeed;
         ui->lineEditFrequency->text().toDouble(&succeed);
         if (succeed) {
-            obj.setInternalFrequency(ui->lineEditFrequency->text().toDouble(&succeed));
+            obj.setFrequency(ui->lineEditFrequency->text().toDouble(&succeed));
         }
         else {
             //do nothing

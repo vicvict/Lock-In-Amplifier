@@ -54,13 +54,23 @@ protected:
                                                                 "57600", "115200"
                                                             };
 
-    std::unordered_map < std::string , QSerialPort::DataBits    > SRS_string_to_data_bits    = {
+    std:: vector < std::string > SRS_vector_to_data_bits  = {
+                                                                "8"
+                                                            };
+
+    std:: vector < std::string > SRS_vector_to_flow_control  = {
+                                                                   "NO",
+                                                                   "HARD"
+                                                               };
+
+
+    /*std::unordered_map < std::string , QSerialPort::DataBits    > SRS_string_to_data_bits    = {
                                                                                                 {"8", QSerialPort::Data8}
                                                                                                };
     std::unordered_map < std::string , QSerialPort::FlowControl > SRS_string_to_flow_control = {
                                                                                                 {  "NO", QSerialPort::NoFlowControl  },
                                                                                                 {"HARD", QSerialPort::HardwareControl}
-                                                                                               };
+                                                                                               };*/
     std::vector < std::string > SRS_vector_to_parity       = {
                                                                 "NO",
                                                                 "EVEN",
@@ -71,10 +81,14 @@ protected:
                                                                                                 {  "ODD", QSerialPort::OddParity  },
                                                                                                 { "EVEN", QSerialPort::EvenParity }
                                                                                                };*/
-    std::unordered_map < std::string , QSerialPort::StopBits    > SRS_string_to_stop_bits    = {
+    /*std::unordered_map < std::string , QSerialPort::StopBits    > SRS_string_to_stop_bits    = {
                                                                                                 {  "1",  QSerialPort::OneStop       },
                                                                                                 {  "2",  QSerialPort::TwoStop       }
-                                                                                               };
+                                                                                               };*/
+    std::vector < std::string > SRS_vector_to_stop_bits       = {
+                                                                    "1",
+                                                                    "2"
+                                                                };
 };
 
 #endif // SRS_H

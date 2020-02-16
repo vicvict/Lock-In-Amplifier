@@ -2,10 +2,14 @@
 //В процессе замены settings на ranges
 LockInAmplifier::LockInAmplifier() {
     //setStringToBaudRate(lockinAmplifier_string_to_baud_rate);
-    setStringToStopBits(lockinAmplifier_string_to_stop_bits);
-    setStringToFlowControl(lockinAmplifier_string_to_flow_control);
+    //setStringToStopBits(lockinAmplifier_string_to_stop_bits);
+    //setStringToFlowControl(lockinAmplifier_string_to_flow_control);
 
-    init();
+    //init();
+
+    supported_models =  {
+                            "SR830", "SR844", "SR865"
+                        };
 }
 
 LockInAmplifier::~LockInAmplifier() {
@@ -77,29 +81,13 @@ bool LockInAmplifier::isValidInternalFrequency(const double &frequency) const {
             frequency <= this->ranges.maxInternalFrequency);
 }
 
-bool LockInAmplifier::setInternalFrequency(const double &frequency) const {
+bool LockInAmplifier::setFrequency(const double &frequency) const {
     std:: string command = commands.Frequence + separator + std:: to_string(frequency);
     if (isValidInternalFrequency(frequency))
         return sendCommand(command);
     else
         return false;
 }
-
-std::string LockInAmplifier:: getInternalFrequency() const {
-    std::string answer = ask(commands.Frequence + "INT" + query_suffix);
-    return answer;
-}
-
-std::string LockInAmplifier:: getExternalFrequency() const {
-    std::string answer = ask(commands.Frequence + "EXT" + query_suffix);
-    return answer;
-}
-
-std::string LockInAmplifier:: getFrequencyDetect() const {
-    std::string answer = ask(commands.FrequencyDetect + query_suffix);
-    return answer;
-}
-
 
 std::string LockInAmplifier::getFrequency() const {
     std::string answer = ask(commands.Frequence + query_suffix);
@@ -224,32 +212,6 @@ std::string LockInAmplifier::getRefSource() const {
 }
 
 
-std::vector<std::string> LockInAmplifier::getRefTriggerModeList() const {
-    return this->refTriggerMode;
-}
-
-int LockInAmplifier::refTriggerModeNumberFromString(const std::string &refTriggerMode_string) const {
-    return numberFromString(this->refTriggerMode, refTriggerMode_string);
-}
-
-std::string LockInAmplifier::refTriggerModeStringFromNumber(const int &refTriggerMode_number) const {
-    return stringFromNumber(this->refTriggerMode, refTriggerMode_number);
-}
-
-bool LockInAmplifier::setRefTriggerMode(const int &refTriggerMode) const {
-    if (!isValidNumber(this->refTriggerMode, refTriggerMode))
-        return false;
-    std::string command = commands.RefTriggerMode + separator + std::to_string(refTriggerMode);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setRefTriggerMode(const std::string &refTriggerMode) const {
-    return setRefTriggerMode(refTriggerModeNumberFromString(refTriggerMode));
-}
-
-std::string LockInAmplifier::getRefTriggerMode() const {
-    return refTriggerModeStringFromNumber(std::stoi(ask(commands.RefTriggerMode + query_suffix)));
-}
 
 
 std::vector<std::string> LockInAmplifier::getRefTriggerOutputList() const {
@@ -279,175 +241,11 @@ std::string LockInAmplifier::getRefTriggerOutput() const {
     return refTriggerOutputStringFromNumber(std::stoi(ask(commands.RefTriggerOutput + query_suffix)));
 }
 
-std::vector<std::string> LockInAmplifier::getInputSignalList() const {
-    return this->inputSignal;
-}
-
-int LockInAmplifier::inputSignalNumberFromString(const std::string &inputSignal_string) const {
-    return numberFromString(this->inputSignal, inputSignal_string);
-}
-
-std::string LockInAmplifier::inputSignalStringFromNumber(const int &inputSignal_number) const {
-    return stringFromNumber(this->inputSignal, inputSignal_number);
-}
-
-bool LockInAmplifier::setInputSignal(const int &inputSignal) const {
-    if (!isValidNumber(this->inputSignal, inputSignal))
-        return false;
-    std::string command = commands.InputSignal + separator + std::to_string(inputSignal);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setInputSignal(const std::string &inputSignal) const {
-    return setInputSignal(inputSignalNumberFromString(inputSignal));
-}
-
-std::string LockInAmplifier::getInputSignal() const {
-    return inputSignalStringFromNumber(std::stoi(ask(commands.InputSignal + query_suffix)));
-}
 
 
-std::vector<std::string> LockInAmplifier::getInputVoltageModeList() const {
-    return this->inputVoltageMode;
-}
-
-int LockInAmplifier::inputVoltageModeNumberFromString(const std::string &inputVoltageMode_string) const {
-    return numberFromString(this->inputVoltageMode, inputVoltageMode_string);
-}
-
-std::string LockInAmplifier::inputVoltageModeStringFromNumber(const int &inputVoltageMode_number) const {
-    return stringFromNumber(this->inputVoltageMode, inputVoltageMode_number);
-}
-
-bool LockInAmplifier::setInputVoltageMode(const int &inputVoltageMode) const {
-    if (!isValidNumber(this->inputVoltageMode, inputVoltageMode))
-        return false;
-    std::string command = commands.InputVoltageMode + separator + std::to_string(inputVoltageMode);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setInputVoltageMode(const std::string &inputVoltageMode) const {
-    return setInputVoltageMode(inputVoltageModeNumberFromString(inputVoltageMode));
-}
-
-std::string LockInAmplifier::getInputVoltageMode() const {
-    return inputVoltageModeStringFromNumber(std::stoi(ask(commands.InputVoltageMode + query_suffix)));
-}
-
-std::vector<std::string> LockInAmplifier::getInputVoltageCouplingList() const {
-    return this->inputVoltageCoupling;
-}
-
-int LockInAmplifier::inputVoltageCouplingNumberFromString(const std::string &inputVoltageCoupling_string) const {
-    return numberFromString(this->inputVoltageCoupling, inputVoltageCoupling_string);
-}
-
-std::string LockInAmplifier::inputVoltageCouplingStringFromNumber(const int &inputVoltageCoupling_number) const {
-    return stringFromNumber(this->inputVoltageCoupling, inputVoltageCoupling_number);
-}
-
-bool LockInAmplifier::setInputVoltageCoupling(const int &inputVoltageCoupling) const {
-    if (!isValidNumber(this->inputVoltageCoupling, inputVoltageCoupling))
-        return false;
-    std::string command = commands.InputVoltageCoupling + separator + std::to_string(inputVoltageCoupling);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setInputVoltageCoupling(const std::string &inputVoltageCoupling) const {
-    return setInputVoltageCoupling(inputVoltageCouplingNumberFromString(inputVoltageCoupling));
-}
-
-std::string LockInAmplifier::getInputVoltageCoupling() const {
-    return inputVoltageCouplingStringFromNumber(std::stoi(ask(commands.InputVoltageCoupling + query_suffix)));
-}
 
 
-std::vector<std::string> LockInAmplifier::getInputVoltageShieldsList() const {
-    return this->inputVoltageShields;
-}
 
-int LockInAmplifier::inputVoltageShieldsNumberFromString(const std::string &inputVoltageShields_string) const {
-    return numberFromString(this->inputVoltageShields, inputVoltageShields_string);
-}
-
-std::string LockInAmplifier::inputVoltageShieldsStringFromNumber(const int &inputVoltageShields_number) const {
-    return stringFromNumber(this->inputVoltageShields, inputVoltageShields_number);
-}
-
-bool LockInAmplifier::setInputVoltageShields(const int &inputVoltageShields) const {
-    if (!isValidNumber(this->inputVoltageShields, inputVoltageShields))
-        return false;
-    std::string command = commands.InputVoltageShields + separator + std::to_string(inputVoltageShields);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setInputVoltageShields(const std::string &inputVoltageShields) const {
-    return setInputVoltageShields(inputVoltageShieldsNumberFromString(inputVoltageShields));
-}
-
-std::string LockInAmplifier::getInputVoltageShields() const {
-    return inputVoltageShieldsStringFromNumber(std::stoi(ask(commands.InputVoltageShields + query_suffix)));
-}
-
-
-std::vector<std::string> LockInAmplifier::getInputVoltageRangeList() const {
-    return this->inputVoltageRange;
-}
-
-int LockInAmplifier::inputVoltageRangeNumberFromString(const std::string &inputVoltageRange_string) const {
-    return numberFromString(this->inputVoltageRange, inputVoltageRange_string);
-}
-
-std::string LockInAmplifier::inputVoltageRangeStringFromNumber(const int &inputVoltageRange_number) const {
-    return stringFromNumber(this->inputVoltageRange, inputVoltageRange_number);
-}
-
-bool LockInAmplifier::setInputVoltageRange(const int &inputVoltageRange) const {
-    if (!isValidNumber(this->inputVoltageRange, inputVoltageRange))
-        return false;
-    std::string command = commands.InputVoltageRange + separator + std::to_string(inputVoltageRange);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setInputVoltageRange(const std::string &inputVoltageRange) const {
-    return setInputVoltageRange(inputVoltageRangeNumberFromString(inputVoltageRange));
-}
-
-std::string LockInAmplifier::getInputVoltageRange() const {
-    return inputVoltageRangeStringFromNumber(std::stoi(ask(commands.InputVoltageRange + query_suffix)));
-}
-
-std::vector<std::string> LockInAmplifier::getInputCurrentGainList() const {
-    return this->inputCurrentGain;
-}
-
-int LockInAmplifier::inputCurrentGainNumberFromString(const std::string &inputCurrentGain_string) const {
-    return numberFromString(this->inputCurrentGain, inputCurrentGain_string);
-}
-
-std::string LockInAmplifier::inputCurrentGainStringFromNumber(const int &inputCurrentGain_number) const {
-    return stringFromNumber(this->inputCurrentGain, inputCurrentGain_number);
-}
-
-bool LockInAmplifier::setInputCurrentGain(const int &inputCurrentGain) const {
-    if (!isValidNumber(this->inputCurrentGain, inputCurrentGain))
-        return false;
-    std::string command = commands.InputCurrentGain + separator + std::to_string(inputCurrentGain);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setInputCurrentGain(const std::string &inputCurrentGain) const {
-    return setInputCurrentGain(inputCurrentGainNumberFromString(inputCurrentGain));
-}
-
-std::string LockInAmplifier::getInputCurrentGain() const {
-    return inputCurrentGainStringFromNumber(std::stoi(ask(commands.InputCurrentGain + query_suffix)));
-}
-
-std::string LockInAmplifier::getSignalStrength() const {
-    std::string answer = ask(commands.SignalStrength + query_suffix);
-    return answer;
-}
 
 std::vector<std::string> LockInAmplifier::getSensitivityList() const {
     return this->sensitivity;
@@ -507,33 +305,6 @@ std::string LockInAmplifier::getFilterSlope() const {
 }
 
 
-std::vector<std::string> LockInAmplifier::getSynchronousFilterList() const {
-    return this->synchronousFilter;
-}
-
-int LockInAmplifier::synchronousFilterNumberFromString(const std::string &synchronousFilter_string) const {
-    return numberFromString(this->synchronousFilter, synchronousFilter_string);
-}
-
-std::string LockInAmplifier::synchronousFilterStringFromNumber(const int &synchronousFilter_number) const {
-    return stringFromNumber(this->synchronousFilter, synchronousFilter_number);
-}
-
-bool LockInAmplifier::setSynchronousFilter(const int &synchronousFilter) const {
-    if (!isValidNumber(this->synchronousFilter, synchronousFilter))
-        return false;
-
-    std::string command = commands.SynchronousFilter + separator + std::to_string(synchronousFilter);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setSynchronousFilter(const std::string &synchronousFilter) const {
-    return setSynchronousFilter(synchronousFilterNumberFromString(synchronousFilter));
-}
-
-std::string LockInAmplifier::getSynchronousFilter() const {
-    return synchronousFilterStringFromNumber(std::stoi(ask(commands.SynchronousFilter + query_suffix)));
-}
 
 std::vector<std::string> LockInAmplifier::getOutDataList() const {
     return this->outData;
@@ -619,42 +390,11 @@ bool LockInAmplifier::getOutDataABC(const std::string &A, std::string &AValue, c
 }
 
 
-std::vector<std::string> LockInAmplifier::getAdvanceFilterList() const {
-    return this->advanceFilter;
-}
-
-int LockInAmplifier::advanceFilterNumberFromString(const std::string &advanceFilter_string) const {
-    return numberFromString(this->advanceFilter, advanceFilter_string);
-}
-
-std::string LockInAmplifier::advanceFilterStringFromNumber(const int &advanceFilter_number) const {
-    return stringFromNumber(this->advanceFilter, advanceFilter_number);
-}
-
-bool LockInAmplifier::setAdvanceFilter(const int &advanceFilter) const {
-    if (!isValidNumber(this->advanceFilter, advanceFilter))
-        return false;
-
-    std::string command = commands.AdvanceFilter + separator + std::to_string(advanceFilter);
-    return sendCommand(command);
-}
-
-bool LockInAmplifier::setAdvanceFilter(const std::string &advanceFilter) const {
-    return setAdvanceFilter(advanceFilterNumberFromString(advanceFilter));
-}
-
-std::string LockInAmplifier::getAdvanceFilter() const {
-    return advanceFilterStringFromNumber(std::stoi(ask(commands.AdvanceFilter + query_suffix)));
-}
-
 
 bool LockInAmplifier:: autoPhase() const {
     return sendCommand(commands.AutoPhase);
 }
 
-bool LockInAmplifier::autoRange() const {
-    return sendCommand(commands.AutoRange);
-}
 
 bool LockInAmplifier::autoScale() const {
     return sendCommand(commands.AutoScale);

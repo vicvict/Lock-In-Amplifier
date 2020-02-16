@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     std::string model;
-    //Добавление моделей
+    /*//Добавление моделей
     for (auto model : obj.getSupportedList()) {
         ui->comboBoxLockInAmplifierModel->addItem(to_QString(model));
     }
@@ -174,7 +174,7 @@ void MainWindow::on_pushButtonFrequency_clicked()
     bool succeed;
     ui->lineEditFrequency->text().toDouble(&succeed);
     if (succeed) {
-        obj.setInternalFrequency(ui->lineEditFrequency->text().toDouble(&succeed));
+        obj.setFrequency(ui->lineEditFrequency->text().toDouble(&succeed));
     }
     else {
         //do nothing

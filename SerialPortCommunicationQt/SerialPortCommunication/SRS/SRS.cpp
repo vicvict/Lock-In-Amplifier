@@ -5,11 +5,11 @@
 
 SRS::SRS() {
     setStringToBaudRate(SRS_vector_to_baud_rate);
-    setStringToDataBits(SRS_string_to_data_bits);
-    setStringToFlowControl(SRS_string_to_flow_control);
+    setStringToDataBits(SRS_vector_to_data_bits);
+    setStringToFlowControl(SRS_vector_to_flow_control);
     //setStringToParity(SRS_string_to_parity);
     setStringToParity(SRS_vector_to_parity);
-    setStringToStopBits(SRS_string_to_stop_bits);
+    setStringToStopBits(SRS_vector_to_stop_bits);
 
     init();
 }

@@ -90,11 +90,14 @@ protected:
 
     //void setStringToBaudRate   (const std::unordered_map < std::string , QSerialPort::BaudRate    > &new_string_to_baud_rate   );
     void setStringToBaudRate   (const std::vector < std::string > &new_vector_to_baud_rate );
-    void setStringToDataBits   (const std::unordered_map < std::string , QSerialPort::DataBits    > &new_string_to_data_bits   );
-    void setStringToFlowControl(const std::unordered_map < std::string , QSerialPort::FlowControl > &new_string_to_flow_control);
+    void setStringToDataBits   (const std::vector < std::string > &new_vector_to_data_bits );
+    void setStringToFlowControl   (const std::vector < std::string > &new_vector_to_flow_control );
+    void setStringToStopBits   (const std::vector < std::string > &new_vector_to_stop_bits );
+    //void setStringToDataBits   (const std::unordered_map < std::string , QSerialPort::DataBits    > &new_string_to_data_bits   );
+    //void setStringToFlowControl(const std::unordered_map < std::string , QSerialPort::FlowControl > &new_string_to_flow_control);
     //void setStringToParity     (const std::unordered_map < std::string , QSerialPort::Parity      > &new_string_to_parity      );
     void setStringToParity     (const std::vector < std::string > &new_vector_to_parity );
-    void setStringToStopBits   (const std::unordered_map < std::string , QSerialPort::StopBits    > &new_string_to_stop_bits   );
+    //void setStringToStopBits   (const std::unordered_map < std::string , QSerialPort::StopBits    > &new_string_to_stop_bits   );
 
     std::unordered_map < std::string , QSerialPort::BaudRate    > string_to_baud_rate    = {
                                                                                             {  "1200", QSerialPort::Baud1200  },

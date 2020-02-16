@@ -134,7 +134,7 @@ public:
                         };
     }
 
-    bool autoWideReverse() const;
+    bool autoWideReverse() const;// не уверен что это функция одинаковая в 830 и 844
 
     std::vector<std::string> getCloseReserveModeList() const;
     int closeReserveModeNumberFromString(const std::string  &closeReserveMode_string) const;
@@ -179,7 +179,40 @@ public:
     std::vector <std::string> getChannel1FromBuffer() const;
     std::vector <std::string> getChannel2FromBuffer() const;
 
+    std::vector<std::string> getRefTriggerModeList() const;
+    int refTriggerModeNumberFromString(const std::string  &refTriggerMode_string) const;
+    std::string refTriggerModeStringFromNumber(const int &refTriggerMode_number) const;
+    bool setRefTriggerMode(const int &refTriggerMode) const;
+    bool setRefTriggerMode(const std::string &refTriggerMode) const;
+    std::string getRefTriggerMode() const;
 
+    std::vector<std::string> getInputVoltageModeList() const;
+    int inputVoltageModeNumberFromString(const std::string  &inputVoltageMode_string) const;
+    std::string inputVoltageModeStringFromNumber(const int &inputVoltageMode_number) const;
+    bool setInputVoltageMode(const int &inputVoltageMode) const;
+    bool setInputVoltageMode(const std::string &inputVoltageMode) const;
+    std::string getInputVoltageMode() const;
+
+    std::vector<std::string> getInputVoltageCouplingList() const;
+    int inputVoltageCouplingNumberFromString(const std::string  &inputVoltageCoupling_string) const;
+    std::string inputVoltageCouplingStringFromNumber(const int &inputVoltageCoupling_number) const;
+    bool setInputVoltageCoupling(const int &inputVoltageCoupling) const;
+    bool setInputVoltageCoupling(const std::string &inputVoltageCoupling) const;
+    std::string getInputVoltageCoupling() const;
+
+    std::vector<std::string> getInputVoltageShieldsList() const;
+    int inputVoltageShieldsNumberFromString(const std::string  &inputVoltageShields_string) const;
+    std::string inputVoltageShieldsStringFromNumber(const int &inputVoltageShields_number) const;
+    bool setInputVoltageShields(const int &inputVoltageShields) const;
+    bool setInputVoltageShields(const std::string &inputVoltageShields) const;
+    std::string getInputVoltageShields() const;
+
+    std::vector<std::string> getSynchronousFilterList() const;
+    int synchronousFilterNumberFromString(const std::string  &synchronousFilter_string) const;
+    std::string synchronousFilterStringFromNumber(const int &synchronousFilter_number) const;
+    bool setSynchronousFilter(const int &synchronousFilter) const;
+    bool setSynchronousFilter(const std::string &synchronousFilter) const;
+    std::string getSynchronousFilter() const;
 protected:
 
 

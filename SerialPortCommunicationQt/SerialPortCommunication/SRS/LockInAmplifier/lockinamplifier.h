@@ -88,7 +88,7 @@ protected:
         std::string SetOutData = "DDEF";
 
         std::string AutoPhase = "APHS";
-        std::string AutoRange = "ARNG";
+        std::string AutoRange;
         std::string AutoScale = "AGAN"; //не факт что в 830 она делает то что надо. Надо проверить
         std::string AutoWideReverse;
         std::string AutoReserve;
@@ -152,19 +152,19 @@ public:
      * @param[in] Frequency the value of frequency in Hz
      * @return True if frequency is valid and sending is correct
      */
-    bool setInternalFrequency(const double &frequency) const;
+    bool setFrequency(const double &frequency) const;
 
     /**
      * @brief Returns the value of internal frequency
      * @return The value of internal frequency in Hz
      */
-    std::string getInternalFrequency() const;
+
 
     /**
      * @brief Returns the value of external reference frequency
      * @return The value of external reference frequency in Hz
      */
-    std::string getExternalFrequency() const;
+
 
     /**
      * @brief  Returns the actual detection frequency
@@ -173,7 +173,7 @@ public:
      * or external reference frequency.
      * @return The actual detection frequency in Hz
      */
-    std::string getFrequencyDetect() const;
+
 
     /**
      * @brief Returns the internal or external frequency
@@ -268,12 +268,6 @@ public:
      */
     std::string getRefSource() const;
 
-    std::vector<std::string> getRefTriggerModeList() const;
-    int refTriggerModeNumberFromString(const std::string  &refTriggerMode_string) const;
-    std::string refTriggerModeStringFromNumber(const int &refTriggerMode_number) const;
-    bool setRefTriggerMode(const int &refTriggerMode) const;
-    bool setRefTriggerMode(const std::string &refTriggerMode) const;
-    std::string getRefTriggerMode() const;
 
     std::vector<std::string> getRefTriggerOutputList() const;
     int refTriggerOutputNumberFromString(const std::string  &refTriggerOutput_string) const;
@@ -292,50 +286,8 @@ public:
     bool setRefTriggerOutput(const std::string &refTriggerOutput) const;
     std::string getRefTriggerOutput() const;
 
-    std::vector<std::string> getInputSignalList() const;
-    int inputSignalNumberFromString(const std::string  &inputSignal_string) const;
-    std::string inputSignalStringFromNumber(const int &inputSignal_number) const;
-    bool setInputSignal(const int &inputSignal) const;
-    bool setInputSignal(const std::string &inputSignal) const;
-    std::string getInputSignal() const;
-
-    std::vector<std::string> getInputVoltageModeList() const;
-    int inputVoltageModeNumberFromString(const std::string  &inputVoltageMode_string) const;
-    std::string inputVoltageModeStringFromNumber(const int &inputVoltageMode_number) const;
-    bool setInputVoltageMode(const int &inputVoltageMode) const;
-    bool setInputVoltageMode(const std::string &inputVoltageMode) const;
-    std::string getInputVoltageMode() const;
 
 
-    std::vector<std::string> getInputVoltageCouplingList() const;
-    int inputVoltageCouplingNumberFromString(const std::string  &inputVoltageCoupling_string) const;
-    std::string inputVoltageCouplingStringFromNumber(const int &inputVoltageCoupling_number) const;
-    bool setInputVoltageCoupling(const int &inputVoltageCoupling) const;
-    bool setInputVoltageCoupling(const std::string &inputVoltageCoupling) const;
-    std::string getInputVoltageCoupling() const;
-
-    std::vector<std::string> getInputVoltageShieldsList() const;
-    int inputVoltageShieldsNumberFromString(const std::string  &inputVoltageShields_string) const;
-    std::string inputVoltageShieldsStringFromNumber(const int &inputVoltageShields_number) const;
-    bool setInputVoltageShields(const int &inputVoltageShields) const;
-    bool setInputVoltageShields(const std::string &inputVoltageShields) const;
-    std::string getInputVoltageShields() const;
-
-    std::vector<std::string> getInputVoltageRangeList() const;
-    int inputVoltageRangeNumberFromString(const std::string  &inputVoltageRange_string) const;
-    std::string inputVoltageRangeStringFromNumber(const int &inputVoltageRange_number) const;
-    bool setInputVoltageRange(const int &inputVoltageRange) const;
-    bool setInputVoltageRange(const std::string &inputVoltageRange) const;
-    std::string getInputVoltageRange() const;
-
-    std::vector<std::string> getInputCurrentGainList() const;
-    int inputCurrentGainNumberFromString(const std::string  &inputCurrentGain_string) const;
-    std::string inputCurrentGainStringFromNumber(const int &inputCurrentGain_number) const;
-    bool setInputCurrentGain(const int &inputCurrentGain) const;
-    bool setInputCurrentGain(const std::string &inputCurrentGain) const;
-    std::string getInputCurrentGain() const;
-
-    std::string getSignalStrength() const;
 
     std::vector<std::string> getSensitivityList() const;
     int sensitivityNumberFromString(const std::string  &sensitivity_string) const;
@@ -351,26 +303,14 @@ public:
     bool setFilterSlope(const std::string &filterSlope) const;
     std::string getFilterSlope() const;
 
-    std::vector<std::string> getSynchronousFilterList() const;
-    int synchronousFilterNumberFromString(const std::string  &synchronousFilter_string) const;
-    std::string synchronousFilterStringFromNumber(const int &synchronousFilter_number) const;
-    bool setSynchronousFilter(const int &synchronousFilter) const;
-    bool setSynchronousFilter(const std::string &synchronousFilter) const;
-    std::string getSynchronousFilter() const;
 
-    std::vector<std::string> getAdvanceFilterList() const;
-    int advanceFilterNumberFromString(const std::string  &advanceFilter_string) const;
-    std::string advanceFilterStringFromNumber(const int &advanceFilter_number) const;
-    bool setAdvanceFilter(const int &advanceFilter) const;
-    bool setAdvanceFilter(const std::string &advanceFilter) const;
-    std::string getAdvanceFilter() const;
+
 
 
     //auto functions
     bool autoPhase() const;
-    bool autoRange() const;
     bool autoScale() const;
-    // не уверен что это функция одинаковая в 830 и 844
+
 
     //output data functions
     std::vector<std::string> getOutDataList() const;
@@ -420,12 +360,12 @@ protected:
     std::vector <std::string> outDataChannel2;
 
 
-    void SetRanges(const LockInAmplifierRanges &new_ranges);
+    //void SetRanges(const LockInAmplifierRanges &new_ranges);
 
-    void SetTimeConstantList( const std::vector<std::string> &new_time_constantlist);
+    //void SetTimeConstantList( const std::vector<std::string> &new_time_constantlist);
 
 
-    std::unordered_map < std::string , QSerialPort::BaudRate    > lockinAmplifier_string_to_baud_rate    = {
+    /*std::unordered_map < std::string , QSerialPort::BaudRate    > lockinAmplifier_string_to_baud_rate    = {
                                                                                            // {  "1200", QSerialPort::Baud1200  },
                                                                                            // {  "2400", QSerialPort::Baud2400  },
                                                                                             //{  "4800", QSerialPort::Baud4800  },
@@ -440,7 +380,7 @@ protected:
 
     std::unordered_map < std::string , QSerialPort::FlowControl > lockinAmplifier_string_to_flow_control = {
                                                                                                 {  "NO", QSerialPort::NoFlowControl  }
-                                                                                               };
+                                                                                               };*/
     std::string invalidData = "-1";
 
     double epsilon = 0.01;

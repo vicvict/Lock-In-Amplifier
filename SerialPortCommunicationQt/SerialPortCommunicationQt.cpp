@@ -539,7 +539,54 @@ void SerialPortCommunicationQt::setStringToBaudRate(const std::vector < std::str
     return;
 }
 
-void SerialPortCommunicationQt::setStringToDataBits(const std::unordered_map < std::string , QSerialPort::DataBits > &new_string_to_data_bits) {
+void SerialPortCommunicationQt::setStringToDataBits(const std::vector<std::string> &new_vector_to_data_bits) {
+    std::unordered_map < std::string , QSerialPort::DataBits > new_string_to_data_bits;
+    for (const auto &str: new_vector_to_data_bits) {
+        if (string_to_data_bits.count(str) > 0) {
+            new_string_to_data_bits[str] = string_to_data_bits.at(str);
+        }
+
+    }
+    string_to_data_bits = new_string_to_data_bits;
+
+    init_subroutine(string_to_data_bits, data_bits_to_string, valid_data_bits);
+    std::reverse(valid_data_bits.begin(), valid_data_bits.end());
+
+    return;
+}
+
+void SerialPortCommunicationQt::setStringToFlowControl(const std::vector<std::string> &new_vector_to_flow_control) {
+    std::unordered_map < std::string , QSerialPort::FlowControl > new_string_to_flow_control;
+    for (const auto &str: new_vector_to_flow_control) {
+        if (string_to_flow_control.count(str) > 0) {
+            new_string_to_flow_control[str] = string_to_flow_control.at(str);
+        }
+
+    }
+    string_to_flow_control = new_string_to_flow_control;
+
+    init_subroutine(string_to_flow_control, flow_control_to_string, valid_flow_control);
+    std::reverse(valid_flow_control.begin(), valid_flow_control.end());
+
+    return;
+}
+
+void SerialPortCommunicationQt::setStringToStopBits(const std::vector<std::string> &new_vector_to_stop_bits) {
+    std::unordered_map < std::string , QSerialPort::StopBits > new_string_to_stop_bits;
+    for (const auto &str: new_vector_to_stop_bits) {
+        if (string_to_stop_bits.count(str) > 0) {
+            new_string_to_stop_bits[str] = string_to_stop_bits.at(str);
+        }
+
+    }
+    string_to_stop_bits = new_string_to_stop_bits;
+
+    init_subroutine(string_to_stop_bits, stop_bits_to_string, valid_stop_bits);
+    std::reverse(valid_stop_bits.begin(), valid_stop_bits.end());
+
+    return;
+}
+/*void SerialPortCommunicationQt::setStringToDataBits(const std::unordered_map < std::string , QSerialPort::DataBits > &new_string_to_data_bits) {
     string_to_data_bits = new_string_to_data_bits;
 
     init_subroutine(string_to_data_bits, data_bits_to_string, valid_data_bits);
@@ -556,7 +603,7 @@ void SerialPortCommunicationQt::setStringToFlowControl(const std::unordered_map 
     std::reverse(valid_flow_control.begin(), valid_flow_control.end());
 
     return;
-}
+}*/
 
 void SerialPortCommunicationQt::setStringToParity(const std::vector < std::string > &new_vector_to_parity) {
     std::unordered_map < std::string , QSerialPort::Parity > new_string_to_parity;
@@ -575,14 +622,14 @@ void SerialPortCommunicationQt::setStringToParity(const std::vector < std::strin
     return;
 }
 
-void SerialPortCommunicationQt::setStringToStopBits(const std::unordered_map < std::string , QSerialPort::StopBits > &new_string_to_stop_bits) {
+/*void SerialPortCommunicationQt::setStringToStopBits(const std::unordered_map < std::string , QSerialPort::StopBits > &new_string_to_stop_bits) {
     string_to_stop_bits = new_string_to_stop_bits;
 
     init_subroutine(string_to_stop_bits, stop_bits_to_string, valid_stop_bits);
     std::reverse(valid_stop_bits.begin(), valid_stop_bits.end());
 
     return;
-}
+}*/
 
 bool SerialPortCommunicationQt::getThrowExceptions() const {
     return throw_exceptions;

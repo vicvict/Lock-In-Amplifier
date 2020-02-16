@@ -229,3 +229,141 @@ std::vector <std::string> SR830::getChannel2FromBuffer() const {
 
         return ans;
 }
+
+std::vector<std::string> SR830::getRefTriggerModeList() const {
+    return this->refTriggerMode;
+}
+
+int SR830::refTriggerModeNumberFromString(const std::string &refTriggerMode_string) const {
+    return numberFromString(this->refTriggerMode, refTriggerMode_string);
+}
+
+std::string SR830::refTriggerModeStringFromNumber(const int &refTriggerMode_number) const {
+    return stringFromNumber(this->refTriggerMode, refTriggerMode_number);
+}
+
+bool SR830::setRefTriggerMode(const int &refTriggerMode) const {
+    if (!isValidNumber(this->refTriggerMode, refTriggerMode))
+        return false;
+    std::string command = commands.RefTriggerMode + separator + std::to_string(refTriggerMode);
+    return sendCommand(command);
+}
+
+bool SR830::setRefTriggerMode(const std::string &refTriggerMode) const {
+    return setRefTriggerMode(refTriggerModeNumberFromString(refTriggerMode));
+}
+
+std::string SR830::getRefTriggerMode() const {
+    return refTriggerModeStringFromNumber(std::stoi(ask(commands.RefTriggerMode + query_suffix)));
+}
+
+
+std::vector<std::string> SR830::getInputVoltageModeList() const {
+    return this->inputVoltageMode;
+}
+
+int SR830::inputVoltageModeNumberFromString(const std::string &inputVoltageMode_string) const {
+    return numberFromString(this->inputVoltageMode, inputVoltageMode_string);
+}
+
+std::string SR830::inputVoltageModeStringFromNumber(const int &inputVoltageMode_number) const {
+    return stringFromNumber(this->inputVoltageMode, inputVoltageMode_number);
+}
+
+bool SR830::setInputVoltageMode(const int &inputVoltageMode) const {
+    if (!isValidNumber(this->inputVoltageMode, inputVoltageMode))
+        return false;
+    std::string command = commands.InputVoltageMode + separator + std::to_string(inputVoltageMode);
+    return sendCommand(command);
+}
+
+bool SR830::setInputVoltageMode(const std::string &inputVoltageMode) const {
+    return setInputVoltageMode(inputVoltageModeNumberFromString(inputVoltageMode));
+}
+
+std::string SR830::getInputVoltageMode() const {
+    return inputVoltageModeStringFromNumber(std::stoi(ask(commands.InputVoltageMode + query_suffix)));
+}
+
+
+std::vector<std::string> SR830::getInputVoltageCouplingList() const {
+    return this->inputVoltageCoupling;
+}
+
+int SR830::inputVoltageCouplingNumberFromString(const std::string &inputVoltageCoupling_string) const {
+    return numberFromString(this->inputVoltageCoupling, inputVoltageCoupling_string);
+}
+
+std::string SR830::inputVoltageCouplingStringFromNumber(const int &inputVoltageCoupling_number) const {
+    return stringFromNumber(this->inputVoltageCoupling, inputVoltageCoupling_number);
+}
+
+bool SR830::setInputVoltageCoupling(const int &inputVoltageCoupling) const {
+    if (!isValidNumber(this->inputVoltageCoupling, inputVoltageCoupling))
+        return false;
+    std::string command = commands.InputVoltageCoupling + separator + std::to_string(inputVoltageCoupling);
+    return sendCommand(command);
+}
+
+bool SR830::setInputVoltageCoupling(const std::string &inputVoltageCoupling) const {
+    return setInputVoltageCoupling(inputVoltageCouplingNumberFromString(inputVoltageCoupling));
+}
+
+std::string SR830::getInputVoltageCoupling() const {
+    return inputVoltageCouplingStringFromNumber(std::stoi(ask(commands.InputVoltageCoupling + query_suffix)));
+}
+
+std::vector<std::string> SR830::getInputVoltageShieldsList() const {
+    return this->inputVoltageShields;
+}
+
+int SR830::inputVoltageShieldsNumberFromString(const std::string &inputVoltageShields_string) const {
+    return numberFromString(this->inputVoltageShields, inputVoltageShields_string);
+}
+
+std::string SR830::inputVoltageShieldsStringFromNumber(const int &inputVoltageShields_number) const {
+    return stringFromNumber(this->inputVoltageShields, inputVoltageShields_number);
+}
+
+bool SR830::setInputVoltageShields(const int &inputVoltageShields) const {
+    if (!isValidNumber(this->inputVoltageShields, inputVoltageShields))
+        return false;
+    std::string command = commands.InputVoltageShields + separator + std::to_string(inputVoltageShields);
+    return sendCommand(command);
+}
+
+bool SR830::setInputVoltageShields(const std::string &inputVoltageShields) const {
+    return setInputVoltageShields(inputVoltageShieldsNumberFromString(inputVoltageShields));
+}
+
+std::string SR830::getInputVoltageShields() const {
+    return inputVoltageShieldsStringFromNumber(std::stoi(ask(commands.InputVoltageShields + query_suffix)));
+}
+
+std::vector<std::string> SR830::getSynchronousFilterList() const {
+    return this->synchronousFilter;
+}
+
+int SR830::synchronousFilterNumberFromString(const std::string &synchronousFilter_string) const {
+    return numberFromString(this->synchronousFilter, synchronousFilter_string);
+}
+
+std::string SR830::synchronousFilterStringFromNumber(const int &synchronousFilter_number) const {
+    return stringFromNumber(this->synchronousFilter, synchronousFilter_number);
+}
+
+bool SR830::setSynchronousFilter(const int &synchronousFilter) const {
+    if (!isValidNumber(this->synchronousFilter, synchronousFilter))
+        return false;
+
+    std::string command = commands.SynchronousFilter + separator + std::to_string(synchronousFilter);
+    return sendCommand(command);
+}
+
+bool SR830::setSynchronousFilter(const std::string &synchronousFilter) const {
+    return setSynchronousFilter(synchronousFilterNumberFromString(synchronousFilter));
+}
+
+std::string SR830::getSynchronousFilter() const {
+    return synchronousFilterStringFromNumber(std::stoi(ask(commands.SynchronousFilter + query_suffix)));
+}
