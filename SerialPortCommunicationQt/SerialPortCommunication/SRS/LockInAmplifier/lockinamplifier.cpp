@@ -305,7 +305,6 @@ std::string LockInAmplifier::getFilterSlope() const {
 }
 
 
-
 std::vector<std::string> LockInAmplifier::getOutDataList() const {
     return this->outData;
 }

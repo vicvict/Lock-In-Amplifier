@@ -217,6 +217,7 @@ public:
     bool setAdvanceFilter(const int &advanceFilter) const;
     bool setAdvanceFilter(const std::string &advanceFilter) const;
     std::string getAdvanceFilter() const;
+
 protected:
     const int minHarmDual = 1;
     const int maxHarmDual = 99;

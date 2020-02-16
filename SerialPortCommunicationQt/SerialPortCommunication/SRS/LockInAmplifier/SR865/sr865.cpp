@@ -283,6 +283,7 @@ bool SR865::setSynchronousFilter(const int &synchronousFilter) const {
     return sendCommand(command);
 }
 
+
 bool SR865::setSynchronousFilter(const std::string &synchronousFilter) const {
     return setSynchronousFilter(synchronousFilterNumberFromString(synchronousFilter));
 }
@@ -290,6 +291,7 @@ bool SR865::setSynchronousFilter(const std::string &synchronousFilter) const {
 std::string SR865::getSynchronousFilter() const {
     return synchronousFilterStringFromNumber(std::stoi(ask(commands.SynchronousFilter + query_suffix)));
 }
+
 
 std::vector<std::string> SR865::getAdvanceFilterList() const {
     return this->advanceFilter;
