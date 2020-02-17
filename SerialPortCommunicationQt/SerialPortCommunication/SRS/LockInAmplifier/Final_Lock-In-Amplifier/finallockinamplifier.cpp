@@ -1941,3 +1941,369 @@ std::string finalLockInAmplifier::getOutData(const std::string &outData) const {
         return sr865->getOutData(outData);
     return "No this model";
 }
+
+bool finalLockInAmplifier::workWithOutDataCouple() const {
+    if (lockInAmplifierModel == "SR830")
+        return true;
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    if (lockInAmplifierModel == "SR865")
+        return true;
+    return false;
+}
+
+std::vector<std::string> finalLockInAmplifier::getOutDataCoupleList() const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataCoupleList();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataCoupleList();
+    if (lockInAmplifierModel == "SR865")
+        return sr865->getOutDataCoupleList();
+}
+
+bool finalLockInAmplifier::getOutDataAB(const int &A, std::string &AValue, const int &B, std::string &BValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataAB(A, AValue, B, BValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataAB(A, AValue, B, BValue);
+    if (lockInAmplifierModel == "SR865")
+        return sr865->getOutDataAB(A, AValue, B, BValue);
+    return false;
+}
+
+bool finalLockInAmplifier::getOutDataAB(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataAB(A, AValue, B, BValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataAB(A, AValue, B, BValue);
+    if (lockInAmplifierModel == "SR865")
+        return sr865->getOutDataAB(A, AValue, B, BValue);
+    return false;
+}
+
+bool finalLockInAmplifier::getOutDataABC(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataABC(A, AValue, B, BValue, C, CValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataABC(A, AValue, B, BValue, C, CValue);
+    if (lockInAmplifierModel == "SR865")
+        return sr865->getOutDataABC(A, AValue, B, BValue, C, CValue);
+    return false;
+}
+
+bool finalLockInAmplifier::getOutDataABC(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataABC(A, AValue, B, BValue, C, CValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataABC(A, AValue, B, BValue, C, CValue);
+    if (lockInAmplifierModel == "SR865")
+        return sr865->getOutDataABC(A, AValue, B, BValue, C, CValue);
+    return false;
+}
+
+bool finalLockInAmplifier::getOutDataABCD(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataABCD(A, AValue, B, BValue, C, CValue, D, DValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataABCD(A, AValue, B, BValue, C, CValue, D, DValue);
+    return false;
+}
+
+bool finalLockInAmplifier::getOutDataABCD(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataABCD(A, AValue, B, BValue, C, CValue, D, DValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataABCD(A, AValue, B, BValue, C, CValue, D, DValue);
+    return false;
+}
+
+bool finalLockInAmplifier::getOutDataABCDE(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataABCDE(A, AValue, B, BValue, C, CValue, D, DValue, E, EValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataABCDE(A, AValue, B, BValue, C, CValue, D, DValue, E, EValue);
+    return false;
+}
+
+bool finalLockInAmplifier::getOutDataABCDE(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue, const std::string &E, std::string &EValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataABCDE(A, AValue, B, BValue, C, CValue, D, DValue, E, EValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataABCDE(A, AValue, B, BValue, C, CValue, D, DValue, E, EValue);
+    return false;
+}
+
+bool finalLockInAmplifier::getOutDataABCDEF(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue, const int &F, std::string &FValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataABCDEF(A, AValue, B, BValue, C, CValue, D, DValue, E, EValue, F, FValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataABCDEF(A, AValue, B, BValue, C, CValue, D, DValue, E, EValue, F, FValue);
+    return false;
+}
+
+bool finalLockInAmplifier::getOutDataABCDEF(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue, const std::string &E, std::string &EValue, const std::string &F, std::string &FValue) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->getOutDataABCDEF(A, AValue, B, BValue, C, CValue, D, DValue, E, EValue, F, FValue);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataABCDEF(A, AValue, B, BValue, C, CValue, D, DValue, E, EValue, F, FValue);
+    return false;
+}
+
+bool finalLockInAmplifier::workWithAutoWideReverse() const {
+    if (lockInAmplifierModel == "SR830")
+        return true;
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return false;
+}
+
+bool finalLockInAmplifier::autoWideReverse() const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->autoWideReverse();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->autoWideReverse();
+    return false;
+}
+
+bool finalLockInAmplifier::workWithAutoReserve() const {
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return  false;
+}
+
+bool finalLockInAmplifier::autoReserve() const {
+    if (lockInAmplifierModel == "SR844")
+        return sr844->autoReserve();
+    return  false;
+}
+
+bool finalLockInAmplifier::workWithInputSignalZ() const {
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return  false;
+}
+
+std::vector<std::string> finalLockInAmplifier::getInputSignalZList() const {
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getInputSignalZList();
+}
+
+bool finalLockInAmplifier::setInputSignalZ(const int &inputSignalZ) const {
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setInputSignalZ(inputSignalZ);
+    return false;
+}
+
+bool finalLockInAmplifier::setInputSignalZ(const std::string &inputSignalZ) const {
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setInputSignalZ(inputSignalZ);
+    return false;
+}
+
+std::string finalLockInAmplifier::getInputSignalZ() const {
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getInputSignalZ();
+    return "No this model or this model can't work with reference trigger mode";
+}
+
+bool finalLockInAmplifier::workWithCloseReserveMode() const {
+    if (lockInAmplifierModel == "SR830")
+        return  true;
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return false;
+}
+
+std::vector<std::string> finalLockInAmplifier::getCloseReserveModeList() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getCloseReserveModeList();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getCloseReserveModeList();
+}
+
+bool finalLockInAmplifier::setCloseReserveMode(const int &closeReserveMode) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setCloseReserveMode(closeReserveMode);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setCloseReserveMode(closeReserveMode);
+    return false;
+}
+
+bool finalLockInAmplifier::setCloseReserveMode(const std::string &closeReserveMode) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setCloseReserveMode(closeReserveMode);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setCloseReserveMode(closeReserveMode);
+    return false;
+}
+
+std::string finalLockInAmplifier::getCloseReserveMode() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getCloseReserveMode();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getCloseReserveMode();
+    return "No this model or this model can't work with reference trigger mode";
+}
+
+bool finalLockInAmplifier::workWithSetOutDataChannel1() const {
+    if (lockInAmplifierModel == "SR830")
+        return  true;
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return false;
+}
+
+std::vector<std::string> finalLockInAmplifier::getOutDataChannel1List() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getOutDataChannel1List();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataChannel1List();
+}
+
+bool finalLockInAmplifier::setOutDataChannel1(const int &outData) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setOutDataChannel1(outData);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setOutDataChannel1(outData);
+    return false;
+}
+
+bool finalLockInAmplifier::setOutDataChannel1(const std::string &outData) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setOutDataChannel1(outData);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setOutDataChannel1(outData);
+    return false;
+}
+
+bool finalLockInAmplifier::workWithSetOutDataChannel2() const {
+    if (lockInAmplifierModel == "SR830")
+        return  true;
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return false;
+}
+
+std::vector<std::string> finalLockInAmplifier::getOutDataChannel2List() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getOutDataChannel2List();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getOutDataChannel2List();
+}
+
+bool finalLockInAmplifier::setOutDataChannel2(const int &outData) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setOutDataChannel2(outData);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setOutDataChannel2(outData);
+    return false;
+}
+
+bool finalLockInAmplifier::setOutDataChannel2(const std::string &outData) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setOutDataChannel2(outData);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setOutDataChannel2(outData);
+    return false;
+}
+
+bool finalLockInAmplifier::workWithBufferMode() const {
+    if (lockInAmplifierModel == "SR830")
+        return  true;
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return false;
+}
+
+std::vector<std::string> finalLockInAmplifier::getBufferModeList() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getBufferModeList();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getBufferModeList();
+}
+
+bool finalLockInAmplifier::setBufferMode(const int &bufferMode) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setBufferMode(bufferMode);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setBufferMode(bufferMode);
+    return false;
+}
+
+bool finalLockInAmplifier::setBufferMode(const std::string &bufferMode) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setBufferMode(bufferMode);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setBufferMode(bufferMode);
+    return false;
+}
+
+std::string finalLockInAmplifier::getBufferMode() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getBufferMode();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getBufferMode();
+    return "No this model or this model can't work with reference trigger mode";
+}
+
+bool finalLockInAmplifier::workWithBuffer() const {
+    if (lockInAmplifierModel == "SR830")
+        return  true;
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return false;
+}
+
+bool finalLockInAmplifier::startBuffer() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->startBuffer();
+    if (lockInAmplifierModel == "SR844")
+        return  sr844->startBuffer();
+    return false;
+}
+
+bool finalLockInAmplifier::stopBuffer() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->stopBuffer();
+    if (lockInAmplifierModel == "SR844")
+        return  sr844->stopBuffer();
+    return false;
+}
+
+bool finalLockInAmplifier::pauseBuffer() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->pauseBuffer();
+    if (lockInAmplifierModel == "SR844")
+        return  sr844->pauseBuffer();
+    return false;
+}
+
+std::string finalLockInAmplifier::getPointFromBufferChannel1(const int &number) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getPointFromBufferChannel1(number);
+    if (lockInAmplifierModel == "SR844")
+        return  sr844->getPointFromBufferChannel1(number);
+    return "No this model or this model can't work with buffer";
+}
+
+std::vector <std::string> finalLockInAmplifier::getChannel1FromBuffer() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getChannel1FromBuffer();
+    if (lockInAmplifierModel == "SR844")
+        return  sr844->getChannel1FromBuffer();
+}
+
+std::string finalLockInAmplifier::getPointFromBufferChannel2(const int &number) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getPointFromBufferChannel2(number);
+    if (lockInAmplifierModel == "SR844")
+        return  sr844->getPointFromBufferChannel2(number);
+    return "No this model or this model can't work with buffer";
+}
+
+std::vector <std::string> finalLockInAmplifier::getChannel2FromBuffer() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getChannel2FromBuffer();
+    if (lockInAmplifierModel == "SR844")
+        return  sr844->getChannel2FromBuffer();
+}

@@ -116,6 +116,15 @@ public:
     bool workWithAutoScale() const;
     bool workWithAutoRange() const;
     bool workWithOutData() const;
+    bool workWithOutDataCouple() const;
+    bool workWithAutoWideReverse() const;
+    bool workWithAutoReserve() const;
+    bool workWithInputSignalZ() const;
+    bool workWithCloseReserveMode() const;
+    bool workWithSetOutDataChannel1() const;
+    bool workWithSetOutDataChannel2() const;
+    bool workWithBuffer() const;
+    bool workWithBufferMode() const;
 
 
     double getMinPhase() const;
@@ -348,12 +357,57 @@ public:
     std::string getOutData(const std::string &outData) const;
 
     std::vector<std::string> getOutDataCoupleList() const;
-    int outDataCoupleNumberFromString(const std::string  &outDataCouple_string) const;
-    std::string outDataCoupleStringFromNumber(const int &outDataCouple_number) const;
     bool getOutDataAB(const int &A, std::string &AValue, const int &B, std::string &BValue) const;
     bool getOutDataABC(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue) const;
     bool getOutDataAB(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue) const;
     bool getOutDataABC(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue) const;
+
+    bool autoWideReverse() const;
+    bool autoReserve() const;
+
+    std::vector<std::string> getInputSignalZList() const;
+    bool setInputSignalZ(const int &inputSignalZ) const;
+    bool setInputSignalZ(const std::string &inputSignalZ) const;
+    std::string getInputSignalZ() const;
+
+    std::vector<std::string> getCloseReserveModeList() const;
+    bool setCloseReserveMode(const int &closeReserveMode) const;
+    bool setCloseReserveMode(const std::string &icloseReserveMode) const;
+    std::string getCloseReserveMode() const;
+
+    /*bool outDataAutoZeroChannel1(const int &outDataChannel1) const;
+    bool outDataAutoZeroChannel1(const std::string &outDataChannel1) const;
+    bool outDataAutoZeroChannel2(const int &outDataChannel2) const;
+    bool outDataAutoZeroChannel2(const std::string &outDataChannel2) const;
+*/ // не понял как работает эта функция поэтому скорей всего удалю
+    std::string getPointFromBufferChannel1(const int &number) const;
+    std::string getPointFromBufferChannel2(const int &number) const;
+    std::vector <std::string> getChannel1FromBuffer() const;
+    std::vector <std::string> getChannel2FromBuffer() const;
+
+    bool getOutDataABCD(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue) const;
+    bool getOutDataABCDE(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue) const;
+    bool getOutDataABCDEF(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue, const int &F, std::string &FValue) const;
+    bool getOutDataABCD(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue) const;
+    bool getOutDataABCDE(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue, const std::string &E, std::string &EValue) const;
+    bool getOutDataABCDEF(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue, const std::string &E, std::string &EValue, const std::string &F, std::string &FValue) const;
+
+    std::vector<std::string> getOutDataChannel1List() const;
+    bool setOutDataChannel1(const int &outDataChannel1) const;
+    bool setOutDataChannel1(const std::string &outDataChannel1) const;
+
+    std::vector<std::string> getOutDataChannel2List() const;
+    bool setOutDataChannel2(const int &outDataChannel2) const;
+    bool setOutDataChannel2(const std::string &outDataChannel2) const;
+
+    std::vector<std::string> getBufferModeList() const;
+    bool setBufferMode(const int &bufferMode) const;
+    bool setBufferMode(const std::string &bufferMode) const;
+    std::string getBufferMode() const;
+
+    bool startBuffer() const;
+    bool pauseBuffer() const;
+    bool stopBuffer() const;
 };
 
 #endif // FINALLOCKINAMPLIFIER_H
