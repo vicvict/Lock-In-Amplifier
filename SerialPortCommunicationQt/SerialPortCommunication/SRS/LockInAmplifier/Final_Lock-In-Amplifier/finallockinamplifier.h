@@ -10,10 +10,13 @@
 #include "../../SR830/sr830.h"
 #include "../../SR844/sr844.h"
 #include "../../SR865/sr865.h"
+#include "../../SRS.h"
 
 class finalLockInAmplifier
 {
 private:
+    SRS *srs;
+
     SR830 *SR830;
     SR844 *SR844;
     SR865 *SR865;
@@ -56,7 +59,7 @@ public:
                  const std::string &new_data_bits   ,
                  const std::string &new_stop_bits   ,
                  const std::string &new_parity      ,
-                 const std::string &new_flow_control) const;
+                 const std::string &new_flow_control);
     bool connect(const std::string &new_port_name   ,
                  const std::string &new_baudrate    ) const;
     bool connect(const std::string &new_port_name   ) const;

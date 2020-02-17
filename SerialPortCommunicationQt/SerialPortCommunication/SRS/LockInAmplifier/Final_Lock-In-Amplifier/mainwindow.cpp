@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "../lockinamplifier.h"
+#include "finallockinamplifier.h"
 #include "test.h"
 //Проблема: при попытке detect'a не receiv'ит сингналы, пока не поменяешь read_wait_timeout
 MainWindow::MainWindow(QWidget *parent) :
@@ -9,87 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     std::string model;
-    /*//Добавление моделей
-    for (auto model : obj.getSupportedList()) {
-        ui->comboBoxLockInAmplifierModel->addItem(to_QString(model));
-    }
-
-    //Добавление time constants
-    for (auto timeConstant : obj.getTimeConstantList()) {
-        ui->comboBoxTimeConstant->addItem(to_QString(timeConstant));
-    }
-
-    //Добавление ref sources
-    for (auto refSource : obj.getRefSourceList()) {
-        ui->comboBoxRefSource->addItem(to_QString(refSource));
-    }
-
-    //Добавление ref trigger mode
-    for (auto refTriggerMode : obj.getRefTriggerModeList()) {
-        ui->comboBoxRefTriggerMode->addItem(to_QString(refTriggerMode));
-    }
-
-    //Добавление ref trigger output
-    for (auto refTriggerOutput : obj.getRefTriggerOutputList()) {
-        ui->comboBoxRefTriggerOutput->addItem(to_QString(refTriggerOutput));
-    }
-
-    //Добавление input signal
-    for (auto inputSignal : obj.getInputSignalList()) {
-        ui->comboBoxInputSignal->addItem(to_QString(inputSignal));
-    }
-
-    //Добавление voltage mode
-    for (auto inputVoltageMode : obj.getInputVoltageModeList()) {
-        ui->comboBoxInputVoltageMode->addItem(to_QString(inputVoltageMode));
-    }
-
-    //Добавление voltage coupling
-    for (auto inputVoltageCoupling : obj.getInputVoltageCouplingList()) {
-        ui->comboBoxInputVoltageCoupling->addItem(to_QString(inputVoltageCoupling));
-    }
-
-    //Добавление voltage shields
-    for (auto inputVoltageShields : obj.getInputVoltageShieldsList()) {
-        ui->comboBoxInputVoltageShields->addItem(to_QString(inputVoltageShields));
-    }
-
-    //Добавление voltage range
-    for (auto inputVoltageRange : obj.getInputVoltageRangeList()) {
-        ui->comboBoxInputVoltageRange->addItem(to_QString(inputVoltageRange));
-    }
-
-    //Добавление current gain
-    for (auto inputCurrentGain : obj.getInputCurrentGainList()) {
-        ui->comboBoxInputCurrentGain->addItem(to_QString(inputCurrentGain));
-    }
-
-    //Добавление sensitivity
-    for (auto sensitivity : obj.getSensitivityList()) {
-        ui->comboBoxSensivitity->addItem(to_QString(sensitivity));
-    }
-
-
-    for (auto filterSlope : obj.getFilterSlopeList()) {
-        ui->comboBoxFilterSlope->addItem(to_QString(filterSlope));
-    }
-
-
-    for (auto synchronousFilter : obj.getSynchronousFilterList()) {
-        ui->comboBoxSynchronousFilter->addItem(to_QString(synchronousFilter));
-    }
-
-
-
-    for (auto advanceFilter : obj.getAdvanceFilterList()) {
-        ui->comboBoxAdvanceFilter->addItem(to_QString(advanceFilter));
-    }
-
-
-    //Добавление data
-    for (auto data : obj.getOutDataList()) {
-        ui->comboBoxOutData->addItem(to_QString(data));
-    }
 
     /*try {
         model = obj.detect("COM4", succeed);
@@ -369,13 +288,96 @@ void MainWindow::on_pushButtonConnect_clicked()
 {
     if(ui->pushButtonConnect->text() == "Connect"){
         try {
-            obj.connect("COM5","19200","8","1", "NO", "NO");
+            obj.connect("COM7","19200","8","1", "NO", "NO");
+
+            //Добавление моделей
+            for (auto model : obj.getSupportedList()) {
+                ui->comboBoxLockInAmplifierModel->addItem(to_QString(model));
+            }
+
+            //Добавление time constants
+            for (auto timeConstant : obj.getTimeConstantList()) {
+                ui->comboBoxTimeConstant->addItem(to_QString(timeConstant));
+            }
+
+            //Добавление ref sources
+            for (auto refSource : obj.getRefSourceList()) {
+                ui->comboBoxRefSource->addItem(to_QString(refSource));
+            }
+
+            //Добавление ref trigger mode
+            for (auto refTriggerMode : obj.getRefTriggerModeList()) {
+                ui->comboBoxRefTriggerMode->addItem(to_QString(refTriggerMode));
+            }
+
+            //Добавление ref trigger output
+            for (auto refTriggerOutput : obj.getRefTriggerOutputList()) {
+                ui->comboBoxRefTriggerOutput->addItem(to_QString(refTriggerOutput));
+            }
+
+            //Добавление input signal
+            for (auto inputSignal : obj.getInputSignalList()) {
+                ui->comboBoxInputSignal->addItem(to_QString(inputSignal));
+            }
+
+            //Добавление voltage mode
+            for (auto inputVoltageMode : obj.getInputVoltageModeList()) {
+                ui->comboBoxInputVoltageMode->addItem(to_QString(inputVoltageMode));
+            }
+
+            //Добавление voltage coupling
+            for (auto inputVoltageCoupling : obj.getInputVoltageCouplingList()) {
+                ui->comboBoxInputVoltageCoupling->addItem(to_QString(inputVoltageCoupling));
+            }
+
+            //Добавление voltage shields
+            for (auto inputVoltageShields : obj.getInputVoltageShieldsList()) {
+                ui->comboBoxInputVoltageShields->addItem(to_QString(inputVoltageShields));
+            }
+
+            //Добавление voltage range
+            for (auto inputVoltageRange : obj.getInputVoltageRangeList()) {
+                ui->comboBoxInputVoltageRange->addItem(to_QString(inputVoltageRange));
+            }
+
+            //Добавление current gain
+            for (auto inputCurrentGain : obj.getInputCurrentGainList()) {
+                ui->comboBoxInputCurrentGain->addItem(to_QString(inputCurrentGain));
+            }
+
+            //Добавление sensitivity
+            for (auto sensitivity : obj.getSensitivityList()) {
+                ui->comboBoxSensivitity->addItem(to_QString(sensitivity));
+            }
+
+
+            for (auto filterSlope : obj.getFilterSlopeList()) {
+                ui->comboBoxFilterSlope->addItem(to_QString(filterSlope));
+            }
+
+
+            for (auto synchronousFilter : obj.getSynchronousFilterList()) {
+                ui->comboBoxSynchronousFilter->addItem(to_QString(synchronousFilter));
+            }
+
+
+
+            for (auto advanceFilter : obj.getAdvanceFilterList()) {
+                ui->comboBoxAdvanceFilter->addItem(to_QString(advanceFilter));
+            }
+
+
+            //Добавление data
+            for (auto data : obj.getOutDataList()) {
+                ui->comboBoxOutData->addItem(to_QString(data));
+            }
+
             ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
             ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
             ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
             ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
             ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
-            /*ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
+            ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
             ui->comboBoxTimeConstant -> setCurrentText(to_QString(obj.getTimeConstant()));
             ui->comboBoxRefSource -> setCurrentText(to_QString(obj.getRefSource()));
             ui->comboBoxRefTriggerMode -> setCurrentText(to_QString(obj.getRefTriggerMode()));
@@ -390,7 +392,7 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
             ui->comboBoxFilterSlope -> setCurrentText(to_QString(obj.getFilterSlope()));
             ui->comboBoxSynchronousFilter -> setCurrentText(to_QString(obj.getSynchronousFilter()));
-            ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));*/
+            ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));
 
             ui->pushButtonConnect->setText("Disconnect");
 
@@ -487,6 +489,17 @@ void MainWindow::on_Test_clicked()
         obj.setRefTriggerMode(to_StdString(ui->comboBoxRefTriggerMode->currentText()));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
+    }
+
+}
+
+void MainWindow::on_pushButtonSend_clicked() {
+    std::string answer;
+    try {
+        obj.sendQuery(to_StdString(ui->lineEditSend->text()), answer);
+        ui -> lineEditRecieve -> setText(to_QString(answer));
+    } catch (std::string s) {
+        ui -> lineEditError->setText(to_QString(s));
     }
 
 }

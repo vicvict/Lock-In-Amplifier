@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "../../lockinamplifier.h"
 #include "../../SR844/sr844.h"
+#include "finallockinamplifier.h"
 
 
 namespace Ui {

@@ -1,4 +1,4 @@
-#include "SR830.h"
+#include "sr830.h"
 
 
 std::vector<std::string> SR830::getCloseReserveModeList() const {

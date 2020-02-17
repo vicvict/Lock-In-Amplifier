@@ -8,7 +8,7 @@ SR844Graphics::SR844Graphics(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    for (auto refSource : obj.getRefSourceList()) {
+    /*for (auto refSource : obj.getRefSourceList()) {
         ui->comboBoxRefSource->addItem(to_QString(refSource));
     }
 
@@ -53,13 +53,13 @@ SR844Graphics::SR844Graphics(QWidget *parent) :
 
     for (auto data : obj.getOutDataList()) {
         ui->comboBoxOutData->addItem(to_QString(data));
-    }
+    }*/
 
 
     try {
         obj.connect("COM7","19200","8","1", "NO", "NO");
-        ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
-        ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
+        //ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
+       /* ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
         ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
         ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
         //ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
@@ -79,9 +79,9 @@ SR844Graphics::SR844Graphics(QWidget *parent) :
         ui->comboBoxFilterSlope -> setCurrentText(to_QString(obj.getFilterSlope()));
         //ui->comboBoxSynchronousFilter -> setCurrentText(to_QString(obj.getSynchronousFilter()));
         //ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));
-        ui->comboBoxInputSignalZ-> setCurrentText(to_QString(obj.getInputSignalZ()));
-        ui->comboBoxCloseReserveMode-> setCurrentText(to_QString(obj.getCloseReserveMode()));
-
+       // ui->comboBoxInputSignalZ-> setCurrentText(to_QString(obj.getInputSignalZ()));
+       // ui->comboBoxCloseReserveMode-> setCurrentText(to_QString(obj.getCloseReserveMode()));
+*/
     } catch (std:: string s) {
         ui->lineEditError->setText(to_QString(s));
     }

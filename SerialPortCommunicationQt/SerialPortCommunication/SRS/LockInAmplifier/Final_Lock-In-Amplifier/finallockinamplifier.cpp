@@ -5,13 +5,16 @@ finalLockInAmplifier::finalLockInAmplifier() {
 }
 
 finalLockInAmplifier::finalLockInAmplifier(const std::string new_model){
-    setModel(new_model);
+    lockInAmplifierModel = new_model;
 }
 
 finalLockInAmplifier::~finalLockInAmplifier() {
     SR830->~SR830();
     SR844->~SR844();
     SR865->~SR865();
+    delete this->SR830;
+    delete this->SR844;
+    delete this->SR865;
 }
 
 std::string finalLockInAmplifier::getModel() const {
@@ -724,22 +727,39 @@ bool finalLockInAmplifier::openSerial() const {
 
 bool finalLockInAmplifier::connect(const std::string &new_port_name, const std::string &new_baudrate, const std::string &new_data_bits, const std::string &new_stop_bits, const std::string &new_parity, const std::string &new_flow_control, const std::string &new_model) {
     setModel(new_model);
-    if(this->lockInAmplifierModel == "SR830")
-        return this->SR830->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);
+    if(this->lockInAmplifierModel == "SR830") {
+        this->SR830 = new class SR830();
+        return this->SR830->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);}
     if(this->lockInAmplifierModel == "SR844")
         return this->SR844->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);
-    if(this->lockInAmplifierModel == "SR865")
-        return this->SR865->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);
+    if(this->lockInAmplifierModel == "SR865") {
+        this->SR865 = new class SR865();
+        std::cout << "LOX\n";
+        return this->SR865->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);}
+    std::cout << "kva\n";
     return false;
 }
 
-bool finalLockInAmplifier::connect(const std::string &new_port_name, const std::string &new_baudrate, const std::string &new_data_bits, const std::string &new_stop_bits, const std::string &new_parity, const std::string &new_flow_control) const {
-    if(this->lockInAmplifierModel == "SR830")
-        return this->SR830->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);
-    if(this->lockInAmplifierModel == "SR844")
-        return this->SR844->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);
-    if(this->lockInAmplifierModel == "SR865")
-        return this->SR865->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);
+bool finalLockInAmplifier::connect(const std::string &new_port_name, const std::string &new_baudrate, const std::string &new_data_bits, const std::string &new_stop_bits, const std::string &new_parity, const std::string &new_flow_control) {
+    this->srs = new SRS();
+    srs->connect(new_port_name,new_baudrate, new_data_bits, new_stop_bits, new_parity, new_flow_control);
+    setModel(srs->getModel());
+    srs->disconnect();
+    if(this->lockInAmplifierModel == "SR830") {
+        this->SR830 = new class SR830();
+        SR830->setSerial(srs->getSerial());
+        return this->SR830->connect(new_port_name);
+    }
+    if(this->lockInAmplifierModel == "SR844") {
+        this->SR844 = new class SR844();
+        SR844->setSerial(srs->getSerial());
+        return this->SR844->connect(new_port_name);
+    }
+    if(this->lockInAmplifierModel == "SR865")  {
+        this->SR865 = new class SR865();
+        SR865->setSerial(srs->getSerial());
+        return this->SR865->connect(new_port_name);
+    }
     return false;
 }
 
@@ -842,11 +862,21 @@ double finalLockInAmplifier::getTTR() const {
 }
 
 std::vector < std::string > finalLockInAmplifier::getSupportedList() const {
-    return this->SR830->getSupportedList();
+    if(this->lockInAmplifierModel == "SR830")
+       return this->SR830->getSupportedList();
+    if(this->lockInAmplifierModel == "SR844")
+       return this->SR844->getSupportedList();
+    if(this->lockInAmplifierModel == "SR865")
+       return this->SR865->getSupportedList();
 }
 
 int finalLockInAmplifier::getAttemptsToConnect() const {
-    return this->SR830->getAttemptsToConnect();
+    if(this->lockInAmplifierModel == "SR830")
+       return this->SR830->getAttemptsToConnect();
+    if(this->lockInAmplifierModel == "SR844")
+       return this->SR844->getAttemptsToConnect();
+    if(this->lockInAmplifierModel == "SR865")
+       return this->SR865->getAttemptsToConnect();
 }
 
 void finalLockInAmplifier::setAttemptsToConnect(const int &new_attempts_to_connect) {
@@ -858,11 +888,23 @@ void finalLockInAmplifier::setAttemptsToConnect(const int &new_attempts_to_conne
 }
 
 std::string finalLockInAmplifier::getIDN(bool* succeed) const {
-    return this->SR844->getIDN(succeed);
+    if(this->lockInAmplifierModel == "SR830")
+       return this->SR830->getIDN();
+    if(this->lockInAmplifierModel == "SR844")
+       return this->SR844->getIDN();
+    if(this->lockInAmplifierModel == "SR865")
+       return this->SR865->getIDN();
+    return "No this model brute\n";
 }
 
 std::string finalLockInAmplifier::getModel(bool* succeed) const {
-    return this->SR865->getModel(succeed);
+    if(this->lockInAmplifierModel == "SR830")
+       return this->SR830->getModel();
+    if(this->lockInAmplifierModel == "SR844")
+       return this->SR844->getModel();
+    if(this->lockInAmplifierModel == "SR865")
+       return this->SR865->getModel();
+    return "No this model brute\n";
 }
 
 bool finalLockInAmplifier::isActive() const {
@@ -1309,9 +1351,12 @@ bool finalLockInAmplifier::workWithRefTriggerMode() const {
 
 std::vector<std::string> finalLockInAmplifier::getRefTriggerModeList() const {
     if (lockInAmplifierModel == "SR830")
-        return SR830->getRefSourceList();
+        return SR830->getRefTriggerModeList();
     if (lockInAmplifierModel == "SR865")
-        return SR865->getRefSourceList();
+        return SR865->getRefTriggerModeList();
+    std::vector <std::string> incorrectData;
+    incorrectData.clear();
+    return incorrectData;
 }
 
 bool finalLockInAmplifier::setRefTriggerMode(const int &refTriggerMode) const {

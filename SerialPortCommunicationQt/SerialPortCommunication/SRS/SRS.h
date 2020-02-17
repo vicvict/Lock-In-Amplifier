@@ -33,7 +33,7 @@ public:
 protected:
     std::vector < std::string > supported_models = {
                                                     "DS335", "DS345",
-                                                    "SR830", "SR844", "SR865", "SR865A",
+                                                    "SR830", "SR844", "SR865",
                                                     "PTC10"
                                                    };
 

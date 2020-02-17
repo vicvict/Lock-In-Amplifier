@@ -72,6 +72,8 @@ private slots:
 
     void on_Test_clicked();
 
+    void on_pushButtonSend_clicked();
+
 private:
     Ui::MainWindow *ui;
 
