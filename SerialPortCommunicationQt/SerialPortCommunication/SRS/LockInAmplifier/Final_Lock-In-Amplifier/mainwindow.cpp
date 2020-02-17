@@ -288,7 +288,7 @@ void MainWindow::on_pushButtonConnect_clicked()
 {
     if(ui->pushButtonConnect->text() == "Connect"){
         try {
-            obj.connect("COM7","19200","8","1", "NO", "NO");
+            obj.connect("COM5","19200","8","1", "NO", "NO");
 
             //Добавление моделей
             for (auto model : obj.getSupportedList()) {

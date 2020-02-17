@@ -17,9 +17,9 @@ class finalLockInAmplifier
 private:
     SRS *srs;
 
-    SR830 *SR830;
-    SR844 *SR844;
-    SR865 *SR865;
+    SR830 *sr830;
+    SR844 *sr844;
+    SR865 *sr865;
 
     std::string lockInAmplifierModel;
 public:
