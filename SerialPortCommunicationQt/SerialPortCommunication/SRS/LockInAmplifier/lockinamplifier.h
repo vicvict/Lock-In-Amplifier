@@ -345,7 +345,6 @@ protected:
     std::vector <std::string> inputCurrentGain;
     std::vector <std::string> sensitivity;
     std::vector <std::string> filterSlope;
-    ///Надо ли его перемещать в 865 и 830, если его нет в 844?
     std::vector <std::string> synchronousFilter;
     std::vector <std::string> advanceFilter;
     std::vector <std::string> inputSignalZ;
