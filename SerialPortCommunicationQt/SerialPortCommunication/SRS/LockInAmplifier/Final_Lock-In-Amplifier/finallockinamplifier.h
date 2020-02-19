@@ -27,13 +27,6 @@ public:
     ~finalLockInAmplifier();
     finalLockInAmplifier(const std::string new_model);
 
-    static std::vector < std::string > getValidPortName   (                                   )      ;
-           std::string                 getPortName        (                                   ) const;
-           void                        setPortName        (const std::string &new_port_name   ) const;
-
-    bool getThrowExceptions(                                ) const;
-    void setThrowExceptions(const bool &new_throw_exceptions) const;
-
     std::string getModel() const;
     void setModel(const std::string new_model) ;
 
@@ -43,9 +36,6 @@ public:
     void setReadTimeout    (const int &new_read_timeout     )      ;
     int  getReadWaitTimeout(                                ) const;
     void setReadWaitTimeout(const int &new_read_wait_timeout)      ;
-
-    bool isOpen    () const;
-    bool openSerial() const;
 
     bool connect(const std::string &new_port_name   ,
                  const std::string &new_baudrate    ,
@@ -91,8 +81,8 @@ public:
 
 
 
-    bool workWithPhas() const;
-    bool workWithAutoPhas() const;
+    bool workWithPhase() const;
+    bool workWithAutoPhase() const;
     bool workWithFrequency() const;
     bool workWithHarmonic() const;
     bool workWithDualHarmonic() const;

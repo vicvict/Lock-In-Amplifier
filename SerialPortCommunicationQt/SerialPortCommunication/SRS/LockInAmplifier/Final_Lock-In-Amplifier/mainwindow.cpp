@@ -288,7 +288,7 @@ void MainWindow::on_pushButtonConnect_clicked()
 {
     if(ui->pushButtonConnect->text() == "Connect"){
         try {
-            obj.connect("COM5","19200","8","1", "NO", "NO");
+            obj.connect("COM7","19200","8","1", "NO", "NO");
 
             //Добавление моделей
             for (auto model : obj.getSupportedList()) {
@@ -300,12 +300,12 @@ void MainWindow::on_pushButtonConnect_clicked()
                 ui->comboBoxTimeConstant->addItem(to_QString(timeConstant));
             }
 
-            //Добавление ref sources
+            /*//Добавление ref sources
             for (auto refSource : obj.getRefSourceList()) {
                 ui->comboBoxRefSource->addItem(to_QString(refSource));
-            }
+            }*/
 
-            //Добавление ref trigger mode
+            /*//Добавление ref trigger mode
             for (auto refTriggerMode : obj.getRefTriggerModeList()) {
                 ui->comboBoxRefTriggerMode->addItem(to_QString(refTriggerMode));
             }
@@ -370,16 +370,16 @@ void MainWindow::on_pushButtonConnect_clicked()
             //Добавление data
             for (auto data : obj.getOutDataList()) {
                 ui->comboBoxOutData->addItem(to_QString(data));
-            }
+            }*/
 
             ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
             ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
             ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
             ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
-            ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
-            ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
+            //ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
+            //ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
             ui->comboBoxTimeConstant -> setCurrentText(to_QString(obj.getTimeConstant()));
-            ui->comboBoxRefSource -> setCurrentText(to_QString(obj.getRefSource()));
+            /*ui->comboBoxRefSource -> setCurrentText(to_QString(obj.getRefSource()));
             ui->comboBoxRefTriggerMode -> setCurrentText(to_QString(obj.getRefTriggerMode()));
             ui->comboBoxRefTriggerOutput -> setCurrentText(to_QString(obj.getRefTriggerOutput()));
             ui->comboBoxInputSignal -> setCurrentText(to_QString(obj.getInputSignal()));
@@ -393,7 +393,7 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->comboBoxFilterSlope -> setCurrentText(to_QString(obj.getFilterSlope()));
             ui->comboBoxSynchronousFilter -> setCurrentText(to_QString(obj.getSynchronousFilter()));
             ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));
-
+*/
             ui->pushButtonConnect->setText("Disconnect");
 
 
