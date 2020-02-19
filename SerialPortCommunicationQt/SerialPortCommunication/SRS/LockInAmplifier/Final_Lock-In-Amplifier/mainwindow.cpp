@@ -296,104 +296,242 @@ void MainWindow::on_pushButtonConnect_clicked()
             }
 
             //Добавление time constants
-            for (auto timeConstant : obj.getTimeConstantList()) {
-                ui->comboBoxTimeConstant->addItem(to_QString(timeConstant));
+            if (obj.workWithTimeConstant()){
+                for (auto timeConstant : obj.getTimeConstantList()) {
+                    ui->comboBoxTimeConstant->addItem(to_QString(timeConstant));
+                }
+                ui->comboBoxTimeConstant->show();
+                ui->comboBoxTimeConstant->setCurrentText(to_QString(obj.getTimeConstant()));
+            }
+            else {
+                ui->comboBoxTimeConstant->hide();
             }
 
-            /*//Добавление ref sources
-            for (auto refSource : obj.getRefSourceList()) {
-                ui->comboBoxRefSource->addItem(to_QString(refSource));
-            }*/
+            //Добавление ref sources
+            if (obj.workWithRefSourse()){
+                for (auto refSource : obj.getRefSourceList()) {
+                    ui->comboBoxRefSource->addItem(to_QString(refSource));
+                }
+                ui->comboBoxRefSource->show();
+                ui->comboBoxRefSource->setCurrentText(to_QString(obj.getRefSource()));
+            }
+            else {
+                ui->comboBoxRefSource->hide();
+            }
 
-            /*//Добавление ref trigger mode
-            for (auto refTriggerMode : obj.getRefTriggerModeList()) {
-                ui->comboBoxRefTriggerMode->addItem(to_QString(refTriggerMode));
+            //Добавление ref trigger mode
+            if (obj.workWithRefTriggerMode()) {
+                for (auto refTriggerMode : obj.getRefTriggerModeList()) {
+                    ui->comboBoxRefTriggerMode->addItem(to_QString(refTriggerMode));
+                }
+                ui->comboBoxRefTriggerMode->show();
+                ui->comboBoxRefTriggerMode->setCurrentText(to_QString(obj.getRefTriggerMode()));
+            }
+            else {
+                ui->comboBoxRefTriggerMode->hide();
             }
 
             //Добавление ref trigger output
-            for (auto refTriggerOutput : obj.getRefTriggerOutputList()) {
-                ui->comboBoxRefTriggerOutput->addItem(to_QString(refTriggerOutput));
+            if (obj.workWithRefTriggerOutput()) {
+                for (auto refTriggerOutput : obj.getRefTriggerOutputList()) {
+                    ui->comboBoxRefTriggerOutput->addItem(to_QString(refTriggerOutput));
+                }
+                ui->comboBoxRefTriggerOutput->show();
+                ui->comboBoxRefTriggerOutput->setCurrentText(to_QString(obj.getRefTriggerOutput()));
+            }
+            else {
+                ui->comboBoxRefTriggerOutput->hide();
             }
 
             //Добавление input signal
-            for (auto inputSignal : obj.getInputSignalList()) {
-                ui->comboBoxInputSignal->addItem(to_QString(inputSignal));
+            if (obj.workWithInputSignal()) {
+                for (auto inputSignal : obj.getInputSignalList()) {
+                    ui->comboBoxInputSignal->addItem(to_QString(inputSignal));
+                }
+                ui->comboBoxInputSignal->show();
+                ui->comboBoxInputSignal->setCurrentText(to_QString(obj.getInputSignal()));
+            }
+            else {
+                ui->comboBoxInputSignal->hide();
             }
 
             //Добавление voltage mode
-            for (auto inputVoltageMode : obj.getInputVoltageModeList()) {
-                ui->comboBoxInputVoltageMode->addItem(to_QString(inputVoltageMode));
+            if (obj.workWithInputVoltageMode()) {
+                for (auto inputVoltageMode : obj.getInputVoltageModeList()) {
+                    ui->comboBoxInputVoltageMode->addItem(to_QString(inputVoltageMode));
+                }
+                ui->comboBoxInputVoltageMode->show();
+                ui->comboBoxInputVoltageMode->setCurrentText(to_QString(obj.getInputVoltageMode()));
+            }
+            else {
+                ui->comboBoxInputVoltageMode->hide();
             }
 
             //Добавление voltage coupling
-            for (auto inputVoltageCoupling : obj.getInputVoltageCouplingList()) {
-                ui->comboBoxInputVoltageCoupling->addItem(to_QString(inputVoltageCoupling));
+            if (obj.workWithInputVoltageCoupling()) {
+                for (auto inputVoltageCoupling : obj.getInputVoltageCouplingList()) {
+                    ui->comboBoxInputVoltageCoupling->addItem(to_QString(inputVoltageCoupling));
+                }
+                ui->comboBoxInputVoltageCoupling->show();
+                ui->comboBoxInputVoltageCoupling->setCurrentText(to_QString(obj.getInputVoltageCoupling()));
+            }
+            else {
+                ui->comboBoxInputVoltageCoupling->hide();
             }
 
             //Добавление voltage shields
-            for (auto inputVoltageShields : obj.getInputVoltageShieldsList()) {
-                ui->comboBoxInputVoltageShields->addItem(to_QString(inputVoltageShields));
+            if (obj.workWithInputVoltageShields()) {
+                for (auto inputVoltageShields : obj.getInputVoltageShieldsList()) {
+                    ui->comboBoxInputVoltageShields->addItem(to_QString(inputVoltageShields));
+                }
+                ui->comboBoxInputVoltageShields->show();
+                ui->comboBoxInputVoltageShields->setCurrentText(to_QString(obj.getInputVoltageShields()));
+            }
+            else {
+                ui->comboBoxInputVoltageShields->hide();
             }
 
             //Добавление voltage range
-            for (auto inputVoltageRange : obj.getInputVoltageRangeList()) {
-                ui->comboBoxInputVoltageRange->addItem(to_QString(inputVoltageRange));
+            if (obj.workWithInputVoltageRange()) {
+                for (auto inputVoltageRange : obj.getInputVoltageRangeList()) {
+                    ui->comboBoxInputVoltageRange->addItem(to_QString(inputVoltageRange));
+                }
+                ui->comboBoxInputVoltageRange->show();
+                ui->comboBoxInputVoltageRange->setCurrentText(to_QString(obj.getInputVoltageRange()));
+            }
+            else {
+                ui->comboBoxInputVoltageRange->hide();
             }
 
             //Добавление current gain
-            for (auto inputCurrentGain : obj.getInputCurrentGainList()) {
-                ui->comboBoxInputCurrentGain->addItem(to_QString(inputCurrentGain));
+            if (obj.workWithInputCurrentGain()) {
+                for (auto inputCurrentGain : obj.getInputCurrentGainList()) {
+                    ui->comboBoxInputCurrentGain->addItem(to_QString(inputCurrentGain));
+                }
+                ui->comboBoxInputCurrentGain->show();
+                ui->comboBoxInputCurrentGain->setCurrentText(to_QString(obj.getInputCurrentGain()));
+            }
+            else {
+                ui->comboBoxInputCurrentGain->hide();
             }
 
             //Добавление sensitivity
-            for (auto sensitivity : obj.getSensitivityList()) {
-                ui->comboBoxSensivitity->addItem(to_QString(sensitivity));
+            if (obj.workWithSensitivity()) {
+                for (auto sensitivity : obj.getSensitivityList()) {
+                    ui->comboBoxSensivitity->addItem(to_QString(sensitivity));
+                }
+                ui->comboBoxSensivitity->show();
+                ui->comboBoxSensivitity->setCurrentText(to_QString(obj.getSensitivity()));
+            }
+            else {
+                ui->comboBoxSensivitity->hide();
+            }
+
+            //добавление фильтров
+            if (obj.workWithFilterSlope()) {
+                for (auto filterSlope : obj.getFilterSlopeList()) {
+                    ui->comboBoxFilterSlope->addItem(to_QString(filterSlope));
+                }
+                ui->comboBoxFilterSlope->show();
+                ui->comboBoxFilterSlope->setCurrentText(to_QString(obj.getFilterSlope()));
+            }
+            else {
+                ui->comboBoxFilterSlope->hide();
+            }
+
+            //добавление синхронного фильтра
+            if (obj.workWithSynchronousFilter()) {
+                for (auto synchronousFilter : obj.getSynchronousFilterList()) {
+                    ui->comboBoxSynchronousFilter->addItem(to_QString(synchronousFilter));
+                }
+                ui->comboBoxSynchronousFilter->show();
+                ui->comboBoxSynchronousFilter->setCurrentText(to_QString(obj.getSynchronousFilter()));
+            }
+            else {
+                ui->comboBoxSynchronousFilter->hide();
             }
 
 
-            for (auto filterSlope : obj.getFilterSlopeList()) {
-                ui->comboBoxFilterSlope->addItem(to_QString(filterSlope));
+            //добавление дополнительного фильтра
+            if (obj.workWithAdvanceFilter()) {
+                for (auto advanceFilter : obj.getAdvanceFilterList()) {
+                    ui->comboBoxAdvanceFilter->addItem(to_QString(advanceFilter));
+                }
+                ui->comboBoxAdvanceFilter->show();
+                ui->comboBoxAdvanceFilter->setCurrentText(to_QString(obj.getAdvanceFilter()));
             }
-
-
-            for (auto synchronousFilter : obj.getSynchronousFilterList()) {
-                ui->comboBoxSynchronousFilter->addItem(to_QString(synchronousFilter));
-            }
-
-
-
-            for (auto advanceFilter : obj.getAdvanceFilterList()) {
-                ui->comboBoxAdvanceFilter->addItem(to_QString(advanceFilter));
+            else {
+                ui->comboBoxAdvanceFilter->hide();
             }
 
 
             //Добавление data
-            for (auto data : obj.getOutDataList()) {
-                ui->comboBoxOutData->addItem(to_QString(data));
-            }*/
+            if (obj.workWithOutData()) {
+                for (auto data : obj.getOutDataList()) {
+                    ui->comboBoxOutData->addItem(to_QString(data));
+                }
+                ui->comboBoxOutData->show();
+            }
+            else {
+                ui->comboBoxOutData->hide();
+            }
+
 
             ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
-            ui->lineEditPhase ->setText(to_QString(obj.getPhase()));
-            ui->lineEditFrequency -> setText(to_QString(obj.getFrequency()));
-            ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
-            //ui->lineEditSineAmplitude -> setText(to_QString(obj.getSineAmplitude()));
-            //ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
-            ui->comboBoxTimeConstant -> setCurrentText(to_QString(obj.getTimeConstant()));
-            /*ui->comboBoxRefSource -> setCurrentText(to_QString(obj.getRefSource()));
-            ui->comboBoxRefTriggerMode -> setCurrentText(to_QString(obj.getRefTriggerMode()));
-            ui->comboBoxRefTriggerOutput -> setCurrentText(to_QString(obj.getRefTriggerOutput()));
-            ui->comboBoxInputSignal -> setCurrentText(to_QString(obj.getInputSignal()));
-            ui->comboBoxInputVoltageMode -> setCurrentText(to_QString(obj.getInputVoltageMode()));
-            ui->comboBoxInputVoltageCoupling -> setCurrentText(to_QString(obj.getInputVoltageCoupling()));
-            ui->comboBoxInputVoltageShields -> setCurrentText(to_QString(obj.getInputVoltageShields()));
-            ui->comboBoxInputVoltageRange -> setCurrentText(to_QString(obj.getInputVoltageRange()));
-            ui->comboBoxInputCurrentGain -> setCurrentText(to_QString(obj.getInputCurrentGain()));
-            ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
-            ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
-            ui->comboBoxFilterSlope -> setCurrentText(to_QString(obj.getFilterSlope()));
-            ui->comboBoxSynchronousFilter -> setCurrentText(to_QString(obj.getSynchronousFilter()));
-            ui->comboBoxAdvanceFilter -> setCurrentText(to_QString(obj.getAdvanceFilter()));
-*/
+
+            if (obj.workWithPhase()) {
+                ui->lineEditPhase->show();
+                ui->lineEditPhase->setText(to_QString(obj.getPhase()));
+                ui->pushButtonPhase->show();
+            }
+            else {
+                ui->lineEditPhase->hide();
+                ui->pushButtonPhase->hide();
+            }
+
+            if (obj.workWithFrequency()) {
+                ui->lineEditFrequency->show();
+                ui->lineEditFrequency->setText(to_QString(obj.getFrequency()));
+                ui->pushButtonFrequency->show();
+            }
+            else {
+                ui->lineEditFrequency->hide();
+                ui->pushButtonFrequency->hide();
+            }
+
+            if (obj.workWithHarmonic()) {
+                ui->lineEditHarmonic->show();
+                ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
+                ui->pushButtonHarmonic->show();
+            }
+            else {
+                ui->lineEditHarmonic->hide();
+                ui->pushButtonHarmonic->hide();
+            }
+
+            if (obj.workWithSineAmplitude()) {
+                ui->lineEditSineAmplitude->show();
+                ui->lineEditSineAmplitude->setText(to_QString(obj.getSineAmplitude()));
+                ui->pushButtonSineAmplitude->show();
+            }
+            else {
+                ui->lineEditSineAmplitude->hide();
+                ui->pushButtonSineAmplitude->hide();
+            }
+
+            if (obj.workWithSineDCLevel()){
+                ui->lineEditSineDCLevel->show();
+                ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
+                ui->pushButtonSineDCLevel->show();
+            }
+            else {
+                ui->lineEditSineDCLevel->hide();
+                ui->pushButtonSineDCLevel->hide();
+            }
+
+
+            //ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
+
             ui->pushButtonConnect->setText("Disconnect");
 
 
