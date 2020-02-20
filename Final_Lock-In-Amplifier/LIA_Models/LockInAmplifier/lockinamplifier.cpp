@@ -76,6 +76,7 @@ double LockInAmplifier::getMaxInternalFrequency() const {
     return this->ranges.maxInternalFrequency;
 }
 
+//все может быть плохо
 bool LockInAmplifier::isValidInternalFrequency(const double &frequency) const {
     return (frequency >= this->ranges.minInternalFrequency &&
             frequency <= this->ranges.maxInternalFrequency);

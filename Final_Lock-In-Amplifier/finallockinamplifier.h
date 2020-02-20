@@ -6,6 +6,7 @@
 #include <map>
 #include <sstream>
 #include <iostream>
+#include <cmath>
 
 #include "LIA_Models/SR830/sr830.h"
 #include "LIA_Models/SR844/sr844.h"
@@ -132,9 +133,12 @@ public:
      * @return The reference phase in degrees
      */
     std::string getPhase() const;
+    std::string testPhase(const double interval, const double epsilon ) const;
 
     double getMinInternalFrequency() const;
     double getMaxInternalFrequency() const;
+
+    bool isValidInternalFrequency(const double &frequency) const;
 
     /**
      * @brief Sets the internal frequency to \f$ f \f$
@@ -173,6 +177,7 @@ public:
      * @return The internal or external frequency in Hz
      */
     std::string getFrequency() const;
+    std::string testFrequency(const double interval, const double epsilon) const;
 
 
     int getMinHarmonic() const;
@@ -190,6 +195,7 @@ public:
      * @return The value of external reference frequency in Hz
      */
     std::string getHarmonic() const;
+   // std::string testHarmonic(const int &interval) const; понятия не имею как это реализовать не хочу пладить три ифа
 
     int getMinDualHarmonic() const;
     int getMaxDualHarmonic() const;

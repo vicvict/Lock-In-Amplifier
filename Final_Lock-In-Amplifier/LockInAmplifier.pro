@@ -52,9 +52,7 @@ HEADERS += \
         LIA_Models/SR844/sr844.h \
         LIA_Models/SR865/sr865.h \
         finallockinamplifier.h \
-        mainwindow.h \
-        test.h \
-        testlib.h
+        mainwindow.h
 
 FORMS += \
         mainwindow.ui \

@@ -353,6 +353,21 @@ std::string finalLockInAmplifier::getPhase() const {
     return  "No ths model";
 }
 
+std::string finalLockInAmplifier::testPhase(const double interval, const double epsilon) const {
+    std::string oldPhase = this->getPhase();
+    double currentPhase = this->getMinPhase()+interval;
+    while (currentPhase < this->getMaxPhase()) {
+        this->setInternalPhase(currentPhase);
+        if (abs(std::stod(this->getPhase()) - currentPhase) < epsilon)
+            currentPhase += interval;
+        else {
+            return "failed phase test";
+        }
+    }
+    this->setInternalPhase(std::stod(oldPhase));
+    return "Phase test passed successfully";
+}
+
 bool finalLockInAmplifier::autoPhase() const {
     if (lockInAmplifierModel == "SR830")
         return sr830->autoPhase();
@@ -391,6 +406,16 @@ double finalLockInAmplifier::getMaxInternalFrequency() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getMaxInternalFrequency();
     return -1;
+}
+
+bool finalLockInAmplifier::isValidInternalFrequency(const double &frequency) const {
+    if (lockInAmplifierModel == "SR830")
+        return sr830->isValidInternalFrequency(frequency);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->isValidInternalFrequency(frequency);
+    if (lockInAmplifierModel == "SR865")
+        return sr865->isValidInternalFrequency(frequency);
+    return false;
 }
 
 bool finalLockInAmplifier::setFrequency(const double &frequency) const {
@@ -443,6 +468,30 @@ std::string finalLockInAmplifier::getFrequencyDetect() const {
     return  "no this model";
 }
 
+std::string finalLockInAmplifier::testFrequency(const double interval, const double epsilon) const {
+    std::string oldFrequency = this->getFrequency();
+    std::string oldRefSourse = this->getRefSource();
+    std::string oldHarmonic = this->getHarmonic();
+    this->setRefSource("INT");
+    if((this->lockInAmplifierModel == "SR830") || (this->lockInAmplifierModel == "SR865"))
+        this->setHarmonic(1);
+    if(this->lockInAmplifierModel == "SR844")
+        this->setHarmonic(0);
+    double currentFrequency = this->getMinInternalFrequency();
+    while (this->isValidInternalFrequency(currentFrequency)) {
+        this->setFrequency(currentFrequency);
+        if (abs(std::stod(this->getFrequency())-currentFrequency) < epsilon)
+            currentFrequency += interval;
+        else {
+            return "Failed frequency test";
+        }
+    }
+    this->setFrequency(std::stod(oldFrequency));
+    this->setRefSource(oldRefSourse);
+    this->setHarmonic(std::stoi(oldHarmonic));
+    return "Frequency test passed successfully";
+}
+
 bool finalLockInAmplifier::workWithHarmonic() const {
     if (lockInAmplifierModel == "SR830")
         return true;
@@ -492,6 +541,10 @@ std::string finalLockInAmplifier::getHarmonic() const {
         return sr865->getHarmonic();
     return  "No this model";
 }
+
+/*std::string finalLockInAmplifier::testHarmonic(const int &interval) const {
+    std::string oldHarmonic = this->getHarmonic();
+}*/
 
 bool finalLockInAmplifier::workWithDualHarmonic() const {
     if (lockInAmplifierModel == "SR865")

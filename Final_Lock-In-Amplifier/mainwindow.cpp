@@ -528,6 +528,24 @@ void MainWindow::on_pushButtonConnect_clicked()
                 ui->pushButtonSineDCLevel->hide();
             }
 
+            if (obj.workWithAutoPhase())
+                ui->pushButtonAutoPhase->show();
+            else {
+                ui->pushButtonAutoPhase->hide();
+            }
+
+            if (obj.workWithAutoRange())
+                ui->pushButtonAutoRange->show();
+            else {
+                ui->pushButtonAutoRange->hide();
+            }
+
+            if (obj.workWithAutoScale())
+                ui->pushButtonAutoScale->show();
+            else {
+                ui->pushButtonAutoScale->hide();
+            }
+
 
             //ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
 

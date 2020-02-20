@@ -12,8 +12,8 @@ protected:
 public:
     SR844() : LockInAmplifier() {
         //something about ranges
-        ranges.minHarmonic = 1;
-        ranges.maxHarmonic = 2;
+        ranges.minHarmonic = 0;
+        ranges.maxHarmonic = 1;
         ranges.minInternalFrequency = 2.5E4;
         ranges.maxInternalFrequency = 2E8;
 
@@ -94,7 +94,7 @@ public:
                         };
 
         refSource = {
-                        "Ext", "Int"
+                        "EXT", "INT"
                     };
 
         refTriggerOutput =  {
