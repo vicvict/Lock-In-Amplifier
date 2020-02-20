@@ -39,6 +39,13 @@ protected:
 
         double minSineAmplitude = 4E-3;
         double maxSineAmplitude = 2.0;
+
+        //only for SR865
+        const int minHarmDual = 1;
+        const int maxHarmDual = 99;
+
+        const double minSineDCLevel = -5.00;
+        const double maxSineDCLevel = +5.00;
     };
 
     //Как использовать этот state?

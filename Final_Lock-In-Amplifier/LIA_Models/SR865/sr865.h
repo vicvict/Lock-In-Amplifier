@@ -219,11 +219,6 @@ public:
     std::string getAdvanceFilter() const;
 
 protected:
-    const int minHarmDual = 1;
-    const int maxHarmDual = 99;
-
-    const double minSineDCLevel = -5.00;
-    const double maxSineDCLevel = +5.00;
 
     double SineDCLevel;
 
