@@ -1,16 +1,16 @@
 #include "sr865.h"
 
 int SR865::getMinDualHarmonic() const {
-    return this->minHarmDual;
+    return this->ranges.minHarmDual;
 }
 
 int SR865::getMaxDualHarmonic() const {
-    return this->maxHarmDual;
+    return this->ranges.maxHarmDual;
 }
 
 bool SR865::isValidDualHarmonic(const int &i) const {
-    return (i >= this->minHarmDual &&
-            i <= this->maxHarmDual);
+    return (i >= this->ranges.minHarmDual &&
+            i <= this->ranges.maxHarmDual);
 }
 
 bool SR865::setDualHarmonic(const int &i) const {
@@ -27,16 +27,16 @@ std::string SR865::getDualHarmonic() const {
 }
 
 double SR865::getMinSineDCLevel() const {
-    return this->minSineDCLevel;
+    return this->ranges.minSineDCLevel;
 }
 
 double SR865::getMaxSineDCLevel() const {
-    return this->maxSineDCLevel;
+    return this->ranges.maxSineDCLevel;
 }
 
 bool SR865::isValidSineDCLevel(const double &voltage) const {
-    return (voltage >= this->minSineDCLevel &&
-            voltage <= this->maxSineDCLevel);
+    return (voltage >= this->ranges.minSineDCLevel &&
+            voltage <= this->ranges.maxSineDCLevel);
 }
 
 bool SR865::setSineDCLevel(const double &voltage) const {
