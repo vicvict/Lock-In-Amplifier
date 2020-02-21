@@ -137,8 +137,25 @@ public:
 
     bool autoRange() const;
 
+    /**
+     * @brief Returns the value of internal frequency
+     * @return The value of internal frequency in Hz
+     */
     std::string getInternalFrequency() const;
+
+    /**
+     * @brief Returns the value of external reference frequency
+     * @return The value of external reference frequency in Hz
+     */
     std::string getExternalFrequency() const;
+
+    /**
+     * @brief  Returns the actual detection frequency
+     * @details This is helpful in dual reference mode or harmonic detection.
+     * Otherwise, the detection frequency is either the internal
+     * or external reference frequency.
+     * @return The actual detection frequency in Hz
+     */
     std::string getFrequencyDetect() const;
 
     int getMinDualHarmonic() const;

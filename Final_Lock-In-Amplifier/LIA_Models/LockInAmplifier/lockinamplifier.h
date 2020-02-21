@@ -130,17 +130,47 @@ public:
      * @return The dest string from the list available by its number
      */
     std::string stringFromNumber(const std::vector< std::string> &vector, const int &number) const;
+
+    /**
+     * @brief Checks the existance of string in src list
+     * @param[in] vector src list
+     * @param[in] string
+     * @return @b True if string exists in src list
+     */
     bool isValidString(const std::vector< std::string> &vector, const std::string &string) const;
+
+    /**
+     * @brief Checks the existance of string with given @b number in src @b string
+
+     * @param[in] vector src list
+     * @param[in] number
+     * @return @b True if string with given @b number exists in src list
+     */
     bool isValidNumber(const std::vector< std::string> &vector, const int &number) const;
 
+    /**
+     * @brief Returns the minimum phase available in this Lock-in Amplifier
+     * @return The minimum phase available in this Lock-in Amplifier
+     */
     double getMinPhase() const;
+
+    /**
+     * @brief Returns the maximum phase available in this Lock-in Amplifier
+     * @return The maximum phase available in this Lock-in Amplifier
+     */
     double getMaxPhase() const;
+
+    /**
+     * @brief Checks if given @phase is valid
+     * @param[in] phase
+     * @return @b True if given @phase is valid
+     */
     bool isValidPhase(const double &phase) const;
 
     /**
      * @brief Set the reference phase shift to 'phase' degrees
      * @param[in] phase The value of phase in degrees is limited: \f$ -180 \leq phase < 180 \f$
-     * @return True if phase is valid and sending is correct
+     * @return @b True if phase is valid and sending is correct
      */
     bool setInternalPhase(const double &phase) const;
 
@@ -150,37 +180,31 @@ public:
      */
     std::string getPhase() const;
 
+    /**
+     * @brief Returns the minimum internal frequency available in this Lock-in Amplifier
+     * @return The minimum internal frequency available in this Lock-in Amplifier
+     */
     double getMinInternalFrequency() const;
+
+    /**
+     * @brief Returns the maximum internal frequency available in this Lock-in Amplifier
+     * @return The maximum internal frequency available in this Lock-in Amplifier
+     */
     double getMaxInternalFrequency() const;
+
+    /**
+     * @brief Checks if given internal @frequency is valid
+     * @param[in] frequency
+     * @return @b True if internal @frequency is valid
+     */
     bool isValidInternalFrequency(const double &frequency) const;
 
     /**
      * @brief Sets the internal frequency to \f$ f \f$
-     * @param[in] Frequency the value of frequency in Hz
-     * @return True if frequency is valid and sending is correct
+     * @param[in] frequency the value of frequency in Hz
+     * @return @b True if frequency is valid and sending is correct
      */
     bool setFrequency(const double &frequency) const;
-
-    /**
-     * @brief Returns the value of internal frequency
-     * @return The value of internal frequency in Hz
-     */
-
-
-    /**
-     * @brief Returns the value of external reference frequency
-     * @return The value of external reference frequency in Hz
-     */
-
-
-    /**
-     * @brief  Returns the actual detection frequency
-     * @details This is helpful in dual reference mode or harmonic detection.
-     * Otherwise, the detection frequency is either the internal
-     * or external reference frequency.
-     * @return The actual detection frequency in Hz
-     */
-
 
     /**
      * @brief Returns the internal or external frequency
@@ -192,15 +216,29 @@ public:
      */
     std::string getFrequency() const;
 
-
+    /**
+     * @brief Returns the minimum harmonic available in this Lock-in Amplifier
+     * @return The minimum harmonic available in this Lock-in Amplifier
+     */
     int getMinHarmonic() const;
+
+    /**
+     * @brief Returns the maximum harmonic available in this Lock-in Amplifier
+     * @return The maximum harmonic available in this Lock-in Amplifier
+     */
     int getMaxHarmonic() const;
+
+    /**
+     * @brief Checks if given harmonic @i is valid
+     * @param[in] phase
+     * @return @b True if harmonic is valid
+     */
     bool isValidHarmonic(const int &i) const;
 
     /**
      * @brief Sets the lock-in to detect at the i-th harmonic of the reference frequency
      * @param[in] i The number of harmonic i is limited: \f$ 0 \leq i \geq 99 \f$
-     * @return True if the harmonic number is valid and sending is correct
+     * @return @b True if the harmonic number is valid and sending is correct
      */
     bool setHarmonic(const int &i) const;
 
@@ -210,14 +248,29 @@ public:
      */
     std::string getHarmonic() const;
 
+    /**
+     * @brief Returns the minimum sine amplitude available in this Lock-in Amplifier
+     * @return The minimum sine amplitude available in this Lock-in Amplifier
+     */
     double getMinSineAmplitude() const;
+
+    /**
+     * @brief Returns the maximum sine amplitude available in this Lock-in Amplifier
+     * @return The maximum sine amplitude available in this Lock-in Amplifier
+     */
     double getMaxSineAmplitude() const;
+
+    /**
+     * @brief Checks if given sine amplitude @voltage is valid
+     * @param[in] voltage
+     * @return @b True if sine amplitude is valid
+     */
     bool isValidSineAmplitude(const double &voltage) const;
 
     /**
      * @brief Sets the sine amplitude to voltage
      * @param[in] voltage The value is to be rounded to 3 digits
-     * @return True if the voltage is valid and sending is correct
+     * @return @b True if the voltage is valid and sending is correct
      */
     bool setSineAmplitude(const double &voltage) const;
 
@@ -239,14 +292,14 @@ public:
      *
      * ![SR865A](timeConstantTableSR865A.png)
      * @param[in] timeConstant
-     * @return True if the time constant is valid and sending is correct
+     * @return @b True if the time constant is valid and sending is correct
      */
     bool setTimeConstant(const int &timeConstant) const;
 
     /**
      * @brief Sets the time constant by actual value
      * @param[in] timeConstant
-     * @return True if the time constant is valid and sending is correct
+     * @return @b True if the time constant is valid and sending is correct
      */
     bool setTimeConstant(const std::string &timeConstant) const;
 
@@ -264,7 +317,7 @@ public:
      * @brief Sets the reference source to internal (i=0), external (i=1) (all the Lock-In Amplifiers),
      * dual (i=2) or chop (i=3). (SR865 only)
      * @param refSource
-     * @return True if the reference source is valid and sending is correct
+     * @return @b True if the reference source is valid and sending is correct
      */
     bool setRefSource(const int &refSource) const;
     bool setRefSource(const std::string &refSource) const;
@@ -287,7 +340,7 @@ public:
      * @arg 50 Ω (0) or 1 MΩ (1) (in SR865A).
      * The reference Input impedance in SR830 is unchangeble and equals to 10 MΩ
      * @param refTriggerOutput
-     * @return True if the reference Input impedance is valid and sending is correct
+     * @return @b True if the reference Input impedance is valid and sending is correct
      */
     bool setRefTriggerOutput(const int &refTriggerOutput) const;
     bool setRefTriggerOutput(const std::string &refTriggerOutput) const;

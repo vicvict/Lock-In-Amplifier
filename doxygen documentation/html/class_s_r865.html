@@ -84,6 +84,18 @@ Inheritance diagram for SR865:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a968794dcf3ce058f45a627f7635e58ba"><td class="memItemLeft" align="right" valign="top"><a id="a968794dcf3ce058f45a627f7635e58ba"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>autoRange</b> () const</td></tr>
+<tr class="separator:a968794dcf3ce058f45a627f7635e58ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada7c61d73c7b152b8cd6b3794dacc42b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_r865.html#ada7c61d73c7b152b8cd6b3794dacc42b">getInternalFrequency</a> () const</td></tr>
+<tr class="memdesc:ada7c61d73c7b152b8cd6b3794dacc42b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of internal frequency.  <a href="class_s_r865.html#ada7c61d73c7b152b8cd6b3794dacc42b">More...</a><br /></td></tr>
+<tr class="separator:ada7c61d73c7b152b8cd6b3794dacc42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2c2f090437e0a65fc4ddef76f0d1c9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_r865.html#a2f2c2f090437e0a65fc4ddef76f0d1c9">getExternalFrequency</a> () const</td></tr>
+<tr class="memdesc:a2f2c2f090437e0a65fc4ddef76f0d1c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of external reference frequency.  <a href="class_s_r865.html#a2f2c2f090437e0a65fc4ddef76f0d1c9">More...</a><br /></td></tr>
+<tr class="separator:a2f2c2f090437e0a65fc4ddef76f0d1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af59961de8ab05a7f3b1c9da3b121bf07"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_r865.html#af59961de8ab05a7f3b1c9da3b121bf07">getFrequencyDetect</a> () const</td></tr>
+<tr class="memdesc:af59961de8ab05a7f3b1c9da3b121bf07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the actual detection frequency.  <a href="class_s_r865.html#af59961de8ab05a7f3b1c9da3b121bf07">More...</a><br /></td></tr>
+<tr class="separator:af59961de8ab05a7f3b1c9da3b121bf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfc97438818454a1dc48870eca22181d"><td class="memItemLeft" align="right" valign="top"><a id="acfc97438818454a1dc48870eca22181d"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>getMinDualHarmonic</b> () const</td></tr>
 <tr class="separator:acfc97438818454a1dc48870eca22181d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,6 +126,171 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>setSineDCLevel</b> (c
 <tr class="memitem:ae7361600ef3740cf9a79e91b72e97b3a"><td class="memItemLeft" align="right" valign="top"><a id="ae7361600ef3740cf9a79e91b72e97b3a"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSineDCLevel</b> () const</td></tr>
 <tr class="separator:ae7361600ef3740cf9a79e91b72e97b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe791092fbb51ea16b9b45fc0e8ef51"><td class="memItemLeft" align="right" valign="top"><a id="afbe791092fbb51ea16b9b45fc0e8ef51"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRefTriggerModeList</b> () const</td></tr>
+<tr class="separator:afbe791092fbb51ea16b9b45fc0e8ef51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94334639182c49592d5fe30606b16e77"><td class="memItemLeft" align="right" valign="top"><a id="a94334639182c49592d5fe30606b16e77"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>refTriggerModeNumberFromString</b> (const std::string &amp;refTriggerMode_string) const</td></tr>
+<tr class="separator:a94334639182c49592d5fe30606b16e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade7d3c166c3b32def049366f1c2cf0a4"><td class="memItemLeft" align="right" valign="top"><a id="ade7d3c166c3b32def049366f1c2cf0a4"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>refTriggerModeStringFromNumber</b> (const int &amp;refTriggerMode_number) const</td></tr>
+<tr class="separator:ade7d3c166c3b32def049366f1c2cf0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7500fa86c2a1ddb7dcbc74a146fef69"><td class="memItemLeft" align="right" valign="top"><a id="aa7500fa86c2a1ddb7dcbc74a146fef69"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setRefTriggerMode</b> (const int &amp;refTriggerMode) const</td></tr>
+<tr class="separator:aa7500fa86c2a1ddb7dcbc74a146fef69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a014ef6ed3d5e86458daf694c48d42cc3"><td class="memItemLeft" align="right" valign="top"><a id="a014ef6ed3d5e86458daf694c48d42cc3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setRefTriggerMode</b> (const std::string &amp;refTriggerMode) const</td></tr>
+<tr class="separator:a014ef6ed3d5e86458daf694c48d42cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7153ca19a989079bc29694a7fc4fa7"><td class="memItemLeft" align="right" valign="top"><a id="a3e7153ca19a989079bc29694a7fc4fa7"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getRefTriggerMode</b> () const</td></tr>
+<tr class="separator:a3e7153ca19a989079bc29694a7fc4fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c520283f2c02c8a28147151cb7b040"><td class="memItemLeft" align="right" valign="top"><a id="a79c520283f2c02c8a28147151cb7b040"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputSignalList</b> () const</td></tr>
+<tr class="separator:a79c520283f2c02c8a28147151cb7b040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab538f67f015a0fc03b2dc20af53bb8"><td class="memItemLeft" align="right" valign="top"><a id="aeab538f67f015a0fc03b2dc20af53bb8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>inputSignalNumberFromString</b> (const std::string &amp;inputSignal_string) const</td></tr>
+<tr class="separator:aeab538f67f015a0fc03b2dc20af53bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d059a8c0f112fdffdba322b0fbc1835"><td class="memItemLeft" align="right" valign="top"><a id="a6d059a8c0f112fdffdba322b0fbc1835"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputSignalStringFromNumber</b> (const int &amp;inputSignal_number) const</td></tr>
+<tr class="separator:a6d059a8c0f112fdffdba322b0fbc1835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba63516da88f0c352ac4084f0100be0d"><td class="memItemLeft" align="right" valign="top"><a id="aba63516da88f0c352ac4084f0100be0d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputSignal</b> (const int &amp;inputSignal) const</td></tr>
+<tr class="separator:aba63516da88f0c352ac4084f0100be0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66d2d1f92197bf3824f9731c9832ab3"><td class="memItemLeft" align="right" valign="top"><a id="af66d2d1f92197bf3824f9731c9832ab3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputSignal</b> (const std::string &amp;inputSignal) const</td></tr>
+<tr class="separator:af66d2d1f92197bf3824f9731c9832ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca07b87bc1dea516d48ae9f29e300139"><td class="memItemLeft" align="right" valign="top"><a id="aca07b87bc1dea516d48ae9f29e300139"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputSignal</b> () const</td></tr>
+<tr class="separator:aca07b87bc1dea516d48ae9f29e300139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e907ec0f068c733f0cbb0fa2033ffe5"><td class="memItemLeft" align="right" valign="top"><a id="a8e907ec0f068c733f0cbb0fa2033ffe5"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageModeList</b> () const</td></tr>
+<tr class="separator:a8e907ec0f068c733f0cbb0fa2033ffe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0eacd60050f01b293571d0f5cb40eba"><td class="memItemLeft" align="right" valign="top"><a id="ab0eacd60050f01b293571d0f5cb40eba"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageModeNumberFromString</b> (const std::string &amp;inputVoltageMode_string) const</td></tr>
+<tr class="separator:ab0eacd60050f01b293571d0f5cb40eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6076b19e5b9e1ad7fd5307cbb0c3b56d"><td class="memItemLeft" align="right" valign="top"><a id="a6076b19e5b9e1ad7fd5307cbb0c3b56d"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageModeStringFromNumber</b> (const int &amp;inputVoltageMode_number) const</td></tr>
+<tr class="separator:a6076b19e5b9e1ad7fd5307cbb0c3b56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e3bcba820780300e6fc8eaa63883ab"><td class="memItemLeft" align="right" valign="top"><a id="a64e3bcba820780300e6fc8eaa63883ab"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageMode</b> (const int &amp;inputVoltageMode) const</td></tr>
+<tr class="separator:a64e3bcba820780300e6fc8eaa63883ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b63ed8d9b0348a895b28767411b9f33"><td class="memItemLeft" align="right" valign="top"><a id="a5b63ed8d9b0348a895b28767411b9f33"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageMode</b> (const std::string &amp;inputVoltageMode) const</td></tr>
+<tr class="separator:a5b63ed8d9b0348a895b28767411b9f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac5860f31624d3f192bf9540bd0de7dd"><td class="memItemLeft" align="right" valign="top"><a id="aac5860f31624d3f192bf9540bd0de7dd"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageMode</b> () const</td></tr>
+<tr class="separator:aac5860f31624d3f192bf9540bd0de7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9acb4eb75dae114a0dcd34fcc3c89ee2"><td class="memItemLeft" align="right" valign="top"><a id="a9acb4eb75dae114a0dcd34fcc3c89ee2"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageCouplingList</b> () const</td></tr>
+<tr class="separator:a9acb4eb75dae114a0dcd34fcc3c89ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ac1e19a0c4e30b4a3f41169096dda0"><td class="memItemLeft" align="right" valign="top"><a id="a82ac1e19a0c4e30b4a3f41169096dda0"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageCouplingNumberFromString</b> (const std::string &amp;inputVoltageCoupling_string) const</td></tr>
+<tr class="separator:a82ac1e19a0c4e30b4a3f41169096dda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c09a736e77b95a79b21a1663ff55d1c"><td class="memItemLeft" align="right" valign="top"><a id="a7c09a736e77b95a79b21a1663ff55d1c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageCouplingStringFromNumber</b> (const int &amp;inputVoltageCoupling_number) const</td></tr>
+<tr class="separator:a7c09a736e77b95a79b21a1663ff55d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c5d955ac01904853ead36242abb86d"><td class="memItemLeft" align="right" valign="top"><a id="a91c5d955ac01904853ead36242abb86d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageCoupling</b> (const int &amp;inputVoltageCoupling) const</td></tr>
+<tr class="separator:a91c5d955ac01904853ead36242abb86d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad70a86ed782af29dd11e27d555d4331"><td class="memItemLeft" align="right" valign="top"><a id="aad70a86ed782af29dd11e27d555d4331"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageCoupling</b> (const std::string &amp;inputVoltageCoupling) const</td></tr>
+<tr class="separator:aad70a86ed782af29dd11e27d555d4331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901d75d080083dfef3e010c5f358d1fc"><td class="memItemLeft" align="right" valign="top"><a id="a901d75d080083dfef3e010c5f358d1fc"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageCoupling</b> () const</td></tr>
+<tr class="separator:a901d75d080083dfef3e010c5f358d1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fbfdfd0f9db7a7e098269bf9c8fc2d0"><td class="memItemLeft" align="right" valign="top"><a id="a2fbfdfd0f9db7a7e098269bf9c8fc2d0"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageShieldsList</b> () const</td></tr>
+<tr class="separator:a2fbfdfd0f9db7a7e098269bf9c8fc2d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ce36607f5fa90d718ffc4088c19403"><td class="memItemLeft" align="right" valign="top"><a id="a53ce36607f5fa90d718ffc4088c19403"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageShieldsNumberFromString</b> (const std::string &amp;inputVoltageShields_string) const</td></tr>
+<tr class="separator:a53ce36607f5fa90d718ffc4088c19403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f929010e55b69c7abaa5bdd6a911348"><td class="memItemLeft" align="right" valign="top"><a id="a5f929010e55b69c7abaa5bdd6a911348"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageShieldsStringFromNumber</b> (const int &amp;inputVoltageShields_number) const</td></tr>
+<tr class="separator:a5f929010e55b69c7abaa5bdd6a911348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d49a079b297e54c0b541b225a202b6a"><td class="memItemLeft" align="right" valign="top"><a id="a2d49a079b297e54c0b541b225a202b6a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageShields</b> (const int &amp;inputVoltageShields) const</td></tr>
+<tr class="separator:a2d49a079b297e54c0b541b225a202b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad7554681d15b54fd9c72f3fb78c87e"><td class="memItemLeft" align="right" valign="top"><a id="abad7554681d15b54fd9c72f3fb78c87e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageShields</b> (const std::string &amp;inputVoltageShields) const</td></tr>
+<tr class="separator:abad7554681d15b54fd9c72f3fb78c87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fe951f710a8e82c5cef4096ff6c33e3"><td class="memItemLeft" align="right" valign="top"><a id="a7fe951f710a8e82c5cef4096ff6c33e3"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageShields</b> () const</td></tr>
+<tr class="separator:a7fe951f710a8e82c5cef4096ff6c33e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fa4aa76faa276a92b6b6d90705d582"><td class="memItemLeft" align="right" valign="top"><a id="a02fa4aa76faa276a92b6b6d90705d582"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageRangeList</b> () const</td></tr>
+<tr class="separator:a02fa4aa76faa276a92b6b6d90705d582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1377d625b95d9e8e1dd3df458371b9b1"><td class="memItemLeft" align="right" valign="top"><a id="a1377d625b95d9e8e1dd3df458371b9b1"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageRangeNumberFromString</b> (const std::string &amp;inputVoltageRange_string) const</td></tr>
+<tr class="separator:a1377d625b95d9e8e1dd3df458371b9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a86e2c0566d8f8a149fe2f6364e7183"><td class="memItemLeft" align="right" valign="top"><a id="a1a86e2c0566d8f8a149fe2f6364e7183"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageRangeStringFromNumber</b> (const int &amp;inputVoltageRange_number) const</td></tr>
+<tr class="separator:a1a86e2c0566d8f8a149fe2f6364e7183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583e98408c35f2876ecee409cbb4dd6d"><td class="memItemLeft" align="right" valign="top"><a id="a583e98408c35f2876ecee409cbb4dd6d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageRange</b> (const int &amp;inputVoltageRange) const</td></tr>
+<tr class="separator:a583e98408c35f2876ecee409cbb4dd6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4397dc604985029e9b37553a683c96a2"><td class="memItemLeft" align="right" valign="top"><a id="a4397dc604985029e9b37553a683c96a2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageRange</b> (const std::string &amp;inputVoltageRange) const</td></tr>
+<tr class="separator:a4397dc604985029e9b37553a683c96a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a315f04aa2bb1f12c541d1a3ea6bb02ef"><td class="memItemLeft" align="right" valign="top"><a id="a315f04aa2bb1f12c541d1a3ea6bb02ef"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageRange</b> () const</td></tr>
+<tr class="separator:a315f04aa2bb1f12c541d1a3ea6bb02ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7195598f852a191f746ae7252c888d79"><td class="memItemLeft" align="right" valign="top"><a id="a7195598f852a191f746ae7252c888d79"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputCurrentGainList</b> () const</td></tr>
+<tr class="separator:a7195598f852a191f746ae7252c888d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72ff64640a036f43ac004891b51b7f4"><td class="memItemLeft" align="right" valign="top"><a id="ad72ff64640a036f43ac004891b51b7f4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>inputCurrentGainNumberFromString</b> (const std::string &amp;inputCurrentGain_string) const</td></tr>
+<tr class="separator:ad72ff64640a036f43ac004891b51b7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06475b12ad93f7baef3b0a836c9a45c9"><td class="memItemLeft" align="right" valign="top"><a id="a06475b12ad93f7baef3b0a836c9a45c9"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputCurrentGainStringFromNumber</b> (const int &amp;inputCurrentGain_number) const</td></tr>
+<tr class="separator:a06475b12ad93f7baef3b0a836c9a45c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a751717f13555a4974460b9117293ba63"><td class="memItemLeft" align="right" valign="top"><a id="a751717f13555a4974460b9117293ba63"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputCurrentGain</b> (const int &amp;inputCurrentGain) const</td></tr>
+<tr class="separator:a751717f13555a4974460b9117293ba63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee55774c87faa44981d2d96c06457d2"><td class="memItemLeft" align="right" valign="top"><a id="a5ee55774c87faa44981d2d96c06457d2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputCurrentGain</b> (const std::string &amp;inputCurrentGain) const</td></tr>
+<tr class="separator:a5ee55774c87faa44981d2d96c06457d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1284db017bafd94256e402643a0b7056"><td class="memItemLeft" align="right" valign="top"><a id="a1284db017bafd94256e402643a0b7056"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputCurrentGain</b> () const</td></tr>
+<tr class="separator:a1284db017bafd94256e402643a0b7056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a980ef3f8abd68ca1ff998a5b9bb8d5c1"><td class="memItemLeft" align="right" valign="top"><a id="a980ef3f8abd68ca1ff998a5b9bb8d5c1"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSignalStrength</b> () const</td></tr>
+<tr class="separator:a980ef3f8abd68ca1ff998a5b9bb8d5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b4689022b8649c6dbde9f39ee8617e"><td class="memItemLeft" align="right" valign="top"><a id="a45b4689022b8649c6dbde9f39ee8617e"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getSynchronousFilterList</b> () const</td></tr>
+<tr class="separator:a45b4689022b8649c6dbde9f39ee8617e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41eeac0290b565a936e7a277e3a037e5"><td class="memItemLeft" align="right" valign="top"><a id="a41eeac0290b565a936e7a277e3a037e5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>synchronousFilterNumberFromString</b> (const std::string &amp;synchronousFilter_string) const</td></tr>
+<tr class="separator:a41eeac0290b565a936e7a277e3a037e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d6043a5ae4fd3c60b1ba0d2ebf05977"><td class="memItemLeft" align="right" valign="top"><a id="a8d6043a5ae4fd3c60b1ba0d2ebf05977"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>synchronousFilterStringFromNumber</b> (const int &amp;synchronousFilter_number) const</td></tr>
+<tr class="separator:a8d6043a5ae4fd3c60b1ba0d2ebf05977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb1c037905d8bea3df19c628fd4f2ba2"><td class="memItemLeft" align="right" valign="top"><a id="aeb1c037905d8bea3df19c628fd4f2ba2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setSynchronousFilter</b> (const int &amp;synchronousFilter) const</td></tr>
+<tr class="separator:aeb1c037905d8bea3df19c628fd4f2ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24d81aceef80002e1a6e058cd5fd53c"><td class="memItemLeft" align="right" valign="top"><a id="af24d81aceef80002e1a6e058cd5fd53c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setSynchronousFilter</b> (const std::string &amp;synchronousFilter) const</td></tr>
+<tr class="separator:af24d81aceef80002e1a6e058cd5fd53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ed56b027ca20e40c1ec0562b29bf93"><td class="memItemLeft" align="right" valign="top"><a id="a10ed56b027ca20e40c1ec0562b29bf93"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSynchronousFilter</b> () const</td></tr>
+<tr class="separator:a10ed56b027ca20e40c1ec0562b29bf93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a597c814c0c6e1516f57f42cb6a711d45"><td class="memItemLeft" align="right" valign="top"><a id="a597c814c0c6e1516f57f42cb6a711d45"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAdvanceFilterList</b> () const</td></tr>
+<tr class="separator:a597c814c0c6e1516f57f42cb6a711d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabc347c877a22f18d43ea2dfe28732a2"><td class="memItemLeft" align="right" valign="top"><a id="aabc347c877a22f18d43ea2dfe28732a2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>advanceFilterNumberFromString</b> (const std::string &amp;advanceFilter_string) const</td></tr>
+<tr class="separator:aabc347c877a22f18d43ea2dfe28732a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa9cd65960eb16a3563110768b48033b"><td class="memItemLeft" align="right" valign="top"><a id="afa9cd65960eb16a3563110768b48033b"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>advanceFilterStringFromNumber</b> (const int &amp;advanceFilter_number) const</td></tr>
+<tr class="separator:afa9cd65960eb16a3563110768b48033b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e4e8922ac9fadac6f4fae40ee85ae36"><td class="memItemLeft" align="right" valign="top"><a id="a4e4e8922ac9fadac6f4fae40ee85ae36"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setAdvanceFilter</b> (const int &amp;advanceFilter) const</td></tr>
+<tr class="separator:a4e4e8922ac9fadac6f4fae40ee85ae36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454cbdc15edaed80f387f07fe6f6d544"><td class="memItemLeft" align="right" valign="top"><a id="a454cbdc15edaed80f387f07fe6f6d544"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setAdvanceFilter</b> (const std::string &amp;advanceFilter) const</td></tr>
+<tr class="separator:a454cbdc15edaed80f387f07fe6f6d544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3352df19b08177a5e50374b2df140288"><td class="memItemLeft" align="right" valign="top"><a id="a3352df19b08177a5e50374b2df140288"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getAdvanceFilter</b> () const</td></tr>
+<tr class="separator:a3352df19b08177a5e50374b2df140288"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_lock_in_amplifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_lock_in_amplifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_lock_in_amplifier.html">LockInAmplifier</a></td></tr>
 <tr class="memitem:a066a667e511224ecfc0e0baf453dba40 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a066a667e511224ecfc0e0baf453dba40"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>getEpsilon</b> () const</td></tr>
@@ -124,20 +301,20 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>getEpsilon</b> () c
 <tr class="memitem:a68a767fa972ddd85f6ee2f748fc7d532 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a68a767fa972ddd85f6ee2f748fc7d532">stringFromNumber</a> (const std::vector&lt; std::string &gt; &amp;vector, const int &amp;number) const</td></tr>
 <tr class="memdesc:a68a767fa972ddd85f6ee2f748fc7d532 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dest string from the list available by its number.  <a href="class_lock_in_amplifier.html#a68a767fa972ddd85f6ee2f748fc7d532">More...</a><br /></td></tr>
 <tr class="separator:a68a767fa972ddd85f6ee2f748fc7d532 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0d3174eb1e6ac78c95261127c0d35c5 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ad0d3174eb1e6ac78c95261127c0d35c5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidString</b> (const std::vector&lt; std::string &gt; &amp;vector, const std::string &amp;string) const</td></tr>
+<tr class="memitem:ad0d3174eb1e6ac78c95261127c0d35c5 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#ad0d3174eb1e6ac78c95261127c0d35c5">isValidString</a> (const std::vector&lt; std::string &gt; &amp;vector, const std::string &amp;string) const</td></tr>
+<tr class="memdesc:ad0d3174eb1e6ac78c95261127c0d35c5 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the existance of string in src list.  <a href="class_lock_in_amplifier.html#ad0d3174eb1e6ac78c95261127c0d35c5">More...</a><br /></td></tr>
 <tr class="separator:ad0d3174eb1e6ac78c95261127c0d35c5 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a754386635ecea573f39c49e5059f6189 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a754386635ecea573f39c49e5059f6189"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidNumber</b> (const std::vector&lt; std::string &gt; &amp;vector, const int &amp;number) const</td></tr>
+<tr class="memitem:a754386635ecea573f39c49e5059f6189 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a754386635ecea573f39c49e5059f6189">isValidNumber</a> (const std::vector&lt; std::string &gt; &amp;vector, const int &amp;number) const</td></tr>
+<tr class="memdesc:a754386635ecea573f39c49e5059f6189 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the existance of string with given <b>number</b> in src <b>string</b>.  <a href="class_lock_in_amplifier.html#a754386635ecea573f39c49e5059f6189">More...</a><br /></td></tr>
 <tr class="separator:a754386635ecea573f39c49e5059f6189 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a224538b4ddd7afc21c1ef8b7d88da81a inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a224538b4ddd7afc21c1ef8b7d88da81a"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getMinPhase</b> () const</td></tr>
+<tr class="memitem:a224538b4ddd7afc21c1ef8b7d88da81a inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a224538b4ddd7afc21c1ef8b7d88da81a">getMinPhase</a> () const</td></tr>
+<tr class="memdesc:a224538b4ddd7afc21c1ef8b7d88da81a inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum phase available in this Lock-in Amplifier.  <a href="class_lock_in_amplifier.html#a224538b4ddd7afc21c1ef8b7d88da81a">More...</a><br /></td></tr>
 <tr class="separator:a224538b4ddd7afc21c1ef8b7d88da81a inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f0fa8bad5dcab60eae26ef88ff44f82 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a2f0fa8bad5dcab60eae26ef88ff44f82"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getMaxPhase</b> () const</td></tr>
+<tr class="memitem:a2f0fa8bad5dcab60eae26ef88ff44f82 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a2f0fa8bad5dcab60eae26ef88ff44f82">getMaxPhase</a> () const</td></tr>
+<tr class="memdesc:a2f0fa8bad5dcab60eae26ef88ff44f82 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum phase available in this Lock-in Amplifier.  <a href="class_lock_in_amplifier.html#a2f0fa8bad5dcab60eae26ef88ff44f82">More...</a><br /></td></tr>
 <tr class="separator:a2f0fa8bad5dcab60eae26ef88ff44f82 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2702c8c84f42ca893f670631aaea291 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ab2702c8c84f42ca893f670631aaea291"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidPhase</b> (const double &amp;phase) const</td></tr>
+<tr class="memitem:ab2702c8c84f42ca893f670631aaea291 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#ab2702c8c84f42ca893f670631aaea291">isValidPhase</a> (const double &amp;phase) const</td></tr>
+<tr class="memdesc:ab2702c8c84f42ca893f670631aaea291 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if given @phase is valid.  <a href="class_lock_in_amplifier.html#ab2702c8c84f42ca893f670631aaea291">More...</a><br /></td></tr>
 <tr class="separator:ab2702c8c84f42ca893f670631aaea291 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3479408b594e51026eed6c0b3f37e05b inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a3479408b594e51026eed6c0b3f37e05b">setInternalPhase</a> (const double &amp;phase) const</td></tr>
 <tr class="memdesc:a3479408b594e51026eed6c0b3f37e05b inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the reference phase shift to 'phase' degrees.  <a href="class_lock_in_amplifier.html#a3479408b594e51026eed6c0b3f37e05b">More...</a><br /></td></tr>
@@ -145,38 +322,29 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidPhase</b> (con
 <tr class="memitem:abcb62c92ae4c3880f1a29dda6149ed42 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#abcb62c92ae4c3880f1a29dda6149ed42">getPhase</a> () const</td></tr>
 <tr class="memdesc:abcb62c92ae4c3880f1a29dda6149ed42 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reference phase.  <a href="class_lock_in_amplifier.html#abcb62c92ae4c3880f1a29dda6149ed42">More...</a><br /></td></tr>
 <tr class="separator:abcb62c92ae4c3880f1a29dda6149ed42 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa98a39c433eb3694ef787a31512104ef inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aa98a39c433eb3694ef787a31512104ef"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getMinInternalFrequency</b> () const</td></tr>
+<tr class="memitem:aa98a39c433eb3694ef787a31512104ef inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#aa98a39c433eb3694ef787a31512104ef">getMinInternalFrequency</a> () const</td></tr>
+<tr class="memdesc:aa98a39c433eb3694ef787a31512104ef inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum internal frequency available in this Lock-in Amplifier.  <a href="class_lock_in_amplifier.html#aa98a39c433eb3694ef787a31512104ef">More...</a><br /></td></tr>
 <tr class="separator:aa98a39c433eb3694ef787a31512104ef inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e8d7c54487493eded4e9c6dc653242b inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a6e8d7c54487493eded4e9c6dc653242b"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getMaxInternalFrequency</b> () const</td></tr>
+<tr class="memitem:a6e8d7c54487493eded4e9c6dc653242b inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a6e8d7c54487493eded4e9c6dc653242b">getMaxInternalFrequency</a> () const</td></tr>
+<tr class="memdesc:a6e8d7c54487493eded4e9c6dc653242b inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum internal frequency available in this Lock-in Amplifier.  <a href="class_lock_in_amplifier.html#a6e8d7c54487493eded4e9c6dc653242b">More...</a><br /></td></tr>
 <tr class="separator:a6e8d7c54487493eded4e9c6dc653242b inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7492ef98a3b13574b57dff6722b4e339 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a7492ef98a3b13574b57dff6722b4e339"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidInternalFrequency</b> (const double &amp;frequency) const</td></tr>
+<tr class="memitem:a7492ef98a3b13574b57dff6722b4e339 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a7492ef98a3b13574b57dff6722b4e339">isValidInternalFrequency</a> (const double &amp;frequency) const</td></tr>
+<tr class="memdesc:a7492ef98a3b13574b57dff6722b4e339 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if given internal @frequency is valid.  <a href="class_lock_in_amplifier.html#a7492ef98a3b13574b57dff6722b4e339">More...</a><br /></td></tr>
 <tr class="separator:a7492ef98a3b13574b57dff6722b4e339 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a797ea5358c7c69ee25b99da505a3c8fa inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a797ea5358c7c69ee25b99da505a3c8fa">setInternalFrequency</a> (const double &amp;frequency) const</td></tr>
-<tr class="memdesc:a797ea5358c7c69ee25b99da505a3c8fa inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the internal frequency to <img class="formulaInl" alt="$ f $" src="form_1.png"/>.  <a href="class_lock_in_amplifier.html#a797ea5358c7c69ee25b99da505a3c8fa">More...</a><br /></td></tr>
-<tr class="separator:a797ea5358c7c69ee25b99da505a3c8fa inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6601c355ca56376ca32ddb0fbc6ebe50 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a6601c355ca56376ca32ddb0fbc6ebe50">getInternalFrequency</a> () const</td></tr>
-<tr class="memdesc:a6601c355ca56376ca32ddb0fbc6ebe50 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of internal frequency.  <a href="class_lock_in_amplifier.html#a6601c355ca56376ca32ddb0fbc6ebe50">More...</a><br /></td></tr>
-<tr class="separator:a6601c355ca56376ca32ddb0fbc6ebe50 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea5d80d3fe6f9d67042a1e07ef7934a8 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#aea5d80d3fe6f9d67042a1e07ef7934a8">getExternalFrequency</a> () const</td></tr>
-<tr class="memdesc:aea5d80d3fe6f9d67042a1e07ef7934a8 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of external reference frequency.  <a href="class_lock_in_amplifier.html#aea5d80d3fe6f9d67042a1e07ef7934a8">More...</a><br /></td></tr>
-<tr class="separator:aea5d80d3fe6f9d67042a1e07ef7934a8 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affab6b4c72eabc0273caddc9ae112d9e inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#affab6b4c72eabc0273caddc9ae112d9e">getFrequencyDetect</a> () const</td></tr>
-<tr class="memdesc:affab6b4c72eabc0273caddc9ae112d9e inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the actual detection frequency.  <a href="class_lock_in_amplifier.html#affab6b4c72eabc0273caddc9ae112d9e">More...</a><br /></td></tr>
-<tr class="separator:affab6b4c72eabc0273caddc9ae112d9e inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd43b05879563c363d82e110bdadcfeb inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#afd43b05879563c363d82e110bdadcfeb">setFrequency</a> (const double &amp;frequency) const</td></tr>
+<tr class="memdesc:afd43b05879563c363d82e110bdadcfeb inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the internal frequency to <img class="formulaInl" alt="$ f $" src="form_1.png"/>.  <a href="class_lock_in_amplifier.html#afd43b05879563c363d82e110bdadcfeb">More...</a><br /></td></tr>
+<tr class="separator:afd43b05879563c363d82e110bdadcfeb inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a237d3b3c128df0b042236e4e7811b4ed inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a237d3b3c128df0b042236e4e7811b4ed">getFrequency</a> () const</td></tr>
 <tr class="memdesc:a237d3b3c128df0b042236e4e7811b4ed inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the internal or external frequency.  <a href="class_lock_in_amplifier.html#a237d3b3c128df0b042236e4e7811b4ed">More...</a><br /></td></tr>
 <tr class="separator:a237d3b3c128df0b042236e4e7811b4ed inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19ef03edfe36a9783cb54b56dbd7ccf8 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a19ef03edfe36a9783cb54b56dbd7ccf8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getMinHarmonic</b> () const</td></tr>
+<tr class="memitem:a19ef03edfe36a9783cb54b56dbd7ccf8 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a19ef03edfe36a9783cb54b56dbd7ccf8">getMinHarmonic</a> () const</td></tr>
+<tr class="memdesc:a19ef03edfe36a9783cb54b56dbd7ccf8 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum harmonic available in this Lock-in Amplifier.  <a href="class_lock_in_amplifier.html#a19ef03edfe36a9783cb54b56dbd7ccf8">More...</a><br /></td></tr>
 <tr class="separator:a19ef03edfe36a9783cb54b56dbd7ccf8 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e58410dccf136e74dc6e28071dbb2b4 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a2e58410dccf136e74dc6e28071dbb2b4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getMaxHarmonic</b> () const</td></tr>
+<tr class="memitem:a2e58410dccf136e74dc6e28071dbb2b4 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a2e58410dccf136e74dc6e28071dbb2b4">getMaxHarmonic</a> () const</td></tr>
+<tr class="memdesc:a2e58410dccf136e74dc6e28071dbb2b4 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum harmonic available in this Lock-in Amplifier.  <a href="class_lock_in_amplifier.html#a2e58410dccf136e74dc6e28071dbb2b4">More...</a><br /></td></tr>
 <tr class="separator:a2e58410dccf136e74dc6e28071dbb2b4 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4265fb8139d6a24b7c45e6056dc7eb35 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a4265fb8139d6a24b7c45e6056dc7eb35"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidHarmonic</b> (const int &amp;i) const</td></tr>
+<tr class="memitem:a4265fb8139d6a24b7c45e6056dc7eb35 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a4265fb8139d6a24b7c45e6056dc7eb35">isValidHarmonic</a> (const int &amp;i) const</td></tr>
+<tr class="memdesc:a4265fb8139d6a24b7c45e6056dc7eb35 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if given harmonic @i is valid.  <a href="class_lock_in_amplifier.html#a4265fb8139d6a24b7c45e6056dc7eb35">More...</a><br /></td></tr>
 <tr class="separator:a4265fb8139d6a24b7c45e6056dc7eb35 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11cfb7008c221c787c21d7b881e2e4fd inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a11cfb7008c221c787c21d7b881e2e4fd">setHarmonic</a> (const int &amp;i) const</td></tr>
 <tr class="memdesc:a11cfb7008c221c787c21d7b881e2e4fd inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the lock-in to detect at the i-th harmonic of the reference frequency.  <a href="class_lock_in_amplifier.html#a11cfb7008c221c787c21d7b881e2e4fd">More...</a><br /></td></tr>
@@ -184,14 +352,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidHarmonic</b> (
 <tr class="memitem:a8e89fb45f70760941b823274edffbcaa inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a8e89fb45f70760941b823274edffbcaa">getHarmonic</a> () const</td></tr>
 <tr class="memdesc:a8e89fb45f70760941b823274edffbcaa inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of actual harmonic.  <a href="class_lock_in_amplifier.html#a8e89fb45f70760941b823274edffbcaa">More...</a><br /></td></tr>
 <tr class="separator:a8e89fb45f70760941b823274edffbcaa inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac30d782dd81a29ebb9d4642267e58269 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ac30d782dd81a29ebb9d4642267e58269"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getMinSineAmplitude</b> () const</td></tr>
+<tr class="memitem:ac30d782dd81a29ebb9d4642267e58269 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#ac30d782dd81a29ebb9d4642267e58269">getMinSineAmplitude</a> () const</td></tr>
+<tr class="memdesc:ac30d782dd81a29ebb9d4642267e58269 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum sine amplitude available in this Lock-in Amplifier.  <a href="class_lock_in_amplifier.html#ac30d782dd81a29ebb9d4642267e58269">More...</a><br /></td></tr>
 <tr class="separator:ac30d782dd81a29ebb9d4642267e58269 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b304825e32e36e10d8e820d91e4dbce inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a2b304825e32e36e10d8e820d91e4dbce"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getMaxSineAmplitude</b> () const</td></tr>
+<tr class="memitem:a2b304825e32e36e10d8e820d91e4dbce inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a2b304825e32e36e10d8e820d91e4dbce">getMaxSineAmplitude</a> () const</td></tr>
+<tr class="memdesc:a2b304825e32e36e10d8e820d91e4dbce inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum sine amplitude available in this Lock-in Amplifier.  <a href="class_lock_in_amplifier.html#a2b304825e32e36e10d8e820d91e4dbce">More...</a><br /></td></tr>
 <tr class="separator:a2b304825e32e36e10d8e820d91e4dbce inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad093ff32b8fd601ccaa687bb7b23506 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aad093ff32b8fd601ccaa687bb7b23506"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidSineAmplitude</b> (const double &amp;voltage) const</td></tr>
+<tr class="memitem:aad093ff32b8fd601ccaa687bb7b23506 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#aad093ff32b8fd601ccaa687bb7b23506">isValidSineAmplitude</a> (const double &amp;voltage) const</td></tr>
+<tr class="memdesc:aad093ff32b8fd601ccaa687bb7b23506 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if given sine amplitude @voltage is valid.  <a href="class_lock_in_amplifier.html#aad093ff32b8fd601ccaa687bb7b23506">More...</a><br /></td></tr>
 <tr class="separator:aad093ff32b8fd601ccaa687bb7b23506 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77647a1f43b36eff9762dfdf2e1f9d41 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#a77647a1f43b36eff9762dfdf2e1f9d41">setSineAmplitude</a> (const double &amp;voltage) const</td></tr>
 <tr class="memdesc:a77647a1f43b36eff9762dfdf2e1f9d41 inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sine amplitude to voltage.  <a href="class_lock_in_amplifier.html#a77647a1f43b36eff9762dfdf2e1f9d41">More...</a><br /></td></tr>
@@ -235,24 +403,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>setRefSource</b> (con
 <tr class="memitem:ad037fd3045a55ebd93ed35212412db8c inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#ad037fd3045a55ebd93ed35212412db8c">getRefSource</a> () const</td></tr>
 <tr class="memdesc:ad037fd3045a55ebd93ed35212412db8c inherit pub_methods_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the actual reference source.  <a href="class_lock_in_amplifier.html#ad037fd3045a55ebd93ed35212412db8c">More...</a><br /></td></tr>
 <tr class="separator:ad037fd3045a55ebd93ed35212412db8c inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf4c9119509ccd29c5067b2094cf3640 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="adf4c9119509ccd29c5067b2094cf3640"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRefTriggerModeList</b> () const</td></tr>
-<tr class="separator:adf4c9119509ccd29c5067b2094cf3640 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3aabc1585382da79c41fe519c97d679f inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a3aabc1585382da79c41fe519c97d679f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>refTriggerModeNumberFromString</b> (const std::string &amp;refTriggerMode_string) const</td></tr>
-<tr class="separator:a3aabc1585382da79c41fe519c97d679f inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11967ba582a1cab38ea3281bcb4b7733 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a11967ba582a1cab38ea3281bcb4b7733"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>refTriggerModeStringFromNumber</b> (const int &amp;refTriggerMode_number) const</td></tr>
-<tr class="separator:a11967ba582a1cab38ea3281bcb4b7733 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f8729e006e446b01f272f9009a3994a inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a4f8729e006e446b01f272f9009a3994a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setRefTriggerMode</b> (const int &amp;refTriggerMode) const</td></tr>
-<tr class="separator:a4f8729e006e446b01f272f9009a3994a inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2842c2b0424c3b393d1c99222c49cdf6 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a2842c2b0424c3b393d1c99222c49cdf6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setRefTriggerMode</b> (const std::string &amp;refTriggerMode) const</td></tr>
-<tr class="separator:a2842c2b0424c3b393d1c99222c49cdf6 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79b45fea1ce8946e0d8a815f2fd42e87 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a79b45fea1ce8946e0d8a815f2fd42e87"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getRefTriggerMode</b> () const</td></tr>
-<tr class="separator:a79b45fea1ce8946e0d8a815f2fd42e87 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afee5e05e71fc04c5102dcab2db330aff inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="afee5e05e71fc04c5102dcab2db330aff"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRefTriggerOutputList</b> () const</td></tr>
 <tr class="separator:afee5e05e71fc04c5102dcab2db330aff inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,117 +421,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>setRefTriggerOutput</
 <tr class="memitem:a60eb27d440407188f348aa6add7e8c7d inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a60eb27d440407188f348aa6add7e8c7d"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getRefTriggerOutput</b> () const</td></tr>
 <tr class="separator:a60eb27d440407188f348aa6add7e8c7d inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15eedb0595a2d85de0c1060fe49fe177 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a15eedb0595a2d85de0c1060fe49fe177"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputSignalList</b> () const</td></tr>
-<tr class="separator:a15eedb0595a2d85de0c1060fe49fe177 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17d0babaff21147c468fdab12966170a inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a17d0babaff21147c468fdab12966170a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>inputSignalNumberFromString</b> (const std::string &amp;inputSignal_string) const</td></tr>
-<tr class="separator:a17d0babaff21147c468fdab12966170a inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa533ded1df9507f3e8821b472a568192 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aa533ded1df9507f3e8821b472a568192"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputSignalStringFromNumber</b> (const int &amp;inputSignal_number) const</td></tr>
-<tr class="separator:aa533ded1df9507f3e8821b472a568192 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a215663f180a68c23261419d00fc21a7a inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a215663f180a68c23261419d00fc21a7a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputSignal</b> (const int &amp;inputSignal) const</td></tr>
-<tr class="separator:a215663f180a68c23261419d00fc21a7a inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa808abf4b56a07131dd38c279f4e3c89 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aa808abf4b56a07131dd38c279f4e3c89"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputSignal</b> (const std::string &amp;inputSignal) const</td></tr>
-<tr class="separator:aa808abf4b56a07131dd38c279f4e3c89 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea538f4ad4e57805f4ce44de6e163d00 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aea538f4ad4e57805f4ce44de6e163d00"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputSignal</b> () const</td></tr>
-<tr class="separator:aea538f4ad4e57805f4ce44de6e163d00 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a524d75b0f09efa23bcdd7535b06f0532 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a524d75b0f09efa23bcdd7535b06f0532"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageModeList</b> () const</td></tr>
-<tr class="separator:a524d75b0f09efa23bcdd7535b06f0532 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af60b595048a7e43a702588cb5ac1667e inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="af60b595048a7e43a702588cb5ac1667e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageModeNumberFromString</b> (const std::string &amp;inputVoltageMode_string) const</td></tr>
-<tr class="separator:af60b595048a7e43a702588cb5ac1667e inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac3d1c65e8e2725bdcafb0f5b99228d8 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aac3d1c65e8e2725bdcafb0f5b99228d8"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageModeStringFromNumber</b> (const int &amp;inputVoltageMode_number) const</td></tr>
-<tr class="separator:aac3d1c65e8e2725bdcafb0f5b99228d8 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b0426fdee667b085576e72847470ffc inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a6b0426fdee667b085576e72847470ffc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageMode</b> (const int &amp;inputVoltageMode) const</td></tr>
-<tr class="separator:a6b0426fdee667b085576e72847470ffc inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48671c41120169f1dd6f58b5332d695a inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a48671c41120169f1dd6f58b5332d695a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageMode</b> (const std::string &amp;inputVoltageMode) const</td></tr>
-<tr class="separator:a48671c41120169f1dd6f58b5332d695a inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5069841a75140ac0da1f3812afb3bd8 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aa5069841a75140ac0da1f3812afb3bd8"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageMode</b> () const</td></tr>
-<tr class="separator:aa5069841a75140ac0da1f3812afb3bd8 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f7314a36154d63bd4756e1a4e814ae3 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a9f7314a36154d63bd4756e1a4e814ae3"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageCouplingList</b> () const</td></tr>
-<tr class="separator:a9f7314a36154d63bd4756e1a4e814ae3 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa1f3666f1b819f77031098ed7e07788 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aaa1f3666f1b819f77031098ed7e07788"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageCouplingNumberFromString</b> (const std::string &amp;inputVoltageCoupling_string) const</td></tr>
-<tr class="separator:aaa1f3666f1b819f77031098ed7e07788 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18f900e609818519b027c69ecedf4556 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a18f900e609818519b027c69ecedf4556"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageCouplingStringFromNumber</b> (const int &amp;inputVoltageCoupling_number) const</td></tr>
-<tr class="separator:a18f900e609818519b027c69ecedf4556 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c7fc8fda6971a938206b374eb7526fc inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a2c7fc8fda6971a938206b374eb7526fc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageCoupling</b> (const int &amp;inputVoltageCoupling) const</td></tr>
-<tr class="separator:a2c7fc8fda6971a938206b374eb7526fc inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6924409515fdede37bd7518112334656 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a6924409515fdede37bd7518112334656"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageCoupling</b> (const std::string &amp;inputVoltageCoupling) const</td></tr>
-<tr class="separator:a6924409515fdede37bd7518112334656 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d6d1d7c917472fa19529c5f8fd2552b inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a1d6d1d7c917472fa19529c5f8fd2552b"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageCoupling</b> () const</td></tr>
-<tr class="separator:a1d6d1d7c917472fa19529c5f8fd2552b inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f4e1c5b0d930c9d263e4f691379a4a8 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a6f4e1c5b0d930c9d263e4f691379a4a8"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageShieldsList</b> () const</td></tr>
-<tr class="separator:a6f4e1c5b0d930c9d263e4f691379a4a8 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa81bf66bda68e9c946b379e8d7825549 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aa81bf66bda68e9c946b379e8d7825549"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageShieldsNumberFromString</b> (const std::string &amp;inputVoltageShields_string) const</td></tr>
-<tr class="separator:aa81bf66bda68e9c946b379e8d7825549 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d6efec41fbd2beb9ebc23077b8f9281 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a1d6efec41fbd2beb9ebc23077b8f9281"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageShieldsStringFromNumber</b> (const int &amp;inputVoltageShields_number) const</td></tr>
-<tr class="separator:a1d6efec41fbd2beb9ebc23077b8f9281 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a4379c2253e139d94a19a276f5269e1 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a7a4379c2253e139d94a19a276f5269e1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageShields</b> (const int &amp;inputVoltageShields) const</td></tr>
-<tr class="separator:a7a4379c2253e139d94a19a276f5269e1 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6738d47459cfe0174d9e52afb00123f2 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a6738d47459cfe0174d9e52afb00123f2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageShields</b> (const std::string &amp;inputVoltageShields) const</td></tr>
-<tr class="separator:a6738d47459cfe0174d9e52afb00123f2 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23c6586da4c41eab2bfbaf277ea64856 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a23c6586da4c41eab2bfbaf277ea64856"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageShields</b> () const</td></tr>
-<tr class="separator:a23c6586da4c41eab2bfbaf277ea64856 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e8b905e1230669aa93642d79c890ac4 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a5e8b905e1230669aa93642d79c890ac4"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageRangeList</b> () const</td></tr>
-<tr class="separator:a5e8b905e1230669aa93642d79c890ac4 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63cd247c8532fba835d253a943669d4c inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a63cd247c8532fba835d253a943669d4c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageRangeNumberFromString</b> (const std::string &amp;inputVoltageRange_string) const</td></tr>
-<tr class="separator:a63cd247c8532fba835d253a943669d4c inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c6a49b5c7e62399478f13c7ac708986 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a7c6a49b5c7e62399478f13c7ac708986"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputVoltageRangeStringFromNumber</b> (const int &amp;inputVoltageRange_number) const</td></tr>
-<tr class="separator:a7c6a49b5c7e62399478f13c7ac708986 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44e5a9672cb3153fb05bd71b3f8df0e inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ae44e5a9672cb3153fb05bd71b3f8df0e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageRange</b> (const int &amp;inputVoltageRange) const</td></tr>
-<tr class="separator:ae44e5a9672cb3153fb05bd71b3f8df0e inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f83a94e48d9902d2bdbed6bea5a8b19 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a8f83a94e48d9902d2bdbed6bea5a8b19"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputVoltageRange</b> (const std::string &amp;inputVoltageRange) const</td></tr>
-<tr class="separator:a8f83a94e48d9902d2bdbed6bea5a8b19 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac057899de3092a7b626f10f3839d0e85 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ac057899de3092a7b626f10f3839d0e85"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputVoltageRange</b> () const</td></tr>
-<tr class="separator:ac057899de3092a7b626f10f3839d0e85 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2067494b0c97275b8d20c1f65b963337 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a2067494b0c97275b8d20c1f65b963337"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputCurrentGainList</b> () const</td></tr>
-<tr class="separator:a2067494b0c97275b8d20c1f65b963337 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad423f02fd1c631343c0f8925112824c3 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ad423f02fd1c631343c0f8925112824c3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>inputCurrentGainNumberFromString</b> (const std::string &amp;inputCurrentGain_string) const</td></tr>
-<tr class="separator:ad423f02fd1c631343c0f8925112824c3 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad720873a220232f6f4947bf6130cc9b9 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ad720873a220232f6f4947bf6130cc9b9"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>inputCurrentGainStringFromNumber</b> (const int &amp;inputCurrentGain_number) const</td></tr>
-<tr class="separator:ad720873a220232f6f4947bf6130cc9b9 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a148c521e4487b21e563723cbff3bd324 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a148c521e4487b21e563723cbff3bd324"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputCurrentGain</b> (const int &amp;inputCurrentGain) const</td></tr>
-<tr class="separator:a148c521e4487b21e563723cbff3bd324 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f48febd8a64a94d0528d8d2531d7868 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a3f48febd8a64a94d0528d8d2531d7868"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setInputCurrentGain</b> (const std::string &amp;inputCurrentGain) const</td></tr>
-<tr class="separator:a3f48febd8a64a94d0528d8d2531d7868 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada17d2dd5bb478e551b17102b8e03a60 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ada17d2dd5bb478e551b17102b8e03a60"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getInputCurrentGain</b> () const</td></tr>
-<tr class="separator:ada17d2dd5bb478e551b17102b8e03a60 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d814cea870c0c50c6bc58ca98bd8bbd inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a2d814cea870c0c50c6bc58ca98bd8bbd"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSignalStrength</b> () const</td></tr>
-<tr class="separator:a2d814cea870c0c50c6bc58ca98bd8bbd inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fd2fd9bd12dc70e5e871ec7788a626d inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a9fd2fd9bd12dc70e5e871ec7788a626d"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getSensitivityList</b> () const</td></tr>
 <tr class="separator:a9fd2fd9bd12dc70e5e871ec7788a626d inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -418,48 +457,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFilterSlope</b> (c
 <tr class="memitem:addf48d000739511eed9da22185908fee inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="addf48d000739511eed9da22185908fee"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getFilterSlope</b> () const</td></tr>
 <tr class="separator:addf48d000739511eed9da22185908fee inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa635c34a8e81592970c36c6a6f7f299c inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aa635c34a8e81592970c36c6a6f7f299c"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getSynchronousFilterList</b> () const</td></tr>
-<tr class="separator:aa635c34a8e81592970c36c6a6f7f299c inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9d392d2e38071c9d18db89bbc68e65d inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ae9d392d2e38071c9d18db89bbc68e65d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>synchronousFilterNumberFromString</b> (const std::string &amp;synchronousFilter_string) const</td></tr>
-<tr class="separator:ae9d392d2e38071c9d18db89bbc68e65d inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89c0c3c1ef1e8683195e5eb5f05bc900 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a89c0c3c1ef1e8683195e5eb5f05bc900"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>synchronousFilterStringFromNumber</b> (const int &amp;synchronousFilter_number) const</td></tr>
-<tr class="separator:a89c0c3c1ef1e8683195e5eb5f05bc900 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ee7da54bca928250d2e18618486c116 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a4ee7da54bca928250d2e18618486c116"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setSynchronousFilter</b> (const int &amp;synchronousFilter) const</td></tr>
-<tr class="separator:a4ee7da54bca928250d2e18618486c116 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3af35f5ee9c11d9eb0a7d9a2179f1ec8 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a3af35f5ee9c11d9eb0a7d9a2179f1ec8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setSynchronousFilter</b> (const std::string &amp;synchronousFilter) const</td></tr>
-<tr class="separator:a3af35f5ee9c11d9eb0a7d9a2179f1ec8 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf9e68e0dcead7291e33d50e210f3a2b inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="adf9e68e0dcead7291e33d50e210f3a2b"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSynchronousFilter</b> () const</td></tr>
-<tr class="separator:adf9e68e0dcead7291e33d50e210f3a2b inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba32e05d24fccf957413be9d2038ef32 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aba32e05d24fccf957413be9d2038ef32"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAdvanceFilterList</b> () const</td></tr>
-<tr class="separator:aba32e05d24fccf957413be9d2038ef32 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1b9ba8b77a7980749d055e9d2df9764 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ae1b9ba8b77a7980749d055e9d2df9764"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>advanceFilterNumberFromString</b> (const std::string &amp;advanceFilter_string) const</td></tr>
-<tr class="separator:ae1b9ba8b77a7980749d055e9d2df9764 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b024a9fe903a2c91c6d89fa0f78d71f inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a9b024a9fe903a2c91c6d89fa0f78d71f"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>advanceFilterStringFromNumber</b> (const int &amp;advanceFilter_number) const</td></tr>
-<tr class="separator:a9b024a9fe903a2c91c6d89fa0f78d71f inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62e0a67455bf8d0dafb217c5014ff991 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a62e0a67455bf8d0dafb217c5014ff991"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setAdvanceFilter</b> (const int &amp;advanceFilter) const</td></tr>
-<tr class="separator:a62e0a67455bf8d0dafb217c5014ff991 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a394b4a2f1f0e16c99f461a9ec42655b4 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a394b4a2f1f0e16c99f461a9ec42655b4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setAdvanceFilter</b> (const std::string &amp;advanceFilter) const</td></tr>
-<tr class="separator:a394b4a2f1f0e16c99f461a9ec42655b4 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76df04299c64e9a96fd0ff81f7afee7c inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a76df04299c64e9a96fd0ff81f7afee7c"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getAdvanceFilter</b> () const</td></tr>
-<tr class="separator:a76df04299c64e9a96fd0ff81f7afee7c inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f121af88d4d8ba76c83c86de2072d6d inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a6f121af88d4d8ba76c83c86de2072d6d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>autoPhase</b> () const</td></tr>
 <tr class="separator:a6f121af88d4d8ba76c83c86de2072d6d inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88bcd8e384976f95ee6aa762c6878878 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a88bcd8e384976f95ee6aa762c6878878"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>autoRange</b> () const</td></tr>
-<tr class="separator:a88bcd8e384976f95ee6aa762c6878878 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af91abb26c9f17f60491848343de5625a inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="af91abb26c9f17f60491848343de5625a"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>autoScale</b> () const</td></tr>
 <tr class="separator:af91abb26c9f17f60491848343de5625a inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -478,6 +478,15 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getOutData</b>
 <tr class="memitem:ad9c22d9088821aeba2e9a2490b6631d1 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ad9c22d9088821aeba2e9a2490b6631d1"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getOutData</b> (const std::string &amp;<a class="el" href="class_lock_in_amplifier.html#ab2b30cfc2e420703775ac0ca96a9e44f">outData</a>) const</td></tr>
 <tr class="separator:ad9c22d9088821aeba2e9a2490b6631d1 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0fa83bcf994940992119bbf7aaa8433 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ab0fa83bcf994940992119bbf7aaa8433"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getOutDataCoupleList</b> () const</td></tr>
+<tr class="separator:ab0fa83bcf994940992119bbf7aaa8433 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1281075fac8cd50902c623b2526682 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a8a1281075fac8cd50902c623b2526682"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>outDataCoupleNumberFromString</b> (const std::string &amp;outDataCouple_string) const</td></tr>
+<tr class="separator:a8a1281075fac8cd50902c623b2526682 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8d4ab95f485b52875fe529ab2faf17 inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a1b8d4ab95f485b52875fe529ab2faf17"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>outDataCoupleStringFromNumber</b> (const int &amp;outDataCouple_number) const</td></tr>
+<tr class="separator:a1b8d4ab95f485b52875fe529ab2faf17 inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f7754b58f0578eeeb1628c4fb45d40d inherit pub_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a5f7754b58f0578eeeb1628c4fb45d40d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>getOutDataAB</b> (const int &amp;A, std::string &amp;AValue, const int &amp;B, std::string &amp;BValue) const</td></tr>
 <tr class="separator:a5f7754b58f0578eeeb1628c4fb45d40d inherit pub_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -642,18 +651,6 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>getTTR</b> () const
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a7174ee640f7548c6ba964aefbd2acea1"><td class="memItemLeft" align="right" valign="top"><a id="a7174ee640f7548c6ba964aefbd2acea1"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>minHarmDual</b> = 1</td></tr>
-<tr class="separator:a7174ee640f7548c6ba964aefbd2acea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a338b0fed3538862fe910e05160f2d1ff"><td class="memItemLeft" align="right" valign="top"><a id="a338b0fed3538862fe910e05160f2d1ff"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>maxHarmDual</b> = 99</td></tr>
-<tr class="separator:a338b0fed3538862fe910e05160f2d1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fcf6280cd9df5cd0650d8164a65a7a5"><td class="memItemLeft" align="right" valign="top"><a id="a2fcf6280cd9df5cd0650d8164a65a7a5"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>minSineDCLevel</b> = -5.00</td></tr>
-<tr class="separator:a2fcf6280cd9df5cd0650d8164a65a7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a127116e0b2c25bb759fee1095aa1a0b8"><td class="memItemLeft" align="right" valign="top"><a id="a127116e0b2c25bb759fee1095aa1a0b8"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>maxSineDCLevel</b> = +5.00</td></tr>
-<tr class="separator:a127116e0b2c25bb759fee1095aa1a0b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5940e6267e41a1990e777439004fb4d2"><td class="memItemLeft" align="right" valign="top"><a id="a5940e6267e41a1990e777439004fb4d2"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>SineDCLevel</b></td></tr>
 <tr class="separator:a5940e6267e41a1990e777439004fb4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -709,22 +706,28 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:aa29a8a5ef46b6211dd8ca1ea8e7ba095 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aa29a8a5ef46b6211dd8ca1ea8e7ba095"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>advanceFilter</b></td></tr>
 <tr class="separator:aa29a8a5ef46b6211dd8ca1ea8e7ba095 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633e46153f5f65de33025c0a26e4c026 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a633e46153f5f65de33025c0a26e4c026"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>inputSignalZ</b></td></tr>
+<tr class="separator:a633e46153f5f65de33025c0a26e4c026 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a542193b2b05c708f76c6735b39298318 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a542193b2b05c708f76c6735b39298318"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>closeReserveMode</b></td></tr>
+<tr class="separator:a542193b2b05c708f76c6735b39298318 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefbe044217c8d1d5e77c2197615b43cd inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aefbe044217c8d1d5e77c2197615b43cd"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>bufferMode</b></td></tr>
+<tr class="separator:aefbe044217c8d1d5e77c2197615b43cd inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2b30cfc2e420703775ac0ca96a9e44f inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ab2b30cfc2e420703775ac0ca96a9e44f"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#ab2b30cfc2e420703775ac0ca96a9e44f">outData</a></td></tr>
 <tr class="memdesc:ab2b30cfc2e420703775ac0ca96a9e44f inherit pro_attribs_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">output data such as X, Y, R, Theta <br /></td></tr>
 <tr class="separator:ab2b30cfc2e420703775ac0ca96a9e44f inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9869a2c0d569602ef1d5ab052ca1da9 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="af9869a2c0d569602ef1d5ab052ca1da9"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>outDataCouple</b></td></tr>
+<tr class="separator:af9869a2c0d569602ef1d5ab052ca1da9 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd229b2a00f72ee779ecc9b958198b06 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="acd229b2a00f72ee779ecc9b958198b06"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>outDataChannel1</b></td></tr>
 <tr class="separator:acd229b2a00f72ee779ecc9b958198b06 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc88748358c1da7406c1a35028f1d62a inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="afc88748358c1da7406c1a35028f1d62a"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>outDataChannel2</b></td></tr>
 <tr class="separator:afc88748358c1da7406c1a35028f1d62a inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78610ab344293f2be6770bf7cf01b048 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, QSerialPort::BaudRate &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>lockinAmplifier_string_to_baud_rate</b></td></tr>
-<tr class="separator:a78610ab344293f2be6770bf7cf01b048 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eb96eb919de420d3e92050fc3cd0db1 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, QSerialPort::StopBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>lockinAmplifier_string_to_stop_bits</b></td></tr>
-<tr class="separator:a6eb96eb919de420d3e92050fc3cd0db1 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a961dfcfa4ab343a0a553e005dcb0ef85 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, QSerialPort::FlowControl &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>lockinAmplifier_string_to_flow_control</b></td></tr>
-<tr class="separator:a961dfcfa4ab343a0a553e005dcb0ef85 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a78bf8d20b796949594d2b9813cd613 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a1a78bf8d20b796949594d2b9813cd613"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>invalidData</b> = &quot;-1&quot;</td></tr>
 <tr class="separator:a1a78bf8d20b796949594d2b9813cd613 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -739,14 +742,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>attempts_to_connect</b
 <tr class="separator:afe0060ca3acab2decb878b1a9372af99 inherit pro_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02be7b277d46470b10f44a31ec7c1d8e inherit pro_attribs_class_s_r_s"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_baud_rate</b></td></tr>
 <tr class="separator:a02be7b277d46470b10f44a31ec7c1d8e inherit pro_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385c3f18da0890a1bc8ad352ff4bbfee inherit pro_attribs_class_s_r_s"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, QSerialPort::DataBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_string_to_data_bits</b></td></tr>
-<tr class="separator:a385c3f18da0890a1bc8ad352ff4bbfee inherit pro_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46f97acc1e5646b8e40d1adc1efd7ca8 inherit pro_attribs_class_s_r_s"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, QSerialPort::FlowControl &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_string_to_flow_control</b></td></tr>
-<tr class="separator:a46f97acc1e5646b8e40d1adc1efd7ca8 inherit pro_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8179385019a97dc530927dbe5e1a23 inherit pro_attribs_class_s_r_s"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_data_bits</b></td></tr>
+<tr class="separator:aac8179385019a97dc530927dbe5e1a23 inherit pro_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2b9139bd63ab54ece83a896deb1fea5 inherit pro_attribs_class_s_r_s"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_flow_control</b></td></tr>
+<tr class="separator:af2b9139bd63ab54ece83a896deb1fea5 inherit pro_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3afe379d13a57908a4f8ddee2435e46b inherit pro_attribs_class_s_r_s"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_parity</b></td></tr>
 <tr class="separator:a3afe379d13a57908a4f8ddee2435e46b inherit pro_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e36321e05daf39dbe85cf2830850af4 inherit pro_attribs_class_s_r_s"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, QSerialPort::StopBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_string_to_stop_bits</b></td></tr>
-<tr class="separator:a9e36321e05daf39dbe85cf2830850af4 inherit pro_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a818f31618cbb6b4c677c50e2b085c914 inherit pro_attribs_class_s_r_s"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_stop_bits</b></td></tr>
+<tr class="separator:a818f31618cbb6b4c677c50e2b085c914 inherit pro_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_serial_port_communication_qt"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_serial_port_communication_qt')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_serial_port_communication_qt.html">SerialPortCommunicationQt</a></td></tr>
 <tr class="memitem:a2bcb6a2395226db92dd61e30b1bd4511 inherit pro_attribs_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a2bcb6a2395226db92dd61e30b1bd4511"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>write_timeout</b> = 10</td></tr>
@@ -830,29 +833,22 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa0b9a4490839c0c47319ea1413fe7fd6 inherit pub_static_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="aa0b9a4490839c0c47319ea1413fe7fd6"></a>
 static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getValidPortName</b> ()</td></tr>
 <tr class="separator:aa0b9a4490839c0c47319ea1413fe7fd6 inherit pub_static_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_class_lock_in_amplifier"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_lock_in_amplifier')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_lock_in_amplifier.html">LockInAmplifier</a></td></tr>
-<tr class="memitem:af18a999f6b169d765b652b891d8f2462 inherit pro_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="af18a999f6b169d765b652b891d8f2462"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetRanges</b> (const <a class="el" href="struct_lock_in_amplifier_1_1_lock_in_amplifier_ranges.html">LockInAmplifierRanges</a> &amp;new_ranges)</td></tr>
-<tr class="separator:af18a999f6b169d765b652b891d8f2462 inherit pro_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f6645a66303f1f6022b3012d8df43ad inherit pro_methods_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a3f6645a66303f1f6022b3012d8df43ad"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetTimeConstantList</b> (const std::vector&lt; std::string &gt; &amp;new_time_constantlist)</td></tr>
-<tr class="separator:a3f6645a66303f1f6022b3012d8df43ad inherit pro_methods_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_serial_port_communication_qt"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_serial_port_communication_qt')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_serial_port_communication_qt.html">SerialPortCommunicationQt</a></td></tr>
 <tr class="memitem:a288ba05b17a4158e05015bc2fc7406c1 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a288ba05b17a4158e05015bc2fc7406c1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToBaudRate</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_baud_rate)</td></tr>
 <tr class="separator:a288ba05b17a4158e05015bc2fc7406c1 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91ed69f54ac9808ffd241f0c3c28e82d inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a91ed69f54ac9808ffd241f0c3c28e82d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToDataBits</b> (const std::unordered_map&lt; std::string, QSerialPort::DataBits &gt; &amp;new_string_to_data_bits)</td></tr>
-<tr class="separator:a91ed69f54ac9808ffd241f0c3c28e82d inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5516d7a45bb7105e79d018a830da119 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="ab5516d7a45bb7105e79d018a830da119"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToFlowControl</b> (const std::unordered_map&lt; std::string, QSerialPort::FlowControl &gt; &amp;new_string_to_flow_control)</td></tr>
-<tr class="separator:ab5516d7a45bb7105e79d018a830da119 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55b5133a9f02328623a26a4e9ba48521 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a55b5133a9f02328623a26a4e9ba48521"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToDataBits</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_data_bits)</td></tr>
+<tr class="separator:a55b5133a9f02328623a26a4e9ba48521 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc2880d801a6f8a1e2d1b970ca16568 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a5fc2880d801a6f8a1e2d1b970ca16568"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToFlowControl</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_flow_control)</td></tr>
+<tr class="separator:a5fc2880d801a6f8a1e2d1b970ca16568 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3b3d0a3e1c8311ed753129b4a576258 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="ab3b3d0a3e1c8311ed753129b4a576258"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToStopBits</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_stop_bits)</td></tr>
+<tr class="separator:ab3b3d0a3e1c8311ed753129b4a576258 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a016b8d409cfb62bc17d66354a26cee72 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a016b8d409cfb62bc17d66354a26cee72"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToParity</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_parity)</td></tr>
 <tr class="separator:a016b8d409cfb62bc17d66354a26cee72 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aedb9d46a7a1a5422e8b21850442a8f inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a4aedb9d46a7a1a5422e8b21850442a8f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToStopBits</b> (const std::unordered_map&lt; std::string, QSerialPort::StopBits &gt; &amp;new_string_to_stop_bits)</td></tr>
-<tr class="separator:a4aedb9d46a7a1a5422e8b21850442a8f inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac372b2a7863c7d5afffe8b81536d6735 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="ac372b2a7863c7d5afffe8b81536d6735"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
 <tr class="separator:ac372b2a7863c7d5afffe8b81536d6735 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -912,9 +908,70 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>c
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>IDN</b> = &quot;*IDN&quot;</td></tr>
 <tr class="separator:aacf1388c8ebeb15cb838b9c0a75e389e inherit pro_static_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2f2c2f090437e0a65fc4ddef76f0d1c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f2c2f090437e0a65fc4ddef76f0d1c9">&#9670;&nbsp;</a></span>getExternalFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SR865::getExternalFrequency </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the value of external reference frequency. </p>
+<dl class="section return"><dt>Returns</dt><dd>The value of external reference frequency in Hz </dd></dl>
+
+</div>
+</div>
+<a id="af59961de8ab05a7f3b1c9da3b121bf07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af59961de8ab05a7f3b1c9da3b121bf07">&#9670;&nbsp;</a></span>getFrequencyDetect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SR865::getFrequencyDetect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the actual detection frequency. </p>
+<p>This is helpful in dual reference mode or harmonic detection. Otherwise, the detection frequency is either the internal or external reference frequency. </p><dl class="section return"><dt>Returns</dt><dd>The actual detection frequency in Hz </dd></dl>
+
+</div>
+</div>
+<a id="ada7c61d73c7b152b8cd6b3794dacc42b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada7c61d73c7b152b8cd6b3794dacc42b">&#9670;&nbsp;</a></span>getInternalFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SR865::getInternalFrequency </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the value of internal frequency. </p>
+<dl class="section return"><dt>Returns</dt><dd>The value of internal frequency in Hz </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>SerialPortCommunicationQt/SerialPortCommunication/SRS/LockInAmplifier/SR865/<a class="el" href="sr865_8h_source.html">sr865.h</a></li>
-<li>SerialPortCommunicationQt/SerialPortCommunication/SRS/LockInAmplifier/SR865/sr865.cpp</li>
+<li>Final_Lock-In-Amplifier/LIA_Models/SR865/<a class="el" href="sr865_8h_source.html">sr865.h</a></li>
+<li>Final_Lock-In-Amplifier/LIA_Models/SR865/sr865.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
