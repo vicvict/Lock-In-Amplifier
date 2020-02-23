@@ -1,7 +1,7 @@
 #ifndef SR865_H
 #define SR865_H
 
-
+///@bug outData = outDataCouple
 #include "LIA_Models/LockInAmplifier/lockinamplifier.h"
 
 #include <vector>

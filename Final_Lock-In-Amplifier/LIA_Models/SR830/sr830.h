@@ -8,7 +8,7 @@
 #include <string>
 #include <map>
 
-
+///@bug outData = outDataCouple
 class SR830: public LockInAmplifier
 {
 public:

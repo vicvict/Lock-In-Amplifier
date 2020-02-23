@@ -1,20 +1,5 @@
 var searchData=
 [
-  ['getexternalfrequency_74',['getExternalFrequency',['../classfinal_lock_in_amplifier.html#a4f848f171e43ceed98d836fb52138b54',1,'finalLockInAmplifier::getExternalFrequency()'],['../class_s_r865.html#a2f2c2f090437e0a65fc4ddef76f0d1c9',1,'SR865::getExternalFrequency()']]],
-  ['getfrequency_75',['getFrequency',['../classfinal_lock_in_amplifier.html#a07e77c9eefe6965fbe9393a0275afffd',1,'finalLockInAmplifier::getFrequency()'],['../class_lock_in_amplifier.html#a237d3b3c128df0b042236e4e7811b4ed',1,'LockInAmplifier::getFrequency()']]],
-  ['getfrequencydetect_76',['getFrequencyDetect',['../classfinal_lock_in_amplifier.html#a315db7690215f382284908e0f6024236',1,'finalLockInAmplifier::getFrequencyDetect()'],['../class_s_r865.html#af59961de8ab05a7f3b1c9da3b121bf07',1,'SR865::getFrequencyDetect()']]],
-  ['getharmonic_77',['getHarmonic',['../classfinal_lock_in_amplifier.html#a42800e02263baf38e67ea7b2bc0adc9d',1,'finalLockInAmplifier::getHarmonic()'],['../class_lock_in_amplifier.html#a8e89fb45f70760941b823274edffbcaa',1,'LockInAmplifier::getHarmonic()']]],
-  ['getinternalfrequency_78',['getInternalFrequency',['../classfinal_lock_in_amplifier.html#adb32dea34769d3943c0c7086a0b22c92',1,'finalLockInAmplifier::getInternalFrequency()'],['../class_s_r865.html#ada7c61d73c7b152b8cd6b3794dacc42b',1,'SR865::getInternalFrequency()']]],
-  ['getmaxharmonic_79',['getMaxHarmonic',['../class_lock_in_amplifier.html#a2e58410dccf136e74dc6e28071dbb2b4',1,'LockInAmplifier']]],
-  ['getmaxinternalfrequency_80',['getMaxInternalFrequency',['../class_lock_in_amplifier.html#a6e8d7c54487493eded4e9c6dc653242b',1,'LockInAmplifier']]],
-  ['getmaxphase_81',['getMaxPhase',['../class_lock_in_amplifier.html#a2f0fa8bad5dcab60eae26ef88ff44f82',1,'LockInAmplifier']]],
-  ['getmaxsineamplitude_82',['getMaxSineAmplitude',['../class_lock_in_amplifier.html#a2b304825e32e36e10d8e820d91e4dbce',1,'LockInAmplifier']]],
-  ['getminharmonic_83',['getMinHarmonic',['../class_lock_in_amplifier.html#a19ef03edfe36a9783cb54b56dbd7ccf8',1,'LockInAmplifier']]],
-  ['getmininternalfrequency_84',['getMinInternalFrequency',['../class_lock_in_amplifier.html#aa98a39c433eb3694ef787a31512104ef',1,'LockInAmplifier']]],
-  ['getminphase_85',['getMinPhase',['../class_lock_in_amplifier.html#a224538b4ddd7afc21c1ef8b7d88da81a',1,'LockInAmplifier']]],
-  ['getminsineamplitude_86',['getMinSineAmplitude',['../class_lock_in_amplifier.html#ac30d782dd81a29ebb9d4642267e58269',1,'LockInAmplifier']]],
-  ['getphase_87',['getPhase',['../classfinal_lock_in_amplifier.html#a69ea96d831c3cc1bd4f299c70970e034',1,'finalLockInAmplifier::getPhase()'],['../class_lock_in_amplifier.html#abcb62c92ae4c3880f1a29dda6149ed42',1,'LockInAmplifier::getPhase()']]],
-  ['getrefsource_88',['getRefSource',['../classfinal_lock_in_amplifier.html#a427e6489b537b863856d26a19c4391de',1,'finalLockInAmplifier::getRefSource()'],['../class_lock_in_amplifier.html#ad037fd3045a55ebd93ed35212412db8c',1,'LockInAmplifier::getRefSource()']]],
-  ['getsineamplitude_89',['getSineAmplitude',['../classfinal_lock_in_amplifier.html#aa9e144260f0b17cc129ddcd1395283ff',1,'finalLockInAmplifier::getSineAmplitude()'],['../class_lock_in_amplifier.html#a3a4d37682f0006041233019b277b9635',1,'LockInAmplifier::getSineAmplitude()']]],
-  ['gettimeconstant_90',['getTimeConstant',['../classfinal_lock_in_amplifier.html#a956a6e22571f92aadf9d3f991497e5cd',1,'finalLockInAmplifier::getTimeConstant()'],['../class_lock_in_amplifier.html#a9dd2e4399d5e30ce6c7652cce0d89fa5',1,'LockInAmplifier::getTimeConstant()']]]
+  ['autophase_107',['autoPhase',['../class_lock_in_amplifier.html#a6f121af88d4d8ba76c83c86de2072d6d',1,'LockInAmplifier']]],
+  ['autoscale_108',['autoScale',['../class_lock_in_amplifier.html#af91abb26c9f17f60491848343de5625a',1,'LockInAmplifier']]]
 ];

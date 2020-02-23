@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['isvalidharmonic_91',['isValidHarmonic',['../class_lock_in_amplifier.html#a4265fb8139d6a24b7c45e6056dc7eb35',1,'LockInAmplifier']]],
-  ['isvalidinternalfrequency_92',['isValidInternalFrequency',['../class_lock_in_amplifier.html#a7492ef98a3b13574b57dff6722b4e339',1,'LockInAmplifier']]],
-  ['isvalidnumber_93',['isValidNumber',['../class_lock_in_amplifier.html#a754386635ecea573f39c49e5059f6189',1,'LockInAmplifier']]],
-  ['isvalidphase_94',['isValidPhase',['../class_lock_in_amplifier.html#ab2702c8c84f42ca893f670631aaea291',1,'LockInAmplifier']]],
-  ['isvalidsineamplitude_95',['isValidSineAmplitude',['../class_lock_in_amplifier.html#aad093ff32b8fd601ccaa687bb7b23506',1,'LockInAmplifier']]],
-  ['isvalidstring_96',['isValidString',['../class_lock_in_amplifier.html#ad0d3174eb1e6ac78c95261127c0d35c5',1,'LockInAmplifier']]]
+  ['filterslopenumberfromstring_109',['filterSlopeNumberFromString',['../class_lock_in_amplifier.html#aee836667829b53b5dea14f0c26d12183',1,'LockInAmplifier']]],
+  ['filterslopestringfromnumber_110',['filterSlopeStringFromNumber',['../class_lock_in_amplifier.html#a595f601420da519de3d5f43cd68e8e78',1,'LockInAmplifier']]]
 ];

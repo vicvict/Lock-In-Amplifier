@@ -86,11 +86,11 @@ public:
 
                                     "Y noise [dBm]",         "AUX IN2"
         };
-
+        ///@bug fixed!
         outDataCouple = {
                             "X", "Y", "R [V]", "R [dBm]", "Theta",
                             "AUX IN1", "AUX IN2", "Ref Frequency",
-                            "CH!", "CH2"
+                            "CH1", "CH2"
                         };
 
         refSource = {

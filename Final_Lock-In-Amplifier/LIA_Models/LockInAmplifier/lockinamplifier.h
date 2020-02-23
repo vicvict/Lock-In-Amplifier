@@ -113,6 +113,9 @@ public:
     LockInAmplifier();
     ~LockInAmplifier();
 
+    /**
+     * @brief Returns the error value
+     */
     double getEpsilon() const;
 
     /**
@@ -280,8 +283,23 @@ public:
      */
     std::string getSineAmplitude() const;
 
+    /**
+     * @brief Returns a list of time constants
+     */
     std::vector<std::string> getTimeConstantList() const;
+
+    /**
+     * @brief Converts the value of time constant to its index
+     * @param[in] timeConstant_string time constant e.g. @a INT
+     * @return Index of considered time constant
+     */
     int timeConstantNumberFromString(const std::string  &timeConstant_string) const;
+
+    /**
+     * @brief Converts the index of time constant to its value
+     * @param[in] timeConstant_number the index of time constant e.g. @a 8
+     * @return The value of time constant
+     */
     std::string timeConstantStringFromNumber(const int &timeConstant_number) const;
 
     /**
@@ -309,17 +327,37 @@ public:
      */
     std::string getTimeConstant() const;
 
+    /**
+     * @brief Returns a list of reference sources
+     */
     std::vector<std::string> getRefSourceList() const;
+
+    /**
+     * @brief Converts the value of ref source to its index
+     * @param[in] refSource_string ref source e.g. @a INT
+     * @return Index of considered ref source
+     */
     int refSourceNumberFromString(const std::string  &refSource_string) const;
+
+    /**
+     * @brief Converts the index of ref source to its value
+     * @param[in] refSource_number the index of ref source e.g. @a 2
+     * @return The value of ref source
+     */
     std::string refSourceStringFromNumber(const int &refSource_number) const;
 
     /**
      * @brief Sets the reference source to internal (i=0), external (i=1) (all the Lock-In Amplifiers),
-     * dual (i=2) or chop (i=3). (SR865 only)
-     * @param refSource
+     * dual (i=2) or chop (i=3). @b (SR865 @b only)
+     * @param[in] refSource
      * @return @b True if the reference source is valid and sending is correct
+     *
      */
     bool setRefSource(const int &refSource) const;
+
+    /**
+     * @brief Sets the reference source by value (see @ref setRefSource "setRefSource" by index)
+     */
     bool setRefSource(const std::string &refSource) const;
 
     /**
@@ -329,8 +367,23 @@ public:
     std::string getRefSource() const;
 
 
+    /**
+     * @brief Returns a list of external reference trigger input
+     */
     std::vector<std::string> getRefTriggerOutputList() const;
+
+    /**
+     * @brief Converts the value of external reference trigger input to its index
+     * @param[in] refTriggerOutput_string reference trigger input e.g. @a 50 @a Ω
+     * @return Index of considered reference trigger input
+     */
     int refTriggerOutputNumberFromString(const std::string  &refTriggerOutput_string) const;
+
+    /**
+     * @brief Converts the index of external reference trigger input to its value
+     * @param[in] refTriggerOutput_number the index of external reference trigger input e.g. @a 0
+     * @return The value of external reference trigger input
+     */
     std::string refTriggerOutputStringFromNumber(const int &refTriggerOutput_number) const;
 
     /**
@@ -339,52 +392,217 @@ public:
      * @arg 50 Ω (0) or 10 kΩ (1) (in SR844);
      * @arg 50 Ω (0) or 1 MΩ (1) (in SR865A).
      * The reference Input impedance in SR830 is unchangeble and equals to 10 MΩ
-     * @param refTriggerOutput
+     * @param[in] refTriggerOutput The index of external reference trigger input e.g. @a 0
      * @return @b True if the reference Input impedance is valid and sending is correct
      */
     bool setRefTriggerOutput(const int &refTriggerOutput) const;
+
+    /**
+     * @brief Sets the external reference trigger input by its value (see @ref setRefTriggerOutput "setRefTriggerOutput" by index)
+     */
     bool setRefTriggerOutput(const std::string &refTriggerOutput) const;
+
+    /**
+     * @brief Gets the actual external reference trigger input
+     * @return Actual external reference trigger input
+     */
     std::string getRefTriggerOutput() const;
 
-
-
-
+    /**
+     * @brief Returns a sensitivity list
+     */
     std::vector<std::string> getSensitivityList() const;
+
+    /**
+     * @brief Converts the value of sensitivity to its index
+     * @param[in] sensitivity_string the value of sensitivity e.g. @a 10 @a mV
+     * @return Index of considered value of sensitivity
+     */
     int sensitivityNumberFromString(const std::string  &sensitivity_string) const;
+
+    /**
+     * @brief Converts the index of sensitivity to its value
+     * @param[in] sensitivity_number the index of sensitivity e.g. @a 7
+     * @return The value of sensitivity
+     */
     std::string sensitivityStringFromNumber(const int &sensitivity_number) const;
+
+    /**
+     * @brief Sets the value of sensitivity by index according to the specification tables
+     * ![SR830](sensitivityTableSR830.png)
+     *
+     * ![SR844](sensitivityTableSR844.png)
+     *
+     * ![SR865A](sensitivityTableSR865A.png)
+     * @param[in] sensitivity
+     * @return @b True if sensitivity is valid and sending is correct
+     */
     bool setSensitivity(const int &sensitivity) const;
+
+    /**
+     * @brief Sets the value of sensitivity by its value (see @ref setSensitivity "setSensitivity" by index)
+     */
     bool setSensitivity(const std::string &sensitivity) const;
+
+    /**
+     * @brief Gets the actual value of sensitivity
+     * @return Actual value of sensitivity
+     */
     std::string getSensitivity() const;
 
+    /**
+     * @brief Returns a list of filer slope values
+     */
     std::vector<std::string> getFilterSlopeList() const;
+
+    /**
+     * @brief Converts the value of filer slope to its index
+     * @param[in] filterSlope_string the value of filer slope e.g. @a 6 @a dB/oct
+     * @return Index of considered value of filer slope
+     */
     int filterSlopeNumberFromString(const std::string  &filterSlope_string) const;
+
+    /**
+     * @brief Converts the index of filer slope to its value
+     * @param[in] filterSlope_number the index of filer slope e.g. @a 2
+     * @return The value of filer slope
+     */
     std::string filterSlopeStringFromNumber(const int &filterSlope_number) const;
+
+    /**
+     * @brief Sets the value of filter slope by index according to the specification table
+     * ![Filter slope values](filterSlopeTable.png)
+     * @param[in] filterSlope
+     * @return @b True if filter slope is valid and sending is correct
+     */
     bool setFilterSlope(const int &filterSlope) const;
+
+    /**
+     * @brief Sets the value of filter slope by its value (see @ref setFilterSlope "setFilterSlope" by index)
+     */
     bool setFilterSlope(const std::string &filterSlope) const;
+
+    /**
+     * @brief Gets the actual value of filter slope
+     * @return Actual value of filter slope
+     */
     std::string getFilterSlope() const;
 
-
-
-
-
-    //auto functions
+    /**
+     * @brief Performs the Auto Phase function
+     * @details This commandis the same as pressing the [Auto Phase] key.
+     * This command adjusts the reference phase so that the current
+     * measurement has a Y value of zero and an X value equal to the
+     * signal magnitude, R.
+     * The outputs will take many time constants to reach their new values.
+     * Do not send the APHS command again without waiting the appropriate
+     * amount of time. If the phase is unstable, then APHS will do nothing.
+     * Query the new value of the phase shift to see if APHS changed the phase shift.
+     * @return @b True if quering is correct
+     */
     bool autoPhase() const;
+
+    /**
+     * @brief Performs the Auto Scale (Auto Gain) function
+     * @details This command is the same as pressing the [Auto Scale]
+     * (in SR865) or [Auto Gain] (in SR8830 and SR844) key.
+     * This automatically sets the sensitivity. Measurements with
+     * the synchronous filter on or measurements of Xnoise or
+     * Ynoise may take many time constants to return to their steady
+     * state values.
+     * @return True if quering is correct
+     */
     bool autoScale() const;
 
-
-    //output data functions
+    /**
+     * @brief Returns a list of out data positions
+     */
     std::vector<std::string> getOutDataList() const;
+
+    /**
+     * @brief Converts the value of out data to its index
+     * @param[in] outData_string the value of out data e.g. @a X
+     * @return Index of considered value of out data
+     */
     int outDataNumberFromString(const std::string  &outData_string) const;
+
+    /**
+     * @brief Converts the index of out data to its value
+     * @param[in] outData_number the index of out data e.g. @a 2
+     * @return The value of out data
+     */
     std::string outDataStringFromNumber(const int &outData_number) const;
+
+    /**
+     * @brief Gets the value of out data by index according to the specification table
+     * ![Out data values (for SR830 & SR844)](outDataTable.png)
+     *
+     * ![Out data values (for SR865)](outDataTableSR865.png)
+     * @param[in] outData
+     * @return @b True if out data is valid and sending is correct
+     */
     std::string getOutData(const int &outData) const;
+
+    /**
+     * @brief Gets the value of out data by its value (see @ref getOutData "getOutData" by index)
+     */
     std::string getOutData(const std::string &outData) const;
 
+    /**
+     * @brief Returns a list of out data could be obtained by multiple values simultaneously
+     */
     std::vector<std::string> getOutDataCoupleList() const;
+
+    /**
+     * @brief Converts the value of out data to its index
+     * @param[in] outData_string the value of out data e.g. @a X
+     * @return Index of considered value of out data
+     */
     int outDataCoupleNumberFromString(const std::string  &outDataCouple_string) const;
+
+    /**
+     * @brief Converts the index of out data to its value
+     * @param[in] outData_number the index of out data e.g. @a 2
+     * @return The value of out data
+     */
     std::string outDataCoupleStringFromNumber(const int &outDataCouple_number) const;
+
+    /**
+     * @brief Returns the values of 2 parameters at a single instant by their indices
+     * according to specification tables
+     * ![SR830](outDataCoupleTableSR830.png)
+     * ![SR844](outDataCoupleTableSR844.png)
+     * ![SR865](outDataTableSR865.png)
+     * @param[in] A
+     * @param[out] AValue
+     * @param[in] B
+     * @param[out] BValue
+     * @return @b True if out data is valid and sending is correct. Records data to appropriate strings
+     */
     bool getOutDataAB(const int &A, std::string &AValue, const int &B, std::string &BValue) const;
+
+    /**
+     * @brief Returns the values of 3 parameters at a single instant by their indices
+     * according to specification tables
+     * ![SR830](outDataCoupleTableSR830.png)
+     * ![SR844](outDataCoupleTableSR844.png)
+     * ![SR865](outDataTableSR865.png)
+     * @param[in] A
+     * @param[out] AValue
+     * @param[in] B
+     * @param[out] BValue
+     * @return @b True if out data is valid and sending is correct. Records data to appropriate strings
+     */
     bool getOutDataABC(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue) const;
+
+    /**
+     * @brief Gets the value of out data by its value (see @ref getOutDataAB "getOutDataAB" by indices)
+     */
     bool getOutDataAB(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue) const;
+
+    /**
+     * @brief Gets the value of out data by its value (see @ref getOutDataABC "getOutDataABC" by indices)
+     */
     bool getOutDataABC(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue) const;
 
 protected:
