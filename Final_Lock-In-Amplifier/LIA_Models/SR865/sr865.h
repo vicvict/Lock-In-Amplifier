@@ -125,14 +125,14 @@ public:
                         "FINT",     "FEXT"
                     };
 
-        outDataCouple =    {
+        outDataCouple = outData;   /*{
                                 "X",        "Y",    "R",    "THETa",
                                 "IN1",      "IN2",  "IN3",  "IN4",
                                 "OUT1",     "OUT2",
                                 "XNOise",   "YNOise",
                                 "PHAse",    "SAMp",  "LEVel",
                                 "FINT",     "FEXT"
-                            };
+                            };*/
     }
 
     bool autoRange() const;

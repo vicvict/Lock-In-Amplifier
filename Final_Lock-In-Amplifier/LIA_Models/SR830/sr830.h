@@ -127,11 +127,11 @@ public:
                         " ", "X", "Y", "R", "Theta"
                     };
 
-        outDataCouple = {
+        outDataCouple = outData; /*{
                             "X", "Y", "R", "Theta",
                             "AUX IN1", "AUX IN2", "AUX IN3", "AUX IN4",
                             "Ref Freqency", "CH1", "CH2"
-                        };
+                        };*/
     }
 
     bool autoWideReverse() const;// не уверен что это функция одинаковая в 830 и 844
