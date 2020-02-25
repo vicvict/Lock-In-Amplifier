@@ -133,7 +133,7 @@ public:
      * @return The reference phase in degrees
      */
     std::string getPhase() const;
-    std::string testPhase(const double interval, const double epsilon ) const;
+    bool testPhase(const double &interval, const double &epsilon ) const;
 
     double getMinInternalFrequency() const;
     double getMaxInternalFrequency() const;
@@ -177,7 +177,7 @@ public:
      * @return The internal or external frequency in Hz
      */
     std::string getFrequency() const;
-    std::string testFrequency(const double interval, const double epsilon) const;
+    bool testFrequency(const double &interval, const double &epsilon) const;
 
 
     int getMinHarmonic() const;
@@ -200,7 +200,7 @@ public:
     int getMinDualHarmonic() const;
     int getMaxDualHarmonic() const;
     bool setDualHarmonic(const int &i) const;
-    std::string getDualHarmonic() const;
+    std::string getDualHarmonic() const; //сложно написать тест надо думать
 
     double getMinSineAmplitude() const;
     double getMaxSineAmplitude() const;
@@ -217,11 +217,13 @@ public:
      * @return Returns the sine out amplitude in Volts
      */
     std::string getSineAmplitude() const;
+    bool testSineAmplitude(const double &interval, const double &epsilon) const;
 
     double getMinSineDCLevel() const;
     double getMaxSineDCLevel() const;
     bool setSineDCLevel(const double &voltage) const;
     std::string getSineDCLevel() const;
+    bool testSineDCLevel(const double &interval, const double &epsilon) const;
 
     std::vector<std::string> getTimeConstantList() const;
 
@@ -249,6 +251,7 @@ public:
      * @return Actual time constant
      */
     std::string getTimeConstant() const;
+    bool testTimeConstant() const;
 
     std::vector<std::string> getRefSourceList() const;
 
@@ -266,11 +269,13 @@ public:
      * @return Actual reference source
      */
     std::string getRefSource() const;
+    bool testRefSource() const;
 
     std::vector<std::string> getRefTriggerModeList() const;
     bool setRefTriggerMode(const int &refTriggerMode) const;
     bool setRefTriggerMode(const std::string &refTriggerMode) const;
     std::string getRefTriggerMode() const;
+    bool testRefTriggerMode() const;
 
     std::vector<std::string> getRefTriggerOutputList() const;
 
@@ -286,37 +291,44 @@ public:
     bool setRefTriggerOutput(const int &refTriggerOutput) const;
     bool setRefTriggerOutput(const std::string &refTriggerOutput) const;
     std::string getRefTriggerOutput() const;
+    bool testRefTriggerOutput() const;
 
     std::vector<std::string> getInputSignalList() const;
     bool setInputSignal(const int &inputSignal) const;
     bool setInputSignal(const std::string &inputSignal) const;
     std::string getInputSignal() const;
+    bool testInputSignal() const;
 
     std::vector<std::string> getInputVoltageModeList() const;
     bool setInputVoltageMode(const int &inputVoltageMode) const;
     bool setInputVoltageMode(const std::string &inputVoltageMode) const;
     std::string getInputVoltageMode() const;
+    bool testInputVoltageMode() const;
 
 
     std::vector<std::string> getInputVoltageCouplingList() const;
     bool setInputVoltageCoupling(const int &inputVoltageCoupling) const;
     bool setInputVoltageCoupling(const std::string &inputVoltageCoupling) const;
     std::string getInputVoltageCoupling() const;
+    bool testInputVoltageCoupling() const;
 
     std::vector<std::string> getInputVoltageShieldsList() const;
     bool setInputVoltageShields(const int &inputVoltageShields) const;
     bool setInputVoltageShields(const std::string &inputVoltageShields) const;
     std::string getInputVoltageShields() const;
+    bool testInputVoltageShields() const;
 
     std::vector<std::string> getInputVoltageRangeList() const;
     bool setInputVoltageRange(const int &inputVoltageRange) const;
     bool setInputVoltageRange(const std::string &inputVoltageRange) const;
     std::string getInputVoltageRange() const;
+    bool testInputVoltageRange() const;
 
     std::vector<std::string> getInputCurrentGainList() const;
     bool setInputCurrentGain(const int &inputCurrentGain) const;
     bool setInputCurrentGain(const std::string &inputCurrentGain) const;
     std::string getInputCurrentGain() const;
+    bool testInputCurrentGain() const;
 
     std::string getSignalStrength() const;
 
@@ -324,21 +336,25 @@ public:
     bool setSensitivity(const int &sensitivity) const;
     bool setSensitivity(const std::string &sensitivity) const;
     std::string getSensitivity() const;
+    bool testSensitivity() const;
 
     std::vector<std::string> getFilterSlopeList() const;
     bool setFilterSlope(const int &filterSlope) const;
     bool setFilterSlope(const std::string &filterSlope) const;
     std::string getFilterSlope() const;
+    bool testFilterSlope() const;
 
     std::vector<std::string> getSynchronousFilterList() const;
     bool setSynchronousFilter(const int &synchronousFilter) const;
     bool setSynchronousFilter(const std::string &synchronousFilter) const;
     std::string getSynchronousFilter() const;
+    bool testSynchronousFilter() const;
 
     std::vector<std::string> getAdvanceFilterList() const;
     bool setAdvanceFilter(const int &advanceFilter) const;
     bool setAdvanceFilter(const std::string &advanceFilter) const;
     std::string getAdvanceFilter() const;
+    bool testAdvanceFilter() const;
 
 
     //auto functions
@@ -365,11 +381,13 @@ public:
     bool setInputSignalZ(const int &inputSignalZ) const;
     bool setInputSignalZ(const std::string &inputSignalZ) const;
     std::string getInputSignalZ() const;
+    bool testInputSignalZ() const;
 
     std::vector<std::string> getCloseReserveModeList() const;
     bool setCloseReserveMode(const int &closeReserveMode) const;
     bool setCloseReserveMode(const std::string &icloseReserveMode) const;
     std::string getCloseReserveMode() const;
+    bool testCloseReserveMode() const;
 
     /*bool outDataAutoZeroChannel1(const int &outDataChannel1) const;
     bool outDataAutoZeroChannel1(const std::string &outDataChannel1) const;
@@ -400,10 +418,13 @@ public:
     bool setBufferMode(const int &bufferMode) const;
     bool setBufferMode(const std::string &bufferMode) const;
     std::string getBufferMode() const;
+    bool testBufferMode() const;
 
     bool startBuffer() const;
     bool pauseBuffer() const;
     bool stopBuffer() const;
+
+    std::string allTest() const;
 };
 
 #endif // FINALLOCKINAMPLIFIER_H

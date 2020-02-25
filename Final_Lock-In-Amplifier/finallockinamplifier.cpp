@@ -353,7 +353,7 @@ std::string finalLockInAmplifier::getPhase() const {
     return  "No ths model";
 }
 
-std::string finalLockInAmplifier::testPhase(const double interval, const double epsilon) const {
+bool finalLockInAmplifier::testPhase(const double &interval, const double &epsilon) const {
     std::string oldPhase = this->getPhase();
     double currentPhase = this->getMinPhase()+interval;
     while (currentPhase < this->getMaxPhase()) {
@@ -361,11 +361,12 @@ std::string finalLockInAmplifier::testPhase(const double interval, const double 
         if (abs(std::stod(this->getPhase()) - currentPhase) < epsilon)
             currentPhase += interval;
         else {
-            return "failed phase test";
+            this->setInternalPhase(std::stod(oldPhase));
+            return false;
         }
     }
     this->setInternalPhase(std::stod(oldPhase));
-    return "Phase test passed successfully";
+    return true;
 }
 
 bool finalLockInAmplifier::autoPhase() const {
@@ -468,7 +469,7 @@ std::string finalLockInAmplifier::getFrequencyDetect() const {
     return  "no this model";
 }
 
-std::string finalLockInAmplifier::testFrequency(const double interval, const double epsilon) const {
+bool finalLockInAmplifier::testFrequency(const double &interval, const double &epsilon) const {
     std::string oldFrequency = this->getFrequency();
     std::string oldRefSourse = this->getRefSource();
     std::string oldHarmonic = this->getHarmonic();
@@ -483,13 +484,16 @@ std::string finalLockInAmplifier::testFrequency(const double interval, const dou
         if (abs(std::stod(this->getFrequency())-currentFrequency) < epsilon)
             currentFrequency += interval;
         else {
-            return "Failed frequency test";
+            this->setFrequency(std::stod(oldFrequency));
+            this->setRefSource(oldRefSourse);
+            this->setHarmonic(std::stoi(oldHarmonic));
+            return false;
         }
     }
     this->setFrequency(std::stod(oldFrequency));
     this->setRefSource(oldRefSourse);
     this->setHarmonic(std::stoi(oldHarmonic));
-    return "Frequency test passed successfully";
+    return true;
 }
 
 bool finalLockInAmplifier::workWithHarmonic() const {
@@ -590,7 +594,7 @@ double finalLockInAmplifier::getMinSineAmplitude() const {
         return sr830->getMinSineAmplitude();
     if (lockInAmplifierModel == "SR865")
         return sr865->getMinSineAmplitude();
-    //return -1;
+    return -1;
 }
 
 double finalLockInAmplifier::getMaxSineAmplitude() const {
@@ -598,7 +602,7 @@ double finalLockInAmplifier::getMaxSineAmplitude() const {
         return sr830->getMaxSineAmplitude();
     if (lockInAmplifierModel == "SR865")
         return sr865->getMaxSineAmplitude();
-    //return -1;
+    return -1;
 }
 
 bool finalLockInAmplifier::setSineAmplitude(const double &sineAmplitude) const {
@@ -617,6 +621,21 @@ std::string finalLockInAmplifier::getSineAmplitude() const {
     return  "No this model";
 }
 
+bool finalLockInAmplifier::testSineAmplitude(const double &interval, const double &epsilon) const {
+    std::string oldSineAmplitude = getSineAmplitude();
+    double currentSineAmplitude = getMinSineAmplitude();
+    while(currentSineAmplitude <= getMaxSineAmplitude()) {
+        setSineAmplitude(currentSineAmplitude);
+        if (abs(std::stod(getSineAmplitude())-currentSineAmplitude) < epsilon)
+            currentSineAmplitude +=interval;
+        else {
+            setSineAmplitude(std::stod(oldSineAmplitude));
+            return false;
+        }
+    }
+    setSineAmplitude(std::stod(oldSineAmplitude));
+    return true;
+}
 
 bool finalLockInAmplifier::workWithSineDCLevel() const {
     if (lockInAmplifierModel == "SR865")
@@ -646,6 +665,22 @@ std::string finalLockInAmplifier::getSineDCLevel() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getSineDCLevel();
     return  "No this model or this model can't work with dual harmonic";
+}
+
+bool finalLockInAmplifier::testSineDCLevel(const double &interval, const double &epsilon) const{
+    std::string oldSineDCLevel = getSineDCLevel();
+    double currentSineDCLevel = getMinSineDCLevel();
+    while(currentSineDCLevel <= getMaxSineDCLevel()) {
+        setSineDCLevel(currentSineDCLevel);
+        if (abs(std::stod(getSineDCLevel())-currentSineDCLevel) < epsilon)
+            currentSineDCLevel +=interval;
+        else {
+            setSineDCLevel(std::stod(oldSineDCLevel));
+            return false;
+        }
+    }
+    setSineDCLevel(std::stod(oldSineDCLevel));
+    return true;
 }
 
 bool finalLockInAmplifier::workWithRefSourse() const {
@@ -697,6 +732,22 @@ std::string finalLockInAmplifier::getRefSource() const {
     return "No this model";
 }
 
+bool finalLockInAmplifier:: testRefSource() const {
+    if (workWithRefSourse()) {
+        std::string oldRefSource = getRefSource();
+        for(auto refSourse: getRefSourceList()) {
+            setRefSource(refSourse);
+            if (refSourse != getRefSource()) {
+                setRefSource(oldRefSource);
+                return false;
+            }
+        }
+        setRefSource(oldRefSource);
+        return  true;
+    }
+    return  false;
+}
+
 bool finalLockInAmplifier::workWithRefTriggerMode() const {
     if (lockInAmplifierModel == "SR830")
         return true;
@@ -737,6 +788,22 @@ std::string finalLockInAmplifier::getRefTriggerMode() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getRefTriggerMode();
     return "No this model or this model can't work with reference trigger mode";
+}
+
+bool finalLockInAmplifier:: testRefTriggerMode() const {
+    if (workWithRefTriggerMode()) {
+        std::string oldRefTriggerMode = getRefTriggerMode();
+        for(auto refTriggerMode: getRefTriggerModeList()) {
+            setRefTriggerMode(refTriggerMode);
+            if (refTriggerMode != getRefTriggerMode()) {
+                setRefTriggerMode(oldRefTriggerMode);
+                return false;
+            }
+        }
+        setRefTriggerMode(oldRefTriggerMode);
+        return  true;
+    }
+    return  false;
 }
 
 bool finalLockInAmplifier::workWithRefTriggerOutput() const {
@@ -788,6 +855,22 @@ std::string finalLockInAmplifier::getRefTriggerOutput() const {
     return "No this model";
 }
 
+bool finalLockInAmplifier:: testRefTriggerOutput() const {
+    if (workWithRefTriggerOutput()) {
+        std::string oldRefTriggerOutput = getRefTriggerOutput();
+        for(auto refTriggerOutput: getRefTriggerOutputList()) {
+            setRefTriggerOutput(refTriggerOutput);
+            if (refTriggerOutput != getRefTriggerOutput()) {
+                setRefTriggerOutput(oldRefTriggerOutput);
+                return false;
+            }
+        }
+        setRefTriggerOutput(oldRefTriggerOutput);
+        return  true;
+    }
+    return  false;
+}
+
 
 bool finalLockInAmplifier::workWithInputSignal() const {
     if (lockInAmplifierModel == "SR865")
@@ -816,6 +899,22 @@ std::string finalLockInAmplifier::getInputSignal() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputSignal();
     return "No this model or this model can't work with reference trigger mode";
+}
+
+bool finalLockInAmplifier:: testInputSignal() const {
+    if (workWithInputSignal()) {
+        std::string oldInputSignal = getInputSignal();
+        for(auto inputSignal: getInputSignalList()) {
+            setInputSignal(inputSignal);
+            if (inputSignal != getInputSignal()) {
+                setInputSignal(oldInputSignal);
+                return false;
+            }
+        }
+        setInputSignal(oldInputSignal);
+        return  true;
+    }
+    return  false;
 }
 
 
@@ -858,6 +957,19 @@ std::string finalLockInAmplifier::getInputVoltageMode() const {
     return "No this model or this model can't work with reference trigger mode";
 }
 
+bool finalLockInAmplifier:: testInputVoltageMode() const {
+    std::string oldInputVoltageMode = getInputVoltageMode();
+    for(auto inputVoltageMode: getInputVoltageModeList()) {
+        setInputVoltageMode(inputVoltageMode);
+        if (inputVoltageMode != getInputVoltageMode()) {
+            setInputVoltageMode(oldInputVoltageMode);
+            return false;
+        }
+    }
+    setInputVoltageMode(oldInputVoltageMode);
+    return  true;
+}
+
 
 bool finalLockInAmplifier::workWithInputVoltageCoupling() const {
     if (lockInAmplifierModel == "SR830")
@@ -896,6 +1008,19 @@ std::string finalLockInAmplifier::getInputVoltageCoupling() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputVoltageCoupling();
     return "No this model or this model can't work with reference trigger mode";
+}
+
+bool finalLockInAmplifier:: testInputVoltageCoupling() const {
+    std::string oldInputVoltageCoupling = getInputVoltageCoupling();
+    for(auto inputVoltageCoupling: getInputVoltageCouplingList()) {
+        setInputVoltageCoupling(inputVoltageCoupling);
+        if (inputVoltageCoupling != getInputVoltageCoupling()) {
+            setInputVoltageCoupling(oldInputVoltageCoupling);
+            return false;
+        }
+    }
+    setInputVoltageCoupling(oldInputVoltageCoupling);
+    return  true;
 }
 
 
@@ -938,6 +1063,19 @@ std::string finalLockInAmplifier::getInputVoltageShields() const {
     return "No this model or this model can't work with reference trigger mode";
 }
 
+bool finalLockInAmplifier::testInputVoltageShields() const {
+    std::string oldInputVoltageShields = getInputVoltageShields();
+    for(auto inputVoltageShields: getInputVoltageShieldsList()) {
+        setInputVoltageShields(inputVoltageShields);
+        if (inputVoltageShields != getInputVoltageShields()) {
+            setInputVoltageShields(oldInputVoltageShields);
+            return false;
+        }
+    }
+    setInputVoltageShields(oldInputVoltageShields);
+    return  true;
+}
+
 bool finalLockInAmplifier::workWithInputVoltageRange() const {
     if (lockInAmplifierModel == "SR865")
         return true;
@@ -967,6 +1105,19 @@ std::string finalLockInAmplifier::getInputVoltageRange() const {
     return "No this model or this model can't work with reference trigger mode";
 }
 
+bool finalLockInAmplifier::testInputVoltageRange() const {
+    std::string oldInputVoltageRange = getInputVoltageRange();
+    for(auto inputVoltageRange: getInputVoltageRangeList()) {
+        setInputVoltageRange(inputVoltageRange);
+        if (inputVoltageRange != getInputVoltageRange()) {
+            setInputVoltageRange(oldInputVoltageRange);
+            return false;
+        }
+    }
+    setInputVoltageRange(oldInputVoltageRange);
+    return  true;
+}
+
 bool finalLockInAmplifier::workWithInputCurrentGain() const {
     if (lockInAmplifierModel == "SR865")
         return true;
@@ -994,6 +1145,19 @@ std::string finalLockInAmplifier::getInputCurrentGain() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputCurrentGain();
     return "No this model or this model can't work with reference trigger mode";
+}
+
+bool finalLockInAmplifier::testInputCurrentGain() const {
+    std::string oldInputCurrentGain = getInputCurrentGain();
+    for(auto inputCurrentGain: getInputCurrentGainList()) {
+        setInputCurrentGain(inputCurrentGain);
+        if (inputCurrentGain != getInputCurrentGain()) {
+            setInputCurrentGain(oldInputCurrentGain);
+            return false;
+        }
+    }
+    setInputCurrentGain(oldInputCurrentGain);
+    return  true;
 }
 
 bool finalLockInAmplifier::workWithSignalStrength() const {
@@ -1057,6 +1221,19 @@ std::string finalLockInAmplifier::getSensitivity() const {
     return "No this model";
 }
 
+bool finalLockInAmplifier::testSensitivity() const {
+    std::string oldSensitivity = getSensitivity();
+    for(auto sensitivity: getSensitivityList()) {
+        setSensitivity(sensitivity);
+        if (sensitivity != getSensitivity()) {
+            setSensitivity(oldSensitivity);
+            return false;
+        }
+    }
+    setSensitivity(oldSensitivity);
+    return  true;
+}
+
 
 bool finalLockInAmplifier::workWithTimeConstant() const {
     if (lockInAmplifierModel == "SR830")
@@ -1105,6 +1282,22 @@ std::string finalLockInAmplifier::getTimeConstant() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getTimeConstant();
     return "No this model";
+}
+
+bool finalLockInAmplifier::testTimeConstant() const {
+    if (workWithTimeConstant()) {
+        std::string oldTimeConstant = getTimeConstant();
+        for(auto timeConstant: getTimeConstantList()) {
+            setTimeConstant(timeConstant);
+            if (timeConstant != getTimeConstant()) {
+                setTimeConstant(oldTimeConstant);
+                return false;
+            }
+        }
+        setTimeConstant(oldTimeConstant);
+        return  true;
+    }
+    return  false;
 }
 
 
@@ -1157,6 +1350,18 @@ std::string finalLockInAmplifier::getFilterSlope() const {
     return "No this model";
 }
 
+bool finalLockInAmplifier::testFilterSlope() const {
+    std::string oldFilterSlope = getFilterSlope();
+    for(auto filterSlope: getFilterSlopeList()) {
+        setFilterSlope(filterSlope);
+        if (filterSlope != getFilterSlope()) {
+            setFilterSlope(oldFilterSlope);
+            return false;
+        }
+    }
+    setFilterSlope(oldFilterSlope);
+    return  true;
+}
 
 bool finalLockInAmplifier::workWithSynchronousFilter() const {
     if (lockInAmplifierModel == "SR830")
@@ -1197,6 +1402,19 @@ std::string finalLockInAmplifier::getSynchronousFilter() const {
     return "No this model or this model can't work with reference trigger mode";
 }
 
+bool finalLockInAmplifier::testSynchronousFilter() const {
+    std::string oldSynchronousFilter = getSynchronousFilter();
+    for(auto synchronousFilter: getSynchronousFilterList()) {
+        setSynchronousFilter(synchronousFilter);
+        if (synchronousFilter != getSynchronousFilter()) {
+            setSynchronousFilter(oldSynchronousFilter);
+            return false;
+        }
+    }
+    setSynchronousFilter(oldSynchronousFilter);
+    return  true;
+}
+
 bool finalLockInAmplifier::workWithAdvanceFilter() const {
     if (lockInAmplifierModel == "SR865")
         return true;
@@ -1226,6 +1444,18 @@ std::string finalLockInAmplifier::getAdvanceFilter() const {
     return "No this model or this model can't work with reference trigger mode";
 }
 
+bool finalLockInAmplifier::testAdvanceFilter() const {
+    std::string oldAdvanceFilter = getAdvanceFilter();
+    for(auto advanceFilter: getAdvanceFilterList()) {
+        setAdvanceFilter(advanceFilter);
+        if (advanceFilter != getAdvanceFilter()) {
+            setAdvanceFilter(oldAdvanceFilter);
+            return false;
+        }
+    }
+    setAdvanceFilter(oldAdvanceFilter);
+    return  true;
+}
 
 bool finalLockInAmplifier::workWithAutoRange() const {
     if (lockInAmplifierModel == "SR865")
@@ -1462,6 +1692,19 @@ std::string finalLockInAmplifier::getInputSignalZ() const {
     return "No this model or this model can't work with reference trigger mode";
 }
 
+bool finalLockInAmplifier::testInputSignalZ() const {
+    std::string oldInputSignalZ = getInputSignalZ();
+    for(auto inputSignalZ: getInputSignalZList()) {
+        setInputSignalZ(inputSignalZ);
+        if (inputSignalZ != getInputSignalZ()) {
+            setInputSignalZ(oldInputSignalZ);
+            return false;
+        }
+    }
+    setInputSignalZ(oldInputSignalZ);
+    return  true;
+}
+
 bool finalLockInAmplifier::workWithCloseReserveMode() const {
     if (lockInAmplifierModel == "SR830")
         return  true;
@@ -1499,6 +1742,19 @@ std::string finalLockInAmplifier::getCloseReserveMode() const {
     if (lockInAmplifierModel == "SR844")
         return sr844->getCloseReserveMode();
     return "No this model or this model can't work with reference trigger mode";
+}
+
+bool finalLockInAmplifier::testCloseReserveMode() const {
+    std::string oldCloseReserveMode = getCloseReserveMode();
+    for(auto closeReserveMode: getCloseReserveModeList()) {
+        setCloseReserveMode(closeReserveMode);
+        if (closeReserveMode != getCloseReserveMode()) {
+            setCloseReserveMode(oldCloseReserveMode);
+            return false;
+        }
+    }
+    setCloseReserveMode(oldCloseReserveMode);
+    return  true;
 }
 
 bool finalLockInAmplifier::workWithSetOutDataChannel1() const {
@@ -1602,6 +1858,19 @@ std::string finalLockInAmplifier::getBufferMode() const {
     return "No this model or this model can't work with reference trigger mode";
 }
 
+bool finalLockInAmplifier::testBufferMode() const {
+    std::string oldBufferMode = getBufferMode();
+    for(auto bufferMode: getBufferModeList()) {
+        setBufferMode(bufferMode);
+        if (bufferMode != getBufferMode()) {
+            setBufferMode(oldBufferMode);
+            return false;
+        }
+    }
+    setBufferMode(oldBufferMode);
+    return  true;
+}
+
 bool finalLockInAmplifier::workWithBuffer() const {
     if (lockInAmplifierModel == "SR830")
         return  true;
@@ -1662,4 +1931,77 @@ std::vector <std::string> finalLockInAmplifier::getChannel2FromBuffer() const {
         return  sr830->getChannel2FromBuffer();
     if (lockInAmplifierModel == "SR844")
         return  sr844->getChannel2FromBuffer();
+}
+
+std::string finalLockInAmplifier::allTest() const {
+    if (workWithPhase())
+        if (testPhase(1,0.1) == 0)
+            return "Phase test Failed";
+    /*if (workWithHarmonic())
+        if (testHarmonic() == 0)
+            return "Harmonic test failed"; надо придумать как написать тест или исправить функци*/
+    /*if (workWithFrequency())
+        if(testFrequency(10, 1) == 0)
+            return "Frequency test failed";*/
+    if (workWithRefSourse())
+        if(testRefSource() == 0)
+            return "Reference source test failed";
+    if (workWithBufferMode())
+        if(testBufferMode() == 0)
+            return "Buffer mode test failed";
+    if (workWithFilterSlope())
+        if(testFilterSlope() == 0)
+            return "Filter slope test failed";
+    if (workWithInputSignal())
+        if (testInputSignal() == 0)
+            return "Input signal test failed";
+    if (workWithSensitivity())
+        if (testSensitivity() == 0)
+            return "Sensitivity test failed";
+    if (workWithSineDCLevel())
+        if (testSineDCLevel(0.1, 0.01) == 0)
+            return "SineDCLevel test failed";
+    /*if (workWithDualHarmonic())
+        if (testDualHarmonic() == 0)
+            return "Dual Harmonic test failed";*/
+    if (workWithInputSignalZ())
+        if (testInputSignalZ() == 0)
+            return  "Input Signal Z test failed";
+    if (workWithTimeConstant())
+        if (testTimeConstant() == 0)
+            return "Time constant test failed";
+    if (workWithAdvanceFilter())
+        if (testAdvanceFilter() == 0)
+            return "Advance filter test failed";
+    if (workWithSineAmplitude())
+        if (testSineAmplitude(0.1, 0.01) == 0)
+            return "Sine Amplitude test failed";
+    if (workWithRefTriggerMode())
+        if (testRefTriggerMode() == 0)
+            return "reference trigger mode test failed";
+    if (workWithCloseReserveMode())
+        if (testCloseReserveMode() == 0)
+            return "Close reserve mode test failed";
+    if (workWithInputCurrentGain())
+        if (testInputCurrentGain() == 0)
+            return "Input current Gain test failed";
+    if (workWithInputVoltageMode())
+        if (testInputVoltageMode() == 0)
+            return "Input Voltage mode test failed";
+    if (workWithRefTriggerOutput())
+        if (testRefTriggerOutput() == 0)
+            return "Reference trigger output test failed";
+    if (workWithInputVoltageRange())
+        if (testInputVoltageRange() == 0)
+            return "Input voltage range test failed";
+    if (workWithSynchronousFilter())
+        if (testSynchronousFilter() == 0)
+            return "Synchronous filter test failed";
+    if (workWithInputVoltageShields())
+        if (testInputVoltageShields() == 0)
+            return "Input voltage shields test failed";
+    if (workWithInputVoltageCoupling())
+        if (testInputVoltageCoupling() == 0)
+            return "Input voltage coupling test failed";
+    return "All test passed";
 }
