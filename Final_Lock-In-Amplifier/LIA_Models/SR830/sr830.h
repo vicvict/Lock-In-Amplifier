@@ -60,13 +60,6 @@ public:
                             "1 V"
                         };
 
-        outData =   {
-                        "X",                    "Y",        "R",        "Theta",
-                        "Aux In1",              "Aux In2",  "Aux In3",  "Aux In4",
-                        "Reference Frequency",
-                        "CH1 display",          "CH2 display"
-                    };
-
         refSource = {
                         "EXT", "INT"
                     };
@@ -127,11 +120,12 @@ public:
                         " ", "X", "Y", "R", "Theta"
                     };
 
-        outDataCouple = outData; /*{
-                            "X", "Y", "R", "Theta",
-                            "AUX IN1", "AUX IN2", "AUX IN3", "AUX IN4",
-                            "Ref Freqency", "CH1", "CH2"
-                        };*/
+        outDataCouple = {
+                            "X",                    "Y",        "R",        "Theta",
+                            "Aux In1",              "Aux In2",  "Aux In3",  "Aux In4",
+                            "Reference Frequency",
+                            "CH1 display",          "CH2 display"
+                        };
     }
 
     bool autoWideReverse() const;// не уверен что это функция одинаковая в 830 и 844
