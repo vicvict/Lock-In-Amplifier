@@ -1,7 +1,7 @@
 #ifndef SR865_H
 #define SR865_H
 
-
+///@bug outData = outDataCouple
 #include "LIA_Models/LockInAmplifier/lockinamplifier.h"
 
 #include <vector>
@@ -125,20 +125,37 @@ public:
                         "FINT",     "FEXT"
                     };
 
-        outDataCouple =    {
+        outDataCouple = outData;   /*{
                                 "X",        "Y",    "R",    "THETa",
                                 "IN1",      "IN2",  "IN3",  "IN4",
                                 "OUT1",     "OUT2",
                                 "XNOise",   "YNOise",
                                 "PHAse",    "SAMp",  "LEVel",
                                 "FINT",     "FEXT"
-                            };
+                            };*/
     }
 
     bool autoRange() const;
 
+    /**
+     * @brief Returns the value of internal frequency
+     * @return The value of internal frequency in Hz
+     */
     std::string getInternalFrequency() const;
+
+    /**
+     * @brief Returns the value of external reference frequency
+     * @return The value of external reference frequency in Hz
+     */
     std::string getExternalFrequency() const;
+
+    /**
+     * @brief  Returns the actual detection frequency
+     * @details This is helpful in dual reference mode or harmonic detection.
+     * Otherwise, the detection frequency is either the internal
+     * or external reference frequency.
+     * @return The actual detection frequency in Hz
+     */
     std::string getFrequencyDetect() const;
 
     int getMinDualHarmonic() const;

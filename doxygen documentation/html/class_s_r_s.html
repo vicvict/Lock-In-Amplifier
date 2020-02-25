@@ -245,14 +245,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>attempts_to_connect</b
 <tr class="separator:afe0060ca3acab2decb878b1a9372af99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02be7b277d46470b10f44a31ec7c1d8e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_baud_rate</b></td></tr>
 <tr class="separator:a02be7b277d46470b10f44a31ec7c1d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385c3f18da0890a1bc8ad352ff4bbfee"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, QSerialPort::DataBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_string_to_data_bits</b></td></tr>
-<tr class="separator:a385c3f18da0890a1bc8ad352ff4bbfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46f97acc1e5646b8e40d1adc1efd7ca8"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, QSerialPort::FlowControl &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_string_to_flow_control</b></td></tr>
-<tr class="separator:a46f97acc1e5646b8e40d1adc1efd7ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8179385019a97dc530927dbe5e1a23"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_data_bits</b></td></tr>
+<tr class="separator:aac8179385019a97dc530927dbe5e1a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2b9139bd63ab54ece83a896deb1fea5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_flow_control</b></td></tr>
+<tr class="separator:af2b9139bd63ab54ece83a896deb1fea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3afe379d13a57908a4f8ddee2435e46b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_parity</b></td></tr>
 <tr class="separator:a3afe379d13a57908a4f8ddee2435e46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e36321e05daf39dbe85cf2830850af4"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, QSerialPort::StopBits &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_string_to_stop_bits</b></td></tr>
-<tr class="separator:a9e36321e05daf39dbe85cf2830850af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a818f31618cbb6b4c677c50e2b085c914"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SRS_vector_to_stop_bits</b></td></tr>
+<tr class="separator:a818f31618cbb6b4c677c50e2b085c914"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_serial_port_communication_qt"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_serial_port_communication_qt')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_serial_port_communication_qt.html">SerialPortCommunicationQt</a></td></tr>
 <tr class="memitem:a2bcb6a2395226db92dd61e30b1bd4511 inherit pro_attribs_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a2bcb6a2395226db92dd61e30b1bd4511"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>write_timeout</b> = 10</td></tr>
@@ -358,18 +358,18 @@ static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valig
 <tr class="memitem:a288ba05b17a4158e05015bc2fc7406c1 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a288ba05b17a4158e05015bc2fc7406c1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToBaudRate</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_baud_rate)</td></tr>
 <tr class="separator:a288ba05b17a4158e05015bc2fc7406c1 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91ed69f54ac9808ffd241f0c3c28e82d inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a91ed69f54ac9808ffd241f0c3c28e82d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToDataBits</b> (const std::unordered_map&lt; std::string, QSerialPort::DataBits &gt; &amp;new_string_to_data_bits)</td></tr>
-<tr class="separator:a91ed69f54ac9808ffd241f0c3c28e82d inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5516d7a45bb7105e79d018a830da119 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="ab5516d7a45bb7105e79d018a830da119"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToFlowControl</b> (const std::unordered_map&lt; std::string, QSerialPort::FlowControl &gt; &amp;new_string_to_flow_control)</td></tr>
-<tr class="separator:ab5516d7a45bb7105e79d018a830da119 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55b5133a9f02328623a26a4e9ba48521 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a55b5133a9f02328623a26a4e9ba48521"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToDataBits</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_data_bits)</td></tr>
+<tr class="separator:a55b5133a9f02328623a26a4e9ba48521 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc2880d801a6f8a1e2d1b970ca16568 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a5fc2880d801a6f8a1e2d1b970ca16568"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToFlowControl</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_flow_control)</td></tr>
+<tr class="separator:a5fc2880d801a6f8a1e2d1b970ca16568 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3b3d0a3e1c8311ed753129b4a576258 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="ab3b3d0a3e1c8311ed753129b4a576258"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToStopBits</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_stop_bits)</td></tr>
+<tr class="separator:ab3b3d0a3e1c8311ed753129b4a576258 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a016b8d409cfb62bc17d66354a26cee72 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a016b8d409cfb62bc17d66354a26cee72"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToParity</b> (const std::vector&lt; std::string &gt; &amp;new_vector_to_parity)</td></tr>
 <tr class="separator:a016b8d409cfb62bc17d66354a26cee72 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aedb9d46a7a1a5422e8b21850442a8f inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a4aedb9d46a7a1a5422e8b21850442a8f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setStringToStopBits</b> (const std::unordered_map&lt; std::string, QSerialPort::StopBits &gt; &amp;new_string_to_stop_bits)</td></tr>
-<tr class="separator:a4aedb9d46a7a1a5422e8b21850442a8f inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac372b2a7863c7d5afffe8b81536d6735 inherit pro_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="ac372b2a7863c7d5afffe8b81536d6735"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
 <tr class="separator:ac372b2a7863c7d5afffe8b81536d6735 inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -414,83 +414,6 @@ QSerialPort::Direction&#160;</td><td class="memItemRight" valign="bottom"><b>ser
 <tr class="separator:abdb22e14590695abe964ea723383c87a inherit pro_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a385c3f18da0890a1bc8ad352ff4bbfee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a385c3f18da0890a1bc8ad352ff4bbfee">&#9670;&nbsp;</a></span>SRS_string_to_data_bits</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt; std::string , QSerialPort::DataBits &gt; SRS::SRS_string_to_data_bits</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">                                                                                                {<span class="stringliteral">&quot;8&quot;</span>, QSerialPort::Data8}</div>
-<div class="line">                                                                                               }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a46f97acc1e5646b8e40d1adc1efd7ca8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46f97acc1e5646b8e40d1adc1efd7ca8">&#9670;&nbsp;</a></span>SRS_string_to_flow_control</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt; std::string , QSerialPort::FlowControl &gt; SRS::SRS_string_to_flow_control</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">                                                                                                {  <span class="stringliteral">&quot;NO&quot;</span>, QSerialPort::NoFlowControl  },</div>
-<div class="line">                                                                                                {<span class="stringliteral">&quot;HARD&quot;</span>, QSerialPort::HardwareControl}</div>
-<div class="line">                                                                                               }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a9e36321e05daf39dbe85cf2830850af4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e36321e05daf39dbe85cf2830850af4">&#9670;&nbsp;</a></span>SRS_string_to_stop_bits</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt; std::string , QSerialPort::StopBits &gt; SRS::SRS_string_to_stop_bits</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">                                                                                                {  <span class="stringliteral">&quot;1&quot;</span>,  QSerialPort::OneStop       },</div>
-<div class="line">                                                                                                {  <span class="stringliteral">&quot;2&quot;</span>,  QSerialPort::TwoStop       }</div>
-<div class="line">                                                                                               }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a02be7b277d46470b10f44a31ec7c1d8e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02be7b277d46470b10f44a31ec7c1d8e">&#9670;&nbsp;</a></span>SRS_vector_to_baud_rate</h2>
 
@@ -516,6 +439,57 @@ QSerialPort::Direction&#160;</td><td class="memItemRight" valign="bottom"><b>ser
 <div class="line">                                                                <span class="stringliteral">&quot;19200&quot;</span>, <span class="stringliteral">&quot;38400&quot;</span>,</div>
 <div class="line">                                                                <span class="stringliteral">&quot;57600&quot;</span>, <span class="stringliteral">&quot;115200&quot;</span></div>
 <div class="line">                                                            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aac8179385019a97dc530927dbe5e1a23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8179385019a97dc530927dbe5e1a23">&#9670;&nbsp;</a></span>SRS_vector_to_data_bits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std:: vector&lt; std::string &gt; SRS::SRS_vector_to_data_bits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">                                                                <span class="stringliteral">&quot;8&quot;</span></div>
+<div class="line">                                                            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af2b9139bd63ab54ece83a896deb1fea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2b9139bd63ab54ece83a896deb1fea5">&#9670;&nbsp;</a></span>SRS_vector_to_flow_control</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std:: vector&lt; std::string &gt; SRS::SRS_vector_to_flow_control</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">                                                                   <span class="stringliteral">&quot;NO&quot;</span>,</div>
+<div class="line">                                                                   <span class="stringliteral">&quot;HARD&quot;</span></div>
+<div class="line">                                                               }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -546,6 +520,32 @@ QSerialPort::Direction&#160;</td><td class="memItemRight" valign="bottom"><b>ser
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a818f31618cbb6b4c677c50e2b085c914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a818f31618cbb6b4c677c50e2b085c914">&#9670;&nbsp;</a></span>SRS_vector_to_stop_bits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; SRS::SRS_vector_to_stop_bits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">                                                                    <span class="stringliteral">&quot;1&quot;</span>,</div>
+<div class="line">                                                                    <span class="stringliteral">&quot;2&quot;</span></div>
+<div class="line">                                                                }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ac1ce9b08407b5ad780628d637be6cb9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac1ce9b08407b5ad780628d637be6cb9c">&#9670;&nbsp;</a></span>supported_models</h2>
 
@@ -567,15 +567,15 @@ QSerialPort::Direction&#160;</td><td class="memItemRight" valign="bottom"><b>ser
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">                                                    <span class="stringliteral">&quot;DS335&quot;</span>, <span class="stringliteral">&quot;DS345&quot;</span>,</div>
-<div class="line">                                                    <span class="stringliteral">&quot;SR830&quot;</span>, <span class="stringliteral">&quot;SR844&quot;</span>, <span class="stringliteral">&quot;SR865&quot;</span>, <span class="stringliteral">&quot;SR865A&quot;</span>,</div>
+<div class="line">                                                    <span class="stringliteral">&quot;SR830&quot;</span>, <span class="stringliteral">&quot;SR844&quot;</span>, <span class="stringliteral">&quot;SR865&quot;</span>,</div>
 <div class="line">                                                    <span class="stringliteral">&quot;PTC10&quot;</span></div>
 <div class="line">                                                   }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>SerialPortCommunicationQt/SerialPortCommunication/SRS/<a class="el" href="_s_r_s_8h_source.html">SRS.h</a></li>
-<li>SerialPortCommunicationQt/SerialPortCommunication/SRS/SRS.cpp</li>
+<li>Final_Lock-In-Amplifier/LIA_Models/LockInAmplifier/SRS/<a class="el" href="_s_r_s_8h_source.html">SRS.h</a></li>
+<li>Final_Lock-In-Amplifier/LIA_Models/LockInAmplifier/SRS/SRS.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
