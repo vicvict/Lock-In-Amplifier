@@ -301,11 +301,11 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="Test">
+   <widget class="QPushButton" name="pushButtonTest">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>390</y>
+      <x>190</x>
+      <y>360</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -598,6 +598,16 @@
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QLineEdit" name="lineEditTest">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>360</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

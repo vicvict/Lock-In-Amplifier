@@ -9,16 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     std::string model;
 
-    /*try {
-        model = obj.detect("COM4", succeed);
-        obj.connect("COM4");
-        ui->lineEditPhase ->setText(QString(obj.getIDN().c_str()));
-        ui->lineEditFrequency ->setText(to_QString(obj.getPortName() + " " + obj.getBaudRate() + " " + obj.getDataBits() + " " + obj.getStopBits() + " " + obj.getFlowControl() + " " + obj.getParity()));
-        ui->lineEditResponse->setText(obj.getFrequency());
-    } catch (std:: string s) {
-        ui->lineEditResponse->setText(to_QString(s));
-    }*/
-
     ui->pushButtonConnect->setText("Connect");
 
     ui->lineEditPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -28,6 +18,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEditSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->lineEditSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->lineEditSignalStrength->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditResponse->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditSend->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditError->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditRecieve->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->lineEditTest->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
     ui->pushButtonPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->pushButtonFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -38,6 +33,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->pushButtonAutoPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->pushButtonAutoRange->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->pushButtonAutoScale->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonSend->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonTest->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
     ui->comboBoxOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxRefSource->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -559,6 +556,7 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->lineEditSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->lineEditSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->lineEditSignalStrength->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->lineEditSend->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
             ui->pushButtonPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->pushButtonFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -569,6 +567,8 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->pushButtonAutoPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->pushButtonAutoRange->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->pushButtonAutoScale->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonSend->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonTest->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
             ui->comboBoxOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxRefSource->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -602,6 +602,7 @@ void MainWindow::on_pushButtonConnect_clicked()
         ui->lineEditSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->lineEditSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->lineEditSignalStrength->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->lineEditSend->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
         ui->pushButtonPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->pushButtonFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -612,6 +613,8 @@ void MainWindow::on_pushButtonConnect_clicked()
         ui->pushButtonAutoPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->pushButtonAutoRange->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->pushButtonAutoScale->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonSend->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonTest->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
         ui->comboBoxOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxRefSource->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -630,18 +633,11 @@ void MainWindow::on_pushButtonConnect_clicked()
         ui->comboBoxInputVoltageCoupling->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     }
 }
-// вначале обязательно конектиться. Потом только можно делать тест
-// Тест это костыль погоняющий костыль(потому что я ленивая жопа)
+
 void MainWindow::on_Test_clicked()
 {
     try {
-        obj.disconnect();
-        //TestAll();
-        obj.connect("COM5","19200","8","1", "NO", "NO");
-        obj.setTimeConstant(to_StdString(ui->comboBoxTimeConstant->currentText()));
-        obj.setSensitivity(to_StdString(ui->comboBoxSensivitity->currentText()));
-        obj.setRefSource(to_StdString(ui->comboBoxRefSource->currentText()));
-        obj.setRefTriggerMode(to_StdString(ui->comboBoxRefTriggerMode->currentText()));
+        ui->lineEditTest->setText(to_QString(obj.allTest()));
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }
