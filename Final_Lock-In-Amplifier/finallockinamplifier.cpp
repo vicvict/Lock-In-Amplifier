@@ -1,4 +1,5 @@
 #include "finallockinamplifier.h"
+#include <QTime>
 
 finalLockInAmplifier::finalLockInAmplifier() {
 
@@ -216,7 +217,7 @@ std::string finalLockInAmplifier::ask(const std::string &command, const std::str
         return this->sr844->ask(command, terminate);
     if(this->lockInAmplifierModel == "SR865")
         return this->sr865->ask(command, terminate);
-    return "wrong model";
+    return "";
 }
 
 double finalLockInAmplifier::getTTS() const {
@@ -225,7 +226,8 @@ double finalLockInAmplifier::getTTS() const {
     if(this->lockInAmplifierModel == "SR844")
         return this->sr844->getTTS();
     if(this->lockInAmplifierModel == "SR865")
-        return this->sr865->getTTS();;
+        return this->sr865->getTTS();
+    return 0;
 }
 
 double finalLockInAmplifier::getTTR() const {
@@ -234,7 +236,8 @@ double finalLockInAmplifier::getTTR() const {
     if(this->lockInAmplifierModel == "SR844")
         return this->sr844->getTTR();
     if(this->lockInAmplifierModel == "SR865")
-        return this->sr865->getTTR();;
+        return this->sr865->getTTR();
+    return 0;
 }
 
 std::vector < std::string > finalLockInAmplifier::getSupportedList() const {
@@ -244,6 +247,7 @@ std::vector < std::string > finalLockInAmplifier::getSupportedList() const {
        return this->sr844->getSupportedList();
     if(this->lockInAmplifierModel == "SR865")
        return this->sr865->getSupportedList();
+    return {};
 }
 
 int finalLockInAmplifier::getAttemptsToConnect() const {
@@ -253,6 +257,7 @@ int finalLockInAmplifier::getAttemptsToConnect() const {
        return this->sr844->getAttemptsToConnect();
     if(this->lockInAmplifierModel == "SR865")
        return this->sr865->getAttemptsToConnect();
+    return 0;
 }
 
 void finalLockInAmplifier::setAttemptsToConnect(const int &new_attempts_to_connect) {
@@ -265,22 +270,22 @@ void finalLockInAmplifier::setAttemptsToConnect(const int &new_attempts_to_conne
 
 std::string finalLockInAmplifier::getIDN(bool* succeed) const {
     if(this->lockInAmplifierModel == "SR830")
-       return this->sr830->getIDN();
+       return this->sr830->getIDN(succeed);
     if(this->lockInAmplifierModel == "SR844")
-       return this->sr844->getIDN();
+       return this->sr844->getIDN(succeed);
     if(this->lockInAmplifierModel == "SR865")
-       return this->sr865->getIDN();
-    return "No this model brute\n";
+       return this->sr865->getIDN(succeed);
+    return "";
 }
 
 std::string finalLockInAmplifier::getModel(bool* succeed) const {
     if(this->lockInAmplifierModel == "SR830")
-       return this->sr830->getModel();
+       return this->sr830->getModel(succeed);
     if(this->lockInAmplifierModel == "SR844")
-       return this->sr844->getModel();
+       return this->sr844->getModel(succeed);
     if(this->lockInAmplifierModel == "SR865")
-       return this->sr865->getModel();
-    return "No this model brute\n";
+       return this->sr865->getModel(succeed);
+    return "";
 }
 
 bool finalLockInAmplifier::isActive() const {
@@ -289,7 +294,7 @@ bool finalLockInAmplifier::isActive() const {
     if(this->lockInAmplifierModel == "SR844")
         return this->sr844->isActive();
     if(this->lockInAmplifierModel == "SR865")
-        return this->sr865->isActive();;
+        return this->sr865->isActive();
     return false;
 }
 
@@ -321,6 +326,7 @@ double finalLockInAmplifier::getMinPhase() const {
         return sr844->getMinPhase();
     if (lockInAmplifierModel == "SR865")
         return sr865->getMinPhase();
+    return 0;
 }
 
 double finalLockInAmplifier::getMaxPhase() const {
@@ -330,6 +336,7 @@ double finalLockInAmplifier::getMaxPhase() const {
         return sr844->getMaxPhase();
     if (lockInAmplifierModel == "SR865")
         return sr865->getMaxPhase();
+    return  0;
 }
 
 
@@ -350,7 +357,7 @@ std::string finalLockInAmplifier::getPhase() const {
         return sr844->getPhase();
     if (lockInAmplifierModel == "SR865")
         return sr865->getPhase();
-    return  "No ths model";
+    return  "";
 }
 
 bool finalLockInAmplifier::testPhase(const double &interval, const double &epsilon) const {
@@ -358,6 +365,7 @@ bool finalLockInAmplifier::testPhase(const double &interval, const double &epsil
     double currentPhase = this->getMinPhase()+interval;
     while (currentPhase < this->getMaxPhase()) {
         this->setInternalPhase(currentPhase);
+        Sleep(1000);
         if (abs(std::stod(this->getPhase()) - currentPhase) < epsilon)
             currentPhase += interval;
         else {
@@ -436,7 +444,7 @@ std::string finalLockInAmplifier::getFrequency() const {
         return sr844->getFrequency();
     if (lockInAmplifierModel == "SR865")
         return sr865->getFrequency();
-    return  "No this model";
+    return  "";
 }
 
 std::string finalLockInAmplifier::getInternalFrequency() const {
@@ -446,7 +454,7 @@ std::string finalLockInAmplifier::getInternalFrequency() const {
         return sr844->getFrequency();
     if (this->lockInAmplifierModel == "SR865")
         return sr865->getInternalFrequency();
-    return  "no this model";
+    return  "";
 }
 
 std::string finalLockInAmplifier::getExternalFrequency() const {
@@ -456,7 +464,7 @@ std::string finalLockInAmplifier::getExternalFrequency() const {
         return sr844->getFrequency();
     if (this->lockInAmplifierModel == "SR865")
         return sr865->getExternalFrequency();
-    return  "no this model";
+    return  "";
 }
 
 std::string finalLockInAmplifier::getFrequencyDetect() const {
@@ -466,7 +474,7 @@ std::string finalLockInAmplifier::getFrequencyDetect() const {
         return sr844->getFrequencyDetect();
     if (this->lockInAmplifierModel == "SR865")
         return sr865->getFrequencyDetect();
-    return  "no this model";
+    return  "";
 }
 
 bool finalLockInAmplifier::testFrequency(const double &interval, const double &epsilon) const {
@@ -481,6 +489,7 @@ bool finalLockInAmplifier::testFrequency(const double &interval, const double &e
     double currentFrequency = this->getMinInternalFrequency();
     while (this->isValidInternalFrequency(currentFrequency)) {
         this->setFrequency(currentFrequency);
+        Sleep(1000);
         if (abs(std::stod(this->getFrequency())-currentFrequency) < epsilon)
             currentFrequency += interval;
         else {
@@ -543,7 +552,7 @@ std::string finalLockInAmplifier::getHarmonic() const {
         return sr844->getHarmonic();
     if (lockInAmplifierModel == "SR865")
         return sr865->getHarmonic();
-    return  "No this model";
+    return  "";
 }
 
 /*std::string finalLockInAmplifier::testHarmonic(const int &interval) const {
@@ -578,7 +587,7 @@ bool finalLockInAmplifier::setDualHarmonic(const int &harmonic) const {
 std::string finalLockInAmplifier::getDualHarmonic() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getDualHarmonic();
-    return  "No this model or this model can't work with dual harmonic";
+    return  "";
 }
 
 bool finalLockInAmplifier::workWithSineAmplitude() const {
@@ -618,7 +627,7 @@ std::string finalLockInAmplifier::getSineAmplitude() const {
         return sr830->getSineAmplitude();
     if (lockInAmplifierModel == "SR865")
         return sr865->getSineAmplitude();
-    return  "No this model";
+    return  "";
 }
 
 bool finalLockInAmplifier::testSineAmplitude(const double &interval, const double &epsilon) const {
@@ -626,6 +635,7 @@ bool finalLockInAmplifier::testSineAmplitude(const double &interval, const doubl
     double currentSineAmplitude = getMinSineAmplitude();
     while(currentSineAmplitude <= getMaxSineAmplitude()) {
         setSineAmplitude(currentSineAmplitude);
+        Sleep(1000);
         if (abs(std::stod(getSineAmplitude())-currentSineAmplitude) < epsilon)
             currentSineAmplitude +=interval;
         else {
@@ -664,7 +674,7 @@ bool finalLockInAmplifier::setSineDCLevel(const double &voltage) const {
 std::string finalLockInAmplifier::getSineDCLevel() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getSineDCLevel();
-    return  "No this model or this model can't work with dual harmonic";
+    return  "";
 }
 
 bool finalLockInAmplifier::testSineDCLevel(const double &interval, const double &epsilon) const{
@@ -672,6 +682,7 @@ bool finalLockInAmplifier::testSineDCLevel(const double &interval, const double 
     double currentSineDCLevel = getMinSineDCLevel();
     while(currentSineDCLevel <= getMaxSineDCLevel()) {
         setSineDCLevel(currentSineDCLevel);
+        Sleep(1000);
         if (abs(std::stod(getSineDCLevel())-currentSineDCLevel) < epsilon)
             currentSineDCLevel +=interval;
         else {
@@ -700,6 +711,7 @@ std::vector<std::string> finalLockInAmplifier::getRefSourceList() const {
         return sr844->getRefSourceList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getRefSourceList();
+    return {};
 }
 
 bool finalLockInAmplifier::setRefSource(const int &refSource) const {
@@ -729,7 +741,7 @@ std::string finalLockInAmplifier::getRefSource() const {
         return sr844->getRefSource();
     if (lockInAmplifierModel == "SR865")
         return sr865->getRefSource();
-    return "No this model";
+    return "";
 }
 
 bool finalLockInAmplifier:: testRefSource() const {
@@ -737,6 +749,7 @@ bool finalLockInAmplifier:: testRefSource() const {
         std::string oldRefSource = getRefSource();
         for(auto refSourse: getRefSourceList()) {
             setRefSource(refSourse);
+            Sleep(1000);
             if (refSourse != getRefSource()) {
                 setRefSource(oldRefSource);
                 return false;
@@ -761,9 +774,7 @@ std::vector<std::string> finalLockInAmplifier::getRefTriggerModeList() const {
         return sr830->getRefTriggerModeList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getRefTriggerModeList();
-    std::vector <std::string> incorrectData;
-    incorrectData.clear();
-    return incorrectData;
+    return {};
 }
 
 bool finalLockInAmplifier::setRefTriggerMode(const int &refTriggerMode) const {
@@ -787,7 +798,7 @@ std::string finalLockInAmplifier::getRefTriggerMode() const {
         return sr830->getRefTriggerMode();
     if (lockInAmplifierModel == "SR865")
         return sr865->getRefTriggerMode();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier:: testRefTriggerMode() const {
@@ -795,6 +806,7 @@ bool finalLockInAmplifier:: testRefTriggerMode() const {
         std::string oldRefTriggerMode = getRefTriggerMode();
         for(auto refTriggerMode: getRefTriggerModeList()) {
             setRefTriggerMode(refTriggerMode);
+            Sleep(1000);
             if (refTriggerMode != getRefTriggerMode()) {
                 setRefTriggerMode(oldRefTriggerMode);
                 return false;
@@ -823,6 +835,7 @@ std::vector<std::string> finalLockInAmplifier::getRefTriggerOutputList() const {
         return sr844->getRefTriggerOutputList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getRefTriggerOutputList();
+    return {};
 }
 
 bool finalLockInAmplifier::setRefTriggerOutput(const int &refTriggerOutput) const {
@@ -852,7 +865,7 @@ std::string finalLockInAmplifier::getRefTriggerOutput() const {
         return sr844->getRefTriggerOutput();
     if (lockInAmplifierModel == "SR865")
         return sr865->getRefTriggerOutput();
-    return "No this model";
+    return "";
 }
 
 bool finalLockInAmplifier:: testRefTriggerOutput() const {
@@ -860,6 +873,7 @@ bool finalLockInAmplifier:: testRefTriggerOutput() const {
         std::string oldRefTriggerOutput = getRefTriggerOutput();
         for(auto refTriggerOutput: getRefTriggerOutputList()) {
             setRefTriggerOutput(refTriggerOutput);
+            Sleep(1000);
             if (refTriggerOutput != getRefTriggerOutput()) {
                 setRefTriggerOutput(oldRefTriggerOutput);
                 return false;
@@ -881,6 +895,7 @@ bool finalLockInAmplifier::workWithInputSignal() const {
 std::vector<std::string> finalLockInAmplifier::getInputSignalList() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputSignalList();
+    return {};
 }
 
 bool finalLockInAmplifier::setInputSignal(const int &inputSignal) const {
@@ -898,7 +913,7 @@ bool finalLockInAmplifier::setInputSignal(const std::string &inputSignal) const 
 std::string finalLockInAmplifier::getInputSignal() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputSignal();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier:: testInputSignal() const {
@@ -906,6 +921,7 @@ bool finalLockInAmplifier:: testInputSignal() const {
         std::string oldInputSignal = getInputSignal();
         for(auto inputSignal: getInputSignalList()) {
             setInputSignal(inputSignal);
+            Sleep(1000);
             if (inputSignal != getInputSignal()) {
                 setInputSignal(oldInputSignal);
                 return false;
@@ -931,6 +947,7 @@ std::vector<std::string> finalLockInAmplifier::getInputVoltageModeList() const {
         return sr830->getInputVoltageModeList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputVoltageModeList();
+    return {};
 }
 
 bool finalLockInAmplifier::setInputVoltageMode(const int &inputVoltageMode) const {
@@ -954,13 +971,14 @@ std::string finalLockInAmplifier::getInputVoltageMode() const {
         return sr830->getInputVoltageMode();
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputVoltageMode();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier:: testInputVoltageMode() const {
     std::string oldInputVoltageMode = getInputVoltageMode();
     for(auto inputVoltageMode: getInputVoltageModeList()) {
         setInputVoltageMode(inputVoltageMode);
+        Sleep(1000);
         if (inputVoltageMode != getInputVoltageMode()) {
             setInputVoltageMode(oldInputVoltageMode);
             return false;
@@ -984,6 +1002,7 @@ std::vector<std::string> finalLockInAmplifier::getInputVoltageCouplingList() con
         return sr830->getInputVoltageCouplingList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputVoltageCouplingList();
+    return {};
 }
 
 bool finalLockInAmplifier::setInputVoltageCoupling(const int &inputVoltageCoupling) const {
@@ -1007,13 +1026,14 @@ std::string finalLockInAmplifier::getInputVoltageCoupling() const {
         return sr830->getInputVoltageCoupling();
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputVoltageCoupling();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier:: testInputVoltageCoupling() const {
     std::string oldInputVoltageCoupling = getInputVoltageCoupling();
     for(auto inputVoltageCoupling: getInputVoltageCouplingList()) {
         setInputVoltageCoupling(inputVoltageCoupling);
+        Sleep(1000);
         if (inputVoltageCoupling != getInputVoltageCoupling()) {
             setInputVoltageCoupling(oldInputVoltageCoupling);
             return false;
@@ -1037,6 +1057,7 @@ std::vector<std::string> finalLockInAmplifier::getInputVoltageShieldsList() cons
         return sr830->getInputVoltageShieldsList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputVoltageShieldsList();
+    return {};
 }
 
 bool finalLockInAmplifier::setInputVoltageShields(const int &inputVoltageShields) const {
@@ -1060,13 +1081,14 @@ std::string finalLockInAmplifier::getInputVoltageShields() const {
         return sr830->getInputVoltageShields();
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputVoltageShields();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier::testInputVoltageShields() const {
     std::string oldInputVoltageShields = getInputVoltageShields();
     for(auto inputVoltageShields: getInputVoltageShieldsList()) {
         setInputVoltageShields(inputVoltageShields);
+        Sleep(1000);
         if (inputVoltageShields != getInputVoltageShields()) {
             setInputVoltageShields(oldInputVoltageShields);
             return false;
@@ -1085,6 +1107,7 @@ bool finalLockInAmplifier::workWithInputVoltageRange() const {
 std::vector<std::string> finalLockInAmplifier::getInputVoltageRangeList() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputVoltageRangeList();
+    return {};
 }
 
 bool finalLockInAmplifier::setInputVoltageRange(const int &inputVoltageRange) const {
@@ -1102,13 +1125,14 @@ bool finalLockInAmplifier::setInputVoltageRange(const std::string &inputVoltageR
 std::string finalLockInAmplifier::getInputVoltageRange() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputVoltageRange();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier::testInputVoltageRange() const {
     std::string oldInputVoltageRange = getInputVoltageRange();
     for(auto inputVoltageRange: getInputVoltageRangeList()) {
         setInputVoltageRange(inputVoltageRange);
+        Sleep(1000);
         if (inputVoltageRange != getInputVoltageRange()) {
             setInputVoltageRange(oldInputVoltageRange);
             return false;
@@ -1127,6 +1151,7 @@ bool finalLockInAmplifier::workWithInputCurrentGain() const {
 std::vector<std::string> finalLockInAmplifier::getInputCurrentGainList() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputCurrentGainList();
+    return {};
 }
 
 bool finalLockInAmplifier::setInputCurrentGain(const int &inputCurrentGain) const {
@@ -1144,13 +1169,14 @@ bool finalLockInAmplifier::setInputCurrentGain(const std::string &inputCurrentGa
 std::string finalLockInAmplifier::getInputCurrentGain() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getInputCurrentGain();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier::testInputCurrentGain() const {
     std::string oldInputCurrentGain = getInputCurrentGain();
     for(auto inputCurrentGain: getInputCurrentGainList()) {
         setInputCurrentGain(inputCurrentGain);
+        Sleep(1000);
         if (inputCurrentGain != getInputCurrentGain()) {
             setInputCurrentGain(oldInputCurrentGain);
             return false;
@@ -1169,7 +1195,7 @@ bool finalLockInAmplifier::workWithSignalStrength() const {
 std::string finalLockInAmplifier::getSignalStrength() const {
     if (lockInAmplifierModel == "SR865")
         return  sr865->getSignalStrength();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier::workWithSensitivity() const {
@@ -1189,6 +1215,7 @@ std::vector<std::string> finalLockInAmplifier::getSensitivityList() const {
         return sr844->getSensitivityList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getSensitivityList();
+    return {};
 }
 
 bool finalLockInAmplifier::setSensitivity(const int &sensitivity) const {
@@ -1218,13 +1245,14 @@ std::string finalLockInAmplifier::getSensitivity() const {
         return sr844->getSensitivity();
     if (lockInAmplifierModel == "SR865")
         return sr865->getSensitivity();
-    return "No this model";
+    return "";
 }
 
 bool finalLockInAmplifier::testSensitivity() const {
     std::string oldSensitivity = getSensitivity();
     for(auto sensitivity: getSensitivityList()) {
         setSensitivity(sensitivity);
+        Sleep(1000);
         if (sensitivity != getSensitivity()) {
             setSensitivity(oldSensitivity);
             return false;
@@ -1252,6 +1280,7 @@ std::vector<std::string> finalLockInAmplifier::getTimeConstantList() const {
         return sr844->getTimeConstantList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getTimeConstantList();
+    return {};
 }
 
 bool finalLockInAmplifier::setTimeConstant(const int &timeConstant) const {
@@ -1281,23 +1310,21 @@ std::string finalLockInAmplifier::getTimeConstant() const {
         return sr844->getTimeConstant();
     if (lockInAmplifierModel == "SR865")
         return sr865->getTimeConstant();
-    return "No this model";
+    return "";
 }
 
 bool finalLockInAmplifier::testTimeConstant() const {
-    if (workWithTimeConstant()) {
-        std::string oldTimeConstant = getTimeConstant();
-        for(auto timeConstant: getTimeConstantList()) {
-            setTimeConstant(timeConstant);
-            if (timeConstant != getTimeConstant()) {
-                setTimeConstant(oldTimeConstant);
-                return false;
-            }
+    std::string oldTimeConstant = getTimeConstant();
+    for(auto timeConstant: getTimeConstantList()) {
+        setTimeConstant(timeConstant);
+        Sleep(1000);
+        if (timeConstant != getTimeConstant()) {
+            setTimeConstant(oldTimeConstant);
+            return false;
         }
-        setTimeConstant(oldTimeConstant);
-        return  true;
     }
-    return  false;
+    setTimeConstant(oldTimeConstant);
+    return  true;
 }
 
 
@@ -1318,6 +1345,7 @@ std::vector<std::string> finalLockInAmplifier::getFilterSlopeList() const {
         return sr844->getFilterSlopeList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getFilterSlopeList();
+    return {};
 }
 
 bool finalLockInAmplifier::setFilterSlope(const int &filterSlope) const {
@@ -1347,13 +1375,14 @@ std::string finalLockInAmplifier::getFilterSlope() const {
         return sr844->getFilterSlope();
     if (lockInAmplifierModel == "SR865")
         return sr865->getFilterSlope();
-    return "No this model";
+    return "";
 }
 
 bool finalLockInAmplifier::testFilterSlope() const {
     std::string oldFilterSlope = getFilterSlope();
     for(auto filterSlope: getFilterSlopeList()) {
         setFilterSlope(filterSlope);
+        Sleep(1000);
         if (filterSlope != getFilterSlope()) {
             setFilterSlope(oldFilterSlope);
             return false;
@@ -1376,6 +1405,7 @@ std::vector<std::string> finalLockInAmplifier::getSynchronousFilterList() const 
         return sr830->getSynchronousFilterList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getSynchronousFilterList();
+    return {};
 }
 
 bool finalLockInAmplifier::setSynchronousFilter(const int &synchronousFilter) const {
@@ -1399,13 +1429,14 @@ std::string finalLockInAmplifier::getSynchronousFilter() const {
         return sr830->getSynchronousFilter();
     if (lockInAmplifierModel == "SR865")
         return sr865->getSynchronousFilter();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier::testSynchronousFilter() const {
     std::string oldSynchronousFilter = getSynchronousFilter();
     for(auto synchronousFilter: getSynchronousFilterList()) {
         setSynchronousFilter(synchronousFilter);
+        Sleep(1000);
         if (synchronousFilter != getSynchronousFilter()) {
             setSynchronousFilter(oldSynchronousFilter);
             return false;
@@ -1424,6 +1455,7 @@ bool finalLockInAmplifier::workWithAdvanceFilter() const {
 std::vector<std::string> finalLockInAmplifier::getAdvanceFilterList() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getAdvanceFilterList();
+    return {};
 }
 
 bool finalLockInAmplifier::setAdvanceFilter(const int &advanceFilter) const {
@@ -1441,13 +1473,14 @@ bool finalLockInAmplifier::setAdvanceFilter(const std::string &advanceFilter) co
 std::string finalLockInAmplifier::getAdvanceFilter() const {
     if (lockInAmplifierModel == "SR865")
         return sr865->getAdvanceFilter();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier::testAdvanceFilter() const {
     std::string oldAdvanceFilter = getAdvanceFilter();
     for(auto advanceFilter: getAdvanceFilterList()) {
         setAdvanceFilter(advanceFilter);
+        Sleep(1000);
         if (advanceFilter != getAdvanceFilter()) {
             setAdvanceFilter(oldAdvanceFilter);
             return false;
@@ -1506,6 +1539,7 @@ std::vector<std::string> finalLockInAmplifier::getOutDataList() const {
         return sr844->getOutDataList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getOutDataList();
+    return {};
 }
 
 std::string finalLockInAmplifier::getOutData(const int &outData) const {
@@ -1515,7 +1549,7 @@ std::string finalLockInAmplifier::getOutData(const int &outData) const {
         return sr844->getOutData(outData);
     if (lockInAmplifierModel == "SR865")
         return sr865->getOutData(outData);
-    return "No this model";
+    return "";
 }
 
 std::string finalLockInAmplifier::getOutData(const std::string &outData) const {
@@ -1525,7 +1559,7 @@ std::string finalLockInAmplifier::getOutData(const std::string &outData) const {
         return sr844->getOutData(outData);
     if (lockInAmplifierModel == "SR865")
         return sr865->getOutData(outData);
-    return "No this model";
+    return "";
 }
 
 bool finalLockInAmplifier::workWithOutDataCouple() const {
@@ -1545,6 +1579,7 @@ std::vector<std::string> finalLockInAmplifier::getOutDataCoupleList() const {
         return sr844->getOutDataCoupleList();
     if (lockInAmplifierModel == "SR865")
         return sr865->getOutDataCoupleList();
+    return {};
 }
 
 bool finalLockInAmplifier::getOutDataAB(const int &A, std::string &AValue, const int &B, std::string &BValue) const {
@@ -1672,6 +1707,7 @@ bool finalLockInAmplifier::workWithInputSignalZ() const {
 std::vector<std::string> finalLockInAmplifier::getInputSignalZList() const {
     if (lockInAmplifierModel == "SR844")
         return sr844->getInputSignalZList();
+    return {};
 }
 
 bool finalLockInAmplifier::setInputSignalZ(const int &inputSignalZ) const {
@@ -1689,13 +1725,14 @@ bool finalLockInAmplifier::setInputSignalZ(const std::string &inputSignalZ) cons
 std::string finalLockInAmplifier::getInputSignalZ() const {
     if (lockInAmplifierModel == "SR844")
         return sr844->getInputSignalZ();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier::testInputSignalZ() const {
     std::string oldInputSignalZ = getInputSignalZ();
     for(auto inputSignalZ: getInputSignalZList()) {
         setInputSignalZ(inputSignalZ);
+        Sleep(1000);
         if (inputSignalZ != getInputSignalZ()) {
             setInputSignalZ(oldInputSignalZ);
             return false;
@@ -1718,6 +1755,7 @@ std::vector<std::string> finalLockInAmplifier::getCloseReserveModeList() const {
         return  sr830->getCloseReserveModeList();
     if (lockInAmplifierModel == "SR844")
         return sr844->getCloseReserveModeList();
+    return {};
 }
 
 bool finalLockInAmplifier::setCloseReserveMode(const int &closeReserveMode) const {
@@ -1741,13 +1779,14 @@ std::string finalLockInAmplifier::getCloseReserveMode() const {
         return  sr830->getCloseReserveMode();
     if (lockInAmplifierModel == "SR844")
         return sr844->getCloseReserveMode();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier::testCloseReserveMode() const {
     std::string oldCloseReserveMode = getCloseReserveMode();
     for(auto closeReserveMode: getCloseReserveModeList()) {
         setCloseReserveMode(closeReserveMode);
+        Sleep(1000);
         if (closeReserveMode != getCloseReserveMode()) {
             setCloseReserveMode(oldCloseReserveMode);
             return false;
@@ -1770,6 +1809,7 @@ std::vector<std::string> finalLockInAmplifier::getOutDataChannel1List() const {
         return  sr830->getOutDataChannel1List();
     if (lockInAmplifierModel == "SR844")
         return sr844->getOutDataChannel1List();
+    return {};
 }
 
 bool finalLockInAmplifier::setOutDataChannel1(const int &outData) const {
@@ -1801,6 +1841,7 @@ std::vector<std::string> finalLockInAmplifier::getOutDataChannel2List() const {
         return  sr830->getOutDataChannel2List();
     if (lockInAmplifierModel == "SR844")
         return sr844->getOutDataChannel2List();
+    return {};
 }
 
 bool finalLockInAmplifier::setOutDataChannel2(const int &outData) const {
@@ -1832,6 +1873,7 @@ std::vector<std::string> finalLockInAmplifier::getBufferModeList() const {
         return  sr830->getBufferModeList();
     if (lockInAmplifierModel == "SR844")
         return sr844->getBufferModeList();
+    return {};
 }
 
 bool finalLockInAmplifier::setBufferMode(const int &bufferMode) const {
@@ -1855,13 +1897,14 @@ std::string finalLockInAmplifier::getBufferMode() const {
         return  sr830->getBufferMode();
     if (lockInAmplifierModel == "SR844")
         return sr844->getBufferMode();
-    return "No this model or this model can't work with reference trigger mode";
+    return "";
 }
 
 bool finalLockInAmplifier::testBufferMode() const {
     std::string oldBufferMode = getBufferMode();
     for(auto bufferMode: getBufferModeList()) {
         setBufferMode(bufferMode);
+        Sleep(1000);
         if (bufferMode != getBufferMode()) {
             setBufferMode(oldBufferMode);
             return false;
@@ -1908,7 +1951,7 @@ std::string finalLockInAmplifier::getPointFromBufferChannel1(const int &number) 
         return  sr830->getPointFromBufferChannel1(number);
     if (lockInAmplifierModel == "SR844")
         return  sr844->getPointFromBufferChannel1(number);
-    return "No this model or this model can't work with buffer";
+    return "";
 }
 
 std::vector <std::string> finalLockInAmplifier::getChannel1FromBuffer() const {
@@ -1916,6 +1959,7 @@ std::vector <std::string> finalLockInAmplifier::getChannel1FromBuffer() const {
         return  sr830->getChannel1FromBuffer();
     if (lockInAmplifierModel == "SR844")
         return  sr844->getChannel1FromBuffer();
+    return {};
 }
 
 std::string finalLockInAmplifier::getPointFromBufferChannel2(const int &number) const {
@@ -1923,7 +1967,7 @@ std::string finalLockInAmplifier::getPointFromBufferChannel2(const int &number) 
         return  sr830->getPointFromBufferChannel2(number);
     if (lockInAmplifierModel == "SR844")
         return  sr844->getPointFromBufferChannel2(number);
-    return "No this model or this model can't work with buffer";
+    return "";
 }
 
 std::vector <std::string> finalLockInAmplifier::getChannel2FromBuffer() const {
@@ -1931,12 +1975,13 @@ std::vector <std::string> finalLockInAmplifier::getChannel2FromBuffer() const {
         return  sr830->getChannel2FromBuffer();
     if (lockInAmplifierModel == "SR844")
         return  sr844->getChannel2FromBuffer();
+    return {};
 }
 
 std::string finalLockInAmplifier::allTest() const {
-    if (workWithPhase())
+    /*if (workWithPhase())
         if (testPhase(1,0.1) == 0)
-            return "Phase test Failed";
+            return "Phase test Failed";*/
     /*if (workWithHarmonic())
         if (testHarmonic() == 0)
             return "Harmonic test failed"; надо придумать как написать тест или исправить функци*/

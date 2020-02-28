@@ -634,7 +634,7 @@ void MainWindow::on_pushButtonConnect_clicked()
     }
 }
 
-void MainWindow::on_Test_clicked()
+void MainWindow::on_pushButtonTest_clicked()
 {
     try {
         ui->lineEditTest->setText(to_QString(obj.allTest()));

@@ -68,7 +68,7 @@ private slots:
 
     void on_pushButtonConnect_clicked();
 
-    void on_Test_clicked();
+    void on_pushButtonTest_clicked();
 
     void on_pushButtonSend_clicked();
 

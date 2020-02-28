@@ -1,17 +1,18 @@
 #ifndef FINALLOCKINAMPLIFIER_H
 #define FINALLOCKINAMPLIFIER_H
 
+#include "LIA_Models/SR830/sr830.h"
+#include "LIA_Models/SR844/sr844.h"
+#include "LIA_Models/SR865/sr865.h"
+#include "LIA_Models/LockInAmplifier/SRS/SRS.h"
+
 #include <string>
 #include <vector>
 #include <map>
 #include <sstream>
 #include <iostream>
 #include <cmath>
-
-#include "LIA_Models/SR830/sr830.h"
-#include "LIA_Models/SR844/sr844.h"
-#include "LIA_Models/SR865/sr865.h"
-#include "LIA_Models/LockInAmplifier/SRS/SRS.h"
+#include "windows.h"
 
 class finalLockInAmplifier
 {

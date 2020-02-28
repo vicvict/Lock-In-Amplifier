@@ -4,10 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-QT += serialport
-CONFIG += serialport
-
+QT += core gui testlib serialport
+CONFIG += warn_on c++1z
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
