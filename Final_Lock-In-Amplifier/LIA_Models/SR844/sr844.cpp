@@ -121,6 +121,34 @@ std::string SR844::getCloseReserveMode() const {
     return closeReserveModeStringFromNumber(std::stoi(ask(commands.CloseReserveMode + query_suffix)));
 }
 
+std::vector<std::string> SR844::getWideReserveModeList() const {
+    return this->wideReserveMode;
+}
+
+int SR844::wideReserveModeNumberFromString(const std::string &wideReserveMode_string) const {
+    return numberFromString(this->wideReserveMode, wideReserveMode_string);
+}
+
+std::string SR844::wideReserveModeStringFromNumber(const int &wideReserveMode_number) const {
+    return stringFromNumber(this->wideReserveMode, wideReserveMode_number);
+}
+
+bool SR844::setWideReserveMode(const int &wideReserveMode) const {
+    if (!isValidNumber(this->wideReserveMode, wideReserveMode))
+        return false;
+
+    std::string command = commands.WideReserveMode + separator + std::to_string(wideReserveMode);
+    return sendCommand(command);
+}
+
+bool SR844::setWideReserveMode(const std::string &wideReserveMode) const {
+    return setWideReserveMode(wideReserveModeNumberFromString(wideReserveMode));
+}
+
+std::string SR844::getWideReserveMode() const {
+    return wideReserveModeStringFromNumber(std::stoi(ask(commands.WideReserveMode + query_suffix)));
+}
+
 bool SR844::getOutDataABCD(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue) const {
     if ((!isValidNumber(this->outDataCouple, A)) && (!isValidNumber(this->outDataCouple, B)) && (!isValidNumber(this->outDataCouple, C)) && (!isValidNumber(this->outDataCouple, D)))
         return false;

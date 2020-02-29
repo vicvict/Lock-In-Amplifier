@@ -35,6 +35,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->pushButtonAutoScale->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->pushButtonSend->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->pushButtonTest->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonAutoReserve->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->pushButtonAutoWideReserve->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
     ui->comboBoxOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxRefSource->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -51,6 +53,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBoxSynchronousFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxInputVoltageShields->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxInputVoltageCoupling->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxWideReserveMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxCloseReserveMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxInputSignalZ->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxBufferMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
 }
 
@@ -109,7 +115,10 @@ void MainWindow::on_pushButtonSineAmplitude_clicked()
 }
 
 void MainWindow::on_pushButtonAutoPhase_clicked() {
-    if (obj.autoPhase()) ui->lineEditPhase->setText(to_QString(obj.getPhase()));
+    if (obj.autoPhase()) {
+        Sleep(2000);
+        ui->lineEditPhase->setText(to_QString(obj.getPhase()));
+    }
     else {
         //do nothing
     }
@@ -117,6 +126,7 @@ void MainWindow::on_pushButtonAutoPhase_clicked() {
 
 void MainWindow::on_pushButtonAutoRange_clicked() {
     if (obj.autoRange()) {
+        Sleep(2000);
         ui->comboBoxInputVoltageRange -> setCurrentText(to_QString(obj.getInputVoltageRange()));
         ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
     }
@@ -127,7 +137,10 @@ void MainWindow::on_pushButtonAutoRange_clicked() {
 }
 
 void MainWindow::on_pushButtonAutoScale_clicked() {
-    if (obj.autoScale()) ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
+    if (obj.autoScale()) {
+        Sleep(2000);
+        ui->comboBoxSensivitity -> setCurrentText(to_QString(obj.getSensitivity()));
+    }
     else {
         //do nothing
     }
@@ -472,6 +485,47 @@ void MainWindow::on_pushButtonConnect_clicked()
                 ui->comboBoxOutData->hide();
             }
 
+            //добавление close reserve mode
+            if (obj.workWithCloseReserveMode()) {
+                for (auto data : obj.getCloseReserveModeList()) {
+                    ui->comboBoxCloseReserveMode->addItem(to_QString(data));
+                }
+                ui->comboBoxCloseReserveMode->show();
+            }
+            else {
+                ui->comboBoxCloseReserveMode->hide();
+            }
+
+            if (obj.workWithWideReserveMode()) {
+                for (auto data : obj.getWideReserveModeList()) {
+                    ui->comboBoxWideReserveMode->addItem(to_QString(data));
+                }
+                ui->comboBoxWideReserveMode->show();
+            }
+            else {
+                ui->comboBoxWideReserveMode->hide();
+            }
+
+            if (obj.workWithInputSignalZ()) {
+                for (auto data : obj.getInputSignalZList()) {
+                    ui->comboBoxInputSignalZ->addItem(to_QString(data));
+                }
+                ui->comboBoxInputSignalZ->show();
+            }
+            else {
+                ui->comboBoxInputSignalZ->hide();
+            }
+
+            if (obj.workWithBufferMode()) {
+                for (auto data : obj.getBufferModeList()) {
+                    ui->comboBoxBufferMode->addItem(to_QString(data));
+                }
+                ui->comboBoxBufferMode->show();
+            }
+            else {
+                ui->comboBoxBufferMode->hide();
+            }
+
 
             ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
 
@@ -543,8 +597,25 @@ void MainWindow::on_pushButtonConnect_clicked()
                 ui->pushButtonAutoScale->hide();
             }
 
+            if (obj.workWithAutoReserve())
+                ui->pushButtonAutoReserve->show();
+            else {
+                ui->pushButtonAutoReserve->hide();
+            }
 
-            //ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
+            if (obj.workWithAutoWideReverse())
+                ui->pushButtonAutoWideReserve->show();
+            else {
+                ui->pushButtonAutoWideReserve->hide();
+            }
+
+            if (obj.workWithSignalStrength()) {
+                ui->lineEditSignalStrength->show();
+                ui->lineEditSignalStrength->setText(to_QString(obj.getSignalStrength()));
+            }
+            else {
+                ui->lineEditSignalStrength->hide();
+            }
 
             ui->pushButtonConnect->setText("Disconnect");
 
@@ -569,6 +640,8 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->pushButtonAutoScale->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->pushButtonSend->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->pushButtonTest->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonAutoReserve->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->pushButtonAutoWideReserve->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
             ui->comboBoxOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxRefSource->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -585,6 +658,10 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->comboBoxSynchronousFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxInputVoltageShields->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxInputVoltageCoupling->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxWideReserveMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxCloseReserveMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxInputSignalZ->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxBufferMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
         } catch (std:: string s) {
             ui->lineEditError->setText(to_QString(s));
@@ -615,6 +692,8 @@ void MainWindow::on_pushButtonConnect_clicked()
         ui->pushButtonAutoScale->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->pushButtonSend->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->pushButtonTest->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonAutoReserve->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->pushButtonAutoWideReserve->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
         ui->comboBoxOutData->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxRefSource->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -631,6 +710,10 @@ void MainWindow::on_pushButtonConnect_clicked()
         ui->comboBoxSynchronousFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxInputVoltageShields->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxInputVoltageCoupling->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxWideReserveMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxCloseReserveMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxInputSignalZ->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxBufferMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     }
 }
 
@@ -653,4 +736,61 @@ void MainWindow::on_pushButtonSend_clicked() {
         ui -> lineEditError->setText(to_QString(s));
     }
 
+}
+
+void MainWindow::on_pushButtonAutoReserve_clicked()
+{
+    try {
+        obj.autoReserve();
+        Sleep(2000);
+        ui->comboBoxCloseReserveMode->setCurrentText(to_QString(obj.getCloseReserveMode()));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxCloseReserveMode_activated(const QString &arg1) {
+    try {
+        obj.setCloseReserveMode(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxWideReserveMode_activated(const QString &arg1)
+{
+    try {
+        obj.setWideReserveMode(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_pushButtonAutoWideReserve_clicked()
+{
+    try {
+        obj.autoWideReverse();
+        Sleep(2000);
+        ui->comboBoxWideReserveMode->setCurrentText(to_QString(obj.getWideReserveMode()));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxInputSignalZ_activated(const QString &arg1)
+{
+    try {
+        obj.setInputSignalZ(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_comboBoxBufferMode_activated(const QString &arg1)
+{
+    try {
+        obj.setBufferMode(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
 }

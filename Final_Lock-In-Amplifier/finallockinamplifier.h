@@ -113,6 +113,7 @@ public:
     bool workWithAutoReserve() const;
     bool workWithInputSignalZ() const;
     bool workWithCloseReserveMode() const;
+    bool workWithWideReserveMode() const;
     bool workWithSetOutDataChannel1() const;
     bool workWithSetOutDataChannel2() const;
     bool workWithBuffer() const;
@@ -389,6 +390,12 @@ public:
     bool setCloseReserveMode(const std::string &icloseReserveMode) const;
     std::string getCloseReserveMode() const;
     bool testCloseReserveMode() const;
+
+    std::vector<std::string> getWideReserveModeList() const;
+    bool setWideReserveMode(const int &wideReserveMode) const;
+    bool setWideReserveMode(const std::string &wideReserveMode) const;
+    std::string getWideReserveMode() const;
+    bool testWideReserveMode() const;
 
     /*bool outDataAutoZeroChannel1(const int &outDataChannel1) const;
     bool outDataAutoZeroChannel1(const std::string &outDataChannel1) const;

@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "finallockinamplifier.h"
 
+#include "windows.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -71,6 +73,18 @@ private slots:
     void on_pushButtonTest_clicked();
 
     void on_pushButtonSend_clicked();
+
+    void on_pushButtonAutoReserve_clicked();
+
+    void on_comboBoxCloseReserveMode_activated(const QString &arg1);
+
+    void on_comboBoxWideReserveMode_activated(const QString &arg1);
+
+    void on_pushButtonAutoWideReserve_clicked();
+
+    void on_comboBoxInputSignalZ_activated(const QString &arg1);
+
+    void on_comboBoxBufferMode_activated(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

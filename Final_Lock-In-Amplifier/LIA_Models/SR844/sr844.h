@@ -19,6 +19,7 @@ public:
 
         //something about commands
         commands.FrequencyDetect = "FRAQ";
+        commands.WideReserveMode = "WRSV";
         commands.AutoWideReverse = "AWRS";
         commands.InputSignalZ = "INPZ";
         commands.CloseReserveMode = "CRSV";
@@ -114,6 +115,10 @@ public:
                                     "High", "Normal", "Low"
                               };
 
+        wideReserveMode =     {
+                                    "High", "Normal", "Low"
+                              };
+
 
     }
 
@@ -135,6 +140,13 @@ public:
     bool setCloseReserveMode(const int &closeReserveMode) const;
     bool setCloseReserveMode(const std::string &icloseReserveMode) const;
     std::string getCloseReserveMode() const;
+
+    std::vector<std::string> getWideReserveModeList() const;
+    int wideReserveModeNumberFromString(const std::string  &wideReserveMode_string) const;
+    std::string wideReserveModeStringFromNumber(const int &wideReserveMode_number) const;
+    bool setWideReserveMode(const int &wideReserveMode) const;
+    bool setWideReserveMode(const std::string &wideReserveMode) const;
+    std::string getWideReserveMode() const;
 
     bool outDataAutoZeroChannel1(const int &outDataChannel1) const;
     bool outDataAutoZeroChannel1(const std::string &outDataChannel1) const;

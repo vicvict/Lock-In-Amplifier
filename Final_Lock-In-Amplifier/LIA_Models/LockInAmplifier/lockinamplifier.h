@@ -89,6 +89,7 @@ protected:
         std::string AdvanceFilter;
         std::string InputSignalZ;
         std::string CloseReserveMode;
+        std::string WideReserveMode;
 
         std::string OutData = "OUTP";
         std::string CoupleOfData = "SNAP";
@@ -627,6 +628,7 @@ protected:
     std::vector <std::string> advanceFilter;
     std::vector <std::string> inputSignalZ;
     std::vector <std::string> closeReserveMode;
+    std::vector <std::string> wideReserveMode;
 
     std::vector <std::string> bufferMode;
 

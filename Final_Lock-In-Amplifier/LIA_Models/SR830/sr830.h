@@ -25,7 +25,7 @@ public:
         commands.AdvanceFilter = "ILIN";
         commands.CloseReserveMode = "RMOD";
 
-        commands.AutoWideReverse = "ARSV";
+        commands.AutoReserve = "ARSV";
 
 
         timeConstant = {
@@ -128,7 +128,7 @@ public:
                         };
     }
 
-    bool autoWideReverse() const;// не уверен что это функция одинаковая в 830 и 844
+    bool autoReserve() const;// не уверен что это функция одинаковая в 830 и 844
 
     std::vector<std::string> getCloseReserveModeList() const;
     int closeReserveModeNumberFromString(const std::string  &closeReserveMode_string) const;

@@ -1671,28 +1671,28 @@ bool finalLockInAmplifier::getOutDataABCDEF(const std::string &A, std::string &A
 }
 
 bool finalLockInAmplifier::workWithAutoWideReverse() const {
-    if (lockInAmplifierModel == "SR830")
-        return true;
     if (lockInAmplifierModel == "SR844")
         return true;
     return false;
 }
 
 bool finalLockInAmplifier::autoWideReverse() const {
-    if (lockInAmplifierModel == "SR830")
-        return sr830->autoWideReverse();
     if (lockInAmplifierModel == "SR844")
         return sr844->autoWideReverse();
     return false;
 }
 
 bool finalLockInAmplifier::workWithAutoReserve() const {
+    if (lockInAmplifierModel == "SR830")
+        return true;
     if (lockInAmplifierModel == "SR844")
         return true;
     return  false;
 }
 
 bool finalLockInAmplifier::autoReserve() const {
+    if (lockInAmplifierModel == "SR830")
+        return sr844->autoReserve();
     if (lockInAmplifierModel == "SR844")
         return sr844->autoReserve();
     return  false;
@@ -1793,6 +1793,50 @@ bool finalLockInAmplifier::testCloseReserveMode() const {
         }
     }
     setCloseReserveMode(oldCloseReserveMode);
+    return  true;
+}
+
+bool finalLockInAmplifier::workWithWideReserveMode() const {
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return false;
+}
+
+std::vector<std::string> finalLockInAmplifier::getWideReserveModeList() const {
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getWideReserveModeList();
+    return {};
+}
+
+bool finalLockInAmplifier::setWideReserveMode(const int &wideReserveMode) const {
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setWideReserveMode(wideReserveMode);
+    return false;
+}
+
+bool finalLockInAmplifier::setWideReserveMode(const std::string &wideReserveMode) const {
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setWideReserveMode(wideReserveMode);
+    return false;
+}
+
+std::string finalLockInAmplifier::getWideReserveMode() const {
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getWideReserveMode();
+    return "";
+}
+
+bool finalLockInAmplifier::testWideReserveMode() const {
+    std::string oldWideReserveMode = getWideReserveMode();
+    for(auto wideReserveMode: getWideReserveModeList()) {
+        setWideReserveMode(wideReserveMode);
+        Sleep(1000);
+        if (wideReserveMode != getWideReserveMode()) {
+            setWideReserveMode(oldWideReserveMode);
+            return false;
+        }
+    }
+    setWideReserveMode(oldWideReserveMode);
     return  true;
 }
 

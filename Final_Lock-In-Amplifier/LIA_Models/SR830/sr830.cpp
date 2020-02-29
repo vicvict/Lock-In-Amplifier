@@ -153,8 +153,8 @@ bool SR830::setOutDataChannel2(const std::string &outDataChannel2) const{
     return setOutDataChannel2(outDataChannel2NumberFromString(outDataChannel2));
 }
 
-bool SR830:: autoWideReverse() const {
-    return sendCommand(commands.AutoWideReverse);
+bool SR830:: autoReserve() const {
+    return sendCommand(commands.AutoReserve);
 }
 
 std::vector<std::string> SR830::getBufferModeList() const {
