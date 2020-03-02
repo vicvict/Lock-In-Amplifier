@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1218</width>
-    <height>490</height>
+    <width>1742</width>
+    <height>559</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -149,19 +149,6 @@
      <string>Sine DC lvl</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButtonAutoPhase">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>40</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Auto Phase</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="lineEditError">
     <property name="geometry">
      <rect>
@@ -202,42 +189,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButtonAutoRange">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>60</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Auto Range</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonAutoScale">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>80</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Auto Scale</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxInputVoltageShields">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>120</y>
-      <width>69</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="lineEditSignalStrength">
     <property name="geometry">
      <rect>
@@ -245,26 +196,6 @@
       <y>270</y>
       <width>113</width>
       <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxSynchronousFilter">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>200</y>
-      <width>69</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxAdvanceFilter">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>220</y>
-      <width>69</width>
-      <height>22</height>
      </rect>
     </property>
    </widget>
@@ -365,239 +296,245 @@
      <rect>
       <x>470</x>
       <y>10</y>
-      <width>358</width>
-      <height>361</height>
+      <width>380</width>
+      <height>444</height>
      </rect>
     </property>
     <property name="title">
      <string>Signal</string>
     </property>
-    <widget class="QWidget" name="gridLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>338</width>
-       <height>321</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="labelSensitivity">
-          <property name="text">
-           <string>Sensitivity</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBoxSensivitity"/>
-        </item>
-       </layout>
-      </item>
-      <item row="3" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
-        <item>
-         <widget class="QLabel" name="labelInput">
-          <property name="text">
-           <string>Input</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBoxInputSignal"/>
-        </item>
-       </layout>
-      </item>
-      <item row="2" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
-        <item>
-         <widget class="QLabel" name="labelInputRange">
-          <property name="text">
-           <string>Input Range</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBoxInputVoltageRange"/>
-        </item>
-       </layout>
-      </item>
-      <item row="4" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_8">
-        <item>
-         <widget class="QLabel" name="labelCurrent">
-          <property name="text">
-           <string>Current</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBoxInputCurrentGain"/>
-        </item>
-       </layout>
-      </item>
-      <item row="5" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_9">
-        <item>
-         <widget class="QGroupBox" name="groupBox_3">
-          <property name="title">
-           <string>Voltage</string>
-          </property>
-          <layout class="QFormLayout" name="formLayout">
-           <item row="3" column="1">
-            <layout class="QVBoxLayout" name="verticalLayout_8">
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_16">
-               <item>
-                <widget class="QLabel" name="labelVoltageCoupling">
-                 <property name="text">
-                  <string>Couple</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QComboBox" name="comboBoxInputVoltageCoupling"/>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_13">
-               <item>
-                <widget class="QLabel" name="labelInputVoltageMode">
-                 <property name="text">
-                  <string>Voltage Mode</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QComboBox" name="comboBoxInputVoltageMode"/>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_15">
-               <item>
-                <widget class="QRadioButton" name="radioButtonFloat">
-                 <property name="text">
-                  <string>Float</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QRadioButton" name="radioButtonGround">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="labelTimeConstant">
-          <property name="text">
-           <string>Time Constant</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBoxTimeConstant"/>
-        </item>
-       </layout>
-      </item>
-      <item row="5" column="1">
-       <widget class="QGroupBox" name="groupBoxFilter">
-        <property name="title">
-         <string>Filter</string>
-        </property>
-        <layout class="QFormLayout" name="formLayout_2">
-         <item row="1" column="1">
-          <layout class="QVBoxLayout" name="verticalLayout_6">
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_10">
-             <item>
-              <widget class="QLabel" name="labelFilterSlope">
-               <property name="text">
-                <string>Filter Slope</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="comboBoxFilterSlope"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <widget class="QGroupBox" name="groupBox_4">
-             <property name="title">
-              <string>Sync</string>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_4">
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_11">
-                <item>
-                 <widget class="QRadioButton" name="radioButtonSyncOff">
-                  <property name="text">
-                   <string>Off</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QRadioButton" name="radioButtonSyncOn">
-                  <property name="text">
-                   <string>On</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QGroupBox" name="groupBox_2">
-             <property name="title">
-              <string>Advanced</string>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <item>
-                 <widget class="QRadioButton" name="radioButtonOff">
-                  <property name="text">
-                   <string>Off</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QRadioButton" name="radioButtonAdvancedOn">
-                  <property name="text">
-                   <string>On</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="2" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_14">
+         <item>
+          <widget class="QLabel" name="labelWideReserveMode">
+           <property name="text">
+            <string>Wide Reserve Mode</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxWideReserveMode"/>
          </item>
         </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+       </item>
+       <item row="8" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QGroupBox" name="groupBox_3">
+           <property name="title">
+            <string>Voltage</string>
+           </property>
+           <layout class="QFormLayout" name="formLayout">
+            <item row="3" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_16">
+                <item>
+                 <widget class="QLabel" name="labelVoltageCoupling">
+                  <property name="text">
+                   <string>Couple</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboBoxInputVoltageCoupling"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_13">
+                <item>
+                 <widget class="QLabel" name="labelInputVoltageMode">
+                  <property name="text">
+                   <string>Voltage Mode</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboBoxInputVoltageMode"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_15">
+                <item>
+                 <widget class="QLabel" name="labelInputVoltageShields">
+                  <property name="text">
+                   <string>Voltage Shields</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboBoxInputVoltageShields"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="8" column="1">
+        <widget class="QGroupBox" name="groupBoxFilter">
+         <property name="title">
+          <string>Filter</string>
+         </property>
+         <layout class="QFormLayout" name="formLayout_2">
+          <item row="1" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <widget class="QLabel" name="labelFilterSlope">
+                <property name="text">
+                 <string>Filter Slope</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBoxFilterSlope"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <widget class="QLabel" name="labelSynchronousFilter">
+                <property name="text">
+                 <string>Sync</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBoxSynchronousFilter"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_12">
+              <item>
+               <widget class="QLabel" name="labelAdvancedFilter">
+                <property name="text">
+                 <string>Advanced</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBoxAdvancedFilter"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="labelTimeConstant">
+           <property name="text">
+            <string>Time Constant</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxTimeConstant"/>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="labelInputRange">
+           <property name="text">
+            <string>Input Range</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxInputVoltageRange"/>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="labelCloseReserveMode">
+           <property name="text">
+            <string>Close Reserve Mode</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxCloseReserveMode"/>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="labelInput">
+           <property name="text">
+            <string>Input</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxInputSignal"/>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLabel" name="labelCurrent">
+           <property name="text">
+            <string>Current</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxInputCurrentGain"/>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="labelSensitivity">
+           <property name="text">
+            <string>Sensitivity</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxSensivitity"/>
+         </item>
+        </layout>
+       </item>
+       <item row="6" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_17">
+         <item>
+          <widget class="QLabel" name="labelInputSignalZ">
+           <property name="text">
+            <string>Input Signal Z</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxInputSignalZ"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
    <widget class="QLineEdit" name="lineEditTest">
     <property name="geometry">
@@ -606,62 +543,6 @@
       <y>360</y>
       <width>113</width>
       <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonAutoReserve">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>40</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Auto Reserve</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxCloseReserveMode">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>120</y>
-      <width>69</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxWideReserveMode">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>140</y>
-      <width>69</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonAutoWideReserve">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>80</y>
-      <width>111</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Auto Wide Reserve</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxInputSignalZ">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>170</y>
-      <width>69</width>
-      <height>22</height>
      </rect>
     </property>
    </widget>
@@ -675,13 +556,197 @@
      </rect>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBoxAuto">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>20</y>
+      <width>125</width>
+      <height>174</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Auto</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButtonAutoReserve">
+         <property name="text">
+          <string>Auto Close Reserve</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonAutoWideReserve">
+         <property name="text">
+          <string>Auto Wide Reserve</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonAutoPhase">
+         <property name="text">
+          <string>Auto Phase</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonAutoRange">
+         <property name="text">
+          <string>Auto Range</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonAutoScale">
+         <property name="text">
+          <string>Auto Scale</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxReference">
+    <property name="geometry">
+     <rect>
+      <x>1070</x>
+      <y>20</y>
+      <width>162</width>
+      <height>176</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Reference</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>140</width>
+       <height>136</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="labelPhase">
+          <property name="text">
+           <string>Phase</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxPhase">
+          <property name="decimals">
+           <number>3</number>
+          </property>
+          <property name="singleStep">
+           <double>0.001000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="labelFrequency">
+          <property name="text">
+           <string>Frequency</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxFrequency">
+          <property name="decimals">
+           <number>7</number>
+          </property>
+          <property name="singleStep">
+           <double>0.001000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_18">
+        <item>
+         <widget class="QLabel" name="labelHarmonic">
+          <property name="text">
+           <string>Harmonic</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxHarmonic">
+          <property name="decimals">
+           <number>0</number>
+          </property>
+          <property name="singleStep">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_19">
+        <item>
+         <widget class="QLabel" name="labelSineAmplitude">
+          <property name="text">
+           <string>Amplitude</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSineAmplitude">
+          <property name="decimals">
+           <number>5</number>
+          </property>
+          <property name="singleStep">
+           <double>0.001000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_20">
+        <item>
+         <widget class="QLabel" name="labelSineDCLevel">
+          <property name="text">
+           <string>DC Level</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="doubleSpinBoxSineDCLevel">
+          <property name="decimals">
+           <number>5</number>
+          </property>
+          <property name="singleStep">
+           <double>0.001000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1218</width>
+     <width>1742</width>
      <height>21</height>
     </rect>
    </property>

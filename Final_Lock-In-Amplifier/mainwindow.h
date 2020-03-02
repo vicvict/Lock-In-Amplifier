@@ -60,7 +60,7 @@ private slots:
 
     void on_comboBoxFilterSlope_activated(const QString &arg1);
 
-    void on_comboBoxAdvanceFilter_activated(const QString &arg1);
+    void on_comboBoxAdvancedFilter_activated(const QString &arg1);
 
     void on_comboBoxSynchronousFilter_activated(const QString &arg1);
 
@@ -85,6 +85,26 @@ private slots:
     void on_comboBoxInputSignalZ_activated(const QString &arg1);
 
     void on_comboBoxBufferMode_activated(const QString &arg1);
+
+    void on_doubleSpinBoxPhase_valueChanged(const QString &arg1);
+
+    void on_doubleSpinBoxPhase_valueChanged(double arg1);
+
+    void on_doubleSpinBoxPhase_editingFinished();
+
+    void on_doubleSpinBoxFrequency_valueChanged(double arg1);
+
+    void on_doubleSpinBoxHarm_valueChanged(double arg1);
+
+    void on_doubleSpinBoxAmplitude_valueChanged(double arg1);
+
+    void on_doubleSpinBoxDCLevel_valueChanged(double arg1);
+
+    void on_doubleSpinBoxHarmonic_valueChanged(double arg1);
+
+    void on_doubleSpinBoxSineAmplitude_valueChanged(double arg1);
+
+    void on_doubleSpinBoxSineDCLevel_valueChanged(double arg1);
 
 private:
     Ui::MainWindow *ui;

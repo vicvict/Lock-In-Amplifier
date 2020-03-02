@@ -2047,9 +2047,9 @@ std::string finalLockInAmplifier::allTest() const {
     if (workWithSensitivity())
         if (testSensitivity() == 0)
             return "Sensitivity test failed";
-    if (workWithSineDCLevel())
+    /*if (workWithSineDCLevel())
         if (testSineDCLevel(0.1, 0.01) == 0)
-            return "SineDCLevel test failed";
+            return "SineDCLevel test failed";*/
     /*if (workWithDualHarmonic())
         if (testDualHarmonic() == 0)
             return "Dual Harmonic test failed";*/
@@ -2062,12 +2062,12 @@ std::string finalLockInAmplifier::allTest() const {
     if (workWithAdvanceFilter())
         if (testAdvanceFilter() == 0)
             return "Advance filter test failed";
-    if (workWithSineAmplitude())
+    /*if (workWithSineAmplitude())
         if (testSineAmplitude(0.1, 0.01) == 0)
-            return "Sine Amplitude test failed";
+            return "Sine Amplitude test failed";*/
     if (workWithRefTriggerMode())
         if (testRefTriggerMode() == 0)
-            return "reference trigger mode test failed";
+            return "Reference trigger mode test failed";
     if (workWithCloseReserveMode())
         if (testCloseReserveMode() == 0)
             return "Close reserve mode test failed";
@@ -2092,5 +2092,5 @@ std::string finalLockInAmplifier::allTest() const {
     if (workWithInputVoltageCoupling())
         if (testInputVoltageCoupling() == 0)
             return "Input voltage coupling test failed";
-    return "All test passed";
+    return "All tests passed";
 }

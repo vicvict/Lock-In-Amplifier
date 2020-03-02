@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBoxInputSignal->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxSensivitity->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxTimeConstant->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
-    ui->comboBoxAdvanceFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->comboBoxAdvancedFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxRefTriggerMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxInputCurrentGain->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxInputVoltageMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -58,6 +58,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBoxInputSignalZ->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     ui->comboBoxBufferMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
+    ui->doubleSpinBoxPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->doubleSpinBoxFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->doubleSpinBoxHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->doubleSpinBoxSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+    ui->doubleSpinBoxSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 }
 
 MainWindow::~MainWindow()
@@ -261,7 +266,7 @@ void MainWindow::on_comboBoxFilterSlope_activated(const QString &arg1) {
 }
 
 
-void MainWindow::on_comboBoxAdvanceFilter_activated(const QString &arg1)
+void MainWindow::on_comboBoxAdvancedFilter_activated(const QString &arg1)
 {
     try {
         obj.setAdvanceFilter(to_StdString(arg1));
@@ -297,7 +302,7 @@ void MainWindow::on_pushButtonConnect_clicked()
 {
     if(ui->pushButtonConnect->text() == "Connect"){
         try {
-            obj.connect("COM7","19200","8","1", "NO", "NO");
+            obj.connect("COM5","19200","8","1", "NO", "NO");
 
             //Добавление моделей
             for (auto model : obj.getSupportedList()) {
@@ -393,10 +398,12 @@ void MainWindow::on_pushButtonConnect_clicked()
                 for (auto inputVoltageShields : obj.getInputVoltageShieldsList()) {
                     ui->comboBoxInputVoltageShields->addItem(to_QString(inputVoltageShields));
                 }
+                ui->labelInputVoltageShields->show();
                 ui->comboBoxInputVoltageShields->show();
                 ui->comboBoxInputVoltageShields->setCurrentText(to_QString(obj.getInputVoltageShields()));
             }
             else {
+                ui->labelInputVoltageShields->hide();
                 ui->comboBoxInputVoltageShields->hide();
             }
 
@@ -453,10 +460,12 @@ void MainWindow::on_pushButtonConnect_clicked()
                 for (auto synchronousFilter : obj.getSynchronousFilterList()) {
                     ui->comboBoxSynchronousFilter->addItem(to_QString(synchronousFilter));
                 }
+                ui->labelSynchronousFilter->show();
                 ui->comboBoxSynchronousFilter->show();
                 ui->comboBoxSynchronousFilter->setCurrentText(to_QString(obj.getSynchronousFilter()));
             }
             else {
+                ui->labelSynchronousFilter->hide();
                 ui->comboBoxSynchronousFilter->hide();
             }
 
@@ -464,13 +473,15 @@ void MainWindow::on_pushButtonConnect_clicked()
             //добавление дополнительного фильтра
             if (obj.workWithAdvanceFilter()) {
                 for (auto advanceFilter : obj.getAdvanceFilterList()) {
-                    ui->comboBoxAdvanceFilter->addItem(to_QString(advanceFilter));
+                    ui->comboBoxAdvancedFilter->addItem(to_QString(advanceFilter));
                 }
-                ui->comboBoxAdvanceFilter->show();
-                ui->comboBoxAdvanceFilter->setCurrentText(to_QString(obj.getAdvanceFilter()));
+                ui->labelAdvancedFilter->show();
+                ui->comboBoxAdvancedFilter->show();
+                ui->comboBoxAdvancedFilter->setCurrentText(to_QString(obj.getAdvanceFilter()));
             }
             else {
-                ui->comboBoxAdvanceFilter->hide();
+                ui->labelAdvancedFilter->hide();
+                ui->comboBoxAdvancedFilter->hide();
             }
 
 
@@ -491,9 +502,11 @@ void MainWindow::on_pushButtonConnect_clicked()
                     ui->comboBoxCloseReserveMode->addItem(to_QString(data));
                 }
                 ui->comboBoxCloseReserveMode->show();
+                ui->labelCloseReserveMode->show();
             }
             else {
                 ui->comboBoxCloseReserveMode->hide();
+                ui->labelCloseReserveMode->hide();
             }
 
             if (obj.workWithWideReserveMode()) {
@@ -501,9 +514,11 @@ void MainWindow::on_pushButtonConnect_clicked()
                     ui->comboBoxWideReserveMode->addItem(to_QString(data));
                 }
                 ui->comboBoxWideReserveMode->show();
+                ui->labelWideReserveMode->show();
             }
             else {
                 ui->comboBoxWideReserveMode->hide();
+                ui->labelWideReserveMode->hide();
             }
 
             if (obj.workWithInputSignalZ()) {
@@ -511,9 +526,11 @@ void MainWindow::on_pushButtonConnect_clicked()
                     ui->comboBoxInputSignalZ->addItem(to_QString(data));
                 }
                 ui->comboBoxInputSignalZ->show();
+                ui->labelInputSignalZ->show();
             }
             else {
                 ui->comboBoxInputSignalZ->hide();
+                ui->labelInputSignalZ->hide();
             }
 
             if (obj.workWithBufferMode()) {
@@ -530,51 +547,98 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->lineEditResponse->setText(QString(obj.getIDN().c_str()));
 
             if (obj.workWithPhase()) {
+                ui->labelPhase->show();
+                ui->doubleSpinBoxPhase->show();
+                ui->doubleSpinBoxPhase->setMinimum(obj.getMinPhase());
+                ui->doubleSpinBoxPhase->setMaximum(obj.getMaxPhase());
+                ui->doubleSpinBoxPhase->setValue(std:: stod(obj.getPhase()));
+
                 ui->lineEditPhase->show();
                 ui->lineEditPhase->setText(to_QString(obj.getPhase()));
                 ui->pushButtonPhase->show();
             }
             else {
+                ui->labelPhase->hide();
+                ui->doubleSpinBoxPhase->hide();
+
                 ui->lineEditPhase->hide();
                 ui->pushButtonPhase->hide();
             }
-
+///@bug changes values after connection
             if (obj.workWithFrequency()) {
+                ui->labelFrequency->show();
+                ui->doubleSpinBoxFrequency->show();
+                ui->doubleSpinBoxFrequency->setMinimum(obj.getMinInternalFrequency());
+                ui->doubleSpinBoxFrequency->setMaximum(obj.getMaxInternalFrequency());
+                ui->doubleSpinBoxFrequency->setValue(std:: stod(obj.getFrequency()));
+
                 ui->lineEditFrequency->show();
                 ui->lineEditFrequency->setText(to_QString(obj.getFrequency()));
                 ui->pushButtonFrequency->show();
             }
             else {
+                ui->labelFrequency->hide();
+                ui->doubleSpinBoxFrequency->hide();
+
                 ui->lineEditFrequency->hide();
                 ui->pushButtonFrequency->hide();
             }
 
             if (obj.workWithHarmonic()) {
+                ui->labelHarmonic->show();
+                ui->doubleSpinBoxHarmonic->show();
+                ui->doubleSpinBoxHarmonic->setDecimals(0);
+                ui->doubleSpinBoxHarmonic->setSingleStep(1.0);
+                ui->doubleSpinBoxHarmonic->setMinimum(obj.getMinHarmonic());
+                ui->doubleSpinBoxHarmonic->setMaximum(obj.getMaxHarmonic());
+                ui->doubleSpinBoxHarmonic->setValue(std:: stod(obj.getHarmonic()));
+
                 ui->lineEditHarmonic->show();
                 ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
                 ui->pushButtonHarmonic->show();
             }
             else {
+                ui->labelHarmonic->hide();
+                ui->doubleSpinBoxHarmonic->hide();
+
                 ui->lineEditHarmonic->hide();
                 ui->pushButtonHarmonic->hide();
             }
 
             if (obj.workWithSineAmplitude()) {
+                ui->labelSineAmplitude->show();
+                ui->doubleSpinBoxSineAmplitude->show();
+                ui->doubleSpinBoxSineAmplitude->setMinimum(obj.getMinSineAmplitude());
+                ui->doubleSpinBoxSineAmplitude->setMaximum(obj.getMaxSineAmplitude());
+                ui->doubleSpinBoxSineAmplitude->setValue(std:: stod(obj.getSineAmplitude()));
+
                 ui->lineEditSineAmplitude->show();
                 ui->lineEditSineAmplitude->setText(to_QString(obj.getSineAmplitude()));
                 ui->pushButtonSineAmplitude->show();
             }
             else {
+                ui->labelSineAmplitude->hide();
+                ui->doubleSpinBoxSineAmplitude->hide();
+
                 ui->lineEditSineAmplitude->hide();
                 ui->pushButtonSineAmplitude->hide();
             }
 
             if (obj.workWithSineDCLevel()){
+                ui->labelSineDCLevel->show();
+                ui->doubleSpinBoxSineDCLevel->show();
+                ui->doubleSpinBoxSineDCLevel->setMinimum(obj.getMinSineDCLevel());
+                ui->doubleSpinBoxSineDCLevel->setMaximum(obj.getMaxSineDCLevel());
+                ui->doubleSpinBoxSineDCLevel->setValue(std:: stod(obj.getSineDCLevel()));
+
                 ui->lineEditSineDCLevel->show();
                 ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));
                 ui->pushButtonSineDCLevel->show();
             }
             else {
+                ui->labelSineDCLevel->hide();
+                ui->doubleSpinBoxSineDCLevel->hide();
+
                 ui->lineEditSineDCLevel->hide();
                 ui->pushButtonSineDCLevel->hide();
             }
@@ -619,7 +683,6 @@ void MainWindow::on_pushButtonConnect_clicked()
 
             ui->pushButtonConnect->setText("Disconnect");
 
-
             ui->lineEditPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->lineEditHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->lineEditFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -649,7 +712,7 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->comboBoxInputSignal->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxSensivitity->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxTimeConstant->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
-            ui->comboBoxAdvanceFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->comboBoxAdvancedFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxRefTriggerMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxInputCurrentGain->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxInputVoltageMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -662,6 +725,12 @@ void MainWindow::on_pushButtonConnect_clicked()
             ui->comboBoxCloseReserveMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxInputSignalZ->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
             ui->comboBoxBufferMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+
+            ui->doubleSpinBoxPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->doubleSpinBoxFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->doubleSpinBoxHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->doubleSpinBoxSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+            ui->doubleSpinBoxSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
 
         } catch (std:: string s) {
             ui->lineEditError->setText(to_QString(s));
@@ -701,7 +770,7 @@ void MainWindow::on_pushButtonConnect_clicked()
         ui->comboBoxInputSignal->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxSensivitity->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxTimeConstant->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
-        ui->comboBoxAdvanceFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->comboBoxAdvancedFilter->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxRefTriggerMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxInputCurrentGain->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxInputVoltageMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
@@ -714,6 +783,12 @@ void MainWindow::on_pushButtonConnect_clicked()
         ui->comboBoxCloseReserveMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxInputSignalZ->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
         ui->comboBoxBufferMode->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+
+        ui->doubleSpinBoxPhase->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->doubleSpinBoxFrequency->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->doubleSpinBoxHarmonic->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->doubleSpinBoxSineAmplitude->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
+        ui->doubleSpinBoxSineDCLevel->setEnabled(ui->pushButtonConnect->text() == "Disconnect");
     }
 }
 
@@ -790,6 +865,52 @@ void MainWindow::on_comboBoxBufferMode_activated(const QString &arg1)
 {
     try {
         obj.setBufferMode(to_StdString(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+
+void MainWindow::on_doubleSpinBoxPhase_valueChanged(double arg1)
+{
+    try {
+        obj.setInternalPhase(arg1);
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_doubleSpinBoxFrequency_valueChanged(double arg1)
+{
+    try {
+        obj.setFrequency(arg1);
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_doubleSpinBoxHarmonic_valueChanged(double arg1)
+{
+    try {
+        obj.setHarmonic(static_cast<int>(arg1));
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_doubleSpinBoxSineAmplitude_valueChanged(double arg1)
+{
+    try {
+        obj.setSineAmplitude(arg1);
+    } catch (std::string s) {
+        ui->lineEditError->setText(to_QString(s));
+    }
+}
+
+void MainWindow::on_doubleSpinBoxSineDCLevel_valueChanged(double arg1)
+{
+    try {
+        obj.setSineDCLevel(arg1);
     } catch (std::string s) {
         ui->lineEditError->setText(to_QString(s));
     }
