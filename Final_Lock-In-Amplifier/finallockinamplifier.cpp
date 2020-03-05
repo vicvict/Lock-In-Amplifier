@@ -365,7 +365,7 @@ bool finalLockInAmplifier::testPhase(const double &interval, const double &epsil
     double currentPhase = this->getMinPhase()+interval;
     while (currentPhase < this->getMaxPhase()) {
         this->setInternalPhase(currentPhase);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (abs(std::stod(this->getPhase()) - currentPhase) < epsilon)
             currentPhase += interval;
         else {
@@ -374,6 +374,7 @@ bool finalLockInAmplifier::testPhase(const double &interval, const double &epsil
         }
     }
     this->setInternalPhase(std::stod(oldPhase));
+    QTest::qWait(1000);
     return true;
 }
 
@@ -489,7 +490,7 @@ bool finalLockInAmplifier::testFrequency(const double &interval, const double &e
     double currentFrequency = this->getMinInternalFrequency();
     while (this->isValidInternalFrequency(currentFrequency)) {
         this->setFrequency(currentFrequency);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (abs(std::stod(this->getFrequency())-currentFrequency) < epsilon)
             currentFrequency += interval;
         else {
@@ -502,6 +503,7 @@ bool finalLockInAmplifier::testFrequency(const double &interval, const double &e
     this->setFrequency(std::stod(oldFrequency));
     this->setRefSource(oldRefSourse);
     this->setHarmonic(std::stoi(oldHarmonic));
+    QTest::qWait(1000);
     return true;
 }
 
@@ -635,7 +637,7 @@ bool finalLockInAmplifier::testSineAmplitude(const double &interval, const doubl
     double currentSineAmplitude = getMinSineAmplitude();
     while(currentSineAmplitude <= getMaxSineAmplitude()) {
         setSineAmplitude(currentSineAmplitude);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (abs(std::stod(getSineAmplitude())-currentSineAmplitude) < epsilon)
             currentSineAmplitude +=interval;
         else {
@@ -644,6 +646,7 @@ bool finalLockInAmplifier::testSineAmplitude(const double &interval, const doubl
         }
     }
     setSineAmplitude(std::stod(oldSineAmplitude));
+    QTest::qWait(1000);
     return true;
 }
 
@@ -682,7 +685,7 @@ bool finalLockInAmplifier::testSineDCLevel(const double &interval, const double 
     double currentSineDCLevel = getMinSineDCLevel();
     while(currentSineDCLevel <= getMaxSineDCLevel()) {
         setSineDCLevel(currentSineDCLevel);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (abs(std::stod(getSineDCLevel())-currentSineDCLevel) < epsilon)
             currentSineDCLevel +=interval;
         else {
@@ -691,6 +694,7 @@ bool finalLockInAmplifier::testSineDCLevel(const double &interval, const double 
         }
     }
     setSineDCLevel(std::stod(oldSineDCLevel));
+    QTest::qWait(1000);
     return true;
 }
 
@@ -749,13 +753,14 @@ bool finalLockInAmplifier:: testRefSource() const {
         std::string oldRefSource = getRefSource();
         for(auto refSourse: getRefSourceList()) {
             setRefSource(refSourse);
-            Sleep(1000);
+            QTest::qWait(1000);
             if (refSourse != getRefSource()) {
                 setRefSource(oldRefSource);
                 return false;
             }
         }
         setRefSource(oldRefSource);
+        QTest::qWait(1000);
         return  true;
     }
     return  false;
@@ -806,13 +811,14 @@ bool finalLockInAmplifier:: testRefTriggerMode() const {
         std::string oldRefTriggerMode = getRefTriggerMode();
         for(auto refTriggerMode: getRefTriggerModeList()) {
             setRefTriggerMode(refTriggerMode);
-            Sleep(1000);
+            QTest::qWait(1000);
             if (refTriggerMode != getRefTriggerMode()) {
                 setRefTriggerMode(oldRefTriggerMode);
                 return false;
             }
         }
         setRefTriggerMode(oldRefTriggerMode);
+        QTest::qWait(1000);
         return  true;
     }
     return  false;
@@ -873,13 +879,14 @@ bool finalLockInAmplifier:: testRefTriggerOutput() const {
         std::string oldRefTriggerOutput = getRefTriggerOutput();
         for(auto refTriggerOutput: getRefTriggerOutputList()) {
             setRefTriggerOutput(refTriggerOutput);
-            Sleep(1000);
+            QTest::qWait(1000);
             if (refTriggerOutput != getRefTriggerOutput()) {
                 setRefTriggerOutput(oldRefTriggerOutput);
                 return false;
             }
         }
         setRefTriggerOutput(oldRefTriggerOutput);
+        QTest::qWait(1000);
         return  true;
     }
     return  false;
@@ -921,13 +928,14 @@ bool finalLockInAmplifier:: testInputSignal() const {
         std::string oldInputSignal = getInputSignal();
         for(auto inputSignal: getInputSignalList()) {
             setInputSignal(inputSignal);
-            Sleep(1000);
+            QTest::qWait(1000);
             if (inputSignal != getInputSignal()) {
                 setInputSignal(oldInputSignal);
                 return false;
             }
         }
         setInputSignal(oldInputSignal);
+        QTest::qWait(1000);
         return  true;
     }
     return  false;
@@ -978,13 +986,14 @@ bool finalLockInAmplifier:: testInputVoltageMode() const {
     std::string oldInputVoltageMode = getInputVoltageMode();
     for(auto inputVoltageMode: getInputVoltageModeList()) {
         setInputVoltageMode(inputVoltageMode);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (inputVoltageMode != getInputVoltageMode()) {
             setInputVoltageMode(oldInputVoltageMode);
             return false;
         }
     }
     setInputVoltageMode(oldInputVoltageMode);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1033,13 +1042,14 @@ bool finalLockInAmplifier:: testInputVoltageCoupling() const {
     std::string oldInputVoltageCoupling = getInputVoltageCoupling();
     for(auto inputVoltageCoupling: getInputVoltageCouplingList()) {
         setInputVoltageCoupling(inputVoltageCoupling);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (inputVoltageCoupling != getInputVoltageCoupling()) {
             setInputVoltageCoupling(oldInputVoltageCoupling);
             return false;
         }
     }
     setInputVoltageCoupling(oldInputVoltageCoupling);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1088,13 +1098,14 @@ bool finalLockInAmplifier::testInputVoltageShields() const {
     std::string oldInputVoltageShields = getInputVoltageShields();
     for(auto inputVoltageShields: getInputVoltageShieldsList()) {
         setInputVoltageShields(inputVoltageShields);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (inputVoltageShields != getInputVoltageShields()) {
             setInputVoltageShields(oldInputVoltageShields);
             return false;
         }
     }
     setInputVoltageShields(oldInputVoltageShields);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1132,13 +1143,14 @@ bool finalLockInAmplifier::testInputVoltageRange() const {
     std::string oldInputVoltageRange = getInputVoltageRange();
     for(auto inputVoltageRange: getInputVoltageRangeList()) {
         setInputVoltageRange(inputVoltageRange);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (inputVoltageRange != getInputVoltageRange()) {
             setInputVoltageRange(oldInputVoltageRange);
             return false;
         }
     }
     setInputVoltageRange(oldInputVoltageRange);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1176,13 +1188,14 @@ bool finalLockInAmplifier::testInputCurrentGain() const {
     std::string oldInputCurrentGain = getInputCurrentGain();
     for(auto inputCurrentGain: getInputCurrentGainList()) {
         setInputCurrentGain(inputCurrentGain);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (inputCurrentGain != getInputCurrentGain()) {
             setInputCurrentGain(oldInputCurrentGain);
             return false;
         }
     }
     setInputCurrentGain(oldInputCurrentGain);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1252,13 +1265,14 @@ bool finalLockInAmplifier::testSensitivity() const {
     std::string oldSensitivity = getSensitivity();
     for(auto sensitivity: getSensitivityList()) {
         setSensitivity(sensitivity);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (sensitivity != getSensitivity()) {
             setSensitivity(oldSensitivity);
             return false;
         }
     }
     setSensitivity(oldSensitivity);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1317,13 +1331,14 @@ bool finalLockInAmplifier::testTimeConstant() const {
     std::string oldTimeConstant = getTimeConstant();
     for(auto timeConstant: getTimeConstantList()) {
         setTimeConstant(timeConstant);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (timeConstant != getTimeConstant()) {
-            setTimeConstant(oldTimeConstant);
-            return false;
+           setTimeConstant(oldTimeConstant);
+           return false;
         }
     }
     setTimeConstant(oldTimeConstant);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1382,13 +1397,14 @@ bool finalLockInAmplifier::testFilterSlope() const {
     std::string oldFilterSlope = getFilterSlope();
     for(auto filterSlope: getFilterSlopeList()) {
         setFilterSlope(filterSlope);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (filterSlope != getFilterSlope()) {
             setFilterSlope(oldFilterSlope);
             return false;
         }
     }
     setFilterSlope(oldFilterSlope);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1436,13 +1452,14 @@ bool finalLockInAmplifier::testSynchronousFilter() const {
     std::string oldSynchronousFilter = getSynchronousFilter();
     for(auto synchronousFilter: getSynchronousFilterList()) {
         setSynchronousFilter(synchronousFilter);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (synchronousFilter != getSynchronousFilter()) {
             setSynchronousFilter(oldSynchronousFilter);
             return false;
         }
     }
     setSynchronousFilter(oldSynchronousFilter);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1480,13 +1497,14 @@ bool finalLockInAmplifier::testAdvanceFilter() const {
     std::string oldAdvanceFilter = getAdvanceFilter();
     for(auto advanceFilter: getAdvanceFilterList()) {
         setAdvanceFilter(advanceFilter);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (advanceFilter != getAdvanceFilter()) {
             setAdvanceFilter(oldAdvanceFilter);
             return false;
         }
     }
     setAdvanceFilter(oldAdvanceFilter);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1732,13 +1750,14 @@ bool finalLockInAmplifier::testInputSignalZ() const {
     std::string oldInputSignalZ = getInputSignalZ();
     for(auto inputSignalZ: getInputSignalZList()) {
         setInputSignalZ(inputSignalZ);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (inputSignalZ != getInputSignalZ()) {
             setInputSignalZ(oldInputSignalZ);
             return false;
         }
     }
     setInputSignalZ(oldInputSignalZ);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1786,13 +1805,14 @@ bool finalLockInAmplifier::testCloseReserveMode() const {
     std::string oldCloseReserveMode = getCloseReserveMode();
     for(auto closeReserveMode: getCloseReserveModeList()) {
         setCloseReserveMode(closeReserveMode);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (closeReserveMode != getCloseReserveMode()) {
             setCloseReserveMode(oldCloseReserveMode);
             return false;
         }
     }
     setCloseReserveMode(oldCloseReserveMode);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1830,13 +1850,14 @@ bool finalLockInAmplifier::testWideReserveMode() const {
     std::string oldWideReserveMode = getWideReserveMode();
     for(auto wideReserveMode: getWideReserveModeList()) {
         setWideReserveMode(wideReserveMode);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (wideReserveMode != getWideReserveMode()) {
             setWideReserveMode(oldWideReserveMode);
             return false;
         }
     }
     setWideReserveMode(oldWideReserveMode);
+    QTest::qWait(1000);
     return  true;
 }
 
@@ -1948,13 +1969,14 @@ bool finalLockInAmplifier::testBufferMode() const {
     std::string oldBufferMode = getBufferMode();
     for(auto bufferMode: getBufferModeList()) {
         setBufferMode(bufferMode);
-        Sleep(1000);
+        QTest::qWait(1000);
         if (bufferMode != getBufferMode()) {
             setBufferMode(oldBufferMode);
             return false;
         }
     }
     setBufferMode(oldBufferMode);
+    QTest::qWait(1000);
     return  true;
 }
 

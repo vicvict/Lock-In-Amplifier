@@ -568,12 +568,16 @@ void MainWindow::on_pushButtonConnect_clicked()
             if (obj.workWithFrequency()) {
                 ui->labelFrequency->show();
                 ui->doubleSpinBoxFrequency->show();
-                ui->doubleSpinBoxFrequency->setMinimum(obj.getMinInternalFrequency());
-                ui->doubleSpinBoxFrequency->setMaximum(obj.getMaxInternalFrequency());
+                ui->lineEditRecieve->setText(to_QString(std::to_string(obj.getMinInternalFrequency())));
+                ui->lineEditFrequency->setText(to_QString(obj.getFrequency()));
                 ui->doubleSpinBoxFrequency->setValue(std:: stod(obj.getFrequency()));
+                //ui->doubleSpinBoxFrequency->setMaximum(obj.getMaxInternalFrequency());
+                ui->doubleSpinBoxFrequency->setRange(obj.getMinInternalFrequency(), obj.getMaxInternalFrequency());
+
+
 
                 ui->lineEditFrequency->show();
-                ui->lineEditFrequency->setText(to_QString(obj.getFrequency()));
+                //ui->lineEditFrequency->setText(to_QString(obj.getFrequency()));
                 ui->pushButtonFrequency->show();
             }
             else {
@@ -591,7 +595,7 @@ void MainWindow::on_pushButtonConnect_clicked()
                 ui->doubleSpinBoxHarmonic->setSingleStep(1.0);
                 ui->doubleSpinBoxHarmonic->setMinimum(obj.getMinHarmonic());
                 ui->doubleSpinBoxHarmonic->setMaximum(obj.getMaxHarmonic());
-                ui->doubleSpinBoxHarmonic->setValue(std:: stod(obj.getHarmonic()));
+                ui->doubleSpinBoxHarmonic->setValue(std:: stoi(obj.getHarmonic()));
 
                 ui->lineEditHarmonic->show();
                 ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));

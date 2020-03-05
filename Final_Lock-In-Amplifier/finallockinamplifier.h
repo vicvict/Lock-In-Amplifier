@@ -14,6 +14,8 @@
 #include <cmath>
 #include "windows.h"
 
+#include <QTest>
+
 class finalLockInAmplifier
 {
 private:

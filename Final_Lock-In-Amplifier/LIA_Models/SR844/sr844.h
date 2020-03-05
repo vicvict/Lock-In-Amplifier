@@ -15,7 +15,7 @@ public:
         ranges.minHarmonic = 0;
         ranges.maxHarmonic = 1;
         ranges.minInternalFrequency = 2.5E4;
-        ranges.maxInternalFrequency = 2E8;
+        ranges.maxInternalFrequency = 2E7;
 
         //something about commands
         commands.FrequencyDetect = "FRAQ";
