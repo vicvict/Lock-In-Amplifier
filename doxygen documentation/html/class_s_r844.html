@@ -83,8 +83,6 @@ Inheritance diagram for SR844:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afd21c077dea796f0a17e2224468ef879"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_r844.html#afd21c077dea796f0a17e2224468ef879">SR844</a> ()</td></tr>
-<tr class="separator:afd21c077dea796f0a17e2224468ef879"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcc3de454a2288034ced7636cc677a92"><td class="memItemLeft" align="right" valign="top"><a id="abcc3de454a2288034ced7636cc677a92"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getFrequencyDetect</b> () const</td></tr>
 <tr class="separator:abcc3de454a2288034ced7636cc677a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,6 +128,24 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>setCloseReserveMode</
 <tr class="memitem:a0484b1b1a36e540c47ea49b20cda5a20"><td class="memItemLeft" align="right" valign="top"><a id="a0484b1b1a36e540c47ea49b20cda5a20"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getCloseReserveMode</b> () const</td></tr>
 <tr class="separator:a0484b1b1a36e540c47ea49b20cda5a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9ad18a6adae2d14cf7d37cf64ad6b6"><td class="memItemLeft" align="right" valign="top"><a id="aec9ad18a6adae2d14cf7d37cf64ad6b6"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getWideReserveModeList</b> () const</td></tr>
+<tr class="separator:aec9ad18a6adae2d14cf7d37cf64ad6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af514a1b78b94c8e13c3aea6f88b656ff"><td class="memItemLeft" align="right" valign="top"><a id="af514a1b78b94c8e13c3aea6f88b656ff"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>wideReserveModeNumberFromString</b> (const std::string &amp;wideReserveMode_string) const</td></tr>
+<tr class="separator:af514a1b78b94c8e13c3aea6f88b656ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade9afcd24540ed626912f6e17774e619"><td class="memItemLeft" align="right" valign="top"><a id="ade9afcd24540ed626912f6e17774e619"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>wideReserveModeStringFromNumber</b> (const int &amp;wideReserveMode_number) const</td></tr>
+<tr class="separator:ade9afcd24540ed626912f6e17774e619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ae46939cc4ea44c1a8ec595e2746b53"><td class="memItemLeft" align="right" valign="top"><a id="a0ae46939cc4ea44c1a8ec595e2746b53"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setWideReserveMode</b> (const int &amp;wideReserveMode) const</td></tr>
+<tr class="separator:a0ae46939cc4ea44c1a8ec595e2746b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a224285a35c6ec30608bcdac3d2491f3b"><td class="memItemLeft" align="right" valign="top"><a id="a224285a35c6ec30608bcdac3d2491f3b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setWideReserveMode</b> (const std::string &amp;wideReserveMode) const</td></tr>
+<tr class="separator:a224285a35c6ec30608bcdac3d2491f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeafe37cb76f818b4a831bd5c24d2b821"><td class="memItemLeft" align="right" valign="top"><a id="aeafe37cb76f818b4a831bd5c24d2b821"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getWideReserveMode</b> () const</td></tr>
+<tr class="separator:aeafe37cb76f818b4a831bd5c24d2b821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c8d9c8488a24a7a356ca890cb41f7cd"><td class="memItemLeft" align="right" valign="top"><a id="a3c8d9c8488a24a7a356ca890cb41f7cd"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>outDataAutoZeroChannel1</b> (const int &amp;outDataChannel1) const</td></tr>
 <tr class="separator:a3c8d9c8488a24a7a356ca890cb41f7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,6 +236,24 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>setBufferMode</b> (co
 <tr class="memitem:aa9ad38789778df40b4d1f58d724b5f40"><td class="memItemLeft" align="right" valign="top"><a id="aa9ad38789778df40b4d1f58d724b5f40"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getBufferMode</b> () const</td></tr>
 <tr class="separator:aa9ad38789778df40b4d1f58d724b5f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac951603077cedc6206c06913279d6d05"><td class="memItemLeft" align="right" valign="top"><a id="ac951603077cedc6206c06913279d6d05"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getDataSampleRateList</b> () const</td></tr>
+<tr class="separator:ac951603077cedc6206c06913279d6d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545538e93e3242e8d38a3afbdcba2776"><td class="memItemLeft" align="right" valign="top"><a id="a545538e93e3242e8d38a3afbdcba2776"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>dataSampleRateNumberFromString</b> (const std::string &amp;dataSampleRate_string) const</td></tr>
+<tr class="separator:a545538e93e3242e8d38a3afbdcba2776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5843413b3d71b8627b347fcae5b185ec"><td class="memItemLeft" align="right" valign="top"><a id="a5843413b3d71b8627b347fcae5b185ec"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>dataSampleRateStringFromNumber</b> (const int &amp;dataSampleRate_number) const</td></tr>
+<tr class="separator:a5843413b3d71b8627b347fcae5b185ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c966a4a5416a67bd1eaf5c080e1c9b"><td class="memItemLeft" align="right" valign="top"><a id="a27c966a4a5416a67bd1eaf5c080e1c9b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setDataSampleRate</b> (const int &amp;dataSampleRate) const</td></tr>
+<tr class="separator:a27c966a4a5416a67bd1eaf5c080e1c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523b53ef9666476e8607a0fb96094108"><td class="memItemLeft" align="right" valign="top"><a id="a523b53ef9666476e8607a0fb96094108"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setDataSampleRate</b> (const std::string &amp;dataSampleRate) const</td></tr>
+<tr class="separator:a523b53ef9666476e8607a0fb96094108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be0f95ad30071ea7d4be62bc57599e4"><td class="memItemLeft" align="right" valign="top"><a id="a9be0f95ad30071ea7d4be62bc57599e4"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getDataSampleRate</b> () const</td></tr>
+<tr class="separator:a9be0f95ad30071ea7d4be62bc57599e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae37b663af7fff49562868b855b5a45f3"><td class="memItemLeft" align="right" valign="top"><a id="ae37b663af7fff49562868b855b5a45f3"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>startBuffer</b> () const</td></tr>
 <tr class="separator:ae37b663af7fff49562868b855b5a45f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -727,9 +761,15 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:a542193b2b05c708f76c6735b39298318 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a542193b2b05c708f76c6735b39298318"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>closeReserveMode</b></td></tr>
 <tr class="separator:a542193b2b05c708f76c6735b39298318 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a157cb18e06027248944c7f3b24972c2e inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a157cb18e06027248944c7f3b24972c2e"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>wideReserveMode</b></td></tr>
+<tr class="separator:a157cb18e06027248944c7f3b24972c2e inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefbe044217c8d1d5e77c2197615b43cd inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="aefbe044217c8d1d5e77c2197615b43cd"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>bufferMode</b></td></tr>
 <tr class="separator:aefbe044217c8d1d5e77c2197615b43cd inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24977836dd6a92edf44434d241dfa491 inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="a24977836dd6a92edf44434d241dfa491"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>dataSampleRate</b></td></tr>
+<tr class="separator:a24977836dd6a92edf44434d241dfa491 inherit pro_attribs_class_lock_in_amplifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2b30cfc2e420703775ac0ca96a9e44f inherit pro_attribs_class_lock_in_amplifier"><td class="memItemLeft" align="right" valign="top"><a id="ab2b30cfc2e420703775ac0ca96a9e44f"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lock_in_amplifier.html#ab2b30cfc2e420703775ac0ca96a9e44f">outData</a></td></tr>
 <tr class="memdesc:ab2b30cfc2e420703775ac0ca96a9e44f inherit pro_attribs_class_lock_in_amplifier"><td class="mdescLeft">&#160;</td><td class="mdescRight">output data such as X, Y, R, Theta <br /></td></tr>
@@ -858,33 +898,6 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>c
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>IDN</b> = &quot;*IDN&quot;</td></tr>
 <tr class="separator:aacf1388c8ebeb15cb838b9c0a75e389e inherit pro_static_attribs_class_s_r_s"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afd21c077dea796f0a17e2224468ef879"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd21c077dea796f0a17e2224468ef879">&#9670;&nbsp;</a></span>SR844()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">SR844::SR844 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>fixed! </dd></dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Final_Lock-In-Amplifier/LIA_Models/SR844/<a class="el" href="sr844_8h_source.html">sr844.h</a></li>
 <li>Final_Lock-In-Amplifier/LIA_Models/SR844/sr844.cpp</li>

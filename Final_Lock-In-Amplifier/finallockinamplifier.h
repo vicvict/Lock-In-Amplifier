@@ -120,6 +120,7 @@ public:
     bool workWithSetOutDataChannel2() const;
     bool workWithBuffer() const;
     bool workWithBufferMode() const;
+    bool workWithDataSampleRate() const;
 
 
     double getMinPhase() const;
@@ -429,6 +430,13 @@ public:
     bool setBufferMode(const std::string &bufferMode) const;
     std::string getBufferMode() const;
     bool testBufferMode() const;
+
+    std::vector<std::string> getDataSampleRateList() const;
+    bool setDataSampleRate(const int &dataSampleRate) const;
+    bool setDataSampleRate(const std::string &dataSampleRate) const;
+    std::string getDataSampleRate() const;
+    bool testDataSampleRate() const;
+
 
     bool startBuffer() const;
     bool pauseBuffer() const;

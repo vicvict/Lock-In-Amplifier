@@ -108,6 +108,13 @@ public:
                             "Shot", "Loop"
                         };
 
+        dataSampleRate =    {
+                                "62.5 mHz", "125 mHz",  "250 mHz",  "500 mHz,"
+                                "1 Hz",     "2 Hz",     "4 Hz",     "8 Hz",
+                                "16 Hz",    "32 Hz",    "64 Hz",    "128 Hz",
+                                "256 Hz",   "512 Hz",   "Trigger"
+                            };
+
         inputSignalZ =    {
                                "50 Ohm", "1 MOhm"
                           };
@@ -183,6 +190,13 @@ public:
     bool setBufferMode(const int &bufferMode) const;
     bool setBufferMode(const std::string &bufferMode) const;
     std::string getBufferMode() const;
+
+    std::vector<std::string> getDataSampleRateList() const;
+    int dataSampleRateNumberFromString(const std::string  &dataSampleRate_string) const;
+    std::string dataSampleRateStringFromNumber(const int &dataSampleRate_number) const;
+    bool setDataSampleRate(const int &dataSampleRate) const;
+    bool setDataSampleRate(const std::string &dataSampleRate) const;
+    std::string getDataSampleRate() const;
 
     bool startBuffer() const;
     bool pauseBuffer() const;

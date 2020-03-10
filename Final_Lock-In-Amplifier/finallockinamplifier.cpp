@@ -1980,6 +1980,61 @@ bool finalLockInAmplifier::testBufferMode() const {
     return  true;
 }
 
+bool finalLockInAmplifier::workWithDataSampleRate() const {
+    if (lockInAmplifierModel == "SR830")
+        return  true;
+    if (lockInAmplifierModel == "SR844")
+        return true;
+    return false;
+}
+
+std::vector<std::string> finalLockInAmplifier::getDataSampleRateList() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getDataSampleRateList();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getDataSampleRateList();
+    return {};
+}
+
+bool finalLockInAmplifier::setDataSampleRate(const int &dataSampleRate) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setDataSampleRate(dataSampleRate);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setDataSampleRate(dataSampleRate);
+    return false;
+}
+
+bool finalLockInAmplifier::setDataSampleRate(const std::string &dataSampleRate) const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->setDataSampleRate(dataSampleRate);
+    if (lockInAmplifierModel == "SR844")
+        return sr844->setDataSampleRate(dataSampleRate);
+    return false;
+}
+
+std::string finalLockInAmplifier::getDataSampleRate() const {
+    if (lockInAmplifierModel == "SR830")
+        return  sr830->getDataSampleRate();
+    if (lockInAmplifierModel == "SR844")
+        return sr844->getDataSampleRate();
+    return "";
+}
+
+bool finalLockInAmplifier::testDataSampleRate() const {
+    std::string oldDataSampleRate = getDataSampleRate();
+    for(auto dataSampleRate : getDataSampleRateList()) {
+        setDataSampleRate(dataSampleRate);
+        QTest::qWait(1000);
+        if (dataSampleRate != getDataSampleRate()) {
+            setDataSampleRate(oldDataSampleRate);
+            return false;
+        }
+    }
+    setDataSampleRate(oldDataSampleRate);
+    QTest::qWait(1000);
+    return  true;
+}
+
 bool finalLockInAmplifier::workWithBuffer() const {
     if (lockInAmplifierModel == "SR830")
         return  true;
@@ -2054,6 +2109,9 @@ std::string finalLockInAmplifier::allTest() const {
     /*if (workWithFrequency())
         if(testFrequency(10, 1) == 0)
             return "Frequency test failed";*/
+    if (workWithDataSampleRate())
+        if(testDataSampleRate() == 0)
+            return "Data Sample Rate test failed";
     if (workWithRefSourse())
         if(testRefSource() == 0)
             return "Reference source test failed";

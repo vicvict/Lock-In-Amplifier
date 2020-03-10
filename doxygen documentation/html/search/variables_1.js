@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['harmonicdual_173',['HarmonicDual',['../struct_lock_in_amplifier_1_1_lock_in_amplifier_commands.html#a87abfbbf514ce74d0dad059cc80f125b',1,'LockInAmplifier::LockInAmplifierCommands']]]
+  ['outdata_218',['outData',['../class_lock_in_amplifier.html#ab2b30cfc2e420703775ac0ca96a9e44f',1,'LockInAmplifier']]]
 ];

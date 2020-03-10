@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['ui_5fmainwindow_86',['Ui_MainWindow',['../class_ui___main_window.html',1,'']]],
-  ['ui_5fsr844graphics_87',['Ui_SR844Graphics',['../class_ui___s_r844_graphics.html',1,'']]]
+  ['timeconstantnumberfromstring_105',['timeConstantNumberFromString',['../class_lock_in_amplifier.html#a3505c2800673122279d25d21301db971',1,'LockInAmplifier']]],
+  ['timeconstantstringfromnumber_106',['timeConstantStringFromNumber',['../class_lock_in_amplifier.html#a3b30e68a836945c4ce6b8f85a6d65aa8',1,'LockInAmplifier']]],
+  ['timer_107',['Timer',['../class_timer.html',1,'']]]
 ];

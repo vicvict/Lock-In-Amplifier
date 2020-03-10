@@ -1,7 +1,7 @@
 /**
  * @file
  * @brief
- * @details The file contains a description of the Lock-in Amplifier class.
+ * @details The file contains a description of the Lock-in Amplifier class
 */
 
 /**
@@ -101,8 +101,10 @@ protected:
         std::string AutoWideReverse;
         std::string AutoReserve;
         std::string AutoZero;
-        ///buffer commands exist only 844 830
+
+        //buffer commands exists only in SR844 and SR830
         std::string BufferMode = "SEND";
+        std::string DataSampleRate = "SRAT";
         std::string StartBuffer = "STRT";
         std::string PauseBuffer = "PAUS";
         std::string StopBuffer =  "REST";
@@ -341,9 +343,9 @@ public:
     int refSourceNumberFromString(const std::string  &refSource_string) const;
 
     /**
-     * @brief Converts the index of ref source to its value
      * @param[in] refSource_number the index of ref source e.g. @a 2
      * @return The value of ref source
+     * @brief Converts the index of ref source to its value
      */
     std::string refSourceStringFromNumber(const int &refSource_number) const;
 
@@ -631,6 +633,7 @@ protected:
     std::vector <std::string> wideReserveMode;
 
     std::vector <std::string> bufferMode;
+    std::vector <std::string> dataSampleRate;
 
 
     ///output data such as X, Y, R, Theta

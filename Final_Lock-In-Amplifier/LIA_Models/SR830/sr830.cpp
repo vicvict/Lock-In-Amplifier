@@ -184,6 +184,33 @@ std::string SR830::getBufferMode() const {
     return bufferModeStringFromNumber(std::stoi(ask(commands.BufferMode + query_suffix)));
 }
 
+std::vector<std::string> SR830::getDataSampleRateList() const {
+    return this->dataSampleRate;
+}
+
+int SR830::dataSampleRateNumberFromString(const std::string &dataSampleRate_string) const {
+    return numberFromString(this->dataSampleRate, dataSampleRate_string);
+}
+
+std::string SR830::dataSampleRateStringFromNumber(const int &dataSampleRate_number) const {
+    return stringFromNumber(this->dataSampleRate, dataSampleRate_number);
+}
+
+bool SR830::setDataSampleRate(const int &dataSampleRate) const {
+    if (!isValidNumber(this->dataSampleRate, dataSampleRate))
+        return false;
+    std::string command = commands.DataSampleRate + separator + std::to_string(dataSampleRate);
+    return sendCommand(command);
+}
+
+bool SR830::setDataSampleRate(const std::string &dataSampleRate) const {
+    return setDataSampleRate(dataSampleRateNumberFromString(dataSampleRate));
+}
+
+std::string SR830::getDataSampleRate() const {
+    return dataSampleRateStringFromNumber(std::stoi(ask(commands.DataSampleRate + query_suffix)));
+}
+
 bool SR830::startBuffer() const {
     return sendCommand(commands.StartBuffer);
 }

@@ -304,6 +304,34 @@ std::string SR844::getBufferMode() const {
     return bufferModeStringFromNumber(std::stoi(ask(commands.BufferMode + query_suffix)));
 }
 
+std::vector<std::string> SR844::getDataSampleRateList() const {
+    return this->dataSampleRate;
+}
+
+int SR844::dataSampleRateNumberFromString(const std::string &dataSampleRate_string) const {
+    return numberFromString(this->dataSampleRate, dataSampleRate_string);
+}
+
+std::string SR844::dataSampleRateStringFromNumber(const int &dataSampleRate_number) const {
+    return stringFromNumber(this->dataSampleRate, dataSampleRate_number);
+}
+
+bool SR844::setDataSampleRate(const int &dataSampleRate) const {
+    if (!isValidNumber(this->dataSampleRate, dataSampleRate))
+        return false;
+    std::string command = commands.DataSampleRate + separator + std::to_string(dataSampleRate);
+    return sendCommand(command);
+}
+
+bool SR844::setDataSampleRate(const std::string &dataSampleRate) const {
+    return setDataSampleRate(dataSampleRateNumberFromString(dataSampleRate));
+}
+
+std::string SR844::getDataSampleRate() const {
+    return dataSampleRateStringFromNumber(std::stoi(ask(commands.DataSampleRate + query_suffix)));
+}
+
+
 bool SR844::startBuffer() const {
     return sendCommand(commands.StartBuffer);
 }
