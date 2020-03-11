@@ -40,7 +40,7 @@ std::string SR844::getInputSignalZ() const {
 
 
 
-bool SR844::outDataAutoZeroChannel1(const int &outDataChannel1) const {
+/*bool SR844::outDataAutoZeroChannel1(const int &outDataChannel1) const {
     if (!isValidNumber(this->outDataChannel1, outDataChannel1))
         return false;
     sendCommand(commands.AutoZero + separator + "1" + comma + std::to_string(outDataChannel1));
@@ -60,7 +60,7 @@ bool SR844::outDataAutoZeroChannel1(const std::string &outDataChannel1) const {
 
 bool SR844::outDataAutoZeroChannel2(const std::string &outDataChannel2) const {
     return outDataAutoZeroChannel2(outDataChannel2NumberFromString(outDataChannel2));
-}
+}*/
 
 std::string SR844::getPointFromBufferChannel1(const int &number) const {
     return ask(commands.GetPointFromBuffer + query_suffix + separator + "1," + std::to_string(number) + ",1");
