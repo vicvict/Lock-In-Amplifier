@@ -1,7 +1,17 @@
+/**
+ * @file
+ * @brief
+ * @details The file contains a description of the SR865 class
+*/
+
+/**
+ * @brief SR865 class
+ * @details The class contains a description of specialized for SR865 methods
+ */
+
 #ifndef SR865_H
 #define SR865_H
 
-///@bug outData = outDataCouple
 #include "LIA_Models/LockInAmplifier/lockinamplifier.h"
 
 #include <vector>
@@ -158,9 +168,28 @@ public:
      */
     std::string getFrequencyDetect() const;
 
+    /**
+     * @brief Returns the minimum dual harmonic available in this Lock-in Amplifier
+     */
     int getMinDualHarmonic() const;
+
+    /**
+     * @brief Returns the maximum dual harmonic available in this Lock-in Amplifier
+     */
     int getMaxDualHarmonic() const;
+
+    /**
+     * @brief Determines if src dual harmonic is valid
+     * @param[in] i The number of src dual harmonic
+     * @return  @b True if dual harmonic is valid
+     */
     bool isValidDualHarmonic(const int &i) const;
+
+    /**
+     * @brief Set harmonic for dual reference mode to i
+     * @param[in] i
+     * @return @b True if query is valid and sending is correct
+     */
     bool setDualHarmonic(const int &i) const;
     std::string getDualHarmonic() const;
 
