@@ -475,9 +475,9 @@ public:
     std::string refTriggerModeStringFromNumber(const int &refTriggerMode_number) const;
 
     /**
-     * @brief Sets or queries the reference trigger mode by index, when using the
+     * @brief Sets the reference trigger mode by index, when using the
      * external reference mode.
-     * @details Sets or queries the reference trigger mode.
+     * @details Sets the reference trigger mode.
      * The parameter i selects @b Zero (i=0) , @b TTL rise (i=1) or @b TTL fail (i=2).
      * At frequencies below 1 Hz, the a TTL reference must be used.
      * @param[in] refTriggerMode
@@ -516,8 +516,8 @@ public:
     std::string inputVoltageModeStringFromNumber(const int &inputVoltageMode_number) const;
 
     /**
-     * @brief  Sets or queries the Input Voltage Mode by index.
-     * @details Sets or queries the Input Voltage Mode.
+     * @brief  Sets the Input Voltage Mode by index.
+     * @details Sets the Input Voltage Mode.
      * The parameter i selects @b A (i=0), @b A-B (i=1), @b 1 MOhm (i=2) or @b 100 MOhm (i=3).
      * Changing the current gain does not change the instrument sensitivity.
      * Sensitivities above 10 nA require a current gain of 1 MOhm.
@@ -559,8 +559,8 @@ public:
     std::string inputVoltageCouplingStringFromNumber(const int &inputVoltageCoupling_number) const;
 
     /**
-     * @brief  Sets or queries the Input Voltage Coupling by index.
-     * @details Sets or queries the Input Voltage Coupling.
+     * @brief  Sets the Input Voltage Coupling by index.
+     * @details Sets the Input Voltage Coupling.
      * The parameter i selects @b AC (i=0) or @b DC (i=1).
      * @param[in] inputVoltageCoupling
      * @return @b True if Input Voltage Coupling is valid and sending is correct.
@@ -598,8 +598,8 @@ public:
     std::string inputVoltageShieldsStringFromNumber(const int &inputVoltageShields_number) const;
 
     /**
-     * @brief  Sets or queries the input shield grounding by index.
-     * @details Sets or queries the input shield grounding.
+     * @brief  Sets the input shield grounding by index.
+     * @details Sets the input shield grounding.
      * The parameter i selects @b Float (i=0) or @b Ground (i=1).
      * @param[in] inputVoltageShields
      * @return @b True if Input Voltage Shields is valid and sending is correct.

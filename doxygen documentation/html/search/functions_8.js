@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['refsourcenumberfromstring_194',['refSourceNumberFromString',['../class_lock_in_amplifier.html#ab4498a470990f2e8c4adb2c1a5cfc651',1,'LockInAmplifier']]],
-  ['refsourcestringfromnumber_195',['refSourceStringFromNumber',['../class_lock_in_amplifier.html#adfcd2a8104ef2695ee1d9be2ab939509',1,'LockInAmplifier']]],
-  ['reftriggeroutputnumberfromstring_196',['refTriggerOutputNumberFromString',['../class_lock_in_amplifier.html#af0e68881ce1660b13fc16934434a1672',1,'LockInAmplifier']]],
-  ['reftriggeroutputstringfromnumber_197',['refTriggerOutputStringFromNumber',['../class_lock_in_amplifier.html#ad5fcc91b2f588de50ad7ca1ea8a091b3',1,'LockInAmplifier']]]
+  ['outdatachannel1numberfromstring_295',['outDataChannel1NumberFromString',['../class_s_r830.html#aa761a745325b6dd4d8263376ac6c5bc0',1,'SR830::outDataChannel1NumberFromString()'],['../class_s_r844.html#ad7bae5d0a549a998f5ebc454872b0a42',1,'SR844::outDataChannel1NumberFromString()']]],
+  ['outdatachannel1stringfromnumber_296',['outDataChannel1StringFromNumber',['../class_s_r830.html#a7ceab4b9119147ed86a35f110c89e47e',1,'SR830::outDataChannel1StringFromNumber()'],['../class_s_r844.html#a1d8d419aec5d9a0277e1c38a04dc361f',1,'SR844::outDataChannel1StringFromNumber()']]],
+  ['outdatachannel2numberfromstring_297',['outDataChannel2NumberFromString',['../class_s_r830.html#aa2fe145ed21454ee117ed42f1e85282e',1,'SR830::outDataChannel2NumberFromString()'],['../class_s_r844.html#a2fc79856d3b9d88e363e13e29e1bc0eb',1,'SR844::outDataChannel2NumberFromString()']]],
+  ['outdatachannel2stringfromnumber_298',['outDataChannel2StringFromNumber',['../class_s_r830.html#ab5917f76b70305bdc3ce9ee34fa40ba6',1,'SR830::outDataChannel2StringFromNumber()'],['../class_s_r844.html#a2ad6746e43c84b4b787de51c839d4465',1,'SR844::outDataChannel2StringFromNumber()']]],
+  ['outdatacouplenumberfromstring_299',['outDataCoupleNumberFromString',['../class_lock_in_amplifier.html#a8a1281075fac8cd50902c623b2526682',1,'LockInAmplifier']]],
+  ['outdatacouplestringfromnumber_300',['outDataCoupleStringFromNumber',['../class_lock_in_amplifier.html#a1b8d4ab95f485b52875fe529ab2faf17',1,'LockInAmplifier']]],
+  ['outdatanumberfromstring_301',['outDataNumberFromString',['../class_lock_in_amplifier.html#ad9da5d88ec7918f7f8971fc0af1e95d4',1,'LockInAmplifier']]],
+  ['outdatastringfromnumber_302',['outDataStringFromNumber',['../class_lock_in_amplifier.html#a3b5b608a76fd7ad3f46d9773f30f063a',1,'LockInAmplifier']]]
 ];

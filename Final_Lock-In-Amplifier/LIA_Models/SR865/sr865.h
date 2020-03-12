@@ -187,65 +187,315 @@ public:
 
     /**
      * @brief Set harmonic for dual reference mode to i
+     * @details Sets the lock-in to detect at the ith harmonic of the
+     * external frequency in dual reference mode. The value of i is
+     * limited to 1 ≤ i ≤ 99. The actual detection frequency,
+     * when operating in dual reference mode, is
+     * ![](harmDualSR865.png)
      * @param[in] i
      * @return @b True if query is valid and sending is correct
      */
     bool setDualHarmonic(const int &i) const;
+
+    /**
+     * @brief Returns the dual external harmonic
+     */
     std::string getDualHarmonic() const;
 
+    /**
+     * @brief Returns the minimum sine out DC level available in this Lock-in Amplifier
+     */
     double getMinSineDCLevel() const;
+
+    /**
+     * @brief Returns the maximum sine out DC level available in this Lock-in Amplifier
+     */
     double getMaxSineDCLevel() const;
+
+    /**
+     * @brief Determines if src sine out DC level is valid
+     * @param[in] voltage The value of src sine out DC level
+     * @return  @b True if sine out DC level is valid
+     */
     bool isValidSineDCLevel(const double &voltage) const;
+
+    /**
+     * @brief Sets the sine out dc level to voltage.
+     * @param[in] voltage
+     * @return  @b True if query is valid and sending is correct
+     */
     bool setSineDCLevel(const double &voltage) const;
+
+    /**
+     * @brief Returns the sine out dc level in Volts
+     */
     std::string getSineDCLevel() const;
 
+    /**
+     * @brief Returns a list of reference trigger mode
+     */
     std::vector<std::string> getRefTriggerModeList() const;
+
+    /**
+     * @brief Converts the value of ref trigger mode to its index
+     * @param[in] refTriggerMode_string reference trigger mode e.g. @a ZERO
+     * @return Index of considered reference trigger mode
+     */
     int refTriggerModeNumberFromString(const std::string  &refTriggerMode_string) const;
+
+    /**
+     * @brief Converts the index of Reference Trigger Mode to its value
+     * @param[in] refTriggerMode_number the index of Reference Trigger Mode e.g. @a 1
+     * @return The value of Reference Trigger Mode
+     */
     std::string refTriggerModeStringFromNumber(const int &refTriggerMode_number) const;
+
+    /**
+     * @brief Sets or queries the reference trigger mode by index.
+     * @details Sets or queries the reference trigger mode.
+     * The parameter i selects @b sine (i=0) , @b positive (i=1) or @b negative (i=2).
+     * @param[in] refTriggerMode
+     * @return @b True if Reference Trigger Mode is valid and sending is correct.
+     */
     bool setRefTriggerMode(const int &refTriggerMode) const;
+
+    /**
+     * @brief Sets Reference Trigger Mode to parameter refTriggerMode by its value (see @ref setRefTriggerMode "setRefTriggerMode" by indices)
+     */
     bool setRefTriggerMode(const std::string &refTriggerMode) const;
+
+    /**
+      * @brief Gets the actual Reference Trigger Mode
+      * @return Actual Reference Trigger Mode
+      */
     std::string getRefTriggerMode() const;
 
+    /**
+     * @brief Returns an Input Signal list
+     */
     std::vector<std::string> getInputSignalList() const;
+
+    /**
+     * @brief Converts the value of Input Signal to its index
+     * @param[in] inputSignal_string Input Signal value e.g. @a VOLTage
+     * @return Index of considered Input Signal
+     */
     int inputSignalNumberFromString(const std::string  &inputSignal_string) const;
+
+    /**
+     * @brief Converts the index of Input Signal to its value
+     * @param[in] inputSignal_number the index of Input Signal e.g. @a 1
+     * @return The value of Input Signal
+     */
     std::string inputSignalStringFromNumber(const int &inputSignal_number) const;
+
+    /**
+     * @brief Sets the signal input to @b voltage (i=0) or @b current (i=1) by index.
+     * @param[in] inputSignal
+     * @return @b True if query is valid and sending is correct
+     */
     bool setInputSignal(const int &inputSignal) const;
+
+    /**
+     * @brief Sets Input Signal to parameter inputSignal by its value (see @ref setInputSignal "setInputSignal" by indices)
+     */
     bool setInputSignal(const std::string &inputSignal) const;
+
+    /**
+     * @brief Returns the signal input
+     */
     std::string getInputSignal() const;
 
+    /**
+     * @brief Returns an Input Voltage Mode list
+     */
     std::vector<std::string> getInputVoltageModeList() const;
+
+    /**
+     * @brief Converts the value of Input Voltage Mode to its index
+     * @param[in] inputVoltageMode_string Input Voltage Mode value e.g. @a A
+     * @return Index of considered Input Voltage Mode
+     */
     int inputVoltageModeNumberFromString(const std::string  &inputVoltageMode_string) const;
+
+    /**
+     * @brief Converts the index of Input Voltage Mode to its value
+     * @param[in] inputVoltageMode_number the index of Input Voltage Mode e.g. @a 1
+     * @return The value of Input Voltage Mode
+     */
     std::string inputVoltageModeStringFromNumber(const int &inputVoltageMode_number) const;
+
+    /**
+     * @brief Sets the voltage input mode to @b A (i=0) or @b A−B (i=1) by index.
+     * @param[in] inputVoltageMode
+     * @return @b True if query is valid and sending is correct
+     */
     bool setInputVoltageMode(const int &inputVoltageMode) const;
+
+    /**
+     * @brief Sets Input Voltage Mode to parameter inputVoltageMode by its value (see @ref setInputVoltageMode "setInputVoltageMode" by indices)
+     */
     bool setInputVoltageMode(const std::string &inputVoltageMode) const;
+
+    /**
+     * @brief Returns the voltage input mode
+     */
     std::string getInputVoltageMode() const;
 
+    /**
+     * @brief Returns a list of Input Voltage Coupling
+     */
     std::vector<std::string> getInputVoltageCouplingList() const;
+
+    /**
+     * @brief Converts the value of Input Voltage Coupling to its index
+     * @param[in] inputVoltageCoupling_string Input Voltage Coupling e.g. @a AC
+     * @return Index of considered Input Voltage Coupling
+     */
     int inputVoltageCouplingNumberFromString(const std::string  &inputVoltageCoupling_string) const;
+
+    /**
+     * @brief Converts the index of Input Voltage Coupling to its value
+     * @param[in] inputVoltageCoupling_number the index of Input Voltage Coupling e.g. @a 1
+     * @return The value of Input Voltage Coupling
+     */
     std::string inputVoltageCouplingStringFromNumber(const int &inputVoltageCoupling_number) const;
+
+    /**
+     * @brief  Sets the Input Voltage Coupling by index.
+     * @details Sets the Input Voltage Coupling.
+     * The parameter i selects @b AC (i=0) or @b DC (i=1).
+     * @param[in] inputVoltageCoupling
+     * @return @b True if Input Voltage Coupling is valid and sending is correct.
+     */
     bool setInputVoltageCoupling(const int &inputVoltageCoupling) const;
+
+    /**
+     * @brief Sets Input Voltage Coupling to parameter inputVoltageCoupling by its value (see @ref setInputVoltageCoupling "setInputVoltageCoupling" by indices)
+     */
     bool setInputVoltageCoupling(const std::string &inputVoltageCoupling) const;
+
+    /**
+      * @brief Gets the actual Input Voltage Coupling
+      * @return Actual Input Voltage Coupling
+      */
     std::string getInputVoltageCoupling() const;
 
+    /**
+     * @brief Returns a list of Input Voltage Shields
+     */
     std::vector<std::string> getInputVoltageShieldsList() const;
+
+    /**
+     * @brief Converts the value of Input Voltage Shields to its index
+     * @param[in] inputVoltageShields_string Input Voltage Shields e.g. @a Float
+     * @return Index of considered Input Voltage Shields
+     */
     int inputVoltageShieldsNumberFromString(const std::string  &inputVoltageShields_string) const;
+
+    /**
+     * @brief Converts the index of Input Voltage Shields to its value
+     * @param[in] inputVoltageShields_number the index of Input Voltage Shields e.g. @a 1
+     * @return The value of Input Voltage Shields
+     */
     std::string inputVoltageShieldsStringFromNumber(const int &inputVoltageShields_number) const;
+
+    /**
+     * @brief  Sets the input shield grounding by index.
+     * @details Sets or queries the input shield grounding.
+     * The parameter i selects @b Float (i=0) or @b Ground (i=1).
+     * @param[in] inputVoltageShields
+     * @return @b True if Input Voltage Shields is valid and sending is correct.
+     */
     bool setInputVoltageShields(const int &inputVoltageShields) const;
+
+    /**
+     * @brief Sets Input Voltage Shields to parameter inputVoltageShields by its value (see @ref setInputVoltageShields "setInputVoltageShields" by indices)
+     */
     bool setInputVoltageShields(const std::string &inputVoltageShields) const;
+
+    /**
+      * @brief Gets the actual Input Voltage Shields
+      * @return Actual Input Voltage Shields
+      */
     std::string getInputVoltageShields() const;
 
+    /**
+     * @brief Returns a list of Input Voltage Ranges
+     */
     std::vector<std::string> getInputVoltageRangeList() const;
+
+    /**
+     * @brief Converts the value of Input Voltage Ranges to its index
+     * @param[in] inputVoltageRange_string Input Voltage Ranges e.g. @a 1 @a V
+     * @return Index of considered Input Voltage Ranges
+     */
     int inputVoltageRangeNumberFromString(const std::string  &inputVoltageRange_string) const;
+
+    /**
+     * @brief Converts the index of Input Voltage Ranges to its value
+     * @param[in] inputVoltageRange_number the index of Input Voltage Ranges e.g. @a 1
+     * @return The value of Input Voltage Ranges
+     */
     std::string inputVoltageRangeStringFromNumber(const int &inputVoltageRange_number) const;
+
+    /**
+     * @brief  Sets the voltage input range by index.
+     * @details Sets the voltage input range by index.
+     * The parameter i selects @b 1 @b V (i=0), @b 300 @b mV (i=1),
+     * @b 100 @b mV (i=2), @b 30 @b mV (i=3) or @b 10 @b mV (i=4).
+     * @param[in] inputVoltageRange
+     * @return @b True if Input Voltage Ranges is valid and sending is correct.
+     */
     bool setInputVoltageRange(const int &inputVoltageRange) const;
+
+    /**
+     * @brief Sets Input Voltage Ranges to parameter inputVoltageRange by its value (see @ref setInputVoltageRange "setInputVoltageRange" by indices)
+     */
     bool setInputVoltageRange(const std::string &inputVoltageRange) const;
+
+    /**
+      * @brief Gets the actual Input Voltage Ranges
+      * @return Actual Input Voltage Ranges
+      */
     std::string getInputVoltageRange() const;
 
+    /**
+     * @brief Returns a list of Input Current Gain
+     */
     std::vector<std::string> getInputCurrentGainList() const;
+
+    /**
+     * @brief Converts the value of Input Current Gain  to its index
+     * @param[in] inputCurrentGain_string Input Current Gain e.g. @a 1 @a MΩ
+     * @return Index of considered Input Current Gain
+     */
     int inputCurrentGainNumberFromString(const std::string  &inputCurrentGain_string) const;
+
+    /**
+     * @brief Converts the index of Input Current Gain to its value
+     * @param[in] inputCurrentGain_number the index of Input Current Gain e.g. @a 1
+     * @return The value of Input Current Gain
+     */
     std::string inputCurrentGainStringFromNumber(const int &inputCurrentGain_number) const;
+
+    /**
+     * @brief  Sets the current input gain by index.
+     * @details Sets the current input gain by index.
+     * The parameter i selects @b 1 @b MΩ (i=0) or @b 100 @b MΩ (i=1),
+     * @param[in] inputCurrentGain
+     * @return @b True if Input Current Gain is valid and sending is correct.
+     */
     bool setInputCurrentGain(const int &inputCurrentGain) const;
+
+    /**
+     * @brief Sets Input Current Gain to parameter inputCurrentGain by its value (see @ref setInputCurrentGain "setInputCurrentGain" by indices)
+     */
     bool setInputCurrentGain(const std::string &inputCurrentGain) const;
+
+    /**
+      * @brief  Returns the current input gain
+      */
     std::string getInputCurrentGain() const;
 
     std::string getSignalStrength() const;
