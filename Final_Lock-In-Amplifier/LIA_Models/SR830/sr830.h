@@ -428,30 +428,30 @@ public:
      */
     bool stopBuffer() const;
     /**
-     * @brief Queries the number of points stored in the buffer.
+     * @brief Return the number of points stored in the buffer.
      * @return Actual number of points stored in the buffer.
      */
     int getBufferSize() const;
 
     /**
-     * @brief Queries the point @b number stored in the Channel 1 buffer.
+     * @brief Return the point @b number stored in the Channel 1 buffer.
      * @param number
      */
     std::string getPointFromBufferChannel1(const int &number) const;
 
     /**
-     * @brief Queries the point @b number stored in the Channel 2 buffer.
+     * @brief Return the point @b number stored in the Channel 2 buffer.
      * @param number
      */
     std::string getPointFromBufferChannel2(const int &number) const;
 
     /**
-     * @brief Queries all point stored in Channel 1 buffer
+     * @brief Return all point stored in Channel 1 buffer
      */
     std::vector <std::string> getChannel1FromBuffer() const;
 
     /**
-     * @brief Queries all point stored in Channel 2 buffer
+     * @brief Return all point stored in Channel 2 buffer
      */
     std::vector <std::string> getChannel2FromBuffer() const;
 
@@ -625,7 +625,7 @@ public:
     /**
      * @brief Converts the value of synchronous filter to its index
      * @param[in] inputSynchronousFilter_string synchronous filter e.g. @a No
-     * @return Index of considered Input Voltage Shields
+     * @return Index of considered Synchronous Filter
      */
     int synchronousFilterNumberFromString(const std::string  &synchronousFilter_string) const;
 
@@ -637,7 +637,7 @@ public:
     std::string synchronousFilterStringFromNumber(const int &synchronousFilter_number) const;
 
     /**
-     * @brief  Sets or queries the synchronous filter by index.
+     * @brief  Sets the synchronous filter by index.
      * @details Sets or queries the input line notch filter status.
      * The parameter i selects @b Out or no filters (i=0), @b Line notch in (i=1),
      * @b 2xLine notch in (i=2) or @b Both notch filters in (i=3).

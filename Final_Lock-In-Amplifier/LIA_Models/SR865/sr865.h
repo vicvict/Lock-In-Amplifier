@@ -498,20 +498,87 @@ public:
       */
     std::string getInputCurrentGain() const;
 
+    /**
+     * @brief Returns the signal strength indicator from lowest (0) to overload (4).
+     */
     std::string getSignalStrength() const;
 
+    /**
+     * @brief Returns a list of Synchronous Filter
+     */
     std::vector<std::string> getSynchronousFilterList() const;
+
+    /**
+     * @brief Converts the value of synchronous filter to its index
+     * @param[in] inputSynchronousFilter_string synchronous filter e.g. @a Off
+     * @return Index of considered Synchronous Filter
+     */
     int synchronousFilterNumberFromString(const std::string  &synchronousFilter_string) const;
+
+    /**
+     * @brief Converts the index of synchronous filter to its value
+     * @param[in] inputSynchronousFilter_number the index of synchronous filter e.g. @a 1
+     * @return The value of synchronous filter
+     */
     std::string synchronousFilterStringFromNumber(const int &synchronousFilter_number) const;
+
+    /**
+     * @brief  Sets the current synchronous filter by index.
+     * @details Sets the current synchronous filter by index.
+     * The parameter i selects @b Off (i=0) or @b On (i=1),
+     * @param[in] synchronousFilter
+     * @return @b True if Synchronous Filter is valid and sending is correct.
+     */
     bool setSynchronousFilter(const int &synchronousFilter) const;
+
+    /**
+     * @brief Sets synchronous filter to parameter synchronousFilter by its value (see @ref setSynchronousFilter "setSynchronousFilter" by indices)
+     */
     bool setSynchronousFilter(const std::string &synchronousFilter) const;
+
+    /**
+      * @brief Gets the actual synchronous filter
+      * @return Actual synchronous filter
+      */
     std::string getSynchronousFilter() const;
 
+    /**
+     * @brief Returns a list of Advance Filter
+     */
     std::vector<std::string> getAdvanceFilterList() const;
+
+    /**
+     * @brief Converts the value of advance filter to its index
+     * @param[in] advanceFilter_string advance filter e.g. @a Off
+     * @return Index of considered advance filter
+     */
     int advanceFilterNumberFromString(const std::string  &advanceFilter_string) const;
+
+    /**
+     * @brief Converts the index of advance filter to its value
+     * @param[in] advanceFilter_number the index of advance filter e.g. @a 1
+     * @return The value of advance filter
+     */
     std::string advanceFilterStringFromNumber(const int &advanceFilter_number) const;
+
+    /**
+     * @brief  Sets the current advance filter by index.
+     * @details Sets the current advance filter by index.
+     * The parameter i selects @b Off (i=0) or @b On (i=1),
+     * @param[in] advanceFilter
+     * @return @b True if Advance Filter is valid and sending is correct.
+     */
     bool setAdvanceFilter(const int &advanceFilter) const;
+
+    /**
+     * @brief Sets advance filter to parameter advanceFilter by its value (see @ref setAdvanceFilter "setAdvanceFilter" by indices)
+     */
     bool setAdvanceFilter(const std::string &advanceFilter) const;
+
+    /**
+      * @brief Gets the actual advance filter
+      * @return Actual advance filter
+      */
     std::string getAdvanceFilter() const;
 
 protected:

@@ -129,16 +129,57 @@ public:
 
     }
 
+    /**
+     * @brief Return the reference frequency
+     * @return
+     */
     std::string getFrequencyDetect() const;
 
+    /**
+     * @brief Automatically sets the Wide Reserve Mode of the instrument to the minimum reserve without overload.
+     */
     bool autoWideReverse() const;
+
+    /**
+     * @brief Automatically sets the Reserve Mode of the instrument to the minimum reserve without overload.
+     */
     bool autoReserve() const;
 
+    /**
+     * @brief Returns a Input Signal list
+     */
     std::vector<std::string> getInputSignalZList() const;
+
+    /**
+     * @brief Converts the value of input signal to its index
+     * @param[in] inputSignalZ_string input signal e.g. @a 50 @a Ohm
+     * @return Index of considered input signal
+     */
     int inputSignalZNumberFromString(const std::string  &inputSignalZ_string) const;
+
+    /**
+     * @brief Converts the index of input signal to its value
+     * @param[in] inputSignalZ_number the index of input signal e.g. @a 1
+     * @return The value of input signal
+     */
     std::string inputSignalZStringFromNumber(const int &inputSignalZ_number) const;
+
+    /**
+     * @brief Sets the input signal to 50 Ohm (i=0) or 1 MOhm (i=1)
+     * @param[in] inputSignalZ
+     * @return
+     */
     bool setInputSignalZ(const int &inputSignalZ) const;
+
+    /**
+     * @brief Sets the input signal by value (see @ref setInputSignalZ "setInputSignalZ" by index)
+     */
     bool setInputSignalZ(const std::string &inputSignalZ) const;
+
+    /**
+     * @brief Gets the actual input signal
+     * @return Actual input signal
+     */
     std::string getInputSignalZ() const;
 
     /**
@@ -149,7 +190,7 @@ public:
     /**
      * @brief Converts the value of close reserve mode to its index
      * @param[in] closeReserveMode_string close reserve mode e.g. @a High
-     * @return Index of considered reference trigger input
+     * @return Index of considered close reserve mode
      */
     int closeReserveModeNumberFromString(const std::string  &closeReserveMode_string) const;
 
@@ -168,7 +209,7 @@ public:
     bool setCloseReserveMode(const int &closeReserveMode) const;
 
     /**
-     * @brief Sets the reserve mode by value (see @ref setCloseReserveMode "setRefSource" by index)
+     * @brief Sets the reserve mode by value (see @ref setCloseReserveMode "setCloseReserveMode" by index)
      */
     bool setCloseReserveMode(const std::string &icloseReserveMode) const;
 
@@ -178,11 +219,41 @@ public:
      */
     std::string getCloseReserveMode() const;
 
+    /**
+     * @brief Returns a Wide Reserve Mode list
+     */
     std::vector<std::string> getWideReserveModeList() const;
+
+    /**
+     * @brief Converts the value of wide reserve mode to its index
+     * @param[in] wideReserveMode_string wide reserve mode e.g. @a High
+     * @return Index of considered wide reserve mode
+     */
     int wideReserveModeNumberFromString(const std::string  &wideReserveMode_string) const;
+
+    /**
+     * @brief Converts the index of wide reserve mode to its value
+     * @param[in] wideReserveMode_number the index of wide reserve mode e.g. @a 1
+     * @return The value of wide reserve mode
+     */
     std::string wideReserveModeStringFromNumber(const int &wideReserveMode_number) const;
+
+    /**
+     * @brief Sets the wide reserve mode to high (i=0), normal (i=1) or low (i=2)
+     * @param[in] wideReserveMode
+     * @return
+     */
     bool setWideReserveMode(const int &wideReserveMode) const;
+
+    /**
+     * @brief Sets the wide reserve mode by value (see @ref setWideReserveMode "setWideReserveMode" by index)
+     */
     bool setWideReserveMode(const std::string &wideReserveMode) const;
+
+    /**
+     * @brief Gets the actual wide reserve mode
+     * @return Actual wide reserve mode
+     */
     std::string getWideReserveMode() const;
 
     /*bool outDataAutoZeroChannel1(const int &outDataChannel1) const;
@@ -191,10 +262,28 @@ public:
     bool outDataAutoZeroChannel2(const std::string &outDataChannel2) const;
 */ // не знаю зачем нужна эта функция
 
+    /**
+     * @brief Return the point @b number stored in the Channel 1 buffer.
+     * @param number
+     */
     std::string getPointFromBufferChannel1(const int &number) const;
+
+    /**
+     * @brief Return the point @b number stored in the Channel 2 buffer.
+     * @param number
+     */
     std::string getPointFromBufferChannel2(const int &number) const;
+
+    /**
+     * @brief Return all point stored in Channel 1 buffer
+     */
     std::vector <std::string> getChannel1FromBuffer() const;
+
+    /**
+     * @brief Return all point stored in Channel 2 buffer
+     */
     std::vector <std::string> getChannel2FromBuffer() const;
+
 
     /**
      * @brief Returns values of 4 parameters at a single instant by their indices
@@ -354,8 +443,8 @@ public:
     std::string bufferModeStringFromNumber(const int &bufferMode_number) const;
 
     /**
-     * @brief Sets or queries the end of buffer mode by index
-     * @details Sets or queries the end of buffer mode.
+     * @brief Sets the end of buffer mode by index
+     * @details Sets the end of buffer mode.
      * The parameter i selects @b Shot (i=0) or @b Loop (i=1).
      * If @b Loop mode is used, make sure to pause data storage
      * before reading the data to avoid confusion about which point
@@ -415,9 +504,25 @@ public:
       */
     std::string getDataSampleRate() const;
 
+    /**
+     * @brief Starts data storage.
+     */
     bool startBuffer() const;
+
+    /**
+     * @brief Pause data storage
+     */
     bool pauseBuffer() const;
+
+    /**
+     * @brief Reset the data buffers.
+     * This command will erase the data buffer
+     */
     bool stopBuffer() const;
+
+    /**
+     * @brief Return the number of points currently stored in the buffer.
+     */
     int getBufferSize() const;
 };
 
