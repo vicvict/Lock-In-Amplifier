@@ -1,3 +1,14 @@
+/**
+ * @file
+ * @brief
+ * @details The file contains a description of the SR844 class
+*/
+
+/**
+ * @brief SR844 class
+ * @details The class contains a description of specialized for SR844 methods
+ */
+
 #ifndef SR844_H
 #define SR844_H
 
