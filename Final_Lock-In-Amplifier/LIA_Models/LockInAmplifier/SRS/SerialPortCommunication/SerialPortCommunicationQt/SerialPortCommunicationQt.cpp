@@ -893,6 +893,7 @@ std::string SerialPortCommunicationQt::ask(const std::string &command, const std
     return response;
 }
 
+/// @anchor ref_getTTS
 double SerialPortCommunicationQt::getTTS() const {
     return *TTS;
 }

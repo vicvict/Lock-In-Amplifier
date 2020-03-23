@@ -111,9 +111,7 @@ bool finalLockInAmplifier::connect(const std::string &new_port_name, const std::
         return this->sr844->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);
     if(this->lockInAmplifierModel == "SR865") {
         this->sr865 = new class SR865();
-        std::cout << "LOX\n";
         return this->sr865->connect(new_port_name, new_baudrate, new_data_bits,new_stop_bits,new_parity, new_flow_control);}
-    std::cout << "kva\n";
     return false;
 }
 
@@ -698,7 +696,7 @@ bool finalLockInAmplifier::testSineDCLevel(const double &interval, const double 
     return true;
 }
 
-bool finalLockInAmplifier::workWithRefSourse() const {
+bool finalLockInAmplifier::workWithRefSource() const {
     if (lockInAmplifierModel == "SR830")
         return true;
     if (lockInAmplifierModel == "SR844")
@@ -749,7 +747,7 @@ std::string finalLockInAmplifier::getRefSource() const {
 }
 
 bool finalLockInAmplifier:: testRefSource() const {
-    if (workWithRefSourse()) {
+    if (workWithRefSource()) {
         std::string oldRefSource = getRefSource();
         for(auto refSourse: getRefSourceList()) {
             setRefSource(refSourse);
@@ -2112,7 +2110,7 @@ std::string finalLockInAmplifier::allTest() const {
     if (workWithDataSampleRate())
         if(testDataSampleRate() == 0)
             return "Data Sample Rate test failed";
-    if (workWithRefSourse())
+    if (workWithRefSource())
         if(testRefSource() == 0)
             return "Reference source test failed";
     if (workWithBufferMode())
