@@ -144,7 +144,12 @@ public:
                                 "FINT",     "FEXT"
                             };*/
     }
-
+    /**
+     * @brief Auto Range function
+     * @details The command performs the Auto Range function.
+     * This command is the same as pressing the [Auto Range]
+     * @return @b True is case of successful quering
+     */
     bool autoRange() const;
 
     /**

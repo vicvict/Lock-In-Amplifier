@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sr830_2eh_192',['sr830.h',['../sr830_8h.html',1,'']]],
-  ['sr865_2eh_193',['sr865.h',['../sr865_8h.html',1,'']]]
+  ['lockinamplifier_2eh_291',['lockinamplifier.h',['../lockinamplifier_8h.html',1,'']]]
 ];

@@ -322,7 +322,7 @@ void MainWindow::on_pushButtonConnect_clicked()
             }
 
             //Добавление ref sources
-            if (obj.workWithRefSourse()){
+            if (obj.workWithRefSource()){
                 for (auto refSource : obj.getRefSourceList()) {
                     ui->comboBoxRefSource->addItem(to_QString(refSource));
                 }

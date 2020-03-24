@@ -85,7 +85,7 @@ Inheritance diagram for LockInAmplifier:</div>
 <area href="class_serial_port_communication.html" alt="SerialPortCommunication" shape="rect" coords="176,56,342,80"/>
 <area href="class_serial_port_communication_qt.html" alt="SerialPortCommunicationQt" shape="rect" coords="176,0,342,24"/>
 <area href="class_s_r830.html" title="SR830 class." alt="SR830" shape="rect" coords="0,224,166,248"/>
-<area href="class_s_r844.html" alt="SR844" shape="rect" coords="176,224,342,248"/>
+<area href="class_s_r844.html" title="SR844 class." alt="SR844" shape="rect" coords="176,224,342,248"/>
 <area href="class_s_r865.html" title="SR865 class." alt="SR865" shape="rect" coords="352,224,518,248"/>
   </map>
 </div></div>
@@ -468,8 +468,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>sendQuery</b> (const 
 <tr class="memitem:a82400eebd8efb02536db2a5879d41b2a inherit pub_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a82400eebd8efb02536db2a5879d41b2a"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ask</b> (const std::string &amp;command, const std::string &amp;terminate=&quot;\n&quot;) const</td></tr>
 <tr class="separator:a82400eebd8efb02536db2a5879d41b2a inherit pub_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad69d349341d47c61927a1b4d737309a9 inherit pub_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="ad69d349341d47c61927a1b4d737309a9"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getTTS</b> () const</td></tr>
+<tr class="memitem:ad69d349341d47c61927a1b4d737309a9 inherit pub_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial_port_communication_qt.html#ad69d349341d47c61927a1b4d737309a9">getTTS</a> () const</td></tr>
 <tr class="separator:ad69d349341d47c61927a1b4d737309a9 inherit pub_methods_class_serial_port_communication_qt"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a118dc2a8e6b6dba19b28af2e39cf70d8 inherit pub_methods_class_serial_port_communication_qt"><td class="memItemLeft" align="right" valign="top"><a id="a118dc2a8e6b6dba19b28af2e39cf70d8"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>getTTR</b> () const</td></tr>
@@ -776,7 +775,7 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>I
 </div><div class="memdoc">
 
 <p>Performs the Auto Scale (Auto Gain) function. </p>
-<p>This command is the same as pressing the [Auto Scale] (in <a class="el" href="class_s_r865.html" title="SR865 class.">SR865</a>) or [Auto Gain] (in SR8830 and <a class="el" href="class_s_r844.html">SR844</a>) key. This automatically sets the sensitivity. Measurements with the synchronous filter on or measurements of Xnoise or Ynoise may take many time constants to return to their steady state values. </p><dl class="section return"><dt>Returns</dt><dd>True if quering is correct </dd></dl>
+<p>This command is the same as pressing the [Auto Scale] (in <a class="el" href="class_s_r865.html" title="SR865 class.">SR865</a>) or [Auto Gain] (in SR8830 and <a class="el" href="class_s_r844.html" title="SR844 class.">SR844</a>) key. This automatically sets the sensitivity. Measurements with the synchronous filter on or measurements of Xnoise or Ynoise may take many time constants to return to their steady state values. </p><dl class="section return"><dt>Returns</dt><dd>True if quering is correct </dd></dl>
 
 </div>
 </div>
@@ -1998,7 +1997,7 @@ Filter slope values</div></div>
 
 <p>Set the Reference Input impedance. </p>
 <p>Set the Reference Input impedance to: </p><ul>
-<li>50 Ω (0) or 10 kΩ (1) (in <a class="el" href="class_s_r844.html">SR844</a>); </li>
+<li>50 Ω (0) or 10 kΩ (1) (in <a class="el" href="class_s_r844.html" title="SR844 class.">SR844</a>); </li>
 <li>50 Ω (0) or 1 MΩ (1) (in SR865A). The reference Input impedance in <a class="el" href="class_s_r830.html" title="SR830 class.">SR830</a> is unchangeble and equals to 10 MΩ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">refTriggerOutput</td><td>The index of external reference trigger input e.g. <em>0</em> </td></tr>

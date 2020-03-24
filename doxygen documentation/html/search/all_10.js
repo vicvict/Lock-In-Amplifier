@@ -1,6 +1,29 @@
 var searchData=
 [
-  ['timeconstantnumberfromstring_168',['timeConstantNumberFromString',['../class_lock_in_amplifier.html#a3505c2800673122279d25d21301db971',1,'LockInAmplifier']]],
-  ['timeconstantstringfromnumber_169',['timeConstantStringFromNumber',['../class_lock_in_amplifier.html#a3b30e68a836945c4ce6b8f85a6d65aa8',1,'LockInAmplifier']]],
-  ['timer_170',['Timer',['../class_timer.html',1,'']]]
+  ['testadvancefilter_209',['testAdvanceFilter',['../classfinal_lock_in_amplifier.html#af23b8aea9979ff043a66b1653130c397',1,'finalLockInAmplifier']]],
+  ['testbuffermode_210',['testBufferMode',['../classfinal_lock_in_amplifier.html#a07833608f90f8c9b4f4953e9d1baf6af',1,'finalLockInAmplifier']]],
+  ['testclosereservemode_211',['testCloseReserveMode',['../classfinal_lock_in_amplifier.html#a118354b248cdfcdd6f8db5d35f02d581',1,'finalLockInAmplifier']]],
+  ['testdatasamplerate_212',['testDataSampleRate',['../classfinal_lock_in_amplifier.html#a9a7729b75b2b8cac9eef60499b6fb799',1,'finalLockInAmplifier']]],
+  ['testfilterslope_213',['testFilterSlope',['../classfinal_lock_in_amplifier.html#a4cda6136923b3adfe30ef3a5ee2ba000',1,'finalLockInAmplifier']]],
+  ['testfrequency_214',['testFrequency',['../classfinal_lock_in_amplifier.html#aca6c1b7bbcc542499098ca8154102459',1,'finalLockInAmplifier']]],
+  ['testinputcurrentgain_215',['testInputCurrentGain',['../classfinal_lock_in_amplifier.html#ad4a05ca683f5693c149d5487f940b5cd',1,'finalLockInAmplifier']]],
+  ['testinputsignal_216',['testInputSignal',['../classfinal_lock_in_amplifier.html#a241af0c02b7fb63e6aa5acbc7ecc460a',1,'finalLockInAmplifier']]],
+  ['testinputsignalz_217',['testInputSignalZ',['../classfinal_lock_in_amplifier.html#a8dcc843041d99c733cec81ed7c672d1e',1,'finalLockInAmplifier']]],
+  ['testinputvoltagecoupling_218',['testInputVoltageCoupling',['../classfinal_lock_in_amplifier.html#a3db20757ce4d9e2f0c8c46b77d1e8a05',1,'finalLockInAmplifier']]],
+  ['testinputvoltagemode_219',['testInputVoltageMode',['../classfinal_lock_in_amplifier.html#a35aadc83e53fa22e3c503112057ac5d8',1,'finalLockInAmplifier']]],
+  ['testinputvoltagerange_220',['testInputVoltageRange',['../classfinal_lock_in_amplifier.html#a84fb40ce4bbd2b139a685038fa6efeab',1,'finalLockInAmplifier']]],
+  ['testinputvoltageshields_221',['testInputVoltageShields',['../classfinal_lock_in_amplifier.html#af7c9809cbf9bd024c6a0a040443a7e94',1,'finalLockInAmplifier']]],
+  ['testphase_222',['testPhase',['../classfinal_lock_in_amplifier.html#ad724cbc6ab105f9e8fdc7e3f9798c2e3',1,'finalLockInAmplifier']]],
+  ['testrefsource_223',['testRefSource',['../classfinal_lock_in_amplifier.html#aa009c7ad6223f59dea96e5fe0b374feb',1,'finalLockInAmplifier']]],
+  ['testreftriggermode_224',['testRefTriggerMode',['../classfinal_lock_in_amplifier.html#a77970cc5139d4fdcab43af0de84e1d1b',1,'finalLockInAmplifier']]],
+  ['testreftriggeroutput_225',['testRefTriggerOutput',['../classfinal_lock_in_amplifier.html#a13c1b642b7e5bb80eb6f08e4a2a7fef1',1,'finalLockInAmplifier']]],
+  ['testsensitivity_226',['testSensitivity',['../classfinal_lock_in_amplifier.html#ac0badb642fca5787e493bff0fad6e0b7',1,'finalLockInAmplifier']]],
+  ['testsineamplitude_227',['testSineAmplitude',['../classfinal_lock_in_amplifier.html#a1591b20bf67acb3da6ed4970a5f15544',1,'finalLockInAmplifier']]],
+  ['testsinedclevel_228',['testSineDCLevel',['../classfinal_lock_in_amplifier.html#a788e8e400eca3ebb88e26123d9d833e7',1,'finalLockInAmplifier']]],
+  ['testsynchronousfilter_229',['testSynchronousFilter',['../classfinal_lock_in_amplifier.html#a0963321f361218b8af465811aa542674',1,'finalLockInAmplifier']]],
+  ['testtimeconstant_230',['testTimeConstant',['../classfinal_lock_in_amplifier.html#a16492463616b65b6b795abc0248091ba',1,'finalLockInAmplifier']]],
+  ['testwidereservemode_231',['testWideReserveMode',['../classfinal_lock_in_amplifier.html#aa2019716071be2028261eed6d36de784',1,'finalLockInAmplifier']]],
+  ['timeconstantnumberfromstring_232',['timeConstantNumberFromString',['../class_lock_in_amplifier.html#a3505c2800673122279d25d21301db971',1,'LockInAmplifier']]],
+  ['timeconstantstringfromnumber_233',['timeConstantStringFromNumber',['../class_lock_in_amplifier.html#a3b30e68a836945c4ce6b8f85a6d65aa8',1,'LockInAmplifier']]],
+  ['timer_234',['Timer',['../class_timer.html',1,'']]]
 ];
