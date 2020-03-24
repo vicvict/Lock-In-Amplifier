@@ -348,8 +348,16 @@ public:
      */
     bool testFrequency(const double &interval, const double &epsilon) const;
 
-
+    /**
+     * @brief Returns the minimum harmonic available in this Lock-in Amplifier
+     * @return The minimum harmonic available in this Lock-in Amplifier
+     */
     int getMinHarmonic() const;
+
+    /**
+     * @brief Returns the maximum harmonic available in this Lock-in Amplifier
+     * @return The maximum harmonic available in this Lock-in Amplifier
+     */
     int getMaxHarmonic() const;
 
     /**
@@ -366,12 +374,43 @@ public:
     std::string getHarmonic() const;
    // std::string testHarmonic(const int &interval) const; понятия не имею как это реализовать не хочу пладить три ифа
 
+    /**
+     * @brief Returns the minimum dual harmonic available in this Lock-in Amplifier
+     */
     int getMinDualHarmonic() const;
+
+    /**
+     * @brief Returns the maximum dual harmonic available in this Lock-in Amplifier
+     */
     int getMaxDualHarmonic() const;
+
+    /**
+     * @brief Set harmonic for dual reference mode to i
+     * @details Sets the lock-in to detect at the ith harmonic of the
+     * external frequency in dual reference mode. The value of i is
+     * limited to 1 ≤ i ≤ 99. The actual detection frequency,
+     * when operating in dual reference mode, is
+     * ![](harmDualSR865.png)
+     * @param[in] i
+     * @return @b True if query is valid and sending is correct
+     */
     bool setDualHarmonic(const int &i) const;
+
+    /**
+     * @brief Returns the dual external harmonic
+     */
     std::string getDualHarmonic() const; //сложно написать тест надо думать
 
+    /**
+     * @brief Returns the minimum sine amplitude available in this Lock-in Amplifier
+     * @return The minimum sine amplitude available in this Lock-in Amplifier
+     */
     double getMinSineAmplitude() const;
+
+    /**
+     * @brief Returns the maximum sine amplitude available in this Lock-in Amplifier
+     * @return The maximum sine amplitude available in this Lock-in Amplifier
+     */
     double getMaxSineAmplitude() const;
 
     /**
@@ -393,9 +432,26 @@ public:
      */
     bool testSineAmplitude(const double &interval, const double &epsilon) const;
 
+    /**
+     * @brief Returns the minimum sine out DC level available in this Lock-in Amplifier
+     */
     double getMinSineDCLevel() const;
+
+    /**
+     * @brief Returns the maximum sine out DC level available in this Lock-in Amplifier
+     */
     double getMaxSineDCLevel() const;
+
+    /**
+     * @brief Sets the sine out dc level to voltage.
+     * @param[in] voltage
+     * @return  @b True if query is valid and sending is correct
+     */
     bool setSineDCLevel(const double &voltage) const;
+
+    /**
+     * @brief Returns the sine out dc level in Volts
+     */
     std::string getSineDCLevel() const;
 
     /**
@@ -404,6 +460,9 @@ public:
      */
     bool testSineDCLevel(const double &interval, const double &epsilon) const;
 
+    /**
+     * @brief Returns a list of time constants
+     */
     std::vector<std::string> getTimeConstantList() const;
 
     /**
@@ -437,6 +496,9 @@ public:
      */
     bool testTimeConstant() const;
 
+    /**
+     * @brief Returns a list of reference sources
+     */
     std::vector<std::string> getRefSourceList() const;
 
     /**
@@ -446,6 +508,10 @@ public:
      * @return True if the reference source is valid and sending is correct
      */
     bool setRefSource(const int &refSource) const;
+
+    /**
+     * @brief Sets the reference source by value (see @ref setRefSource "setRefSource" by index)
+     */
     bool setRefSource(const std::string &refSource) const;
 
     /**
@@ -460,9 +526,29 @@ public:
      */
     bool testRefSource() const;
 
+    /**
+     * @brief Returns a list of reference trigger mode
+     */
     std::vector<std::string> getRefTriggerModeList() const;
+
+    /**
+     * @brief Sets or queries the reference trigger mode by index.
+     * @details Sets or queries the reference trigger mode.
+     * The parameter i selects @b sine (i=0) , @b positive (i=1) or @b negative (i=2).
+     * @param[in] refTriggerMode
+     * @return @b True if Reference Trigger Mode is valid and sending is correct.
+     */
     bool setRefTriggerMode(const int &refTriggerMode) const;
+
+    /**
+     * @brief Sets Reference Trigger Mode to parameter refTriggerMode by its value (see @ref setRefTriggerMode "setRefTriggerMode" by indices)
+     */
     bool setRefTriggerMode(const std::string &refTriggerMode) const;
+
+    /**
+      * @brief Gets the actual Reference Trigger Mode
+      * @return Actual Reference Trigger Mode
+      */
     std::string getRefTriggerMode() const;
 
     /**
@@ -471,6 +557,9 @@ public:
      */
     bool testRefTriggerMode() const;
 
+    /**
+     * @brief Returns a list of external reference trigger input
+     */
     std::vector<std::string> getRefTriggerOutputList() const;
 
     /**
@@ -483,7 +572,16 @@ public:
      * @return True if the reference Input impedance is valid and sending is correct
      */
     bool setRefTriggerOutput(const int &refTriggerOutput) const;
+
+    /**
+     * @brief Sets the external reference trigger input by its value (see @ref setRefTriggerOutput "setRefTriggerOutput" by index)
+     */
     bool setRefTriggerOutput(const std::string &refTriggerOutput) const;
+
+    /**
+     * @brief Gets the actual external reference trigger input
+     * @return Actual external reference trigger input
+     */
     std::string getRefTriggerOutput() const;
 
     /**
@@ -492,9 +590,26 @@ public:
      */
     bool testRefTriggerOutput() const;
 
+    /**
+     * @brief Returns an Input Signal list
+     */
     std::vector<std::string> getInputSignalList() const;
+
+    /**
+     * @brief Sets the signal input to @b voltage (i=0) or @b current (i=1) by index.
+     * @param[in] inputSignal
+     * @return @b True if query is valid and sending is correct
+     */
     bool setInputSignal(const int &inputSignal) const;
+    \
+    /**
+     * @brief Sets Input Signal to parameter inputSignal by its value (see @ref setInputSignal "setInputSignal" by indices)
+     */
     bool setInputSignal(const std::string &inputSignal) const;
+
+    /**
+     * @brief Returns the signal input
+     */
     std::string getInputSignal() const;
 
     /**
@@ -503,9 +618,26 @@ public:
      */
     bool testInputSignal() const;
 
+    /**
+     * @brief Returns an Input Voltage Mode list
+     */
     std::vector<std::string> getInputVoltageModeList() const;
+
+    /**
+     * @brief Sets the voltage input mode to @b A (i=0) or @b A−B (i=1) by index.
+     * @param[in] inputVoltageMode
+     * @return @b True if query is valid and sending is correct
+     */
     bool setInputVoltageMode(const int &inputVoltageMode) const;
+
+    /**
+     * @brief Sets Input Voltage Mode to parameter inputVoltageMode by its value (see @ref setInputVoltageMode "setInputVoltageMode" by indices)
+     */
     bool setInputVoltageMode(const std::string &inputVoltageMode) const;
+
+    /**
+     * @brief Returns the voltage input mode
+     */
     std::string getInputVoltageMode() const;
 
     /**
@@ -514,10 +646,29 @@ public:
      */
     bool testInputVoltageMode() const;
 
-
+    /**
+     * @brief Returns a list of Input Voltage Coupling
+     */
     std::vector<std::string> getInputVoltageCouplingList() const;
+
+    /**
+     * @brief  Sets the Input Voltage Coupling by index.
+     * @details Sets the Input Voltage Coupling.
+     * The parameter i selects @b AC (i=0) or @b DC (i=1).
+     * @param[in] inputVoltageCoupling
+     * @return @b True if Input Voltage Coupling is valid and sending is correct.
+     */
     bool setInputVoltageCoupling(const int &inputVoltageCoupling) const;
+
+    /**
+     * @brief Sets Input Voltage Coupling to parameter inputVoltageCoupling by its value (see @ref setInputVoltageCoupling "setInputVoltageCoupling" by indices)
+     */
     bool setInputVoltageCoupling(const std::string &inputVoltageCoupling) const;
+
+    /**
+      * @brief Gets the actual Input Voltage Coupling
+      * @return Actual Input Voltage Coupling
+      */
     std::string getInputVoltageCoupling() const;
 
     /**
@@ -526,9 +677,29 @@ public:
      */
     bool testInputVoltageCoupling() const;
 
+    /**
+     * @brief Returns a list of Input Voltage Shields
+     */
     std::vector<std::string> getInputVoltageShieldsList() const;
+
+    /**
+     * @brief  Sets the input shield grounding by index.
+     * @details Sets or queries the input shield grounding.
+     * The parameter i selects @b Float (i=0) or @b Ground (i=1).
+     * @param[in] inputVoltageShields
+     * @return @b True if Input Voltage Shields is valid and sending is correct.
+     */
     bool setInputVoltageShields(const int &inputVoltageShields) const;
+
+    /**
+     * @brief Sets Input Voltage Shields to parameter inputVoltageShields by its value (see @ref setInputVoltageShields "setInputVoltageShields" by indices)
+     */
     bool setInputVoltageShields(const std::string &inputVoltageShields) const;
+
+    /**
+      * @brief Gets the actual Input Voltage Shields
+      * @return Actual Input Voltage Shields
+      */
     std::string getInputVoltageShields() const;
 
     /**
@@ -537,9 +708,30 @@ public:
      */
     bool testInputVoltageShields() const;
 
+    /**
+     * @brief Returns a list of Input Voltage Ranges
+     */
     std::vector<std::string> getInputVoltageRangeList() const;
+
+    /**
+     * @brief  Sets the voltage input range by index.
+     * @details Sets the voltage input range by index.
+     * The parameter i selects @b 1 @b V (i=0), @b 300 @b mV (i=1),
+     * @b 100 @b mV (i=2), @b 30 @b mV (i=3) or @b 10 @b mV (i=4).
+     * @param[in] inputVoltageRange
+     * @return @b True if Input Voltage Ranges is valid and sending is correct.
+     */
     bool setInputVoltageRange(const int &inputVoltageRange) const;
+
+    /**
+     * @brief Sets Input Voltage Ranges to parameter inputVoltageRange by its value (see @ref setInputVoltageRange "setInputVoltageRange" by indices)
+     */
     bool setInputVoltageRange(const std::string &inputVoltageRange) const;
+
+    /**
+      * @brief Gets the actual Input Voltage Ranges
+      * @return Actual Input Voltage Ranges
+      */
     std::string getInputVoltageRange() const;
 
     /**
@@ -548,9 +740,28 @@ public:
      */
     bool testInputVoltageRange() const;
 
+    /**
+     * @brief Returns a list of Input Current Gain
+     */
     std::vector<std::string> getInputCurrentGainList() const;
+
+    /**
+     * @brief  Sets the current input gain by index.
+     * @details Sets the current input gain by index.
+     * The parameter i selects @b 1 @b MΩ (i=0) or @b 100 @b MΩ (i=1),
+     * @param[in] inputCurrentGain
+     * @return @b True if Input Current Gain is valid and sending is correct.
+     */
     bool setInputCurrentGain(const int &inputCurrentGain) const;
+
+    /**
+     * @brief Sets Input Current Gain to parameter inputCurrentGain by its value (see @ref setInputCurrentGain "setInputCurrentGain" by indices)
+     */
     bool setInputCurrentGain(const std::string &inputCurrentGain) const;
+
+    /**
+      * @brief  Returns the current input gain
+      */
     std::string getInputCurrentGain() const;
 
     /**
@@ -559,11 +770,37 @@ public:
      */
     bool testInputCurrentGain() const;
 
+    /**
+     * @brief Returns the signal strength indicator from lowest (0) to overload (4).
+     */
     std::string getSignalStrength() const;
 
+    /**
+     * @brief Returns a sensitivity list
+     */
     std::vector<std::string> getSensitivityList() const;
+
+    /**
+     * @brief Sets the value of sensitivity by index according to the specification tables
+     * ![SR830](sensitivityTableSR830.png)
+     *
+     * ![SR844](sensitivityTableSR844.png)
+     *
+     * ![SR865A](sensitivityTableSR865A.png)
+     * @param[in] sensitivity
+     * @return @b True if sensitivity is valid and sending is correct
+     */
     bool setSensitivity(const int &sensitivity) const;
+
+    /**
+     * @brief Sets the value of sensitivity by its value (see @ref setSensitivity "setSensitivity" by index)
+     */
     bool setSensitivity(const std::string &sensitivity) const;
+
+    /**
+     * @brief Gets the actual value of sensitivity
+     * @return Actual value of sensitivity
+     */
     std::string getSensitivity() const;
 
     /**
@@ -572,9 +809,28 @@ public:
      */
     bool testSensitivity() const;
 
+    /**
+     * @brief Returns a list of filer slope values
+     */
     std::vector<std::string> getFilterSlopeList() const;
+
+    /**
+     * @brief Sets the value of filter slope by index according to the specification table
+     * ![Filter slope values](filterSlopeTable.png)
+     * @param[in] filterSlope
+     * @return @b True if filter slope is valid and sending is correct
+     */
     bool setFilterSlope(const int &filterSlope) const;
+
+    /**
+     * @brief Sets the value of filter slope by its value (see @ref setFilterSlope "setFilterSlope" by index)
+     */
     bool setFilterSlope(const std::string &filterSlope) const;
+
+    /**
+     * @brief Gets the actual value of filter slope
+     * @return Actual value of filter slope
+     */
     std::string getFilterSlope() const;
 
     /**
@@ -583,9 +839,29 @@ public:
      */
     bool testFilterSlope() const;
 
+    /**
+     * @brief Returns a list of Synchronous Filter
+     */
     std::vector<std::string> getSynchronousFilterList() const;
+
+    /**
+     * @brief  Sets the current synchronous filter by index.
+     * @details Sets the current synchronous filter by index.
+     * The parameter i selects @b Off (i=0) or @b On (i=1),
+     * @param[in] synchronousFilter
+     * @return @b True if Synchronous Filter is valid and sending is correct.
+     */
     bool setSynchronousFilter(const int &synchronousFilter) const;
+
+    /**
+     * @brief Sets synchronous filter to parameter synchronousFilter by its value (see @ref setSynchronousFilter "setSynchronousFilter" by indices)
+     */
     bool setSynchronousFilter(const std::string &synchronousFilter) const;
+
+    /**
+      * @brief Gets the actual synchronous filter
+      * @return Actual synchronous filter
+      */
     std::string getSynchronousFilter() const;
 
     /**
@@ -594,9 +870,29 @@ public:
      */
     bool testSynchronousFilter() const;
 
+    /**
+     * @brief Returns a list of Advance Filter
+     */
     std::vector<std::string> getAdvanceFilterList() const;
+
+    /**
+     * @brief  Sets the current advance filter by index.
+     * @details Sets the current advance filter by index.
+     * The parameter i selects @b Off (i=0) or @b On (i=1),
+     * @param[in] advanceFilter
+     * @return @b True if Advance Filter is valid and sending is correct.
+     */
     bool setAdvanceFilter(const int &advanceFilter) const;
+
+    /**
+     * @brief Sets advance filter to parameter advanceFilter by its value (see @ref setAdvanceFilter "setAdvanceFilter" by indices)
+     */
     bool setAdvanceFilter(const std::string &advanceFilter) const;
+
+    /**
+      * @brief Gets the actual advance filter
+      * @return Actual advance filter
+      */
     std::string getAdvanceFilter() const;
 
     /**
@@ -607,28 +903,136 @@ public:
 
 
     //auto functions
+    /**
+     * @brief Performs the Auto Phase function
+     * @details This commandis the same as pressing the [Auto Phase] key.
+     * This command adjusts the reference phase so that the current
+     * measurement has a Y value of zero and an X value equal to the
+     * signal magnitude, R.
+     * The outputs will take many time constants to reach their new values.
+     * Do not send the APHS command again without waiting the appropriate
+     * amount of time. If the phase is unstable, then APHS will do nothing.
+     * Query the new value of the phase shift to see if APHS changed the phase shift.
+     * @return @b True if quering is correct
+     */
     bool autoPhase() const;
+
+    /**
+     * @brief Auto Range function
+     * @details The command performs the Auto Range function.
+     * This command is the same as pressing the [Auto Range]
+     * @return @b True is case of successful quering
+     */
     bool autoRange() const;
+
+    /**
+     * @brief Performs the Auto Scale (Auto Gain) function
+     * @details This command is the same as pressing the [Auto Scale]
+     * (in SR865) or [Auto Gain] (in SR8830 and SR844) key.
+     * This automatically sets the sensitivity. Measurements with
+     * the synchronous filter on or measurements of Xnoise or
+     * Ynoise may take many time constants to return to their steady
+     * state values.
+     * @return True if quering is correct
+     */
     bool autoScale() const;
 
 
     //output data functions
+    /**
+     * @brief Returns a list of out data positions
+     */
     std::vector<std::string> getOutDataList() const;
+
+    /**
+     * @brief Gets the value of out data by index according to the specification table
+     * ![Out data values (for SR830 & SR844)](outDataTable.png)
+     *
+     * ![Out data values (for SR865)](outDataTableSR865.png)
+     * @param[in] outData
+     * @return @b True if out data is valid and sending is correct
+     */
     std::string getOutData(const int &outData) const;
+
+    /**
+     * @brief Gets the value of out data by its value (see @ref getOutData "getOutData" by index)
+     */
     std::string getOutData(const std::string &outData) const;
 
+    /**
+     * @brief Returns a list of out data could be obtained by multiple values simultaneously
+     */
     std::vector<std::string> getOutDataCoupleList() const;
+
+    /**
+     * @brief Returns the values of 2 parameters at a single instant by their indices
+     * according to specification tables
+     * ![SR830](outDataCoupleTableSR830.png)
+     * ![SR844](outDataCoupleTableSR844.png)
+     * ![SR865](outDataTableSR865.png)
+     * @param[in] A
+     * @param[out] AValue
+     * @param[in] B
+     * @param[out] BValue
+     * @return @b True if out data is valid and sending is correct. Records data to appropriate strings
+     */
     bool getOutDataAB(const int &A, std::string &AValue, const int &B, std::string &BValue) const;
+
+    /**
+     * @brief Returns the values of 3 parameters at a single instant by their indices
+     * according to specification tables
+     * ![SR830](outDataCoupleTableSR830.png)
+     * ![SR844](outDataCoupleTableSR844.png)
+     * ![SR865](outDataTableSR865.png)
+     * @param[in] A
+     * @param[out] AValue
+     * @param[in] B
+     * @param[out] BValue
+     * @return @b True if out data is valid and sending is correct. Records data to appropriate strings
+     */
     bool getOutDataABC(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue) const;
+
+    /**
+     * @brief Gets the value of out data by its value (see @ref getOutDataAB "getOutDataAB" by indices)
+     */
     bool getOutDataAB(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue) const;
+
+    /**
+     * @brief Gets the value of out data by its value (see @ref getOutDataABC "getOutDataABC" by indices)
+     */
     bool getOutDataABC(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue) const;
 
+    /**
+     * @brief Automatically sets the Wide Reserve Mode of the instrument to the minimum reserve without overload.
+     */
     bool autoWideReverse() const;
+
+    /**
+     * @brief Automatically sets the Reserve Mode of the instrument to the minimum reserve without overload.
+     */
     bool autoReserve() const;
 
+    /**
+     * @brief Returns a Input Signal list
+     */
     std::vector<std::string> getInputSignalZList() const;
+
+    /**
+     * @brief Sets the input signal to 50 Ohm (i=0) or 1 MOhm (i=1)
+     * @param[in] inputSignalZ
+     * @return
+     */
     bool setInputSignalZ(const int &inputSignalZ) const;
+
+    /**
+     * @brief Sets the input signal by value (see @ref setInputSignalZ "setInputSignalZ" by index)
+     */
     bool setInputSignalZ(const std::string &inputSignalZ) const;
+
+    /**
+     * @brief Gets the actual input signal
+     * @return Actual input signal
+     */
     std::string getInputSignalZ() const;
 
     /**
@@ -637,9 +1041,27 @@ public:
      */
     bool testInputSignalZ() const;
 
+    /**
+     * @brief Returns a Close Reserve Mode list
+     */
     std::vector<std::string> getCloseReserveModeList() const;
+
+    /**
+     * @brief Sets the reserve mode to high (i=0), normal (i=1) or low (i=2)
+     * @param[in] closeReserveMode
+     * @return
+     */
     bool setCloseReserveMode(const int &closeReserveMode) const;
+
+    /**
+     * @brief Sets the reserve mode by value (see @ref setCloseReserveMode "setCloseReserveMode" by index)
+     */
     bool setCloseReserveMode(const std::string &icloseReserveMode) const;
+
+    /**
+     * @brief Gets the actual reserve mode
+     * @return Actual reserve mode
+     */
     std::string getCloseReserveMode() const;
 
     /**
@@ -648,9 +1070,27 @@ public:
      */
     bool testCloseReserveMode() const;
 
+    /**
+     * @brief Returns a Wide Reserve Mode list
+     */
     std::vector<std::string> getWideReserveModeList() const;
+
+    /**
+     * @brief Sets the wide reserve mode to high (i=0), normal (i=1) or low (i=2)
+     * @param[in] wideReserveMode
+     * @return
+     */
     bool setWideReserveMode(const int &wideReserveMode) const;
+
+    /**
+     * @brief Sets the wide reserve mode by value (see @ref setWideReserveMode "setWideReserveMode" by index)
+     */
     bool setWideReserveMode(const std::string &wideReserveMode) const;
+
+    /**
+     * @brief Gets the actual wide reserve mode
+     * @return Actual wide reserve mode
+     */
     std::string getWideReserveMode() const;
 
     /**
@@ -664,29 +1104,163 @@ public:
     bool outDataAutoZeroChannel2(const int &outDataChannel2) const;
     bool outDataAutoZeroChannel2(const std::string &outDataChannel2) const;
 */ // не понял как работает эта функция поэтому скорей всего удалю
+
+    /**
+     * @brief Return the point @b number stored in the Channel 1 buffer.
+     * @param number
+     */
     std::string getPointFromBufferChannel1(const int &number) const;
+
+    /**
+     * @brief Return the point @b number stored in the Channel 2 buffer.
+     * @param number
+     */
     std::string getPointFromBufferChannel2(const int &number) const;
+
+    /**
+     * @brief Return all point stored in Channel 1 buffer
+     */
     std::vector <std::string> getChannel1FromBuffer() const;
+
+    /**
+     * @brief Return all point stored in Channel 2 buffer
+     */
     std::vector <std::string> getChannel2FromBuffer() const;
 
+    /**
+     * @brief Returns values of 4 parameters at a single instant by their indices
+     * according to specification tables
+     * ![SR830](outDataCoupleTableSR844.png)
+     * @param[in] A
+     * @param[out] AValue
+     * @param[in] B
+     * @param[out] BValue
+     * @param[in] C
+     * @param[out] CValue
+     * @param[in] D
+     * @param[out] DValue
+     * @return @b True if out data is valid and sending is correct. Records data to appropriate strings
+     */
     bool getOutDataABCD(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue) const;
-    bool getOutDataABCDE(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue) const;
-    bool getOutDataABCDEF(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue, const int &F, std::string &FValue) const;
+
+    /**
+     * @brief Gets the value of out data by its value (see @ref getOutDataABCD "getOutDataABCD" by indices)
+     */
     bool getOutDataABCD(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue) const;
+
+    /**
+     * @brief Returns values of 5 parameters at a single instant by their indices
+     * according to specification tables
+     * ![SR830](outDataCoupleTableSR844.png)
+     * @param[in] A
+     * @param[out] AValue
+     * @param[in] B
+     * @param[out] BValue
+     * @param[in] C
+     * @param[out] CValue
+     * @param[in] D
+     * @param[out] DValue
+     * @param[in] E
+     * @param[out] EValue
+     * @return @b True if out data is valid and sending is correct. Records data to appropriate strings
+     */
+    bool getOutDataABCDE(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue) const;
+
+    /**
+     * @brief Gets the value of out data by its value (see @ref getOutDataABCDE "getOutDataABCDE" by indices)
+     */
     bool getOutDataABCDE(const std::string &A, std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue, const std::string &E, std::string &EValue) const;
+
+
+    /**
+     * @brief Returns values of 6 parameters at a single instant by their indices
+     * according to specification tables
+     * ![SR830](outDataCoupleTableSR844.png)
+     * @param[in] A
+     * @param[out] AValue
+     * @param[in] B
+     * @param[out] BValue
+     * @param[in] C
+     * @param[out] CValue
+     * @param[in] D
+     * @param[out] DValue
+     * @param[in] E
+     * @param[out] EValue
+     * @param[in] F
+     * @param[out] FValue
+     * @return @b True if out data is valid and sending is correct. Records data to appropriate strings
+     */
+    bool getOutDataABCDEF(const int &A, std::string &AValue, const int &B, std::string &BValue, const int &C, std::string &CValue, const int &D, std::string &DValue, const int &E, std::string &EValue, const int &F, std::string &FValue) const;
+
+    /**
+     * @brief Gets the value of out data by its value (see @ref getOutDataABCDEF "getOutDataABCDEF" by indices)
+     */
     bool getOutDataABCDEF(const std::string &A,std::string &AValue, const std::string &B, std::string &BValue, const std::string &C, std::string &CValue, const std::string &D, std::string &DValue, const std::string &E, std::string &EValue, const std::string &F, std::string &FValue) const;
 
+    /**
+     * @brief Returns an Out Data Channel 1 list
+     */
     std::vector<std::string> getOutDataChannel1List() const;
+
+    /**
+     * @brief Sets display 1 to parameter outDataChannel1 by index
+     * according to specification tables
+     * ![Out Data Channel 1](outDataChannel1TableSR844.png)
+     * @param[in] outDataChannel1
+     * @return @b True if Out Data Channel 1 is valid and sending is correct. Records data to appropriate strings
+     */
     bool setOutDataChannel1(const int &outDataChannel1) const;
+
+    /**
+     * @brief Sets display 1 to parameter outDataChannel1 by its value (see @ref setOutDataChannel1 "setOutDataChannel1" by indices)
+     */
     bool setOutDataChannel1(const std::string &outDataChannel1) const;
 
+    /**
+     * @brief Returns an Out Data Channel 2 list
+     */
     std::vector<std::string> getOutDataChannel2List() const;
+
+    /**
+     * @brief Sets display 2 to parameter outDataChannel2 by index
+     * according to specification tables
+     * ![Out Data Channel 2](outDataChannel2TableSR844.png)
+     * @param[in] outDataChannel2
+     * @return @b True if Out Data Channel 2 is valid and sending is correct. Records data to appropriate strings
+     */
     bool setOutDataChannel2(const int &outDataChannel2) const;
+
+    /**
+     * @brief Sets display 2 to parameter outDataChannel2 by its value (see @ref setOutDataChannel2 "setOutDataChannel2" by indices)
+     */
     bool setOutDataChannel2(const std::string &outDataChannel2) const;
 
+    /**
+     * @brief Returns a Buffer Mode list
+     */
     std::vector<std::string> getBufferModeList() const;
+
+    /**
+     * @brief Sets the end of buffer mode by index
+     * @details Sets the end of buffer mode.
+     * The parameter i selects @b Shot (i=0) or @b Loop (i=1).
+     * If @b Loop mode is used, make sure to pause data storage
+     * before reading the data to avoid confusion about which point
+     * is the most recent.
+     * @param[in] bufferMode
+     * @return @b True if Buffer Mode is valid and sending is correct.
+     */
     bool setBufferMode(const int &bufferMode) const;
+
+    /**
+     * @brief Sets Buffer Mode by its value (see @ref setBufferMode "setBufferMode" by index)
+     */
     bool setBufferMode(const std::string &bufferMode) const;
+
+    /**
+     * @brief Gets the actual Buffer Mode
+     * @return Actual Buffer Mode
+     */
     std::string getBufferMode() const;
 
     /**
@@ -695,9 +1269,29 @@ public:
      */
     bool testBufferMode() const;
 
+    /**
+     * @brief Returns a Data Sample Rate list
+     */
     std::vector<std::string> getDataSampleRateList() const;
+
+    /**
+     * @brief Sets Data Sample Rate to parameter dataSampleRate by index
+     * according to specification tables
+     * ![Data Sample Rate](dataSampleRateTableSR844.png)
+     * @param[in] dataSampleRate
+     * @return @b True if Data Sample Rate is valid and sending is correct.
+     */
     bool setDataSampleRate(const int &dataSampleRate) const;
+
+    /**
+     * @brief Sets Data Sample Rate to parameter dataSampleRate by its value (see @ref setDataSampleRate "setDataSampleRate" by indices)
+     */
     bool setDataSampleRate(const std::string &dataSampleRate) const;
+
+    /**
+      * @brief Gets the actual Data Sample Rate
+      * @return Actual Data Sample Rate
+      */
     std::string getDataSampleRate() const;
 
     /**
@@ -706,9 +1300,20 @@ public:
      */
     bool testDataSampleRate() const;
 
-
+    /**
+     * @brief Starts data storage.
+     */
     bool startBuffer() const;
+
+    /**
+     * @brief Pause data storage
+     */
     bool pauseBuffer() const;
+
+    /**
+     * @brief Reset the data buffers.
+     * This command will erase the data buffer
+     */
     bool stopBuffer() const;
 
 

@@ -88,19 +88,9 @@ private slots:
 
     void on_comboBoxBufferMode_activated(const QString &arg1);
 
-    void on_doubleSpinBoxPhase_valueChanged(const QString &arg1);
-
     void on_doubleSpinBoxPhase_valueChanged(double arg1);
 
-    void on_doubleSpinBoxPhase_editingFinished();
-
     void on_doubleSpinBoxFrequency_valueChanged(double arg1);
-
-    void on_doubleSpinBoxHarm_valueChanged(double arg1);
-
-    void on_doubleSpinBoxAmplitude_valueChanged(double arg1);
-
-    void on_doubleSpinBoxDCLevel_valueChanged(double arg1);
 
     void on_doubleSpinBoxHarmonic_valueChanged(double arg1);
 
