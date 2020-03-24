@@ -302,7 +302,7 @@ void MainWindow::on_pushButtonConnect_clicked()
 {
     if(ui->pushButtonConnect->text() == "Connect"){
         try {
-            obj.connect("COM5","19200","8","1", "NO", "NO");
+            obj.connect("COM7","19200","8","1", "NO", "NO");
 
             //Добавление моделей
             for (auto model : obj.getSupportedList()) {
@@ -550,8 +550,11 @@ void MainWindow::on_pushButtonConnect_clicked()
                 ui->labelPhase->show();
                 ui->doubleSpinBoxPhase->show();
                 ui->doubleSpinBoxPhase->setMinimum(obj.getMinPhase());
+               // QTest::qWait(500);
                 ui->doubleSpinBoxPhase->setMaximum(obj.getMaxPhase());
+               // QTest::qWait(500);
                 ui->doubleSpinBoxPhase->setValue(std:: stod(obj.getPhase()));
+                QTest::qWait(500);
 
                 ui->lineEditPhase->show();
                 ui->lineEditPhase->setText(to_QString(obj.getPhase()));
@@ -568,12 +571,16 @@ void MainWindow::on_pushButtonConnect_clicked()
             if (obj.workWithFrequency()) {
                 ui->labelFrequency->show();
                 ui->doubleSpinBoxFrequency->show();
-                ui->lineEditRecieve->setText(to_QString(std::to_string(obj.getMinInternalFrequency())));
+
+                ui->lineEditRecieve->setText(to_QString(obj.getFrequency()));
+                ui->doubleSpinBoxFrequency->setMinimum(obj.getMinInternalFrequency());
                 ui->lineEditFrequency->setText(to_QString(obj.getFrequency()));
+               // ui->doubleSpinBoxFrequency->setMinimum(obj.getMinInternalFrequency());
+                ui->doubleSpinBoxFrequency->setMaximum(obj.getMaxInternalFrequency());
                 ui->doubleSpinBoxFrequency->setValue(std:: stod(obj.getFrequency()));
                 //ui->doubleSpinBoxFrequency->setMaximum(obj.getMaxInternalFrequency());
-                ui->doubleSpinBoxFrequency->setRange(obj.getMinInternalFrequency(), obj.getMaxInternalFrequency());
 
+                //QTest::qWait(500);
 
 
                 ui->lineEditFrequency->show();
@@ -596,6 +603,8 @@ void MainWindow::on_pushButtonConnect_clicked()
                 ui->doubleSpinBoxHarmonic->setMinimum(obj.getMinHarmonic());
                 ui->doubleSpinBoxHarmonic->setMaximum(obj.getMaxHarmonic());
                 ui->doubleSpinBoxHarmonic->setValue(std:: stoi(obj.getHarmonic()));
+                QTest::qWait(500);
+
 
                 ui->lineEditHarmonic->show();
                 ui->lineEditHarmonic -> setText(to_QString(obj.getHarmonic()));
@@ -615,6 +624,8 @@ void MainWindow::on_pushButtonConnect_clicked()
                 ui->doubleSpinBoxSineAmplitude->setMinimum(obj.getMinSineAmplitude());
                 ui->doubleSpinBoxSineAmplitude->setMaximum(obj.getMaxSineAmplitude());
                 ui->doubleSpinBoxSineAmplitude->setValue(std:: stod(obj.getSineAmplitude()));
+                QTest::qWait(500);
+
 
                 ui->lineEditSineAmplitude->show();
                 ui->lineEditSineAmplitude->setText(to_QString(obj.getSineAmplitude()));
@@ -634,6 +645,8 @@ void MainWindow::on_pushButtonConnect_clicked()
                 ui->doubleSpinBoxSineDCLevel->setMinimum(obj.getMinSineDCLevel());
                 ui->doubleSpinBoxSineDCLevel->setMaximum(obj.getMaxSineDCLevel());
                 ui->doubleSpinBoxSineDCLevel->setValue(std:: stod(obj.getSineDCLevel()));
+                QTest::qWait(500);
+
 
                 ui->lineEditSineDCLevel->show();
                 ui->lineEditSineDCLevel -> setText(to_QString(obj.getSineDCLevel()));

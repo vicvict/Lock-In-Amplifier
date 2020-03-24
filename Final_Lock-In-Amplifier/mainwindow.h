@@ -6,6 +6,8 @@
 
 #include "windows.h"
 
+#include <QTest>
+
 namespace Ui {
 class MainWindow;
 }
