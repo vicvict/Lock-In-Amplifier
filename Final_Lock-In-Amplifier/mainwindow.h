@@ -21,17 +21,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButtonPhase_clicked();
-
-    void on_pushButtonHarmonic_clicked();
-
-    void on_pushButtonFrequency_clicked();
-
-    void on_pushButtonSineAmplitude_clicked();
-
     void on_pushButtonAutoPhase_clicked();
-
-    void on_pushButtonSineDCLevel_clicked();
 
     void on_comboBoxTimeConstant_activated(const QString &new_text);
 
@@ -58,7 +48,6 @@ private slots:
     void on_comboBoxInputCurrentGain_activated(const QString &arg1);
 
     void on_comboBoxSensivitity_activated(const QString &arg1);
-
 
     void on_comboBoxFilterSlope_activated(const QString &arg1);
 
@@ -102,6 +91,14 @@ private:
     Ui::MainWindow *ui;
 
     finalLockInAmplifier obj;
+
+    //Флаг того, что соответствующий spinbox инициализирован. Нужен для корректной обработки события
+    //valueChanged()
+    bool phaseInitFlag = false;
+    bool freqInitFlag = false;
+    bool harmInitFlag = false;
+    bool amplInitFlag = false;
+    bool dcLevelInitFlag = false;
 };
 
 #endif // MAINWINDOW_H

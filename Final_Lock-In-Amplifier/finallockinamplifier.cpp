@@ -2,7 +2,7 @@
 #include <QTime>
 
 finalLockInAmplifier::finalLockInAmplifier() {
-
+    this->srs = new SRS();
 }
 
 finalLockInAmplifier::finalLockInAmplifier(const std::string new_model){
@@ -10,9 +10,11 @@ finalLockInAmplifier::finalLockInAmplifier(const std::string new_model){
 }
 
 finalLockInAmplifier::~finalLockInAmplifier() {
+    srs->~SRS();
     sr830->~SR830();
     sr844->~SR844();
     sr865->~SR865();
+    delete this->srs;
     delete this->sr830;
     delete this->sr844;
     delete this->sr865;
@@ -239,13 +241,13 @@ double finalLockInAmplifier::getTTR() const {
 }
 
 std::vector < std::string > finalLockInAmplifier::getSupportedList() const {
-    if(this->lockInAmplifierModel == "SR830")
+    /*if(this->lockInAmplifierModel == "SR830")
        return this->sr830->getSupportedList();
     if(this->lockInAmplifierModel == "SR844")
        return this->sr844->getSupportedList();
     if(this->lockInAmplifierModel == "SR865")
-       return this->sr865->getSupportedList();
-    return {};
+       return this->sr865->getSupportedList();*/
+    return this->srs->getSupportedList();
 }
 
 int finalLockInAmplifier::getAttemptsToConnect() const {
